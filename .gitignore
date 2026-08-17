@@ -1,24 +1,45 @@
-# dependencies
+# Dependencies
 node_modules/
+.pnp/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # Next.js
 .next/
 out/
 
-# production
+# Build
 dist/
 build/
 
-# environment
+# Testing
+coverage/
+
+# Environment
 .env
 .env.*
 !.env.example
 
-# logs
+# Vercel
+.vercel/
+
+# Logs
 *.log
 npm-debug.log*
-pnpm-debug.log*
 yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Certificates / keys
+*.pem
 
 # OS
 .DS_Store
@@ -27,3 +48,7 @@ Thumbs.db
 # IDE
 .idea/
 .vscode/
+
+# Misc
+*.swp
+*.swo
