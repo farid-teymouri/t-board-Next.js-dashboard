@@ -39,7 +39,7 @@ export function AdminLinkButton({
       <div className="flex flex-1 items-center gap-3">{content}</div>
 
       {socialBadge && (
-        <Badge className="block bg-red-50 text-sky-700 dark:bg-sky-800 dark:text-sky-100">
+        <Badge className="block text-popover" variant="outline">
           {socialBadge}
         </Badge>
       )}
