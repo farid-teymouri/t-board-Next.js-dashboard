@@ -28,7 +28,7 @@ export function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
     <Popover>
       <PopoverTrigger
         render={<Button variant="outline" />}
-        className="h-auto rounded-4xl!"
+        className="h-auto rounded-4xl! hover:text-primary"
       >
         <AdminAvatar name={name} avatarSrc={avatarSrc} />
       </PopoverTrigger>

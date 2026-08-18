@@ -3,6 +3,8 @@
 // import { HeaderUser } from "./header-user";
 import { AdminPopover } from "./admin-setting-popover/admin-popover";
 import { FullScreen } from "./full-screen/full-screen";
+
+import { NotificationPopover } from "./notification-popover/notification-popover";
 export function Header() {
   return (
     <header className="w-full flex flex-row h-16 items-center justify-between border-b px-7  ">
@@ -15,6 +17,7 @@ export function Header() {
           role="Super Admin"
         />
         <FullScreen />
+        <NotificationPopover />
       </div>
       {/* <HeaderSearch />
 
