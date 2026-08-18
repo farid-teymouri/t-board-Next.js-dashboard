@@ -1,5 +1,5 @@
 import { Sidebar } from "@/components/layout/sidebar";
-import { Header } from "@/components/layout/header";
+import { Header } from "@/components/layout/header/header";
 
 export default function DashboardLayout({
   children,
@@ -7,13 +7,13 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <Sidebar />
+    <div className="min-h-screen">
+      {/* <Sidebar /> */}
 
       <div>
         <Header />
 
-        <main>{children}</main>
+        <main className="p-4 md:p-6">{children}</main>
       </div>
     </div>
   );
