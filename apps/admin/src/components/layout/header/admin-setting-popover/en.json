@@ -1,0 +1,17 @@
+{
+  "cloudCard": {
+    "title": "Cloud Storage Details",
+    "usage": " of cloud storage is used",
+    "settings": "Cloud Storage Settings",
+    "usagePercent": "70%"
+  },
+  "links": {
+    "accountSettings": "Account Settings",
+    "publicPage": "Public Page",
+    "logout": "Log Out"
+  },
+  "switchCard": {
+    "sms": "Receive notifications via SMS",
+    "email": "Receive notifications via Email"
+  }
+}

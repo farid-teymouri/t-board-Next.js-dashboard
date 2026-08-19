@@ -3,9 +3,10 @@
 // import { HeaderUser } from "./header-user";
 import { AdminPopover } from "./admin-setting-popover/admin-popover";
 import { FullScreen } from "./full-screen/full-screen";
-
+import { getDictionary } from "@/i18n/dictionaries";
 import { NotificationPopover } from "./notification-popover/components/notification-popover";
-export function Header() {
+export async function Header() {
+  const dic = await getDictionary();
   return (
     <header className="w-full flex flex-row h-16 items-center justify-between border-b px-7  ">
       <div className="flex flex-row items-center gap-4">
@@ -17,7 +18,10 @@ export function Header() {
           role="Super Admin"
         />
         <FullScreen />
-        <NotificationPopover />
+        <NotificationPopover
+          dictionary={dic.notifications}
+          timeDictionary={dic.util.time}
+        />
       </div>
       {/* <HeaderSearch />
 

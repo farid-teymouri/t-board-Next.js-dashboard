@@ -1,0 +1,10 @@
+{
+  "time": {
+    "now": "حالا",
+    "seconds": "{value} ثانیه پیش",
+    "minute": "{value} دقیقه پیش",
+    "minutes": "{value} دقیقه پیش",
+    "hour": "{value} ساعت پیش",
+    "hours": "{value} ساعت پیش"
+  }
+}

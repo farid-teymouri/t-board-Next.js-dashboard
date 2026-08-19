@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
-import "./globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
+import "../globals.css";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+import { notFound } from "next/navigation";
+import { i18nConfig } from "@/i18n/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,28 +24,43 @@ export const metadata: Metadata = {
 const shabnam = localFont({
   src: [
     {
-      path: "../fonts/Shabnam.woff2",
+      path: "../../fonts/Shabnam.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/Shabnam-Medium.woff2",
+      path: "../../fonts/Shabnam-Medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../fonts/Shabnam-Bold.woff2",
+      path: "../../fonts/Shabnam-Bold.woff2",
       weight: "700",
       style: "normal",
     },
   ],
   variable: "--font-shabnam",
 });
-export default function RootLayout({ children }: LayoutProps<"/">) {
+type RootLayoutProps = {
+  children: React.ReactNode;
+  params: Promise<{
+    locale: string;
+  }>;
+};
+export default async function RootLayout({
+  children,
+  params,
+}: RootLayoutProps) {
+  const { locale } = await params;
+
+  if (!i18nConfig.locales.includes(locale as "fa" | "en")) {
+    notFound();
+  }
+
   return (
     <html
-      lang="fa"
-      dir="rtl"
+      lang={locale}
+      dir={locale === "fa" ? "rtl" : "ltr"}
       className={cn(
         shabnam.className,
         "h-full",
