@@ -75,7 +75,7 @@ const notifications: Notification[] = [
     type: "shared-post",
     username: "nilofare_abi",
     social: "facebook",
-    types: [],
+    types: ["share"],
     createdAt: "32 دقیقه پیش",
   },
 
