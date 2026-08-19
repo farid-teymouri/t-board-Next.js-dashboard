@@ -45,6 +45,11 @@ export const notificationBadges = {
     label: "سرور",
     variant: "outline",
   },
+
+  share: {
+    label: "اشتراک گذاری",
+    variant: "outline",
+  },
 } as const;
 
 export type NotificationType = keyof typeof notificationBadges;
