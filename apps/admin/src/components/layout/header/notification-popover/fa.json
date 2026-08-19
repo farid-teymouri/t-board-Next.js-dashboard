@@ -1,0 +1,48 @@
+{
+  "badge": {
+    "all": "تمام اعلان‌ها",
+    "new": "جدید",
+    "unread": "دیده نشده",
+    "pending": "در انتظار تأیید",
+    "financial": "مالی",
+    "warning": "هشدار",
+    "others": "سایر اعلان‌ها",
+    "forum": "انجمن",
+    "media": "مدیا",
+    "server": "سرور",
+    "share": "اشتراک‌گذاری"
+  },
+  "classSelector": {
+    "placeholder": "نوع اعلان را انتخاب کنید",
+    "label": "لیست اعلان‌ها"
+  },
+  "popover": {
+    "title": "اعلان‌های اخیر",
+    "markAllAsRead": "همه را خواندم",
+    "ariaLabel": "اعلان‌ها"
+  },
+  "newUser": {
+    "message": "یک کاربر جدید با نام {username} به جمع ما پیوست."
+  },
+  "serverEvent": {
+    "highCpu": {
+      "title": "مصرف پردازنده بالا",
+      "description": "هشدار: پردازنده تا {percent}٪ اشغال شده"
+    },
+    "highMemory": {
+      "title": "مصرف حافظه بالا",
+      "description": "هشدار: حافظه تا {percent}٪ اشغال شده"
+    },
+    "down": {
+      "title": "سرویس از دسترس خارج شده",
+      "description": "هشدار: سرویس موردنظر از دسترس خارج شده است"
+    },
+    "backup": {
+      "title": "پشتیبان‌گیری",
+      "description": "عملیات پشتیبان‌گیری انجام شد"
+    }
+  },
+  "sharedPost": {
+    "message": "کاربر {username} پست شما را در {social} به اشتراک گذاشت."
+  }
+}

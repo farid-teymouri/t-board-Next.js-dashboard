@@ -23,11 +23,15 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
+type NotificationTime = {
+  value: number;
+  unit: "now" | "seconds" | "minute" | "minutes" | "hour" | "hours";
+};
 type BaseNotification = {
   id: number;
   username: string;
   types: NotificationType[];
-  createdAt: string;
+  createdAt: NotificationTime;
 };
 
 type NewUserNotification = BaseNotification & {
@@ -42,21 +46,27 @@ type SharedPostNotification = BaseNotification & {
 type ServerEventNotification = BaseNotification & {
   type: "server-event";
   event: "high-cpu" | "high-memory" | "down" | "backup";
-  title: string;
-  description: string;
+  cpuUsage?: number;
 };
-
+type NotificationBadgeDictionary = Record<
+  NotificationType | "all" | "others",
+  string
+>;
 type Notification =
   | NewUserNotification
   | SharedPostNotification
   | ServerEventNotification;
+
 const notifications: Notification[] = [
   {
     id: 1,
     type: "new-user",
     username: "farima23",
     types: ["new", "unread"],
-    createdAt: "7 دقیقه پیش",
+    createdAt: {
+      value: 7,
+      unit: "minutes",
+    },
   },
 
   {
@@ -64,10 +74,12 @@ const notifications: Notification[] = [
     type: "server-event",
     username: "admin",
     event: "high-cpu",
-    title: "مصرف پردازنده بالا",
-    description: "هشدار: پردازنده تا ۹۲٪ اشغال شده",
+    cpuUsage: 92,
     types: ["server", "warning"],
-    createdAt: "15 دقیقه پیش",
+    createdAt: {
+      value: 15,
+      unit: "minutes",
+    },
   },
 
   {
@@ -76,7 +88,10 @@ const notifications: Notification[] = [
     username: "nilofare_abi",
     social: "facebook",
     types: ["share"],
-    createdAt: "32 دقیقه پیش",
+    createdAt: {
+      value: 32,
+      unit: "minutes",
+    },
   },
 
   {
@@ -84,10 +99,73 @@ const notifications: Notification[] = [
     type: "new-user",
     username: "abasi8744",
     types: ["unread"],
-    createdAt: "1 ساعت پیش",
+    createdAt: {
+      value: 1,
+      unit: "hour",
+    },
   },
 ];
-export function NotificationPopover() {
+type ServerEventDictionary = {
+  title: string;
+  description: string;
+};
+type NotificationDictionary = {
+  badge: NotificationBadgeDictionary;
+
+  classSelector: {
+    placeholder: string;
+    label: string;
+  };
+
+  popover: {
+    title: string;
+    markAllAsRead: string;
+    ariaLabel: string;
+  };
+
+  newUser: {
+    message: string;
+  };
+
+  sharedPost: {
+    message: string;
+  };
+
+  serverEvent: {
+    highCpu: ServerEventDictionary;
+    highMemory: ServerEventDictionary;
+    down: ServerEventDictionary;
+    backup: ServerEventDictionary;
+  };
+};
+type TimeDictionary = {
+  now: string;
+  seconds: string;
+  minute: string;
+  minutes: string;
+  hour: string;
+  hours: string;
+};
+type NotificationPopoverProps = {
+  dictionary: NotificationDictionary;
+  timeDictionary: TimeDictionary;
+};
+
+function formatNotificationTime(
+  createdAt: NotificationTime,
+  dictionary: TimeDictionary,
+) {
+  if (createdAt.unit === "now") {
+    return dictionary.now;
+  }
+
+  return dictionary[createdAt.unit].replace("{value}", String(createdAt.value));
+}
+
+export function NotificationPopover({
+  dictionary,
+  timeDictionary,
+}: NotificationPopoverProps) {
   const [filter, setFilter] = useState<NotificationFilter>("all");
 
   const filteredNotifications =
@@ -101,11 +179,37 @@ export function NotificationPopover() {
             notification.types.includes(filter),
           );
 
+  function getServerEventDictionary(
+    notification: ServerEventNotification,
+    dictionary: NotificationDictionary["serverEvent"],
+  ) {
+    const eventDictionary = {
+      "high-cpu": dictionary.highCpu,
+      "high-memory": dictionary.highMemory,
+      down: dictionary.down,
+      backup: dictionary.backup,
+    }[notification.event];
+
+    return {
+      title: eventDictionary.title,
+      description: eventDictionary.description.replace(
+        "{percent}",
+        String(notification.cpuUsage ?? ""),
+      ),
+    };
+  }
+
   return (
     <Popover>
       <PopoverTrigger
         className="w-8.5 h-8.5 hover:text-primary"
-        render={<Button variant="outline" size="icon" aria-label="اعلان‌ها" />}
+        render={
+          <Button
+            variant="outline"
+            size="icon"
+            aria-label={dictionary.popover.ariaLabel}
+          />
+        }
       >
         <Bell />
       </PopoverTrigger>
@@ -115,17 +219,18 @@ export function NotificationPopover() {
           <div className="grid gap-2 p-4 pb-0">
             <div className="flex flex-row items-center justify-between space-y-1">
               <h5 className="text-md font-medium leading-none capitalize">
-                اعلان‌های اخیر
+                {dictionary.popover.title}
               </h5>
 
               <Button variant="link" className="p-0 text-xs text-primary">
-                همه را خواندم
+                {dictionary.popover.markAllAsRead}
               </Button>
             </div>
 
             <NotificationClassSelector
               value={filter}
               onValueChange={setFilter}
+              dictionary={dictionary}
             />
           </div>
 
@@ -137,17 +242,35 @@ export function NotificationPopover() {
                   <NewUser
                     username={notification.username}
                     types={notification.types}
-                    createdAt={notification.createdAt}
+                    createdAt={formatNotificationTime(
+                      notification.createdAt,
+                      timeDictionary,
+                    )}
+                    dictionary={dictionary.newUser}
+                    badgeDictionary={dictionary.badge}
                   />
                 )}
                 {notification.type === "server-event" && (
                   <ServerEvent
-                    username={notification.username}
-                    event={notification.event}
-                    title={notification.title}
-                    description={notification.description}
+                    // event={notification.event}
+                    // title={
+                    //   getServerEventDictionary(
+                    //     notification,
+                    //     dictionary.serverEvent,
+                    //   ).title
+                    // }
+                    description={
+                      getServerEventDictionary(
+                        notification,
+                        dictionary.serverEvent,
+                      ).description
+                    }
                     types={notification.types}
-                    createdAt={notification.createdAt}
+                    createdAt={formatNotificationTime(
+                      notification.createdAt,
+                      timeDictionary,
+                    )}
+                    badgeDictionary={dictionary.badge}
                   />
                 )}
                 {notification.type === "shared-post" && (
@@ -155,7 +278,12 @@ export function NotificationPopover() {
                     username={notification.username}
                     social={notification.social}
                     types={notification.types}
-                    createdAt={notification.createdAt}
+                    createdAt={formatNotificationTime(
+                      notification.createdAt,
+                      timeDictionary,
+                    )}
+                    dictionary={dictionary.sharedPost}
+                    badgeDictionary={dictionary.badge}
                   />
                 )}
 
