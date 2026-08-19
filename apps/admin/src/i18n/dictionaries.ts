@@ -12,6 +12,10 @@ const dictionaries = {
     notifications: (
       await import("@/components/layout/header/notification-popover/en.json")
     ).default,
+
+    languageSwitcher: (
+      await import("@/components/layout/header/language-switcher/en.json")
+    ).default,
   }),
 
   fa: async () => ({
@@ -23,6 +27,10 @@ const dictionaries = {
 
     notifications: (
       await import("@/components/layout/header/notification-popover/fa.json")
+    ).default,
+
+    languageSwitcher: (
+      await import("@/components/layout/header/language-switcher/fa.json")
     ).default,
   }),
 };

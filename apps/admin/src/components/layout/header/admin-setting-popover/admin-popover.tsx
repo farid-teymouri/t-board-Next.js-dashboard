@@ -34,7 +34,7 @@ export async function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
         <AdminAvatar name={name} avatarSrc={avatarSrc} />
       </PopoverTrigger>
 
-      <PopoverPositioner>
+      <PopoverPositioner align="end">
         <PopoverContent className="relative w-80 max-h-[calc(100vh-2rem)] overflow-y-auto">
           <div className="grid gap-4">
             <div className="space-y-1">

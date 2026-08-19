@@ -24,7 +24,7 @@ export async function AdminCloudCard() {
 
         <CardDescription className="space-y-2">
           <h4 className="flex flex-row gap-1">
-            <Badge variant="secondary">{dic.cloudCard.usagePercent}</Badge>
+            <span className="text-primary">{dic.cloudCard.usagePercent}</span>
 
             <p>{dic.cloudCard.usage}</p>
           </h4>
@@ -34,9 +34,8 @@ export async function AdminCloudCard() {
       </CardHeader>
 
       <CardContent className="-mb-(--card-spacing) overflow-hidden relative h-20 flex flex-col justify-between p-3">
-        <div className="admin-card-content"></div>
-
-        <Button className="w-fit p-4">{dic.cloudCard.settings}</Button>
+        <Button className="w-fit p-4">{dic.cloudCard.settings}</Button>{" "}
+        <div className="admin-card-content rtl:before:-left-10 before:-right-10 rtl:after:-left-32.5 after:-right-32.5 "></div>
       </CardContent>
     </Card>
   );

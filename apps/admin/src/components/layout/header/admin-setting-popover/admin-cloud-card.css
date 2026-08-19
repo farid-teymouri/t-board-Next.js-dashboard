@@ -4,7 +4,6 @@
   border-image: none;
   border-radius: 50%;
   top: 55px;
-  left: -40px;
   content: "";
   position: absolute;
   width: 200px;
@@ -17,7 +16,6 @@
   border-image: none;
   border-radius: 50%;
   top: 0;
-  left: -130px;
   content: "";
   position: absolute;
   width: 200px;
