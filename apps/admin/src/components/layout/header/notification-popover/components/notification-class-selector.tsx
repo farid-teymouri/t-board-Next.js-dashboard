@@ -8,29 +8,42 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import type { NotificationFilter } from "../notification-types";
+import type {
+  NotificationFilter,
+  NotificationType,
+} from "../notification-types";
 
 const items = [
-  { label: "تمام اعلان‌ها", value: "all" },
-  { label: "جدید", value: "new" },
-  { label: "خوانده‌نشده", value: "unread" },
-  { label: "در انتظار تأیید", value: "pending" },
-  { label: "مالی", value: "financial" },
-  { label: "هشدار", value: "warning" },
-  { label: "سایر اعلان‌ها", value: "others" },
+  { value: "all", key: "all" },
+  { value: "new", key: "new" },
+  { value: "unread", key: "unread" },
+  { value: "pending", key: "pending" },
+  { value: "financial", key: "financial" },
+  { value: "warning", key: "warning" },
+  { value: "others", key: "others" },
 ] satisfies {
-  label: string;
   value: NotificationFilter;
+  key: NotificationFilter;
 }[];
 
 type NotificationClassSelectorProps = {
   value: NotificationFilter;
   onValueChange: (value: NotificationFilter) => void;
+
+  dictionary: {
+    classSelector: {
+      placeholder: string;
+      label: string;
+    };
+
+    badge: Record<NotificationType | "all" | "others", string>;
+  };
 };
 
 export function NotificationClassSelector({
   value,
   onValueChange,
+  dictionary,
 }: NotificationClassSelectorProps) {
   return (
     <Select
@@ -40,19 +53,22 @@ export function NotificationClassSelector({
           onValueChange(value as NotificationFilter);
         }
       }}
-      items={items}
+      items={items.map((item) => ({
+        value: item.value,
+        label: dictionary.badge[item.key],
+      }))}
     >
       <SelectTrigger className="w-full">
-        <SelectValue placeholder="نوع اعلان را انتخاب کنید" />
+        <SelectValue placeholder={dictionary.classSelector.placeholder} />
       </SelectTrigger>
 
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>لیست اعلان‌ها</SelectLabel>
+          <SelectLabel>{dictionary.classSelector.label}</SelectLabel>
 
           {items.map((item) => (
             <SelectItem key={item.value} value={item.value}>
-              {item.label}
+              {dictionary.badge[item.key]}
             </SelectItem>
           ))}
         </SelectGroup>

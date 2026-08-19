@@ -1,0 +1,48 @@
+{
+  "badge": {
+    "all": "All notifications",
+    "new": "New",
+    "unread": "Unread",
+    "pending": "Pending approval",
+    "financial": "Financial",
+    "warning": "Warning",
+    "others": "Other notifications",
+    "forum": "Forum",
+    "media": "Media",
+    "server": "Server",
+    "share": "Shared"
+  },
+  "classSelector": {
+    "placeholder": "Select notification type",
+    "label": "Notification List"
+  },
+  "popover": {
+    "title": "Recent Notifications",
+    "markAllAsRead": "Mark all as read",
+    "ariaLabel": "Notifications"
+  },
+  "newUser": {
+    "message": "A new user named {username} joined us."
+  },
+  "serverEvent": {
+    "highCpu": {
+      "title": "High CPU Usage",
+      "description": "Warning: CPU usage has reached {percent}%"
+    },
+    "highMemory": {
+      "title": "High Memory Usage",
+      "description": "Warning: memory usage has reached {percent}%"
+    },
+    "down": {
+      "title": "Service Unavailable",
+      "description": "Warning: the requested service is unavailable"
+    },
+    "backup": {
+      "title": "Backup",
+      "description": "The backup operation was completed"
+    }
+  },
+  "sharedPost": {
+    "message": "User {username} shared your post on {social}."
+  }
+}
