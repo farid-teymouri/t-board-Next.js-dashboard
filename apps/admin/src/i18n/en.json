@@ -1,0 +1,10 @@
+{
+  "time": {
+    "now": "now",
+    "seconds": "{value} seconds ago",
+    "minute": "{value} minutes ago",
+    "minutes": "{value} minutes ago",
+    "hour": "{value} hour ago",
+    "hours": "{value} hours ago"
+  }
+}

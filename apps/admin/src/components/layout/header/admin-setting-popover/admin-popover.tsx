@@ -7,7 +7,7 @@ import { AdminLinkButton } from "./admin-link-button";
 import { Settings } from "lucide-react";
 import { DoorOpen } from "lucide-react";
 import { UserRound } from "lucide-react";
-
+import { getDictionary } from "@/i18n/dictionaries";
 import {
   Popover,
   PopoverContent,
@@ -23,7 +23,8 @@ type AdminInfoProps = {
   role: string;
 };
 
-export function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
+export async function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
+  const dic = (await getDictionary()).adminSettings;
   return (
     <Popover>
       <PopoverTrigger
@@ -32,6 +33,7 @@ export function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
       >
         <AdminAvatar name={name} avatarSrc={avatarSrc} />
       </PopoverTrigger>
+
       <PopoverPositioner>
         <PopoverContent className="relative w-80 max-h-[calc(100vh-2rem)] overflow-y-auto">
           <div className="grid gap-4">
@@ -39,6 +41,7 @@ export function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
               <h4 className="leading-none font-medium capitalize text-center">
                 {name}
               </h4>
+
               <p className="text-muted-foreground text-xs text-center">
                 {role}
               </p>
@@ -60,7 +63,7 @@ export function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
               <AdminLinkButton
                 variant="ghost"
                 href="admin/account/settings"
-                text="تنظیمات حساب"
+                text={dic.links.accountSettings}
               >
                 <Settings data-icon="inline-end" />
               </AdminLinkButton>
@@ -68,13 +71,17 @@ export function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
               <AdminLinkButton
                 variant="secondary"
                 href="admin/public-page"
-                text="صفحه عمومی"
+                text={dic.links.publicPage}
                 socialBadge="5"
               >
                 <UserRound data-icon="inline-end" />
               </AdminLinkButton>
 
-              <AdminLinkButton href="admin/logout" text="خروج" variant="ghost">
+              <AdminLinkButton
+                href="admin/logout"
+                text={dic.links.logout}
+                variant="ghost"
+              >
                 <DoorOpen data-icon="inline-end" />
               </AdminLinkButton>
             </div>

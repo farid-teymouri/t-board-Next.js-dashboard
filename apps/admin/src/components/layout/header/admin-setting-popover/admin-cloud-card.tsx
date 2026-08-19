@@ -9,27 +9,34 @@ import "./admin-cloud-card.css";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { getDictionary } from "@/i18n/dictionaries";
+export async function AdminCloudCard() {
+  const dic = (await getDictionary()).adminSettings;
 
-export function AdminCloudCard() {
   return (
     <Card className="mx-auto w-full max-w-sm">
       <CardHeader className="space-y-2">
         <CardTitle>
-          <h3 className="leading-none font-medium text-lg">جزئیات فضای ابری</h3>
+          <h3 className="leading-none font-medium text-lg">
+            {dic.cloudCard.title}
+          </h3>
         </CardTitle>
 
         <CardDescription className="space-y-2">
           <h4 className="flex flex-row gap-1">
-            <Badge variant="secondary">۷۰%</Badge>
-            <p>از فضای ابری اشغال شده</p>
+            <Badge variant="secondary">{dic.cloudCard.usagePercent}</Badge>
+
+            <p>{dic.cloudCard.usage}</p>
           </h4>
+
           <Progress value={70} className="w-full max-w-sm" />
         </CardDescription>
       </CardHeader>
 
       <CardContent className="-mb-(--card-spacing) overflow-hidden relative h-20 flex flex-col justify-between p-3">
         <div className="admin-card-content"></div>
-        <Button className="w-fit p-4">تنظیمات فضای ابری</Button>
+
+        <Button className="w-fit p-4">{dic.cloudCard.settings}</Button>
       </CardContent>
     </Card>
   );
