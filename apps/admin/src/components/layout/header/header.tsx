@@ -8,24 +8,34 @@ import { NotificationPopover } from "./notification-popover/components/notificat
 
 import { LanguageSwitcher } from "./language-switcher/language-switcher";
 
+import { SearchInput } from "./search/search";
+
 export async function Header() {
   const dic = await getDictionary();
   return (
     <header className="w-full flex flex-row h-16 items-center justify-between border-b px-7  ">
-      <div className="flex flex-row items-center gap-4">
-        <AdminPopover
-          name="farid teymouri"
-          avatarSrc="https://github.com/evilrabbit.png"
-          username="demo"
-          status="online"
-          role="Super Admin"
-        />
-        <FullScreen />
-        <NotificationPopover
-          dictionary={dic.notifications}
-          timeDictionary={dic.util.time}
-        />
-        <LanguageSwitcher dictionary={dic.languageSwitcher} />
+      <div className="w-full flex flex-row justify-between items-center gap-4">
+        <div className="w-full flex flex-row items-center gap-4">
+          <AdminPopover
+            name="farid teymouri"
+            avatarSrc="https://github.com/evilrabbit.png"
+            username="demo"
+            status="online"
+            role="Super Admin"
+          />
+
+          <FullScreen />
+
+          <NotificationPopover
+            dictionary={dic.notifications}
+            timeDictionary={dic.util.time}
+          />
+
+          <LanguageSwitcher dictionary={dic.languageSwitcher} />
+        </div>
+        <div className="w-full max-w-108.75 block">
+          <SearchInput />
+        </div>
       </div>
       {/* <HeaderSearch />
 

@@ -51,7 +51,7 @@ export function LanguageSwitcher({ dictionary }: LanguageSwitcherProps) {
       </PopoverTrigger>
 
       <PopoverPositioner align="center">
-        <PopoverContent className="w-44 p-2">
+        <PopoverContent className="w-44 p-2 relative top-1">
           <div className="grid gap-1">
             <div className="px-2 py-1.5 text-sm font-medium">
               {dictionary.title}
