@@ -1,0 +1,14 @@
+{
+  "placeholder": "جستجو...",
+  "ariaLabel": "جستجو",
+  "settings": "تنظیمات جستجو",
+  "searchIn": "جستجو در",
+  "categories": {
+    "content": "محتوا",
+    "community": "انجمن",
+    "management": "مدیریت",
+    "infrastructure": "زیرساخت",
+    "system": "سیستم"
+  },
+  "close": "بستن جستجو"
+}

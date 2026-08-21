@@ -57,7 +57,7 @@ export function NotificationPopover({
       </PopoverTrigger>
 
       <PopoverPositioner align="center">
-        <PopoverContent className="relative top-1 max-h-[calc(100vh-2rem)] w-80 space-y-3 overflow-y-auto p-0">
+        <PopoverContent className="relative top-1 max-h-[calc(100vh-2rem)] sm:w-80 w-72  space-y-3 overflow-y-auto p-0">
           <div className="grid gap-2 p-4 pb-0">
             <div className="flex items-center justify-between space-y-1">
               <h5 className="text-md font-medium leading-none">

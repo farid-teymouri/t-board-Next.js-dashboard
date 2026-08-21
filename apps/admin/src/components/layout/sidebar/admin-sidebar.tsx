@@ -28,7 +28,7 @@ export function AdminSidebar({ side, locale, dictionary }: AdminSidebarProps) {
   const isActive = (href: string) => pathname === getLocalePath(href);
 
   return (
-    <Sidebar side={side} collapsible="icon" className="border-none!">
+    <Sidebar side={side} collapsible="icon" className="border-none! z-10">
       <SidebarContent>
         {sidebarMenuGroups.map((group, index) => (
           <AdminSidebarMenuGroup

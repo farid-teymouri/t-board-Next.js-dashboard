@@ -39,7 +39,7 @@ export function AdminCloudCard({ dictionary }: AdminCloudCardProps) {
 
       <CardContent className="-mb-(--card-spacing) overflow-hidden relative h-20 flex flex-col justify-between p-3">
         <Button className="w-fit p-4">{dictionary.cloudCard.settings}</Button>{" "}
-        <div className="admin-card-content rtl:before:-left-10 before:-right-10 rtl:after:-left-32.5 after:-right-32.5 "></div>
+        <div className="admin-card-content rtl:before:-left-10 ltr:before:-right-10 rtl:after:-left-32.5 ltr:after:-right-32.5 "></div>
       </CardContent>
     </Card>
   );

@@ -45,8 +45,8 @@ export function AdminPopover({
         <AdminAvatar name={name} avatarSrc={avatarSrc} />
       </PopoverTrigger>
 
-      <PopoverPositioner align="end">
-        <PopoverContent className="relative w-80 max-h-[calc(100vh-2rem)] overflow-y-auto">
+      <PopoverPositioner align="center">
+        <PopoverContent className="relative sm:w-80 w-72 max-h-[calc(100vh-2rem)] overflow-y-auto">
           <div className="grid gap-4">
             <div className="space-y-1">
               <h4 className="leading-none font-medium capitalize text-center">

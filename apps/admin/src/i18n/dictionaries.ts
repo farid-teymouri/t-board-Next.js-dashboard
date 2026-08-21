@@ -20,6 +20,8 @@ const dictionaries = {
     languageSwitcher: (
       await import("@/components/layout/header/language-switcher/en.json")
     ).default,
+
+    search: (await import("@/components/layout/header/search/en.json")).default,
   }),
 
   fa: async () => ({
@@ -38,6 +40,8 @@ const dictionaries = {
     languageSwitcher: (
       await import("@/components/layout/header/language-switcher/fa.json")
     ).default,
+
+    search: (await import("@/components/layout/header/search/fa.json")).default,
   }),
 };
 
