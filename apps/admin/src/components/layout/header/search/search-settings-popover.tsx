@@ -12,36 +12,42 @@ import {
 export const searchCategories = [
   {
     id: "content",
-    title: "Content",
   },
   {
     id: "community",
-    title: "Community",
   },
   {
     id: "management",
-    title: "Management",
   },
   {
     id: "infrastructure",
-    title: "Infrastructure",
   },
   {
     id: "system",
-    title: "System",
   },
 ] as const;
 
 export type SearchCategory = (typeof searchCategories)[number]["id"];
 
+export type SearchDictionary = {
+  placeholder: string;
+  ariaLabel: string;
+  settings: string;
+  searchIn: string;
+  close: string;
+  categories: Record<SearchCategory, string>;
+};
+
 type SearchSettingsPopoverProps = {
   searchCategory: SearchCategory;
   onSearchCategoryChange: (category: SearchCategory) => void;
+  dictionary: SearchDictionary;
 };
 
 export function SearchSettingsPopover({
   searchCategory,
   onSearchCategoryChange,
+  dictionary,
 }: SearchSettingsPopoverProps) {
   return (
     <Popover>
@@ -50,8 +56,8 @@ export function SearchSettingsPopover({
           <Button
             type="button"
             variant="secondary"
-            size="icon-sm"
-            aria-label="Search settings"
+            size="icon"
+            aria-label={dictionary.settings}
           />
         }
       >
@@ -59,10 +65,10 @@ export function SearchSettingsPopover({
       </PopoverTrigger>
 
       <PopoverPositioner align="start">
-        <PopoverContent className="w-72 p-4 relative top-2">
+        <PopoverContent className="relative top-2 w-72 p-4">
           <div className="grid gap-6">
             <div className="grid gap-3">
-              <h3 className="text-sm font-medium">Search in</h3>
+              <h3 className="text-sm font-medium">{dictionary.searchIn}</h3>
 
               <div className="grid gap-1">
                 {searchCategories.map((category) => {
@@ -76,7 +82,7 @@ export function SearchSettingsPopover({
                       className="justify-between"
                       onClick={() => onSearchCategoryChange(category.id)}
                     >
-                      <span>{category.title}</span>
+                      <span>{dictionary.categories[category.id]}</span>
 
                       {isActive && <Check className="size-4" />}
                     </Button>

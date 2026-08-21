@@ -1,0 +1,14 @@
+{
+  "placeholder": "Search...",
+  "ariaLabel": "Search",
+  "settings": "Search settings",
+  "searchIn": "Search in",
+  "categories": {
+    "content": "Content",
+    "community": "Community",
+    "management": "Management",
+    "infrastructure": "Infrastructure",
+    "system": "System"
+  },
+  "close": "Close search"
+}
