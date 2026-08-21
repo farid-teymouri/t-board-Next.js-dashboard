@@ -7,7 +7,7 @@ import { AdminLinkButton } from "./admin-link-button";
 import { Settings } from "lucide-react";
 import { DoorOpen } from "lucide-react";
 import { UserRound } from "lucide-react";
-import { getDictionary } from "@/i18n/dictionaries";
+import type { AdminSettingsDictionary } from "@/i18n/dictionaries";
 import {
   Popover,
   PopoverContent,
@@ -15,16 +15,27 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-type AdminInfoProps = {
+// type AdminInfoProps = {
+//   name: string;
+//   username: string;
+//   status: string;
+//   avatarSrc?: string;
+//   role: string;
+// };
+type AdminPopoverProps = {
+  dictionary: AdminSettingsDictionary;
   name: string;
+  avatarSrc: string;
   username: string;
-  status: string;
-  avatarSrc?: string;
+  status: "online" | "offline";
   role: string;
 };
-
-export async function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
-  const dic = (await getDictionary()).adminSettings;
+export function AdminPopover({
+  dictionary,
+  name,
+  avatarSrc,
+  role,
+}: AdminPopoverProps) {
   return (
     <Popover>
       <PopoverTrigger
@@ -49,12 +60,12 @@ export async function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
 
             <Separator />
 
-            <AdminCloudCard />
+            <AdminCloudCard dictionary={dictionary} />
 
             <Separator />
 
             <div className="flex flex-col w-full">
-              <AdminSwitchCard />
+              <AdminSwitchCard dictionary={dictionary} />
             </div>
 
             <Separator />
@@ -63,7 +74,7 @@ export async function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
               <AdminLinkButton
                 variant="ghost"
                 href="admin/account/settings"
-                text={dic.links.accountSettings}
+                text={dictionary.links.accountSettings}
               >
                 <Settings data-icon="inline-end" />
               </AdminLinkButton>
@@ -71,7 +82,7 @@ export async function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
               <AdminLinkButton
                 variant="secondary"
                 href="admin/public-page"
-                text={dic.links.publicPage}
+                text={dictionary.links.publicPage}
                 socialBadge="5"
               >
                 <UserRound data-icon="inline-end" />
@@ -79,7 +90,7 @@ export async function AdminPopover({ name, avatarSrc, role }: AdminInfoProps) {
 
               <AdminLinkButton
                 href="admin/logout"
-                text={dic.links.logout}
+                text={dictionary.links.logout}
                 variant="ghost"
               >
                 <DoorOpen data-icon="inline-end" />

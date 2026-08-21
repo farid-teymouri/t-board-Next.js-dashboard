@@ -1,5 +1,7 @@
-import { locale } from "next/root-params";
 import { notFound } from "next/navigation";
+
+import type { Locale } from "./config";
+import { hasLocale } from "./config";
 
 const dictionaries = {
   en: async () => ({
@@ -8,6 +10,8 @@ const dictionaries = {
     adminSettings: (
       await import("@/components/layout/header/admin-setting-popover/en.json")
     ).default,
+
+    sidebar: (await import("@/components/layout/sidebar/en.json")).default,
 
     notifications: (
       await import("@/components/layout/header/notification-popover/en.json")
@@ -25,6 +29,8 @@ const dictionaries = {
       await import("@/components/layout/header/admin-setting-popover/fa.json")
     ).default,
 
+    sidebar: (await import("@/components/layout/sidebar/fa.json")).default,
+
     notifications: (
       await import("@/components/layout/header/notification-popover/fa.json")
     ).default,
@@ -35,17 +41,14 @@ const dictionaries = {
   }),
 };
 
-export type Locale = keyof typeof dictionaries;
+export type Dictionary = Awaited<ReturnType<(typeof dictionaries)["fa"]>>;
 
-export const hasLocale = (locale: string): locale is Locale =>
-  locale in dictionaries;
+export type AdminSettingsDictionary = Dictionary["adminSettings"];
 
-export const getDictionary = async () => {
-  const currentLocale = await locale();
-
-  if (!hasLocale(currentLocale)) {
+export const getDictionary = async (locale: Locale) => {
+  if (!hasLocale(locale)) {
     notFound();
   }
 
-  return dictionaries[currentLocale]();
+  return dictionaries[locale]();
 };

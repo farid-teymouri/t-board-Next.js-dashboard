@@ -1,0 +1,66 @@
+{
+  "groups": {
+    "overview": "نمای کلی",
+    "management": "مدیریت",
+    "infrastructure": "زیرساخت",
+    "administration": "مدیریت سیستم"
+  },
+  "items": {
+    "dashboard": "داشبورد",
+    "users": "کاربران",
+
+    "community": "انجمن",
+    "forum": "فروم",
+    "posts": "پست‌ها",
+    "comments": "نظرات",
+    "reports": "گزارش‌ها",
+    "moderation": "نظارت",
+
+    "finance": "مالی",
+    "revenue": "درآمد",
+    "transactions": "تراکنش‌ها",
+    "subscriptions": "اشتراک‌ها",
+    "payments": "پرداخت‌ها",
+    "refunds": "بازپرداخت‌ها",
+
+    "analytics": "تحلیل و آمار",
+    "analyticsUsers": "کاربران",
+    "analyticsMusic": "موسیقی",
+    "analyticsMedia": "رسانه",
+    "downloads": "دانلودها",
+    "traffic": "ترافیک",
+    "analyticsRevenue": "درآمد",
+
+    "infrastructure": "زیرساخت",
+    "servers": "سرورها",
+    "storage": "فضای ذخیره‌سازی",
+    "cpu": "پردازنده",
+    "ram": "حافظه RAM",
+    "bandwidth": "پهنای باند",
+    "services": "سرویس‌ها",
+    "monitoring": "مانیتورینگ",
+
+    "notifications": "اعلان‌ها",
+
+    "security": "امنیت",
+    "loginActivity": "فعالیت ورود",
+    "adminActivity": "فعالیت مدیران",
+    "auditLogs": "گزارش‌های حسابرسی",
+    "suspiciousActivity": "فعالیت مشکوک",
+    "ipManagement": "مدیریت IP",
+
+    "system": "سیستم",
+    "settings": "تنظیمات",
+    "roles": "نقش‌ها",
+    "permissions": "مجوزها",
+    "featureFlags": "فلگ‌های قابلیت",
+    "configuration": "پیکربندی",
+
+    "cms": "مدیریت محتوا",
+    "pages": "صفحات",
+    "banners": "بنرها",
+    "seo": "سئو",
+    "announcements": "اطلاعیه‌ها",
+    "homepage": "صفحه اصلی"
+  }
+}
