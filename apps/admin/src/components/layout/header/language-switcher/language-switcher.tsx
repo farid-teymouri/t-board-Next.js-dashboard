@@ -13,6 +13,9 @@ import {
 import { Button, buttonVariants } from "@/components/ui/button";
 
 const locales = ["fa", "en"] as const;
+const defaultLocale = "fa";
+
+type Locale = (typeof locales)[number];
 
 type LanguageSwitcherDictionary = {
   title: string;
@@ -23,16 +26,27 @@ type LanguageSwitcherDictionary = {
 type LanguageSwitcherProps = {
   dictionary: LanguageSwitcherDictionary;
 };
+
 export function LanguageSwitcher({ dictionary }: LanguageSwitcherProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const currentLocale = locales.includes(pathname.split("/")[1] as "fa" | "en")
-    ? (pathname.split("/")[1] as "fa" | "en")
-    : "fa";
+  const segments = pathname.split("/").filter(Boolean);
 
-  const createLocalePath = (locale: (typeof locales)[number]) => {
-    const path = pathname.replace(`/${currentLocale}`, `/${locale}`);
+  const currentLocale: Locale = locales.includes(segments[0] as Locale)
+    ? (segments[0] as Locale)
+    : defaultLocale;
+
+  const pathWithoutLocale =
+    currentLocale === defaultLocale
+      ? pathname
+      : pathname.replace(`/${currentLocale}`, "") || "/";
+
+  const createLocalePath = (locale: Locale) => {
+    const path =
+      locale === defaultLocale
+        ? pathWithoutLocale
+        : `/${locale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
 
     const queryString = searchParams.toString();
 
@@ -51,7 +65,7 @@ export function LanguageSwitcher({ dictionary }: LanguageSwitcherProps) {
       </PopoverTrigger>
 
       <PopoverPositioner align="center">
-        <PopoverContent className="w-44 p-2 relative top-1">
+        <PopoverContent className="relative top-1 w-44 p-2">
           <div className="grid gap-1">
             <div className="px-2 py-1.5 text-sm font-medium">
               {dictionary.title}
@@ -68,7 +82,7 @@ export function LanguageSwitcher({ dictionary }: LanguageSwitcherProps) {
                     variant: isActive ? "secondary" : "ghost",
                     className: isActive
                       ? "w-full justify-between"
-                      : "w-full justify-between hover:bg-accent! ",
+                      : "w-full justify-between hover:bg-accent!",
                   })}
                   aria-current={isActive ? "page" : undefined}
                 >

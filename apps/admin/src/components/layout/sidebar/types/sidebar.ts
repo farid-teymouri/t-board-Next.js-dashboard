@@ -1,0 +1,24 @@
+import type { LucideIcon } from "lucide-react";
+
+export type SidebarSubItem = {
+  id: string;
+  href: string;
+};
+
+export type SidebarMenuItem = {
+  id: string;
+  href: string;
+  icon: LucideIcon;
+  items?: SidebarSubItem[];
+};
+
+export type SidebarMenuGroup = {
+  id: string;
+  items: SidebarMenuItem[];
+};
+
+export type SidebarDictionary = {
+  groups: Record<string, string>;
+
+  items: Record<string, string>;
+};
