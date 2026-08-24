@@ -53,7 +53,7 @@ export function SearchInput({ onClose, dictionary }: SearchInputProps) {
             type="button"
             variant="outline"
             size="icon"
-            className="text-red-500 hover:bg-red-500/10 hover:text-red-600 rtl:ml-1 ltr:mr-1"
+            className="text-destructive hover:bg-destructive/10 hover:text-destructive rtl:ml-1 ltr:mr-1"
             onClick={onClose}
             aria-label={dictionary.close}
           >

@@ -40,7 +40,7 @@ export function AdminPopover({
     <Popover>
       <PopoverTrigger
         render={<Button variant="outline" />}
-        className="h-auto rounded-4xl! hover:text-primary"
+        className="h-auto rounded-4xl!"
       >
         <AdminAvatar name={name} avatarSrc={avatarSrc} />
       </PopoverTrigger>

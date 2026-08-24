@@ -27,7 +27,7 @@ export function FullScreen() {
         variant="outline"
         size="icon"
         aria-label="Toggle fullscreen"
-        className="w-8.5 h-8.5 hover:text-primary"
+        className="w-8.5 h-8.5"
         onClick={handleFullscreen}
       >
         {isFullscreen ? <Shrink /> : <Expand />}

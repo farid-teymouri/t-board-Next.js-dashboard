@@ -44,7 +44,7 @@ export function NotificationPopover({
   return (
     <Popover>
       <PopoverTrigger
-        className="h-8.5 w-8.5 hover:text-primary"
+        className="h-8.5 w-8.5"
         render={
           <Button
             variant="outline"
@@ -64,7 +64,7 @@ export function NotificationPopover({
                 {dictionary.popover.title}
               </h5>
 
-              <Button variant="link" className="p-0 text-xs text-primary">
+              <Button variant="link" className="p-0 text-xs">
                 {dictionary.popover.markAllAsRead}
               </Button>
             </div>

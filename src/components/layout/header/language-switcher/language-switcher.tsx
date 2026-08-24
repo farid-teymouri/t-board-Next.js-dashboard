@@ -56,7 +56,7 @@ export function LanguageSwitcher({ dictionary }: LanguageSwitcherProps) {
   return (
     <Popover>
       <PopoverTrigger
-        className="h-8.5 w-8.5 hover:text-primary"
+        className="h-8.5 w-8.5"
         render={
           <Button variant="outline" size="icon" aria-label={dictionary.title} />
         }

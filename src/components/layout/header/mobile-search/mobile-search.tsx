@@ -28,7 +28,7 @@ export function MobileSearch({ dictionary }: MobileSearchProps) {
 
   return (
     <Button
-      className="h-8.5 w-8.5 hover:text-primary"
+      className="h-8.5 w-8.5"
       variant="outline"
       size="icon"
       aria-label={dictionary.ariaLabel}
