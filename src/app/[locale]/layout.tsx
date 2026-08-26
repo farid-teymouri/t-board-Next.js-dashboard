@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
-
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import "../globals.css";
 
 import { cn } from "@/lib/utils";
@@ -69,10 +69,18 @@ export default async function RootLayout({
         "antialiased",
         geistSans.variable,
         geistMono.variable,
-        "dark",
       )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

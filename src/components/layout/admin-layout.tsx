@@ -3,7 +3,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
 import { getDictionary } from "@/i18n/dictionaries";
-
+import { ThemeCustomizer } from "@/components/layout/theme-customizer/theme-customizer";
 import { Header } from "./header/header";
 import { AdminSidebar } from "./sidebar/admin-sidebar";
 
@@ -41,6 +41,7 @@ export async function AdminLayout({ children, locale }: AdminLayoutProps) {
           <main className="min-w-0 flex-1">{children}</main>
         </div>
       </div>
+      <ThemeCustomizer />
     </SidebarProvider>
   );
 }
