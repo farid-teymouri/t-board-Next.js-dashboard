@@ -4,9 +4,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import "../globals.css";
-
+import { ThemePresetProvider } from "@/components/layout/theme-customizer/theme-preset-provider";
 import { cn } from "@/lib/utils";
 import { hasLocale } from "@/i18n/config";
+import { cookies } from "next/headers";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -53,6 +54,23 @@ export default async function RootLayout({
   children,
   params,
 }: RootLayoutProps) {
+  const cookieStore = await cookies();
+  const storedPreset = cookieStore.get("theme-preset")?.value;
+
+  const validPresets = [
+    "default",
+    "amber-minimal",
+    "amethyst-haze",
+    "bold-tech",
+    "bubblegum",
+    "caffeine",
+  ] as const;
+
+  const themePreset = validPresets.includes(
+    storedPreset as (typeof validPresets)[number],
+  )
+    ? storedPreset
+    : "default";
   const { locale } = await params;
 
   if (!hasLocale(locale)) {
@@ -63,6 +81,8 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={locale === "fa" ? "rtl" : "ltr"}
+      suppressHydrationWarning
+      data-theme={themePreset}
       className={cn(
         shabnam.className,
         "h-full",
@@ -78,6 +98,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ThemePresetProvider />
           {children}
         </ThemeProvider>
       </body>

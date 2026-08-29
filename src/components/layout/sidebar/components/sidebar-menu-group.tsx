@@ -33,7 +33,7 @@ export function AdminSidebarMenuGroup({
         <SidebarGroupLabel>{dictionary.groups[group.id]}</SidebarGroupLabel>
 
         <SidebarGroupContent>
-          <SidebarMenu>
+          <SidebarMenu className="space-y-2">
             {group.items.map((item) => (
               <AdminSidebarMenuItem
                 key={item.id}

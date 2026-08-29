@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import { useTheme } from "next-themes";
 import { Paintbrush, XIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
-import { ThemeModeSelector } from "./theme-mode-selector";
-import { ThemePresetSelector } from "./theme-preset-selector";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -12,38 +15,62 @@ import {
   SheetClose,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
-export function ThemeCustomizer() {
+
+import { ThemeModeSelector } from "./theme-mode-selector";
+import { ThemePresetSelector } from "./theme-preset-selector";
+import type { ThemePresetId } from "./types/theme";
+import {
+  getStoredThemePreset,
+  setStoredThemePreset,
+  applyThemePreset,
+} from "./utils/theme-preset";
+
+type ThemeCustomizerProps = {
+  side: "left" | "right";
+  locale: "fa" | "en";
+};
+
+export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
   const { setTheme } = useTheme();
+
+  const [activePreset, setActivePreset] = useState<ThemePresetId>(
+    getStoredThemePreset(),
+  );
+
+  const handlePresetChange = (preset: ThemePresetId) => {
+    setActivePreset(preset);
+    setStoredThemePreset(preset);
+    applyThemePreset(preset);
+  };
+
+  const handleReset = () => {
+    setTheme("system");
+    setActivePreset("default");
+    setStoredThemePreset("default");
+    applyThemePreset("default");
+  };
+
+  const triggerSide = locale === "fa" ? "left" : "right";
+
   return (
     <Sheet>
       <SheetTrigger
-        className="
-          fixed
-          top-1/2
-          inset-e-0
-          z-50
-          flex
-          size-12
-          -translate-y-1/2
-          items-center
-          justify-center
-          rounded-none
-          rounded-s-xl
-          border
-          border-e-0
-          bg-background/95
-          shadow-lg
-          backdrop-blur
-          hover:bg-accent
-        "
+        dir="ltr"
+        className={cn(
+          "fixed top-1/2 z-50 flex size-12 -translate-y-1/2 items-center justify-center",
+          "border bg-background/95 shadow-lg backdrop-blur hover:bg-accent",
+          triggerSide === "right"
+            ? "inset-e-0 rounded-s-xl border-e-0"
+            : "inset-s-0 rounded-e-xl border-s-0",
+        )}
         aria-label="Customize theme"
       >
         <Paintbrush className="size-5" />
       </SheetTrigger>
 
       <SheetContent
+        side={side === "right" ? "left" : "right"}
+        dir={locale === "fa" ? "rtl" : "ltr"}
         showCloseButton={false}
         className="w-full gap-2 p-0 sm:max-w-sm"
       >
@@ -57,7 +84,7 @@ export function ThemeCustomizer() {
               type="button"
               variant="destructive"
               size="lg"
-              onClick={() => setTheme("system")}
+              onClick={handleReset}
             >
               Reset
             </Button>
@@ -83,9 +110,14 @@ export function ThemeCustomizer() {
         <div className="p-4">
           <ThemeModeSelector />
         </div>
+
         <Separator />
+
         <div className="p-4">
-          <ThemePresetSelector />
+          <ThemePresetSelector
+            activePreset={activePreset}
+            onPresetChange={handlePresetChange}
+          />
         </div>
       </SheetContent>
     </Sheet>

@@ -41,7 +41,7 @@ export async function AdminLayout({ children, locale }: AdminLayoutProps) {
           <main className="min-w-0 flex-1">{children}</main>
         </div>
       </div>
-      <ThemeCustomizer />
+      <ThemeCustomizer side={isRTL ? "right" : "left"} locale={locale} />
     </SidebarProvider>
   );
 }

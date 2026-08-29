@@ -78,8 +78,12 @@ export function SearchSettingsPopover({
                     <Button
                       key={category.id}
                       type="button"
-                      variant={isActive ? "secondary" : "ghost"}
-                      className="justify-between"
+                      variant={isActive ? "default" : "secondary"}
+                      className={
+                        isActive
+                          ? "w-full justify-between"
+                          : "w-full justify-between hover:bg-accent!"
+                      }
                       onClick={() => onSearchCategoryChange(category.id)}
                     >
                       <span>{dictionary.categories[category.id]}</span>

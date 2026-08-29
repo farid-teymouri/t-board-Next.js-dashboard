@@ -79,7 +79,7 @@ export function LanguageSwitcher({ dictionary }: LanguageSwitcherProps) {
                   key={locale}
                   href={createLocalePath(locale)}
                   className={buttonVariants({
-                    variant: isActive ? "secondary" : "ghost",
+                    variant: isActive ? "default" : "secondary",
                     className: isActive
                       ? "w-full justify-between"
                       : "w-full justify-between hover:bg-accent!",

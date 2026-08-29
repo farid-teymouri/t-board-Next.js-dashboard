@@ -34,13 +34,14 @@ export function AdminSidebarMenuItem({
         render={<Link href={createLocalePath(item.href)} />}
         tooltip={dictionary.items[item.id]}
         isActive={isActive(item.href)}
-        className="h-12 px-3 text-base text-muted-foreground hover:bg-accent hover:text-primary data-active:text-primary group-data-[collapsible=icon]:h-12! group-data-[collapsible=icon]:w-full! group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:px-0!"
+        className="h-12 px-3 text-base text-muted-foreground hover:bg-accent hover:text-primary data-active:text-primary  group-data-[collapsible=icon]:h-12! group-data-[collapsible=icon]:w-full! group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:px-0!"
       >
-        <Icon className="size-5 group-data-[collapsible=icon]:size-6!" />
-
-        <span className="group-data-[collapsible=icon]:hidden">
-          {dictionary.items[item.id]}
-        </span>
+        <div className="flex group-data-[collapsible=icon]:w-fit w-full flex-row items-center gap-1">
+          <Icon className="size-5 shrink-0 group-data-[collapsible=icon]:size-6!" />
+          <span className="leading-none group-data-[collapsible=icon]:hidden">
+            {dictionary.items[item.id]}
+          </span>
+        </div>
       </SidebarMenuButton>
 
       {item.items?.length ? (

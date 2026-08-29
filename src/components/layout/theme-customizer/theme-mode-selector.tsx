@@ -41,7 +41,7 @@ export function ThemeModeSelector() {
               key={themeMode.value}
               type="button"
               variant={isActive ? "secondary" : "ghost"}
-              className={`${isActive ? "ring ring-accent" : "hover:ring hover:ring-accent"} h-auto flex-col gap-2 py-3  border-0`}
+              className={`${isActive ? "ring ring-accent" : "hover:ring hover:ring-accent"} h-auto flex-col gap-2 border-0 py-3`}
               onClick={() => setTheme(themeMode.value)}
             >
               <Icon className="size-5" />
