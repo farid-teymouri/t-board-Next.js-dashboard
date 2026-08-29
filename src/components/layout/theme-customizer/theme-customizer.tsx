@@ -3,6 +3,7 @@
 import { Paintbrush, XIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { ThemeModeSelector } from "./theme-mode-selector";
+import { ThemePresetSelector } from "./theme-preset-selector";
 import {
   Sheet,
   SheetContent,
@@ -81,6 +82,10 @@ export function ThemeCustomizer() {
 
         <div className="p-4">
           <ThemeModeSelector />
+        </div>
+        <Separator />
+        <div className="p-4">
+          <ThemePresetSelector />
         </div>
       </SheetContent>
     </Sheet>
