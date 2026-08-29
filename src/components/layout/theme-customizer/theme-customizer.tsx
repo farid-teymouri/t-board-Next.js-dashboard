@@ -3,7 +3,20 @@
 import { useState } from "react";
 import { useTheme } from "next-themes";
 import { Paintbrush, XIcon } from "lucide-react";
+import { ThemeWidthSelector } from "./theme-width-selector";
+import type { ThemePresetId, ThemeWidth } from "./types/theme";
 
+import {
+  getStoredThemePreset,
+  setStoredThemePreset,
+  applyThemePreset,
+} from "./utils/theme-preset";
+
+import {
+  getStoredThemeWidth,
+  setStoredThemeWidth,
+  applyThemeWidth,
+} from "./utils/theme-width";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
@@ -18,12 +31,6 @@ import {
 
 import { ThemeModeSelector } from "./theme-mode-selector";
 import { ThemePresetSelector } from "./theme-preset-selector";
-import type { ThemePresetId } from "./types/theme";
-import {
-  getStoredThemePreset,
-  setStoredThemePreset,
-  applyThemePreset,
-} from "./utils/theme-preset";
 
 type ThemeCustomizerProps = {
   side: "left" | "right";
@@ -36,18 +43,29 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
   const [activePreset, setActivePreset] = useState<ThemePresetId>(
     getStoredThemePreset(),
   );
-
+  const [activeWidth, setActiveWidth] = useState<ThemeWidth>(
+    getStoredThemeWidth(),
+  );
   const handlePresetChange = (preset: ThemePresetId) => {
     setActivePreset(preset);
     setStoredThemePreset(preset);
     applyThemePreset(preset);
   };
-
+  const handleWidthChange = (width: ThemeWidth) => {
+    setActiveWidth(width);
+    setStoredThemeWidth(width);
+    applyThemeWidth(width);
+  };
   const handleReset = () => {
     setTheme("system");
+
     setActivePreset("default");
     setStoredThemePreset("default");
     applyThemePreset("default");
+
+    setActiveWidth("container");
+    setStoredThemeWidth("container");
+    applyThemeWidth("container");
   };
 
   const triggerSide = locale === "fa" ? "left" : "right";
@@ -117,6 +135,14 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
           <ThemePresetSelector
             activePreset={activePreset}
             onPresetChange={handlePresetChange}
+          />
+        </div>
+        <Separator />
+
+        <div className="p-4">
+          <ThemeWidthSelector
+            activeWidth={activeWidth}
+            onWidthChange={handleWidthChange}
           />
         </div>
       </SheetContent>

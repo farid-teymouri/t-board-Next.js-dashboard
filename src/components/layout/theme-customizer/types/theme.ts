@@ -5,7 +5,7 @@ export type ThemePresetId =
   | "bold-tech"
   | "bubblegum"
   | "caffeine";
-
+export type ThemeWidth = "container" | "fluid";
 export type ThemeColors = {
   background: string;
   foreground: string;
