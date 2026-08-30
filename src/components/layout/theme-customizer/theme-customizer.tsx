@@ -1,11 +1,14 @@
 "use client";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
 import { Paintbrush, XIcon } from "lucide-react";
-import { ThemeWidthSelector } from "./theme-width-selector";
-import type { ThemePresetId, ThemeWidth } from "./types/theme";
-
+import type {
+  ThemePresetId,
+  ThemeWidth,
+  ThemeMenuOrientation,
+} from "./types/theme";
+import { applyStoredThemeSettings } from "./theme-settings";
 import {
   getStoredThemePreset,
   setStoredThemePreset,
@@ -17,9 +20,11 @@ import {
   setStoredThemeWidth,
   applyThemeWidth,
 } from "./utils/theme-width";
+import { ThemeWidthSelector } from "./theme-width-selector";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+
 import {
   Sheet,
   SheetContent,
@@ -32,6 +37,14 @@ import {
 import { ThemeModeSelector } from "./theme-mode-selector";
 import { ThemePresetSelector } from "./theme-preset-selector";
 
+import { ThemeOrientationSelector } from "./theme-orientation-selector";
+
+import {
+  getStoredThemeMenuOrientation,
+  setStoredThemeMenuOrientation,
+  applyThemeMenuOrientation,
+} from "./utils/theme-orientation";
+
 type ThemeCustomizerProps = {
   side: "left" | "right";
   locale: "fa" | "en";
@@ -39,13 +52,27 @@ type ThemeCustomizerProps = {
 
 export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
   const { setTheme } = useTheme();
-
+  const router = useRouter();
   const [activePreset, setActivePreset] = useState<ThemePresetId>(
     getStoredThemePreset(),
   );
   const [activeWidth, setActiveWidth] = useState<ThemeWidth>(
     getStoredThemeWidth(),
   );
+  const [activeOrientation, setActiveOrientation] =
+    useState<ThemeMenuOrientation>(getStoredThemeMenuOrientation());
+  useEffect(() => {
+    applyStoredThemeSettings();
+  }, []);
+  const handleOrientationChange = (orientation: ThemeMenuOrientation) => {
+    setActiveOrientation(orientation);
+
+    setStoredThemeMenuOrientation(orientation);
+    applyThemeMenuOrientation(orientation);
+
+    router.refresh();
+  };
+
   const handlePresetChange = (preset: ThemePresetId) => {
     setActivePreset(preset);
     setStoredThemePreset(preset);
@@ -66,6 +93,12 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
     setActiveWidth("container");
     setStoredThemeWidth("container");
     applyThemeWidth("container");
+
+    setActiveOrientation("vertical");
+    setStoredThemeMenuOrientation("vertical");
+    applyThemeMenuOrientation("vertical");
+
+    router.refresh();
   };
 
   const triggerSide = locale === "fa" ? "left" : "right";
@@ -137,12 +170,22 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
             onPresetChange={handlePresetChange}
           />
         </div>
+
         <Separator />
 
         <div className="p-4">
           <ThemeWidthSelector
             activeWidth={activeWidth}
             onWidthChange={handleWidthChange}
+          />
+        </div>
+
+        <Separator />
+
+        <div className="p-4">
+          <ThemeOrientationSelector
+            activeOrientation={activeOrientation}
+            onOrientationChange={handleOrientationChange}
           />
         </div>
       </SheetContent>

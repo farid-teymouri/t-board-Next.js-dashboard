@@ -6,6 +6,9 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { ThemeCustomizer } from "@/components/layout/theme-customizer/theme-customizer";
 import { Header } from "./header/header";
 import { AdminSidebar } from "./sidebar/admin-sidebar";
+import { AdminNavigationMenu } from "./sidebar/admin-navigation-menu";
+
+import { cookies } from "next/headers";
 
 type AdminLayoutProps = {
   children: ReactNode;
@@ -17,6 +20,13 @@ export async function AdminLayout({ children, locale }: AdminLayoutProps) {
 
   const isRTL = locale === "fa";
 
+  const cookieStore = await cookies();
+
+  const menuOrientation =
+    cookieStore.get("theme-menu-orientation")?.value === "horizontal"
+      ? "horizontal"
+      : "vertical";
+
   return (
     <SidebarProvider
       style={
@@ -27,20 +37,63 @@ export async function AdminLayout({ children, locale }: AdminLayoutProps) {
     >
       <div
         dir={isRTL ? "rtl" : "ltr"}
-        className="flex min-h-svh w-full flex-col"
+        data-menu-orientation={menuOrientation}
+        className="flex min-h-svh w-full flex-col "
       >
         <Header locale={locale} />
 
-        <div className="flex min-h-0 flex-1">
-          <AdminSidebar
-            side={isRTL ? "right" : "left"}
-            locale={locale}
-            dictionary={dictionary.sidebar}
-          />
-
-          <main className="min-w-0 flex-1">{children}</main>
+        <div className="flex min-h-0 flex-1 in-data-[menu-orientation=horizontal]:lg:flex-col">
+          {/* Sidebar
+              - Mobile: always visible
+              - Desktop: only in vertical mode
+          */}
+          <div className="block in-data-[menu-orientation=horizontal]:lg:hidden">
+            <AdminSidebar
+              side={isRTL ? "right" : "left"}
+              locale={locale}
+              dictionary={dictionary.sidebar}
+            />
+          </div>
+          {/* Horizontal navigation
+                - Mobile: hidden
+                - Desktop: only in horizontal mode
+            */}
+          <div
+            data-theme-content
+            className="
+                hidden
+                in-data-[menu-orientation=horizontal]:px-5
+                in-data-[menu-orientation=horizontal]:lg:block  w-full
+                in-data-[theme-width=container]:mx-auto
+                in-data-[theme-width=container]:max-w-7xl
+                in-data-[theme-width=container]:px-4
+                in-data-[theme-width=container]:sm:px-6
+                in-data-[theme-width=container]:lg:px-8
+              "
+          >
+            <AdminNavigationMenu
+              locale={locale}
+              dictionary={dictionary.sidebar}
+            />
+          </div>
+          <main
+            data-theme-content
+            className="flex min-w-0 flex-1 flex-col in-data-[menu-orientation=horizontal]:mx-5 mx-2 bg-card rounded-tl-xl rounded-tr-xl"
+          >
+            <div
+              className="p-5 
+                in-data-[theme-width=container]:mx-auto
+                in-data-[theme-width=container]:max-w-7xl
+                in-data-[theme-width=container]:px-4
+                in-data-[theme-width=container]:sm:px-6
+                in-data-[theme-width=container]:lg:px-8"
+            >
+              {children}
+            </div>
+          </main>
         </div>
       </div>
+
       <ThemeCustomizer side={isRTL ? "right" : "left"} locale={locale} />
     </SidebarProvider>
   );

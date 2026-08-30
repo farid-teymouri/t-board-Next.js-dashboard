@@ -54,7 +54,7 @@ export function AdminSidebar({ side, locale, dictionary }: AdminSidebarProps) {
       </SidebarHeader>
 
       <SidebarContent
-        className="data-[scrollable=true]:overflow-y-auto data-[scrollable=true]:overflow-x-hidden"
+        className="data-[scrollable=true]:overflow-y-auto data-[scrollable=true]:overflow-x-hidden bg-background pt-5"
         data-scrollable="true"
       >
         {sidebarMenuGroups.map((group, index) => (
