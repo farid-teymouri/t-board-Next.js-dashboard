@@ -40,6 +40,10 @@ export function AdminNavigationMenu({
   const isActive = (href: string) => {
     const path = getLocalePath(href);
 
+    if (href === "/") {
+      return pathname === path;
+    }
+
     return pathname === path || pathname.startsWith(`${path}/`);
   };
 
@@ -49,8 +53,6 @@ export function AdminNavigationMenu({
   const moreItems = menuItems.slice(MAX_VISIBLE_ITEMS);
 
   const renderIcon = (item: (typeof menuItems)[number]) => {
-    if (!item.icon) return null;
-
     const Icon = item.icon;
 
     return (
@@ -65,9 +67,14 @@ export function AdminNavigationMenu({
     const label = dictionary.items[item.id];
     const subItems = item.items ?? [];
     const hasSubItems = subItems.length > 0;
-    const active = isActive(item.href);
 
-    if (!hasSubItems) {
+    const active = hasSubItems
+      ? subItems.some((subItem) => isActive(subItem.href))
+      : item.href
+        ? isActive(item.href)
+        : false;
+
+    if (!hasSubItems && item.href) {
       return (
         <NavigationMenuItem key={item.id}>
           <NavigationMenuLink
@@ -77,7 +84,7 @@ export function AdminNavigationMenu({
               "text-muted-foreground",
               "hover:bg-accent hover:text-sidebar-accent-foreground",
               active &&
-                "bg-primary text-muted hover:bg-primary hover:text-muted",
+                "bg-primary focus:bg-primary focus:text-muted text-muted hover:bg-primary hover:text-muted",
             )}
           >
             {renderIcon(item)}
@@ -87,54 +94,62 @@ export function AdminNavigationMenu({
       );
     }
 
-    return (
-      <NavigationMenuItem key={item.id}>
-        <NavigationMenuTrigger
-          className={cn(
-            "flex h-10 w-max flex-row items-center gap-2 px-3 text-sm font-medium",
-            "text-muted-foreground",
-            "hover:bg-accent hover:text-sidebar-accent-foreground",
-            active && "bg-primary text-sidebar-accent-foreground",
-          )}
-        >
-          {renderIcon(item)}
-          <span>{label}</span>
-        </NavigationMenuTrigger>
+    if (hasSubItems) {
+      return (
+        <NavigationMenuItem key={item.id}>
+          <NavigationMenuTrigger
+            className={cn(
+              "flex h-10 w-max flex-row items-center gap-2 px-3 text-sm font-medium",
+              "text-muted-foreground",
+              "hover:bg-accent hover:text-sidebar-accent-foreground",
+              active &&
+                "bg-primary focus:bg-primary focus:text-muted text-muted",
+            )}
+          >
+            {renderIcon(item)}
+            <span>{label}</span>
+          </NavigationMenuTrigger>
 
-        <NavigationMenuContent>
-          <ul className="flex w-[220px] flex-col gap-1 p-2 ">
-            {subItems.map((subItem) => {
-              const subActive = isActive(subItem.href);
+          <NavigationMenuContent>
+            <ul className="flex w-[220px] flex-col gap-1 p-2">
+              {subItems.map((subItem) => {
+                const subActive = isActive(subItem.href);
 
-              return (
-                <li key={subItem.id}>
-                  <NavigationMenuLink
-                    render={<Link href={getLocalePath(subItem.href)} />}
-                    className={cn(
-                      "flex w-full flex-row items-center gap-2",
-                      "rounded-lg px-3 py-2 text-sm",
-                      "text-muted-foreground",
-                      "hover:bg-accent hover:text-sidebar-accent-foreground",
-                      subActive && "bg-accent text-sidebar-accent-foreground",
-                    )}
-                  >
-                    <span>{dictionary.items[subItem.id]}</span>
-                  </NavigationMenuLink>
-                </li>
-              );
-            })}
-          </ul>
-        </NavigationMenuContent>
-      </NavigationMenuItem>
-    );
+                return (
+                  <li key={subItem.id}>
+                    <NavigationMenuLink
+                      render={<Link href={getLocalePath(subItem.href)} />}
+                      className={cn(
+                        "flex w-full flex-row items-center gap-2",
+                        "rounded-lg px-3 py-2 text-sm",
+                        "text-muted-foreground",
+                        "hover:bg-accent hover:text-sidebar-accent-foreground",
+                        subActive &&
+                          "bg-primary focus:bg-primary focus:text-muted text-muted",
+                      )}
+                    >
+                      <span>{dictionary.items[subItem.id]}</span>
+                    </NavigationMenuLink>
+                  </li>
+                );
+              })}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      );
+    }
+
+    return null;
   };
-
+  const hasActiveMoreItem = moreItems.some(
+    (item) => item.href !== undefined && isActive(item.href),
+  );
   return (
     <NavigationMenu
       dir={locale === "fa" ? "rtl" : "ltr"}
-      className="w-full max-w-none justify-start h-16"
+      className="h-16 w-full max-w-none justify-start"
     >
-      <NavigationMenuList className={cn("w-full flex-1 justify-start gap-2 ")}>
+      <NavigationMenuList className={cn("w-full flex-1 justify-start gap-2")}>
         {visibleItems.map(renderMenuItem)}
 
         {moreItems.length > 0 && (
@@ -144,6 +159,8 @@ export function AdminNavigationMenu({
                 "flex h-10 w-max flex-row items-center gap-2 px-3 text-sm font-medium",
                 "text-muted-foreground",
                 "hover:bg-accent hover:text-sidebar-accent-foreground",
+                hasActiveMoreItem &&
+                  "bg-primary focus:bg-primary focus:text-muted text-muted hover:bg-primary hover:text-muted",
               )}
             >
               <MoreHorizontal className="size-4 shrink-0" aria-hidden="true" />
@@ -154,6 +171,8 @@ export function AdminNavigationMenu({
             <NavigationMenuContent>
               <ul className="flex w-[220px] flex-col gap-1 p-2">
                 {moreItems.map((item) => {
+                  if (!item.href) return null;
+
                   const label = dictionary.items[item.id];
                   const active = isActive(item.href);
 
@@ -166,7 +185,8 @@ export function AdminNavigationMenu({
                           "rounded-lg px-3 py-2 text-sm",
                           "text-muted-foreground",
                           "hover:bg-accent hover:text-sidebar-accent-foreground",
-                          active && "bg-accent text-sidebar-accent-foreground",
+                          active &&
+                            "bg-primary focus:bg-primary focus:text-muted text-muted",
                         )}
                       >
                         {renderIcon(item)}

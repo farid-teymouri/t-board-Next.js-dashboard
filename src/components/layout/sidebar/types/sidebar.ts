@@ -7,8 +7,8 @@ export type SidebarSubItem = {
 
 export type SidebarMenuItem = {
   id: string;
-  href: string;
   icon: LucideIcon;
+  href?: string;
   items?: SidebarSubItem[];
 };
 
@@ -19,6 +19,5 @@ export type SidebarMenuGroup = {
 
 export type SidebarDictionary = {
   groups: Record<string, string>;
-
   items: Record<string, string>;
 };

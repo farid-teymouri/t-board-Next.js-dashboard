@@ -31,7 +31,6 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
     items: [
       {
         id: "community",
-        href: "/community",
         icon: MessageSquare,
         items: [
           {
@@ -51,7 +50,6 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
 
       {
         id: "analytics",
-        href: "/analytics",
         icon: ChartNoAxesCombined,
         items: [
           {
@@ -79,7 +77,6 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
         href: "/notifications",
         icon: Bell,
       },
-
       {
         id: "settings",
         href: "/settings",

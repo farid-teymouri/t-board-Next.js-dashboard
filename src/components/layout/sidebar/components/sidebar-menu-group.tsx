@@ -27,7 +27,7 @@ export function AdminSidebarMenuGroup({
 }: AdminSidebarMenuGroupProps) {
   return (
     <>
-      {showSeparator && <SidebarSeparator />}
+      {showSeparator && <SidebarSeparator className="mx-3" />}
 
       <SidebarGroup>
         <SidebarGroupLabel>{dictionary.groups[group.id]}</SidebarGroupLabel>

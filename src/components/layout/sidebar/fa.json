@@ -1,6 +1,6 @@
 {
   "groups": {
-    "overview": "نمای کلی",
+    "overview": "چشم انداز",
     "management": "مدیریت",
     "infrastructure": "زیرساخت",
     "administration": "مدیریت سیستم"
@@ -9,8 +9,8 @@
     "dashboard": "داشبورد",
     "users": "کاربران",
 
-    "community": "انجمن",
-    "forum": "فروم",
+    "community": "جامعه کاربران",
+    "forum": "انجمن",
     "posts": "پست‌ها",
     "comments": "نظرات",
     "reports": "گزارش‌ها",
