@@ -22,6 +22,10 @@ const dictionaries = {
     ).default,
 
     search: (await import("@/components/layout/header/search/en.json")).default,
+
+    themeCustomizer: (
+      await import("@/components/layout/theme-customizer/en.json")
+    ).default,
   }),
 
   fa: async () => ({
@@ -42,6 +46,10 @@ const dictionaries = {
     ).default,
 
     search: (await import("@/components/layout/header/search/fa.json")).default,
+
+    themeCustomizer: (
+      await import("@/components/layout/theme-customizer/fa.json")
+    ).default,
   }),
 };
 

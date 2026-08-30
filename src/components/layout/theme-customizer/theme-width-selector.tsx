@@ -7,20 +7,26 @@ import { Label } from "@/components/ui/label";
 
 import type { ThemeWidth } from "./types/theme";
 
+type ThemeWidthDictionary = {
+  label: string;
+  description: string;
+  container: string;
+  fluid: string;
+};
+
 type ThemeWidthSelectorProps = {
   activeWidth: ThemeWidth;
   onWidthChange: (width: ThemeWidth) => void;
+  dictionary: ThemeWidthDictionary;
 };
 
 const themeWidths = [
   {
     value: "container",
-    label: "Container",
     icon: Maximize2,
   },
   {
     value: "fluid",
-    label: "Fluid",
     icon: MoveHorizontal,
   },
 ] as const;
@@ -28,14 +34,15 @@ const themeWidths = [
 export function ThemeWidthSelector({
   activeWidth,
   onWidthChange,
+  dictionary,
 }: ThemeWidthSelectorProps) {
   return (
-    <div className="flex md:flex-row flex-col md:items-center justify-between gap-4">
-      <div>
-        <Label>Theme width</Label>
+    <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-col gap-1">
+        <Label>{dictionary.label}</Label>
 
         <p className="text-xs text-muted-foreground">
-          Choose the width of your dashboard content.
+          {dictionary.description}
         </p>
       </div>
 
@@ -43,6 +50,7 @@ export function ThemeWidthSelector({
         {themeWidths.map((themeWidth) => {
           const Icon = themeWidth.icon;
           const isActive = activeWidth === themeWidth.value;
+          const label = dictionary[themeWidth.value];
 
           return (
             <Button
@@ -52,12 +60,12 @@ export function ThemeWidthSelector({
               className={
                 isActive
                   ? "h-auto flex-col gap-2 border-0 py-3 ring ring-accent"
-                  : "h-auto flex-col gap-2 border-0 py-3 hover:ring hover:ring-accent ring ring-accent hover:bg-accent"
+                  : "h-auto flex-col gap-2 border-0 py-3 ring ring-accent hover:ring-accent"
               }
               onClick={() => onWidthChange(themeWidth.value)}
             >
               <Icon className="size-5" />
-              <span className="text-xs">{themeWidth.label}</span>
+              <span className="text-xs">{label}</span>
             </Button>
           );
         })}

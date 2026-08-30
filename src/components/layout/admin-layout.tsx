@@ -1,9 +1,9 @@
 import type { CSSProperties, ReactNode } from "react";
 
 import { SidebarProvider } from "@/components/ui/sidebar";
-
 import { getDictionary } from "@/i18n/dictionaries";
 import { ThemeCustomizer } from "@/components/layout/theme-customizer/theme-customizer";
+
 import { Header } from "./header/header";
 import { AdminSidebar } from "./sidebar/admin-sidebar";
 import { AdminNavigationMenu } from "./sidebar/admin-navigation-menu";
@@ -17,7 +17,6 @@ type AdminLayoutProps = {
 
 export async function AdminLayout({ children, locale }: AdminLayoutProps) {
   const dictionary = await getDictionary(locale);
-
   const isRTL = locale === "fa";
 
   const cookieStore = await cookies();
@@ -38,7 +37,7 @@ export async function AdminLayout({ children, locale }: AdminLayoutProps) {
       <div
         dir={isRTL ? "rtl" : "ltr"}
         data-menu-orientation={menuOrientation}
-        className="flex min-h-svh w-full flex-col "
+        className="flex min-h-svh w-full flex-col"
       >
         <Header locale={locale} />
 
@@ -54,39 +53,44 @@ export async function AdminLayout({ children, locale }: AdminLayoutProps) {
               dictionary={dictionary.sidebar}
             />
           </div>
+
           {/* Horizontal navigation
-                - Mobile: hidden
-                - Desktop: only in horizontal mode
-            */}
+              - Mobile: hidden
+              - Desktop: only in horizontal mode
+          */}
           <div
             data-theme-content
             className="
-                hidden
-                in-data-[menu-orientation=horizontal]:px-5
-                in-data-[menu-orientation=horizontal]:lg:block  w-full
-                in-data-[theme-width=container]:mx-auto
-                in-data-[theme-width=container]:max-w-7xl
-                in-data-[theme-width=container]:px-4
-                in-data-[theme-width=container]:sm:px-6
-                in-data-[theme-width=container]:lg:px-8
-              "
+              hidden
+              in-data-[menu-orientation=horizontal]:px-5
+              in-data-[menu-orientation=horizontal]:lg:block
+              w-full
+              in-data-[theme-width=container]:mx-auto
+              in-data-[theme-width=container]:max-w-7xl
+              in-data-[theme-width=container]:px-4
+              in-data-[theme-width=container]:sm:px-6
+              in-data-[theme-width=container]:lg:px-8
+            "
           >
             <AdminNavigationMenu
               locale={locale}
               dictionary={dictionary.sidebar}
             />
           </div>
+
           <main
             data-theme-content
-            className="flex min-w-0 flex-1 flex-col in-data-[menu-orientation=horizontal]:mx-5 me-5 ms-3 bg-card rounded-tl-xl rounded-tr-xl"
+            className="flex min-w-0 flex-1 flex-col in-data-[menu-orientation=horizontal]:mx-5 me-5 ms-3 bg-sidebar rounded-tl-xl rounded-tr-xl"
           >
             <div
-              className="p-5 
+              className="
+                p-5
                 in-data-[theme-width=container]:mx-auto
                 in-data-[theme-width=container]:max-w-7xl
                 in-data-[theme-width=container]:px-4
                 in-data-[theme-width=container]:sm:px-6
-                in-data-[theme-width=container]:lg:px-8"
+                in-data-[theme-width=container]:lg:px-8
+              "
             >
               {children}
             </div>
@@ -94,7 +98,11 @@ export async function AdminLayout({ children, locale }: AdminLayoutProps) {
         </div>
       </div>
 
-      <ThemeCustomizer side={isRTL ? "right" : "left"} locale={locale} />
+      <ThemeCustomizer
+        side={isRTL ? "right" : "left"}
+        locale={locale}
+        dictionary={dictionary.themeCustomizer}
+      />
     </SidebarProvider>
   );
 }

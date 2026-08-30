@@ -1,14 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
+import { useState } from "react";
+import { useTheme } from "@/components/providers/theme-provider";
 import { useRouter } from "next/navigation";
 import { Paintbrush, XIcon } from "lucide-react";
+import type { Dictionary } from "@/i18n/dictionaries";
 import type {
   ThemePresetId,
   ThemeWidth,
   ThemeMenuOrientation,
 } from "./types/theme";
-import { applyStoredThemeSettings } from "./theme-settings";
+
 import {
   getStoredThemePreset,
   setStoredThemePreset,
@@ -48,9 +49,14 @@ import {
 type ThemeCustomizerProps = {
   side: "left" | "right";
   locale: "fa" | "en";
+  dictionary: Dictionary["themeCustomizer"];
 };
 
-export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
+export function ThemeCustomizer({
+  side,
+  locale,
+  dictionary,
+}: ThemeCustomizerProps) {
   const { setTheme } = useTheme();
   const router = useRouter();
   const [activePreset, setActivePreset] = useState<ThemePresetId>(
@@ -61,9 +67,7 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
   );
   const [activeOrientation, setActiveOrientation] =
     useState<ThemeMenuOrientation>(getStoredThemeMenuOrientation());
-  useEffect(() => {
-    applyStoredThemeSettings();
-  }, []);
+
   const handleOrientationChange = (orientation: ThemeMenuOrientation) => {
     setActiveOrientation(orientation);
 
@@ -127,7 +131,7 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
       >
         <SheetHeader className="flex flex-row items-center justify-between">
           <div>
-            <SheetTitle>Theme settings</SheetTitle>
+            <SheetTitle>{dictionary.themeCustomizer.title}</SheetTitle>
           </div>
 
           <div className="flex flex-row items-center gap-2">
@@ -137,7 +141,7 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
               size="lg"
               onClick={handleReset}
             >
-              Reset
+              {dictionary.themeCustomizer.reset}
             </Button>
 
             <SheetClose
@@ -148,10 +152,12 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
                   className="border-0 ring ring-accent"
                 />
               }
-              aria-label="Close"
+              aria-label={dictionary.themeCustomizer.close}
             >
               <XIcon />
-              <span className="sr-only">Close</span>
+              <span className="sr-only">
+                {dictionary.themeCustomizer.close}
+              </span>
             </SheetClose>
           </div>
         </SheetHeader>
@@ -159,7 +165,7 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
         <Separator />
 
         <div className="p-4">
-          <ThemeModeSelector />
+          <ThemeModeSelector dictionary={dictionary.themeCustomizer.mode} />
         </div>
 
         <Separator />
@@ -168,6 +174,7 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
           <ThemePresetSelector
             activePreset={activePreset}
             onPresetChange={handlePresetChange}
+            dictionary={dictionary.themeCustomizer.preset}
           />
         </div>
 
@@ -177,6 +184,7 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
           <ThemeWidthSelector
             activeWidth={activeWidth}
             onWidthChange={handleWidthChange}
+            dictionary={dictionary.themeCustomizer.width}
           />
         </div>
 
@@ -186,6 +194,7 @@ export function ThemeCustomizer({ side, locale }: ThemeCustomizerProps) {
           <ThemeOrientationSelector
             activeOrientation={activeOrientation}
             onOrientationChange={handleOrientationChange}
+            dictionary={dictionary.themeCustomizer.orientation}
           />
         </div>
       </SheetContent>

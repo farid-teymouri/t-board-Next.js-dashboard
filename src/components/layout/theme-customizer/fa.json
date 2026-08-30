@@ -1,0 +1,41 @@
+{
+  "themeCustomizer": {
+    "title": "تنظیمات پوسته",
+    "reset": "بازنشانی",
+    "close": "بستن",
+
+    "mode": {
+      "label": "حالت پوسته",
+      "light": "روشن",
+      "dark": "تیره",
+      "system": "سیستم"
+    },
+
+    "preset": {
+      "label": "پیش‌ تنظیم پوسته",
+      "description": "یک پالت رنگ برای داشبورد خود انتخاب کنید.",
+      "default": "پیش‌ فرض",
+      "amberMinimal": "کهربایی مینیمال",
+      "amethystHaze": "مه آمیتیست",
+      "boldTech": "فناوری جسورانه",
+      "bubblegum": "بادکنکی",
+      "caffeine": "کافئین"
+    },
+
+    "width": {
+      "label": "عرض پوسته",
+      "description": "عرض محتوای داشبورد خود را انتخاب کنید.",
+      "container": "محدود",
+      "fluid": "تمام‌ عرض"
+    },
+
+    "orientation": {
+      "label": "جهت منو",
+      "description": "نحوه نمایش منوی ناوبری داشبورد را انتخاب کنید.",
+      "vertical": "عمودی",
+      "horizontal": "افقی",
+      "sidebarNavigation": "ناوبری نوار کناری",
+      "topNavigation": "ناوبری بالایی"
+    }
+  }
+}

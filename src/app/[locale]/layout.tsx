@@ -4,8 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 
-import { ThemeProvider } from "@/components/providers/theme-provider";
-import { ThemeSettingsScript } from "@/components/layout/theme-customizer/theme-settings-script";
+import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
 import { hasLocale } from "@/i18n/config";
 
@@ -117,9 +116,7 @@ export default async function RootLayout({
         geistMono.variable,
       )}
     >
-      <body className="min-h-full flex flex-col">
-        <ThemeSettingsScript />
-
+      <body className="flex min-h-full flex-col">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

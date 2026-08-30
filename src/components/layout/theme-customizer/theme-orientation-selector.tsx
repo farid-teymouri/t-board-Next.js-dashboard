@@ -7,37 +7,46 @@ import { Button } from "@/components/ui/button";
 
 import type { ThemeMenuOrientation } from "./types/theme";
 
+type ThemeOrientationDictionary = {
+  label: string;
+  description: string;
+  vertical: string;
+  horizontal: string;
+  sidebarNavigation: string;
+  topNavigation: string;
+};
+
 type ThemeOrientationSelectorProps = {
   activeOrientation: ThemeMenuOrientation;
   onOrientationChange: (orientation: ThemeMenuOrientation) => void;
+  dictionary: ThemeOrientationDictionary;
 };
 
 const orientations = [
   {
     value: "vertical",
-    label: "Vertical",
-    description: "Sidebar navigation",
     icon: Rows3,
+    descriptionKey: "sidebarNavigation",
   },
   {
     value: "horizontal",
-    label: "Horizontal",
-    description: "Top navigation",
     icon: PanelTop,
+    descriptionKey: "topNavigation",
   },
 ] as const;
 
 export function ThemeOrientationSelector({
   activeOrientation,
   onOrientationChange,
+  dictionary,
 }: ThemeOrientationSelectorProps) {
   return (
     <div className="space-y-4">
-      <div>
-        <h3 className="text-sm font-medium">Menu orientation</h3>
+      <div className="flex flex-col gap-1">
+        <h3 className="text-sm font-medium">{dictionary.label}</h3>
 
         <p className="text-xs text-muted-foreground">
-          Choose how your dashboard navigation is displayed.
+          {dictionary.description}
         </p>
       </div>
 
@@ -45,6 +54,9 @@ export function ThemeOrientationSelector({
         {orientations.map((orientation) => {
           const Icon = orientation.icon;
           const isActive = activeOrientation === orientation.value;
+
+          const orientationLabel = dictionary[orientation.value];
+          const orientationDescription = dictionary[orientation.descriptionKey];
 
           return (
             <Button
@@ -68,10 +80,10 @@ export function ThemeOrientationSelector({
 
               <Icon className="size-6" />
 
-              <span className="text-xs font-medium">{orientation.label}</span>
+              <span className="text-xs font-medium">{orientationLabel}</span>
 
               <span className="text-[10px] text-muted-foreground">
-                {orientation.description}
+                {orientationDescription}
               </span>
             </Button>
           );

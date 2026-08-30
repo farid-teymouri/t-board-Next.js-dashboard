@@ -1,0 +1,41 @@
+{
+  "themeCustomizer": {
+    "title": "Theme settings",
+    "reset": "Reset",
+    "close": "Close",
+
+    "mode": {
+      "label": "Theme mode",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+
+    "preset": {
+      "label": "Theme preset",
+      "description": "Choose a color palette for your dashboard.",
+      "default": "Default",
+      "amberMinimal": "Amber Minimal",
+      "amethystHaze": "Amethyst Haze",
+      "boldTech": "Bold Tech",
+      "bubblegum": "Bubblegum",
+      "caffeine": "Caffeine"
+    },
+
+    "width": {
+      "label": "Theme width",
+      "description": "Choose the width of your dashboard content.",
+      "container": "Container",
+      "fluid": "Fluid"
+    },
+
+    "orientation": {
+      "label": "Menu orientation",
+      "description": "Choose how your dashboard navigation is displayed.",
+      "vertical": "Vertical",
+      "horizontal": "Horizontal",
+      "sidebarNavigation": "Sidebar navigation",
+      "topNavigation": "Top navigation"
+    }
+  }
+}
