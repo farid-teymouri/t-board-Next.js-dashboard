@@ -13,7 +13,7 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
     items: [
       {
         id: "dashboards",
-        href: "/dashboards",
+        href: "/dashboards/sales",
         icon: LayoutDashboard,
         items: [
           {
@@ -42,7 +42,7 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
     items: [
       {
         id: "ecommerce",
-        href: "/ecommerce",
+        href: "/ecommerce/products",
         icon: ShoppingCart,
         items: [
           {
@@ -71,6 +71,7 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
     items: [
       {
         id: "jobs",
+        href: "/jobs/dashboards",
         icon: BriefcaseBusiness,
         items: [
           {
@@ -97,7 +98,7 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
             href: "/blog/list",
           },
           {
-            id: "blog-details",
+            id: "blogDetails",
             href: "/blog/blog-details",
           },
         ],

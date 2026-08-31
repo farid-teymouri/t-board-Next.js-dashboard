@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 
 import { AdminLayout } from "@/components/layout/admin-layout";
+import { Breadcrumbs } from "@/components/layout/breadcrumb/breadcrumb";
+import { getDictionary } from "@/i18n/dictionaries";
 import { hasLocale } from "@/i18n/config";
 
 export default async function AdminDashboardLayout({
@@ -18,5 +20,13 @@ export default async function AdminDashboardLayout({
     notFound();
   }
 
-  return <AdminLayout locale={locale}>{children}</AdminLayout>;
+  const dictionary = await getDictionary(locale);
+
+  return (
+    <AdminLayout locale={locale}>
+      <Breadcrumbs dictionary={dictionary.sidebar} locale={locale} />
+
+      {children}
+    </AdminLayout>
+  );
 }

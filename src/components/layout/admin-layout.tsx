@@ -90,6 +90,7 @@ export async function AdminLayout({ children, locale }: AdminLayoutProps) {
                 in-data-[theme-width=container]:px-4
                 in-data-[theme-width=container]:sm:px-6
                 in-data-[theme-width=container]:lg:px-8
+                w-full
               "
             >
               {children}
