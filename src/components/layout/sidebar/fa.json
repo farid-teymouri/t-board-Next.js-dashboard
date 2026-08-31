@@ -1,66 +1,26 @@
 {
   "groups": {
-    "overview": "چشم انداز",
-    "management": "مدیریت",
-    "infrastructure": "زیرساخت",
-    "administration": "مدیریت سیستم"
+    "overview": "نمای کلی",
+    "applications": "برنامه‌ها",
+    "modules": "ماژول‌ها"
   },
   "items": {
-    "dashboard": "داشبورد",
-    "users": "کاربران",
-
-    "community": "جامعه کاربران",
-    "forum": "انجمن",
-    "posts": "پست‌ها",
-    "comments": "نظرات",
-    "reports": "گزارش‌ها",
-    "moderation": "نظارت",
-
-    "finance": "مالی",
-    "revenue": "درآمد",
-    "transactions": "تراکنش‌ها",
-    "subscriptions": "اشتراک‌ها",
-    "payments": "پرداخت‌ها",
-    "refunds": "بازپرداخت‌ها",
-
+    "dashboards": "داشبوردها",
+    "sales": "فروش",
     "analytics": "تحلیل و آمار",
-    "analyticsUsers": "کاربران",
-    "analyticsMusic": "موسیقی",
-    "analyticsMedia": "رسانه",
-    "downloads": "دانلودها",
-    "traffic": "ترافیک",
-    "analyticsRevenue": "درآمد",
+    "ecommerce": "فروشگاه",
+    "finance": "مالی",
 
-    "infrastructure": "زیرساخت",
-    "servers": "سرورها",
-    "storage": "فضای ذخیره‌سازی",
-    "cpu": "پردازنده",
-    "ram": "حافظه RAM",
-    "bandwidth": "پهنای باند",
-    "services": "سرویس‌ها",
-    "monitoring": "مانیتورینگ",
+    "products": "محصولات",
+    "productDetails": "جزئیات محصول",
+    "checkout": "پرداخت",
+    "invoices": "فاکتورها",
 
-    "notifications": "اعلان‌ها",
+    "jobs": "استخدام",
+    "list": "فهرست",
+    "jobDetails": "جزئیات موقعیت شغلی",
 
-    "security": "امنیت",
-    "loginActivity": "فعالیت ورود",
-    "adminActivity": "فعالیت مدیران",
-    "auditLogs": "گزارش‌های حسابرسی",
-    "suspiciousActivity": "فعالیت مشکوک",
-    "ipManagement": "مدیریت IP",
-
-    "system": "سیستم",
-    "settings": "تنظیمات",
-    "roles": "نقش‌ها",
-    "permissions": "مجوزها",
-    "featureFlags": "فلگ‌های قابلیت",
-    "configuration": "پیکربندی",
-
-    "cms": "مدیریت محتوا",
-    "pages": "صفحات",
-    "banners": "بنرها",
-    "seo": "سئو",
-    "announcements": "اطلاعیه‌ها",
-    "homepage": "صفحه اصلی"
+    "blog": "بلاگ",
+    "blogDetails": "جزئیات مطلب"
   }
 }

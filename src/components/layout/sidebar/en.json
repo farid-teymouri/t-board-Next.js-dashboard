@@ -1,66 +1,26 @@
 {
   "groups": {
     "overview": "Overview",
-    "management": "Management",
-    "infrastructure": "Infrastructure",
-    "administration": "Administration"
+    "applications": "Applications",
+    "modules": "Modules"
   },
   "items": {
-    "dashboard": "Dashboard",
-    "users": "Users",
-
-    "community": "Community",
-    "forum": "Forum",
-    "posts": "Posts",
-    "comments": "Comments",
-    "reports": "Reports",
-    "moderation": "Moderation",
-
-    "finance": "Finance",
-    "revenue": "Revenue",
-    "transactions": "Transactions",
-    "subscriptions": "Subscriptions",
-    "payments": "Payments",
-    "refunds": "Refunds",
-
+    "dashboards": "Dashboards",
+    "sales": "Sales",
     "analytics": "Analytics",
-    "analyticsUsers": "Users",
-    "analyticsMusic": "Music",
-    "analyticsMedia": "Media",
-    "downloads": "Downloads",
-    "traffic": "Traffic",
-    "analyticsRevenue": "Revenue",
+    "ecommerce": "E-commerce",
+    "finance": "Finance",
 
-    "infrastructure": "Infrastructure",
-    "servers": "Servers",
-    "storage": "Storage",
-    "cpu": "CPU",
-    "ram": "RAM",
-    "bandwidth": "Bandwidth",
-    "services": "Services",
-    "monitoring": "Monitoring",
+    "products": "Products",
+    "productDetails": "Product Details",
+    "checkout": "Checkout",
+    "invoices": "Invoices",
 
-    "notifications": "Notifications",
+    "jobs": "Jobs",
+    "list": "List",
+    "jobDetails": "Job Details",
 
-    "security": "Security",
-    "loginActivity": "Login Activity",
-    "adminActivity": "Admin Activity",
-    "auditLogs": "Audit Logs",
-    "suspiciousActivity": "Suspicious Activity",
-    "ipManagement": "IP Management",
-
-    "system": "System",
-    "settings": "Settings",
-    "roles": "Roles",
-    "permissions": "Permissions",
-    "featureFlags": "Feature Flags",
-    "configuration": "Configuration",
-
-    "cms": "CMS",
-    "pages": "Pages",
-    "banners": "Banners",
-    "seo": "SEO",
-    "announcements": "Announcements",
-    "homepage": "Homepage"
+    "blog": "Blog",
+    "blogDetails": "Blog Details"
   }
 }

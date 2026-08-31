@@ -1,10 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 export function SidebarLogo() {
+  const params = useParams<{ locale: "fa" | "en" }>();
+  const locale = params.locale;
+
   return (
     <Link
-      href="/"
-      aria-label="Tophit"
+      href={`/${locale}`}
+      aria-label="T-Board"
       className="flex shrink-0 items-center gap-2"
     >
       <svg

@@ -1,10 +1,8 @@
 import {
-  Bell,
-  ChartNoAxesCombined,
+  BriefcaseBusiness,
   LayoutDashboard,
-  MessageSquare,
-  Settings,
-  Users,
+  Newspaper,
+  ShoppingCart,
 } from "lucide-react";
 
 import type { SidebarMenuGroup } from "../types/sidebar";
@@ -14,55 +12,25 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
     id: "overview",
     items: [
       {
-        id: "dashboard",
-        href: "/",
+        id: "dashboards",
+        href: "/dashboards",
         icon: LayoutDashboard,
-      },
-      {
-        id: "users",
-        href: "/users",
-        icon: Users,
-      },
-    ],
-  },
-
-  {
-    id: "management",
-    items: [
-      {
-        id: "community",
-        icon: MessageSquare,
         items: [
           {
-            id: "forum",
-            href: "/community/forum",
+            id: "sales",
+            href: "/dashboards/sales",
           },
           {
-            id: "posts",
-            href: "/community/posts",
+            id: "analytics",
+            href: "/dashboards/analytics",
           },
           {
-            id: "reports",
-            href: "/community/reports",
-          },
-        ],
-      },
-
-      {
-        id: "analytics",
-        icon: ChartNoAxesCombined,
-        items: [
-          {
-            id: "analyticsUsers",
-            href: "/analytics/users",
+            id: "ecommerce",
+            href: "/dashboards/ecommerce",
           },
           {
-            id: "analyticsMusic",
-            href: "/analytics/music",
-          },
-          {
-            id: "traffic",
-            href: "/analytics/traffic",
+            id: "finance",
+            href: "/dashboards/finance",
           },
         ],
       },
@@ -70,17 +38,69 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
   },
 
   {
-    id: "system",
+    id: "applications",
     items: [
       {
-        id: "notifications",
-        href: "/notifications",
-        icon: Bell,
+        id: "ecommerce",
+        href: "/ecommerce",
+        icon: ShoppingCart,
+        items: [
+          {
+            id: "products",
+            href: "/ecommerce/products",
+          },
+          {
+            id: "productDetails",
+            href: "/ecommerce/product-details",
+          },
+          {
+            id: "checkout",
+            href: "/ecommerce/checkout",
+          },
+          {
+            id: "invoices",
+            href: "/ecommerce/invoices",
+          },
+        ],
       },
+    ],
+  },
+
+  {
+    id: "modules",
+    items: [
       {
-        id: "settings",
-        href: "/settings",
-        icon: Settings,
+        id: "jobs",
+        icon: BriefcaseBusiness,
+        items: [
+          {
+            id: "dashboards",
+            href: "/jobs/dashboards",
+          },
+          {
+            id: "list",
+            href: "/jobs/list",
+          },
+          {
+            id: "jobDetails",
+            href: "/jobs/job-details",
+          },
+        ],
+      },
+
+      {
+        id: "blog",
+        icon: Newspaper,
+        items: [
+          {
+            id: "list",
+            href: "/blog/list",
+          },
+          {
+            id: "blog-details",
+            href: "/blog/blog-details",
+          },
+        ],
       },
     ],
   },
