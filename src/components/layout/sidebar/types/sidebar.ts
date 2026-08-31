@@ -20,4 +20,11 @@ export type SidebarMenuGroup = {
 export type SidebarDictionary = {
   groups: Record<string, string>;
   items: Record<string, string>;
+  pages: Record<
+    string,
+    {
+      title: string;
+      description: string;
+    }
+  >;
 };

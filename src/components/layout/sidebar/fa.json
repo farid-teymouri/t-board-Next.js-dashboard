@@ -22,5 +22,59 @@
 
     "blog": "بلاگ",
     "blogDetails": "جزئیات مطلب"
+  },
+  "pages": {
+    "sales": {
+      "title": "فروش",
+      "description": "نگاهی سریع به روند درآمد و عملکرد فروش."
+    },
+    "analytics": {
+      "title": "تحلیل و آمار",
+      "description": "نمایی روشن از رشد مخاطبان، جذب کاربران و رفتار آن‌ها."
+    },
+    "ecommerce": {
+      "title": "فروشگاه",
+      "description": "عملکرد فروشگاه، سفارش‌ها و وضعیت کالاها را یکجا بررسی کنید."
+    },
+    "finance": {
+      "title": "مالی و بانکی",
+      "description": "موجودی حساب‌ها، جریان نقدی و بودجه‌ها را در یک نگاه مدیریت کنید."
+    },
+    "products": {
+      "title": "محصولات",
+      "description": "{count} محصول در کاتالوگ."
+    },
+    "productDetails": {
+      "title": "{name}",
+      "description": "SKU {sku} · {category}."
+    },
+    "checkout": {
+      "title": "پرداخت",
+      "description": "پرداخت امن — {count} مورد در سبد خرید شما."
+    },
+    "invoices": {
+      "title": "فاکتورها",
+      "description": "{count} فاکتور — {overdue} مورد سررسید گذشته با مجموع {amount}."
+    },
+    "jobsDashboard": {
+      "title": "استخدام",
+      "description": "وضعیت فرایند استخدام در {count} موقعیت شغلی فعال."
+    },
+    "jobsList": {
+      "title": "فهرست موقعیت‌های شغلی",
+      "description": "{open} موقعیت باز · {applicants} متقاضی · {closing} موقعیت در حال بسته‌شدن."
+    },
+    "jobDetails": {
+      "title": "{title}",
+      "description": "{company} · {department} · {applicants} متقاضی."
+    },
+    "blogList": {
+      "title": "بلاگ",
+      "description": "{published} مقاله منتشرشده · {drafts} پیش‌نویس · {reads} بازدید."
+    },
+    "blogDetails": {
+      "title": "{title}",
+      "description": "{category}."
+    }
   }
 }

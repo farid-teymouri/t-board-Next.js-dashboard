@@ -36,7 +36,7 @@ export function AdminSidebar({ side, locale, dictionary }: AdminSidebarProps) {
 
   return (
     <Sidebar side={side} collapsible="icon" className="z-10 border-none!">
-      <SidebarHeader className="p-4 md:hidden">
+      <SidebarHeader className="p-4 md:hidden ">
         <div className="flex items-center justify-between gap-2">
           <SidebarLogo />
 

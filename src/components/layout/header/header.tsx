@@ -22,18 +22,18 @@ export async function Header({ locale }: HeaderProps) {
       <div className="flex h-20 w-full items-center px-4 md:px-5 lg:px-7">
         <div className="flex flex-row w-full items-center gap-3 md:gap-4 justify-between">
           {/* Sidebar + Logo */}
-          <div className="flex shrink-0 items-center gap-2">
-            <div className="hidden sm:block">
+          <div className="flex  lg:max-w-[223px] md:max-w-[230px] justify-baseline md:w-full items-center gap-2">
+            <div className="hidden sm:block w-full">
               <SidebarLogo />
             </div>
 
-            <div className="in-data-[menu-orientation=horizontal]:lg:hidden">
+            <div className="in-data-[menu-orientation=horizontal]:lg:hidden ">
               <SidebarTrigger />
             </div>
           </div>
 
           {/* Desktop search */}
-          <div className="hidden min-w-0 flex-1 md:block">
+          <div className="hidden min-w-0 flex-1 w-full md:block">
             <div className="w-full max-w-108.75">
               <SearchInput dictionary={dic.search} />
             </div>

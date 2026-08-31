@@ -22,5 +22,59 @@
 
     "blog": "Blog",
     "blogDetails": "Blog Details"
+  },
+  "pages": {
+    "sales": {
+      "title": "Sales",
+      "description": "Here's a quick look at how revenue is trending."
+    },
+    "analytics": {
+      "title": "Analytics",
+      "description": "A clear view of audience growth, acquisition, and behavior."
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "description": "Track store performance, orders, and merchandising at a glance."
+    },
+    "finance": {
+      "title": "Finance & Banking",
+      "description": "Monitor balances, cash flow, and budgets in one place."
+    },
+    "products": {
+      "title": "Products",
+      "description": "{count} products in the catalog."
+    },
+    "productDetails": {
+      "title": "{name}",
+      "description": "SKU {sku} · {category}."
+    },
+    "checkout": {
+      "title": "Checkout",
+      "description": "Secure checkout — {count} items in your bag."
+    },
+    "invoices": {
+      "title": "Invoices",
+      "description": "{count} invoices — {overdue} overdue totalling {amount}."
+    },
+    "jobsDashboard": {
+      "title": "Recruitment",
+      "description": "Hiring pipeline health across {count} active requisitions."
+    },
+    "jobsList": {
+      "title": "Jobs List",
+      "description": "{open} open postings · {applicants} applicants · {closing} closing."
+    },
+    "jobDetails": {
+      "title": "{title}",
+      "description": "{company} · {department} · {applicants} applicants."
+    },
+    "blogList": {
+      "title": "Blog",
+      "description": "{published} published articles · {drafts} drafts · {reads} reads."
+    },
+    "blogDetails": {
+      "title": "{title}",
+      "description": "{category}."
+    }
   }
 }
