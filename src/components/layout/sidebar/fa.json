@@ -16,11 +16,13 @@
     "checkout": "پرداخت",
     "invoices": "فاکتورها",
 
-    "jobs": "استخدام",
-    "list": "فهرست",
+    "jobs": "استخدام و کاریابی",
+    "jobsDashboard": "استخدام",
+    "jobsList": "فهرست",
     "jobDetails": "جزئیات موقعیت شغلی",
 
-    "blog": "بلاگ",
+    "blog": "وبلاگ",
+    "blogList": "فهرست",
     "blogDetails": "جزئیات مطلب"
   },
   "pages": {

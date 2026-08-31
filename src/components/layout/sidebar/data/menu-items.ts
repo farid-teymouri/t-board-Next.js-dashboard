@@ -75,11 +75,11 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
         icon: BriefcaseBusiness,
         items: [
           {
-            id: "dashboards",
+            id: "jobsDashboard",
             href: "/jobs/dashboards",
           },
           {
-            id: "list",
+            id: "jobsList",
             href: "/jobs/list",
           },
           {
@@ -94,7 +94,7 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
         icon: Newspaper,
         items: [
           {
-            id: "list",
+            id: "blogList",
             href: "/blog/list",
           },
           {

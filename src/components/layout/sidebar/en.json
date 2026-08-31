@@ -16,11 +16,13 @@
     "checkout": "Checkout",
     "invoices": "Invoices",
 
-    "jobs": "Jobs",
-    "list": "List",
+    "jobs": "Jobs & Recruitment",
+    "jobsDashboard": "Jobs",
+    "jobsList": "List",
     "jobDetails": "Job Details",
 
     "blog": "Blog",
+    "blogList": "List",
     "blogDetails": "Blog Details"
   },
   "pages": {
