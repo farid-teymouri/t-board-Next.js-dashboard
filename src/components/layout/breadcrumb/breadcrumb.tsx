@@ -48,7 +48,7 @@ export function Breadcrumbs({ dictionary, locale }: BreadcrumbsProps) {
 
   return (
     <Breadcrumb>
-      <BreadcrumbList>
+      <BreadcrumbList className="flex flex-row md:gap-3 gap-1">
         {dashboardsHref && (
           <>
             <BreadcrumbItem>
@@ -74,7 +74,7 @@ export function Breadcrumbs({ dictionary, locale }: BreadcrumbsProps) {
 
           return (
             <div key={item.id} className="contents">
-              {index > 0 && <BreadcrumbSeparator />}
+              {index > 0 && <BreadcrumbSeparator className="rtl:rotate-180" />}
 
               <BreadcrumbItem>
                 {isLast || !href ? (

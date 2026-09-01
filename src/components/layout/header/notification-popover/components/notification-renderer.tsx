@@ -5,7 +5,7 @@ import { SharedPost } from "../notifications/shared-post";
 import { formatNotificationTime } from "../utils/notification-time";
 import { getServerEventDictionary } from "../utils/server-event";
 
-import type { Notification } from "../types/notification";
+import type { Notification } from "@/app/api/admin/types/notifications";
 import type {
   NotificationDictionary,
   TimeDictionary,

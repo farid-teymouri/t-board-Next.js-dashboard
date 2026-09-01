@@ -1,6 +1,8 @@
-import type { Notification } from "../types/notification";
+import { NextResponse } from "next/server";
 
-export const notifications: Notification[] = [
+import type { AdminNotificationsResponse } from "../types/notifications";
+
+const notifications: AdminNotificationsResponse = [
   {
     id: 1,
     type: "new-user",
@@ -11,7 +13,6 @@ export const notifications: Notification[] = [
       unit: "minutes",
     },
   },
-
   {
     id: 2,
     type: "server-event",
@@ -24,7 +25,6 @@ export const notifications: Notification[] = [
       unit: "minutes",
     },
   },
-
   {
     id: 3,
     type: "shared-post",
@@ -36,7 +36,6 @@ export const notifications: Notification[] = [
       unit: "minutes",
     },
   },
-
   {
     id: 4,
     type: "new-user",
@@ -48,3 +47,7 @@ export const notifications: Notification[] = [
     },
   },
 ];
+
+export async function GET() {
+  return NextResponse.json(notifications);
+}

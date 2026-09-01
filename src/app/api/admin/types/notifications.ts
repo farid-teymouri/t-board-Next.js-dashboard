@@ -1,5 +1,3 @@
-import type { NotificationType } from "../notification-types";
-
 export type NotificationTime = {
   value: number;
   unit: "now" | "seconds" | "minute" | "minutes" | "hour" | "hours";
@@ -33,3 +31,16 @@ export type Notification =
   | NewUserNotification
   | SharedPostNotification
   | ServerEventNotification;
+
+export type NotificationType =
+  | "new"
+  | "unread"
+  | "pending"
+  | "financial"
+  | "warning"
+  | "forum"
+  | "media"
+  | "server"
+  | "share";
+
+export type AdminNotificationsResponse = Notification[];

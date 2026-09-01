@@ -25,6 +25,7 @@
     "blogList": "List",
     "blogDetails": "Blog Details"
   },
+  "logout": "Log out",
   "pages": {
     "sales": {
       "title": "Sales",

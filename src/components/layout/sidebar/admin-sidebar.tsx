@@ -17,7 +17,7 @@ import { sidebarMenuGroups } from "./data/menu-items";
 import { AdminSidebarMenuGroup } from "./components/sidebar-menu-group";
 import { SidebarLogo } from "./sidebar-logo";
 import { createLocalePath } from "./utils/sidebar-path";
-
+import { AdminSidebarFooter } from "./sidebar-footer";
 import type { SidebarDictionary } from "./types/sidebar";
 
 type AdminSidebarProps = {
@@ -40,7 +40,7 @@ export function AdminSidebar({ side, locale, dictionary }: AdminSidebarProps) {
     <Sidebar
       side={side}
       collapsible="icon"
-      className="z-10 border-none! md:mx-2 mx-1"
+      className="z-10 border-none! md:mx-2 mx-1 "
     >
       <SidebarHeader className="p-4 md:hidden">
         <div className="flex items-center justify-between gap-2">
@@ -79,7 +79,11 @@ export function AdminSidebar({ side, locale, dictionary }: AdminSidebarProps) {
         ))}
       </SidebarContent>
 
-      <SidebarFooter />
+      <SidebarFooter className="p-0 bg-background">
+        <div className="rounded-t-lg  bg-foreground/5 py-6 group-data-[collapsible=icon]:py-4 p-2 ">
+          <AdminSidebarFooter logoutLabel={dictionary.logout} />
+        </div>
+      </SidebarFooter>
     </Sidebar>
   );
 }

@@ -1,20 +1,18 @@
+import type { NotificationType } from "@/app/api/admin/types/notifications";
+
 export const notificationFilters = {
   new: {
     variant: "default",
   },
-
   unread: {
     variant: "secondary",
   },
-
   pending: {
     variant: "link",
   },
-
   financial: {
     variant: "default",
   },
-
   warning: {
     variant: "destructive",
   },
@@ -42,6 +40,6 @@ export const notificationBadges = {
   },
 } as const;
 
-export type NotificationType = keyof typeof notificationBadges;
-
 export type NotificationFilter = "all" | "others" | NotificationFilterType;
+
+export type { NotificationType };

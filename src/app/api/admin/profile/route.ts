@@ -4,7 +4,8 @@ import type { AdminProfile } from "../types/profile";
 
 const adminProfile: AdminProfile = {
   name: "John Smith",
-  username: "farid",
+  username: "Johnsmith748",
+  email: "johnsmith@example.com",
   avatarSrc: "/images/avatar.jpg",
   status: "online",
   role: "administrator",

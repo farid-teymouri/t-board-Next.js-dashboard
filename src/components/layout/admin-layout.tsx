@@ -80,7 +80,7 @@ export async function AdminLayout({ children, locale }: AdminLayoutProps) {
 
           <main
             data-theme-content
-            className="flex min-w-0 flex-1 flex-col in-data-[menu-orientation=horizontal]:mx-5 me-5  bg-sidebar rounded-tl-xl rounded-tr-xl"
+            className="flex min-w-0 flex-1 flex-col in-data-[menu-orientation=horizontal]:mx-5 me-5 bg-foreground/5 rounded-tl-xl rounded-tr-xl"
           >
             <div
               className="

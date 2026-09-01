@@ -5,6 +5,7 @@ export type AdminRole = "administrator" | "editor" | "viewer";
 export type AdminProfile = {
   name: string;
   username: string;
+  email: string;
   avatarSrc: string | null;
   status: AdminStatus;
   role: AdminRole;

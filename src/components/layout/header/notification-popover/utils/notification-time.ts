@@ -1,4 +1,4 @@
-import type { NotificationTime } from "../types/notification";
+import type { NotificationTime } from "@/app/api/admin/types/notifications";
 
 import type { TimeDictionary } from "../types/dictionary";
 
