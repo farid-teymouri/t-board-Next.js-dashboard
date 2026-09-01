@@ -1,8 +1,8 @@
 "use client";
 
 import { X } from "lucide-react";
-
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 import {
   Sidebar,
@@ -30,13 +30,19 @@ export function AdminSidebar({ side, locale, dictionary }: AdminSidebarProps) {
   const pathname = usePathname();
   const { setOpenMobile } = useSidebar();
 
+  const [openPopoverId, setOpenPopoverId] = useState<string | null>(null);
+
   const getLocalePath = (href: string) => createLocalePath(href, locale);
 
   const isActive = (href: string) => pathname === getLocalePath(href);
 
   return (
-    <Sidebar side={side} collapsible="icon" className="z-10 border-none!">
-      <SidebarHeader className="p-4 md:hidden ">
+    <Sidebar
+      side={side}
+      collapsible="icon"
+      className="z-10 border-none! md:mx-2 mx-1"
+    >
+      <SidebarHeader className="p-4 md:hidden">
         <div className="flex items-center justify-between gap-2">
           <SidebarLogo />
 
@@ -65,6 +71,9 @@ export function AdminSidebar({ side, locale, dictionary }: AdminSidebarProps) {
             dictionary={dictionary}
             isActive={isActive}
             createLocalePath={getLocalePath}
+            side={side}
+            openPopoverId={openPopoverId}
+            setOpenPopoverId={setOpenPopoverId}
             showSeparator={index > 0}
           />
         ))}

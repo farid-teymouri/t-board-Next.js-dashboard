@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
-
+import { QueryProvider } from "@/components/providers/query-provider";
 import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
 import { hasLocale } from "@/i18n/config";
@@ -123,7 +123,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <QueryProvider>{children}</QueryProvider>
         </ThemeProvider>
       </body>
     </html>

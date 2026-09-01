@@ -1,9 +1,19 @@
 {
+  "profile": {
+    "status": {
+      "online": "آنلاین",
+      "offline": "آفلاین"
+    },
+    "role": {
+      "administrator": "مدیر سیستم",
+      "editor": "ویرایشگر",
+      "viewer": "مشاهده‌گر"
+    }
+  },
   "cloudCard": {
     "title": "جزئیات فضای ابری",
     "usage": "از فضای ابری اشغال شده",
-    "settings": "تنظیمات فضای ابری",
-    "usagePercent": "۷۰٪"
+    "settings": "تنظیمات فضای ابری"
   },
   "links": {
     "accountSettings": "تنظیمات حساب",

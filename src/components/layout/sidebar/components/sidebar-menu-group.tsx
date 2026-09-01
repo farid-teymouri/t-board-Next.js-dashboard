@@ -15,6 +15,9 @@ type AdminSidebarMenuGroupProps = {
   dictionary: SidebarDictionary;
   isActive: (href: string) => boolean;
   createLocalePath: (href: string) => string;
+  side: "left" | "right";
+  openPopoverId: string | null;
+  setOpenPopoverId: (id: string | null) => void;
   showSeparator?: boolean;
 };
 
@@ -23,16 +26,23 @@ export function AdminSidebarMenuGroup({
   dictionary,
   isActive,
   createLocalePath,
+  side,
+  openPopoverId,
+  setOpenPopoverId,
   showSeparator = false,
 }: AdminSidebarMenuGroupProps) {
   return (
     <>
-      {showSeparator && <SidebarSeparator className="mx-3" />}
+      {showSeparator && (
+        <SidebarSeparator className="group-data-[collapsible=icon]:hidden mx-auto mt-2 w-full" />
+      )}
 
       <SidebarGroup>
-        <SidebarGroupLabel>{dictionary.groups[group.id]}</SidebarGroupLabel>
+        <SidebarGroupLabel className="group-data-[collapsible=icon]:hidden">
+          {dictionary.groups[group.id]}
+        </SidebarGroupLabel>
 
-        <SidebarGroupContent>
+        <SidebarGroupContent className="w-full justify-center">
           <SidebarMenu className="space-y-2">
             {group.items.map((item) => (
               <AdminSidebarMenuItem
@@ -41,6 +51,9 @@ export function AdminSidebarMenuGroup({
                 dictionary={dictionary}
                 isActive={isActive}
                 createLocalePath={createLocalePath}
+                side={side}
+                openPopoverId={openPopoverId}
+                setOpenPopoverId={setOpenPopoverId}
               />
             ))}
           </SidebarMenu>

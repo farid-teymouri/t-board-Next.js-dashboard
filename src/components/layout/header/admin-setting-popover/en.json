@@ -1,9 +1,19 @@
 {
+  "profile": {
+    "status": {
+      "online": "Online",
+      "offline": "Offline"
+    },
+    "role": {
+      "administrator": "Administrator",
+      "editor": "Editor",
+      "viewer": "Viewer"
+    }
+  },
   "cloudCard": {
     "title": "Cloud Storage Details",
     "usage": " of cloud storage is used",
-    "settings": "Cloud Storage Settings",
-    "usagePercent": "70%"
+    "settings": "Cloud Storage Settings"
   },
   "links": {
     "accountSettings": "Account Settings",

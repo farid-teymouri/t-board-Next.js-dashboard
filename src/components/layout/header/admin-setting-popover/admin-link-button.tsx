@@ -34,7 +34,7 @@ export function AdminLinkButton({
   return (
     <Link
       href={href}
-      className={`${buttonVariants({ variant, size: "sm" })} flex w-full items-center gap-3 p-6`}
+      className={`${buttonVariants({ variant, size: "sm" })} flex w-full items-center gap-3 p-6 hover:bg-accent!`}
     >
       <div className="flex flex-1 items-center gap-3">{content}</div>
 
