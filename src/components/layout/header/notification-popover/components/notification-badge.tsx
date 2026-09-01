@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-
+import { SoftBadge } from "@/components/ui/soft-badge";
 import {
   notificationBadges,
   type NotificationType,
@@ -24,20 +24,20 @@ export function NotificationBadge({
     );
   }
 
-  if (notification.variant === "destructive") {
-    return (
-      <Badge
-        variant="destructive"
-        className="items-center bg-red-700 text-white dark:bg-rose-600 dark:text-foreground"
-      >
-        <span className="rtl:pb-1 ">{dictionary[type]}</span>
-      </Badge>
-    );
-  }
+  // if (notification.variant === "destructive") {
+  //   return (
+  //     <Badge
+  //       variant="destructive"
+  //       className="items-center bg-red-700 text-white dark:bg-rose-600 dark:text-foreground"
+  //     >
+  //       <span className="rtl:pb-1 ">{dictionary[type]}</span>
+  //     </Badge>
+  //   );
+  // }
 
   return (
-    <Badge className="items-center" variant={notification.variant}>
+    <SoftBadge className="items-center" variant={notification.variant}>
       <span className="rtl:pb-1 ">{dictionary[type]}</span>
-    </Badge>
+    </SoftBadge>
   );
 }

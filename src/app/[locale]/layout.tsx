@@ -10,16 +10,6 @@ import { hasLocale } from "@/i18n/config";
 
 import "../globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 const shabnam = localFont({
   src: [
     {
@@ -108,13 +98,7 @@ export default async function RootLayout({
       data-theme={themePreset}
       data-theme-width={themeWidth}
       data-menu-orientation={themeOrientation}
-      className={cn(
-        shabnam.className,
-        "h-full",
-        "antialiased",
-        geistSans.variable,
-        geistMono.variable,
-      )}
+      className={cn(shabnam.className, "h-full", "antialiased")}
     >
       <body className="flex min-h-full flex-col">
         <ThemeProvider

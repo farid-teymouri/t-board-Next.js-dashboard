@@ -24,19 +24,19 @@ export const notificationBadges = {
   ...notificationFilters,
 
   forum: {
-    variant: "outline",
+    variant: "ghost",
   },
 
   media: {
-    variant: "outline",
+    variant: "ghost",
   },
 
   server: {
-    variant: "outline",
+    variant: "ghost",
   },
 
   share: {
-    variant: "outline",
+    variant: "ghost",
   },
 } as const;
 
