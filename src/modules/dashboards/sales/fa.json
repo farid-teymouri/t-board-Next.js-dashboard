@@ -10,5 +10,10 @@
   "actions": {
     "createInvoice": "ایجاد فاکتور",
     "viewPipeline": "مشاهده فرایند فروش"
+  },
+  "totalRevenue": {
+    "title": "مجموع درآمد",
+    "description": "عملکرد درآمد در ۱۲ ماه گذشته",
+    "growth": "نسبت به سال گذشته"
   }
 }

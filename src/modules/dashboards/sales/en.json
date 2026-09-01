@@ -10,5 +10,10 @@
   "actions": {
     "createInvoice": "Create invoice",
     "viewPipeline": "View pipeline"
+  },
+  "totalRevenue": {
+    "title": "Total revenue",
+    "description": "Revenue performance over the last 12 months",
+    "growth": "vs. last year"
   }
 }

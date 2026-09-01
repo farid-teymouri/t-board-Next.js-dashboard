@@ -6,3 +6,11 @@ export type UserSalesOverview = {
   stillOpen: number;
   pendingInvoices: number;
 };
+export type TotalRevenue = {
+  currentYear: {
+    month: string;
+    revenue: number;
+  }[];
+
+  growth: number;
+};

@@ -5,7 +5,7 @@ import { SoftBadge } from "@/components/ui/soft-badge";
 import { apiGet } from "@/lib/api/client";
 
 import type { UserProfile } from "@/app/api/types/profile";
-import type { UserSalesOverview } from "@/app/api/types/dashboards/sales";
+import type { SalesOverview } from "@/app/api/types/dashboards/sales/overview";
 import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
 
 import { Button } from "@/components/ui/button";
@@ -47,7 +47,7 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
   } = useQuery({
     queryKey: ["dashboards", "sales", "sales-overview", locale],
     queryFn: () =>
-      apiGet<UserSalesOverview>(
+      apiGet<SalesOverview>(
         `/api/dashboards/sales/sales-overview?locale=${locale}`,
       ),
   });
@@ -71,9 +71,9 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
 
   return (
     <Card>
-      <CardContent className="lg:space-y-6 space-y-8">
-        <div className="flex lg:flex-row flex-col items-end justify-between gap-8">
-          <div className="lg:max-w-2xl w-full space-y-3">
+      <CardContent className="flex flex-col gap-4 justify-between h-full">
+        <div className="flex  flex-wrap items-center justify-between gap-4">
+          <div className="w-full space-y-3">
             <p className="text-sm font-medium text-muted-foreground">
               {dictionary.label}
             </p>
@@ -82,7 +82,7 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
               {dictionary.welcome.replace("{name}", profile.name)}
             </h2>
 
-            <p className="max-w-xl text-sm leading-6 text-muted-foreground">
+            <p className=" text-sm leading-6 text-muted-foreground">
               {renderTemplate(dictionary.description, {
                 growth: formatNumber(sales.revenueGrowth),
                 product1: (
@@ -102,7 +102,9 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
                 {dictionary.stats.targetHit}
               </p>
 
-              <p className="text-2xl font-semibold">{sales.targetHit}%</p>
+              <p className="text-2xl font-semibold">
+                {formatNumber(sales.targetHit)}%
+              </p>
             </div>
 
             <div className="space-y-1 w-full bg-secondary/30 p-px rounded-lg">
