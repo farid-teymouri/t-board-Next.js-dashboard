@@ -20,7 +20,7 @@ import type {
   TimeDictionary,
 } from "../types/dictionary";
 
-import type { AdminNotificationsResponse } from "@/app/api/admin/types/notifications";
+import type { UserNotificationsResponse } from "@/app/api/types/notifications";
 
 import {
   Popover,
@@ -46,8 +46,7 @@ export function NotificationPopover({
     isError,
   } = useQuery({
     queryKey: ["admin", "notifications"],
-    queryFn: () =>
-      apiGet<AdminNotificationsResponse>("/api/admin/notifications"),
+    queryFn: () => apiGet<UserNotificationsResponse>("/api/notifications"),
   });
 
   if (isPending || isError || !notifications) {

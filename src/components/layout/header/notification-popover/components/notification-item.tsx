@@ -39,7 +39,7 @@ export function NotificationItem({
                 {description}
               </ItemDescription>
 
-              <div className="flex flex-wrap items-center gap-1">
+              <div className="space-x-2">
                 {types.map((type) => (
                   <NotificationBadge
                     key={type}

@@ -1,0 +1,24 @@
+.user-card-content::before {
+  border-width: 3px;
+  border-style: solid;
+  border-image: none;
+  border-radius: 50%;
+  top: 55px;
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-color: var(--secondary);
+}
+.user-card-content::after {
+  border-width: 19px;
+  border-style: solid;
+  border-image: none;
+  border-radius: 50%;
+  top: 0;
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-color: var(--secondary);
+}

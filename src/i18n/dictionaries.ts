@@ -7,8 +7,8 @@ const dictionaries = {
   en: async () => ({
     util: (await import("./en.json")).default,
 
-    adminSettings: (
-      await import("@/components/layout/header/admin-setting-popover/en.json")
+    settings: (
+      await import("@/components/layout/header/user-setting-popover/en.json")
     ).default,
 
     sidebar: (await import("@/components/layout/sidebar/en.json")).default,
@@ -26,13 +26,17 @@ const dictionaries = {
     themeCustomizer: (
       await import("@/components/layout/theme-customizer/en.json")
     ).default,
+
+    dashboards: {
+      sales: (await import("@/modules/dashboards/sales/en.json")).default,
+    },
   }),
 
   fa: async () => ({
     util: (await import("./fa.json")).default,
 
-    adminSettings: (
-      await import("@/components/layout/header/admin-setting-popover/fa.json")
+    settings: (
+      await import("@/components/layout/header/user-setting-popover/fa.json")
     ).default,
 
     sidebar: (await import("@/components/layout/sidebar/fa.json")).default,
@@ -50,12 +54,18 @@ const dictionaries = {
     themeCustomizer: (
       await import("@/components/layout/theme-customizer/fa.json")
     ).default,
+
+    dashboards: {
+      sales: (await import("@/modules/dashboards/sales/fa.json")).default,
+    },
   }),
 };
 
 export type Dictionary = Awaited<ReturnType<(typeof dictionaries)["fa"]>>;
 
-export type AdminSettingsDictionary = Dictionary["adminSettings"];
+export type UserSettingsDictionary = Dictionary["settings"];
+
+export type SalesDashboardDictionary = Dictionary["dashboards"]["sales"];
 
 export const getDictionary = async (locale: Locale) => {
   if (!hasLocale(locale)) {

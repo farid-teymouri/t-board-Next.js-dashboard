@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { AdminLayout } from "@/components/layout/admin-layout";
+import { UserLayout } from "@/components/layout/user-layout";
 import { Breadcrumbs } from "@/components/layout/breadcrumb/breadcrumb";
 import { PageHeader } from "@/components/layout/page-header/page-header";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -24,7 +24,7 @@ export default async function AdminDashboardLayout({
   const dictionary = await getDictionary(locale);
 
   return (
-    <AdminLayout locale={locale}>
+    <UserLayout locale={locale}>
       <div className="space-y-5">
         <Breadcrumbs dictionary={dictionary.sidebar} locale={locale} />
 
@@ -32,6 +32,6 @@ export default async function AdminDashboardLayout({
       </div>
 
       {children}
-    </AdminLayout>
+    </UserLayout>
   );
 }

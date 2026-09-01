@@ -1,0 +1,14 @@
+{
+  "label": "Sales overview",
+  "welcome": "Welcome back, {name}",
+  "description": "Revenue closed the month {growth}% ahead of the same period last year, carried by {product1} and {product2}. {pendingInvoices} invoices are still awaiting settlement.",
+  "stats": {
+    "targetHit": "Target hit",
+    "dealsWon": "Deals won",
+    "stillOpen": "Still open"
+  },
+  "actions": {
+    "createInvoice": "Create invoice",
+    "viewPipeline": "View pipeline"
+  }
+}

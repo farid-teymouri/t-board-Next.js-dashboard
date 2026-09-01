@@ -1,4 +1,4 @@
-import type { NotificationType } from "@/app/api/admin/types/notifications";
+import type { NotificationType } from "@/app/api/types/notifications";
 
 export const notificationFilters = {
   new: {

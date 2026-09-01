@@ -2,7 +2,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 
 import { getDictionary } from "@/i18n/dictionaries";
 
-import { AdminPopover } from "./admin-setting-popover/admin-popover";
+import { UserPopover } from "./user-setting-popover/user-popover";
 import { FullScreen } from "./full-screen/full-screen";
 import { LanguageSwitcher } from "./language-switcher/language-switcher";
 import { NotificationPopover } from "./notification-popover/components/notification-popover";
@@ -58,15 +58,8 @@ export async function Header({ locale }: HeaderProps) {
             <div className="hidden lg:block">
               <FullScreen />
             </div>
-            {/* Admin */}
-            <AdminPopover
-              dictionary={dic.adminSettings}
-              name="farid teymouri"
-              avatarSrc="https://github.com/evilrabbit.png"
-              username="demo"
-              status="online"
-              role="Super Admin"
-            />
+            {/* User */}
+            <UserPopover dictionary={dic.settings} />
           </div>
         </div>
       </div>

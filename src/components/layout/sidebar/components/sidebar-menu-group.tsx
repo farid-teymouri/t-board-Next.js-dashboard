@@ -6,11 +6,11 @@ import {
   SidebarSeparator,
 } from "@/components/ui/sidebar";
 
-import { AdminSidebarMenuItem } from "./sidebar-menu-item";
+import { UserSidebarMenuItem } from "./sidebar-menu-item";
 
 import type { SidebarDictionary, SidebarMenuGroup } from "../types/sidebar";
 
-type AdminSidebarMenuGroupProps = {
+type UserSidebarMenuGroupProps = {
   group: SidebarMenuGroup;
   dictionary: SidebarDictionary;
   isActive: (href: string) => boolean;
@@ -21,7 +21,7 @@ type AdminSidebarMenuGroupProps = {
   showSeparator?: boolean;
 };
 
-export function AdminSidebarMenuGroup({
+export function UserSidebarMenuGroup({
   group,
   dictionary,
   isActive,
@@ -30,7 +30,7 @@ export function AdminSidebarMenuGroup({
   openPopoverId,
   setOpenPopoverId,
   showSeparator = false,
-}: AdminSidebarMenuGroupProps) {
+}: UserSidebarMenuGroupProps) {
   return (
     <>
       {showSeparator && (
@@ -45,7 +45,7 @@ export function AdminSidebarMenuGroup({
         <SidebarGroupContent className="w-full justify-center">
           <SidebarMenu className="space-y-2">
             {group.items.map((item) => (
-              <AdminSidebarMenuItem
+              <UserSidebarMenuItem
                 key={item.id}
                 item={item}
                 dictionary={dictionary}

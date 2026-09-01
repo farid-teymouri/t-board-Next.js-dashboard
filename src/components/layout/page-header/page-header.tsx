@@ -33,7 +33,7 @@ export function PageHeader({ dictionary }: PageHeaderProps) {
 
   return (
     <div className="space-y-1">
-      <h1 className="text-2xl font-semibold tracking-tight">{page.title}</h1>
+      <h1 className="text-3xl font-semibold tracking-tight">{page.title}</h1>
 
       <p className="text-sm text-muted-foreground">{page.description}</p>
     </div>

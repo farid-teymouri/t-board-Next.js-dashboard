@@ -2,7 +2,7 @@ import {
   notificationFilters,
   type NotificationFilter,
 } from "../notification-types";
-import type { Notification } from "@/app/api/admin/types/notifications";
+import type { Notification } from "@/app/api/types/notifications";
 export function filterNotifications(
   notifications: Notification[],
   filter: NotificationFilter,

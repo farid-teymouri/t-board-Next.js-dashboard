@@ -24,7 +24,7 @@ import type {
   SidebarMenuItem as SidebarMenuItemType,
 } from "../types/sidebar";
 
-type AdminSidebarMenuItemProps = {
+type UserSidebarMenuItemProps = {
   item: SidebarMenuItemType;
   dictionary: SidebarDictionary;
   isActive: (href: string) => boolean;
@@ -34,7 +34,7 @@ type AdminSidebarMenuItemProps = {
   setOpenPopoverId: (id: string | null) => void;
 };
 
-export function AdminSidebarMenuItem({
+export function UserSidebarMenuItem({
   item,
   dictionary,
   isActive,
@@ -42,7 +42,7 @@ export function AdminSidebarMenuItem({
   side,
   openPopoverId,
   setOpenPopoverId,
-}: AdminSidebarMenuItemProps) {
+}: UserSidebarMenuItemProps) {
   const Icon = item.icon;
   const hasSubItems = Boolean(item.items?.length);
 

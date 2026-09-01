@@ -9,20 +9,20 @@ import { apiGet } from "@/lib/api/client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { buttonVariants } from "@/components/ui/button";
 
-import type { AdminProfile } from "@/app/api/admin/types/profile";
+import type { UserProfile } from "@/app/api/types/profile";
 
-type AdminSidebarFooterProps = {
+type UserSidebarFooterProps = {
   logoutLabel: string;
 };
 
-export function AdminSidebarFooter({ logoutLabel }: AdminSidebarFooterProps) {
+export function UserSidebarFooter({ logoutLabel }: UserSidebarFooterProps) {
   const {
     data: profile,
     isPending,
     isError,
   } = useQuery({
     queryKey: ["admin", "profile"],
-    queryFn: () => apiGet<AdminProfile>("/api/admin/profile"),
+    queryFn: () => apiGet<UserProfile>("/api/profile"),
   });
 
   if (isPending || isError || !profile) {

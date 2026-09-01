@@ -1,0 +1,14 @@
+{
+  "label": "نمای کلی فروش",
+  "welcome": "خوش برگشتی، {name}",
+  "description": "درآمد این ماه {growth}٪ بیشتر از مدت مشابه سال گذشته بوده و رشد آن را فروش {product1} و {product2} رقم زده‌اند. {pendingInvoices} فاکتور همچنان در انتظار تسویه هستند.",
+  "stats": {
+    "targetHit": "تحقق هدف",
+    "dealsWon": "معاملات موفق",
+    "stillOpen": "باز"
+  },
+  "actions": {
+    "createInvoice": "ایجاد فاکتور",
+    "viewPipeline": "مشاهده فرایند فروش"
+  }
+}
