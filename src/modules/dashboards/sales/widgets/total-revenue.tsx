@@ -42,7 +42,7 @@ export function TotalRevenueWidget({ locale }: Props) {
   const formatter = new Intl.NumberFormat(locale === "fa" ? "fa-IR" : "en-US");
 
   return (
-    <Card className="pb-0 max-w-[385px] flex flex-col justify-between">
+    <Card className="pb-0 w-[385px] xl:w-full flex flex-col justify-between">
       <CardHeader>
         <div className="flex items-start justify-between">
           <div className="rtl:text-right flex flex-col gap-2">

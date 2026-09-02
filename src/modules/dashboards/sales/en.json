@@ -15,5 +15,12 @@
     "title": "Total revenue",
     "description": "Revenue performance over the last 12 months",
     "growth": "vs. last year"
+  },
+  "overviewMetrics": {
+    "customers": "Customers",
+    "products": "Products",
+    "transactions": "Transactions",
+    "averageOrderValue": "Avg. order value",
+    "refundRate": "Refund rate"
   }
 }

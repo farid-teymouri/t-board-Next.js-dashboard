@@ -61,15 +61,20 @@ export async function UserLayout({ children, locale }: UserLayoutProps) {
           <div
             data-theme-content
             className="
-              hidden
-              in-data-[menu-orientation=horizontal]:px-5
-              in-data-[menu-orientation=horizontal]:lg:block
-              w-full
-              in-data-[theme-width=container]:mx-auto
-              in-data-[theme-width=container]:max-w-7xl
-              in-data-[theme-width=container]:px-4
-              in-data-[theme-width=container]:sm:px-6
-              in-data-[theme-width=container]:lg:px-8
+          sticky top-20 z-40
+          hidden
+          w-full
+          in-data-[menu-orientation=horizontal]:lg:block
+          in-data-[menu-orientation=horizontal]:px-5
+          bg-background
+          backdrop-blur-xl
+          supports-backdrop-filter:bg-background/50
+          border-b border-border/40
+          in-data-[theme-width=container]:mx-auto
+          in-data-[theme-width=container]:max-w-7xl
+          in-data-[theme-width=container]:px-4
+          in-data-[theme-width=container]:sm:px-6
+          in-data-[theme-width=container]:lg:px-8
             "
           >
             <UserNavigationMenu

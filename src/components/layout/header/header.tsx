@@ -17,7 +17,16 @@ type HeaderProps = {
 export async function Header({ locale }: HeaderProps) {
   const dic = await getDictionary(locale);
   return (
-    <header className="relative z-20 flex w-full shrink-0 flex-col in-data-[menu-orientation=horizontal]:lg:border-b">
+    <header
+      className="
+    sticky top-0 z-50
+    flex w-full shrink-0 flex-col
+    bg-background
+    backdrop-blur-xl
+    supports-backdrop-filter:bg-background/50
+    in-data-[menu-orientation=horizontal]:lg:border-b
+  "
+    >
       {/* Main header */}
       <div className="flex h-20 w-full items-center px-4 md:px-5 lg:px-7">
         <div className="flex flex-row w-full items-center gap-3 md:gap-4 justify-between">

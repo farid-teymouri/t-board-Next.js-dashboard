@@ -71,7 +71,7 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
 
   return (
     <Card>
-      <CardContent className="flex flex-col gap-4 justify-between h-full">
+      <CardContent className="flex flex-col gap-4 justify-between h-full w-full">
         <div className="flex  flex-wrap items-center justify-between gap-4">
           <div className="w-full space-y-3">
             <p className="text-sm font-medium text-muted-foreground">
@@ -97,32 +97,32 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
           </div>
 
           <div className="flex shrink-0 flex-row gap-2 items-center justify-center text-center max-w-xs w-full">
-            <div className="space-y-1 w-full bg-secondary/30 p-px rounded-lg">
-              <p className="text-sm text-muted-foreground">
+            <div className="flex flex-col gap-2 items-center justify-center w-full bg-secondary/30 p-px rounded-lg py-2">
+              <p className="text-sm text-muted-foreground items-center justify-center">
                 {dictionary.stats.targetHit}
               </p>
 
-              <p className="text-2xl font-semibold">
+              <p className="text-2xl font-semibold items-center justify-center text-center block w-full">
                 {formatNumber(sales.targetHit)}%
               </p>
             </div>
 
-            <div className="space-y-1 w-full bg-secondary/30 p-px rounded-lg">
-              <p className="text-sm text-muted-foreground">
+            <div className="flex flex-col gap-2 items-center justify-center w-full bg-secondary/30 p-px rounded-lg py-2">
+              <p className="text-sm text-muted-foreground items-center justify-center">
                 {dictionary.stats.dealsWon}
               </p>
 
-              <p className="text-2xl font-semibold">
+              <p className="text-2xl font-semibold items-center justify-center text-center block w-full">
                 {formatNumber(sales.dealsWon)}
               </p>
             </div>
 
-            <div className="space-y-1 w-full bg-secondary/30 p-px rounded-lg">
-              <p className="text-sm text-muted-foreground">
+            <div className="flex flex-col gap-2 items-center justify-center w-full bg-secondary/30 p-px rounded-lg py-2">
+              <p className="text-sm text-muted-foreground items-center justify-center">
                 {dictionary.stats.stillOpen}
               </p>
 
-              <p className="text-2xl font-semibold">
+              <p className="text-2xl font-semibold items-center justify-center text-center block w-full">
                 {formatNumber(sales.stillOpen)}
               </p>
             </div>

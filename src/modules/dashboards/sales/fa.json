@@ -15,5 +15,12 @@
     "title": "مجموع درآمد",
     "description": "عملکرد درآمد در ۱۲ ماه گذشته",
     "growth": "نسبت به سال گذشته"
+  },
+  "overviewMetrics": {
+    "customers": "مشتریان",
+    "products": "محصولات",
+    "transactions": "تراکنش‌ها",
+    "averageOrderValue": "میانگین ارزش سفارش",
+    "refundRate": "نرخ بازپرداخت"
   }
 }
