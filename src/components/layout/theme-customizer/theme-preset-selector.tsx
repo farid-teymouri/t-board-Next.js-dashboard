@@ -13,7 +13,7 @@ type ThemePresetDictionary = {
   description: string;
   default: string;
   amberMinimal: string;
-  amethystHaze: string;
+  rosePine: string;
   boldTech: string;
   bubblegum: string;
   caffeine: string;
@@ -29,7 +29,7 @@ const presetDictionaryKeys: Record<ThemePresetId, keyof ThemePresetDictionary> =
   {
     default: "default",
     "amber-minimal": "amberMinimal",
-    "amethyst-haze": "amethystHaze",
+    "rose-pine": "rosePine",
     "bold-tech": "boldTech",
     bubblegum: "bubblegum",
     caffeine: "caffeine",

@@ -1,7 +1,7 @@
 export type ThemePresetId =
   | "default"
   | "amber-minimal"
-  | "amethyst-haze"
+  | "rose-pine"
   | "bold-tech"
   | "bubblegum"
   | "caffeine";

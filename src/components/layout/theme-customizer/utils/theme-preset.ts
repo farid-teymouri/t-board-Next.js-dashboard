@@ -5,7 +5,7 @@ const THEME_PRESET_KEY = "theme-preset";
 const THEME_PRESET_IDS: ThemePresetId[] = [
   "default",
   "amber-minimal",
-  "amethyst-haze",
+  "rose-pine",
   "bold-tech",
   "bubblegum",
   "caffeine",

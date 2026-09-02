@@ -24,7 +24,7 @@ type Props = {
 const chartConfig = {
   revenue: {
     label: "Revenue",
-    color: "var(--chart-1)",
+    color: "var(--chart-3)",
   },
 } satisfies ChartConfig;
 

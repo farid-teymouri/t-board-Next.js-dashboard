@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const validPresets = [
   "default",
   "amber-minimal",
-  "amethyst-haze",
+  "rose-pine",
   "bold-tech",
   "bubblegum",
   "caffeine",
