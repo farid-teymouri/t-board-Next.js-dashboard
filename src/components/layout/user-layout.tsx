@@ -3,7 +3,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { getDictionary } from "@/i18n/dictionaries";
 import { ThemeCustomizer } from "@/components/layout/theme-customizer/theme-customizer";
-
+import { DashboardGrid } from "./dashboard-grid";
 import { Header } from "./header/header";
 import { UserSidebar } from "./sidebar/user-sidebar";
 import { UserNavigationMenu } from "./sidebar/user-navigation-menu";
@@ -65,7 +65,7 @@ export async function UserLayout({ children, locale }: UserLayoutProps) {
           hidden
           w-full
           in-data-[menu-orientation=horizontal]:lg:block
-          in-data-[menu-orientation=horizontal]:px-5
+          in-data-[menu-orientation=horizontal]:lg:px-5
           bg-background
           backdrop-blur-xl
           supports-backdrop-filter:bg-background/50
@@ -85,17 +85,13 @@ export async function UserLayout({ children, locale }: UserLayoutProps) {
 
           <main
             data-theme-content
-            className="flex min-w-0 flex-1 flex-col in-data-[menu-orientation=horizontal]:mx-5 me-5 bg-foreground/2 rounded-tl-xl rounded-tr-xl"
+            className=" flex min-w-0 flex-1 flex-col in-data-[menu-orientation=horizontal]:lg:mx-5 me-5 rounded-tl-xl rounded-tr-xl bg-foreground/2 "
           >
-            <div
-              className="
-              flex w-full flex-col gap-14 p-5
-              in-data-[theme-width=container]:mx-auto
-              in-data-[theme-width=container]:lg:w-[72vw]
-            "
-            >
-              {children}
-            </div>
+            <DashboardGrid menuOrientation={menuOrientation}>
+              <div className=" flex w-full flex-col gap-14 p-5 in-data-[theme-width=container]:mx-auto in-data-[theme-width=container]:lg:w-[72vw] ">
+                {children}
+              </div>
+            </DashboardGrid>
           </main>
         </div>
       </div>

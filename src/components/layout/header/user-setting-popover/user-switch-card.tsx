@@ -22,7 +22,7 @@ export function UserSwitchCard({ dictionary }: UserSwitchCardProps) {
     isPending,
     isError,
   } = useQuery({
-    queryKey: ["admin", "preferences"],
+    queryKey: ["user", "preferences"],
     queryFn: () => apiGet<UserPreferences>("/api/preferences"),
   });
 

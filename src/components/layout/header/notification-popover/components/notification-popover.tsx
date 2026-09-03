@@ -45,7 +45,7 @@ export function NotificationPopover({
     isPending,
     isError,
   } = useQuery({
-    queryKey: ["admin", "notifications"],
+    queryKey: ["user", "notifications"],
     queryFn: () => apiGet<UserNotificationsResponse>("/api/notifications"),
   });
 

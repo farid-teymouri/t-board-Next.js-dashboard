@@ -22,5 +22,54 @@
     "transactions": "Transactions",
     "averageOrderValue": "Avg. order value",
     "refundRate": "Refund rate"
+  },
+  "performance": {
+    "title": "Sales Statistics",
+    "description": "Monthly revenue vs. previous period",
+    "thisPeriod": "This period",
+    "previousPeriod": "Previous period",
+    "year": "Year",
+    "month": "Month",
+    "week": "Week",
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  },
+  "totalBalance": {
+    "title": "Total Balance",
+    "currencies": {
+      "usd": "USD",
+      "eur": "EUR",
+      "gbp": "GBP",
+      "irt": "IRT"
+    },
+    "actions": {
+      "deposit": "Deposit",
+      "withdraw": "Withdraw"
+    },
+    "summary": {
+      "income": "Income",
+      "spend": "Spend",
+      "saved": "Saved"
+    }
+  },
+  "visitorDevices": {
+    "title": "Visitors by device",
+    "description": "Visitor distribution across devices",
+    "mobile": "Mobile",
+    "desktop": "Desktop",
+    "tablet": "Tablet",
+    "visitors": "Visitors"
   }
 }

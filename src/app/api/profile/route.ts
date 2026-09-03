@@ -4,7 +4,7 @@ import type { UserProfile } from "../types/profile";
 
 const profile: UserProfile = {
   name: "John Smith",
-  username: "Johnsmith748",
+  username: "johnsmith748",
   email: "johnsmith@example.com",
   avatarSrc: "/images/avatar.jpg",
   status: "online",

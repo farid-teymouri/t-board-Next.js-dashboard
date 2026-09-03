@@ -33,12 +33,12 @@ export function UserPopover({ dictionary }: UserPopoverProps) {
     isPending,
     isError,
   } = useQuery({
-    queryKey: ["admin", "profile"],
+    queryKey: ["user", "profile"],
     queryFn: () => apiGet<UserProfile>("/api/profile"),
   });
 
   const { data: dashboardUnreadCount } = useQuery({
-    queryKey: ["admin", "dashboard", "unread-count"],
+    queryKey: ["user", "dashboard", "unread-count"],
     queryFn: () =>
       apiGet<UserDashboardUnreadCount>("/api/public-page/unread-count"),
   });

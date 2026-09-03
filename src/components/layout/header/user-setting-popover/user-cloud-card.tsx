@@ -29,7 +29,7 @@ export function UserCloudCard({ dictionary }: UserCloudCardProps) {
     isPending,
     isError,
   } = useQuery({
-    queryKey: ["admin", "storage"],
+    queryKey: ["user", "storage"],
     queryFn: () => apiGet<UserStorage>("/api/storage"),
   });
 

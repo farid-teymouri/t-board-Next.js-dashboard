@@ -123,7 +123,7 @@ export function OverviewMetrics({
   translations,
 }: OverviewMetricsProps) {
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["sales", "overview-metrics"],
+    queryKey: ["dashboards", "sales", "overview-metrics", locale],
     queryFn: getOverviewMetrics,
   });
 

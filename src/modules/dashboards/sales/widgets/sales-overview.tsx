@@ -29,7 +29,38 @@ type SalesOverviewProps = {
   dictionary: SalesDashboardDictionary;
   locale: "fa" | "en";
 };
+function SalesOverviewSkeleton() {
+  return (
+    <Card>
+      <CardContent className="flex h-full flex-col justify-between gap-4">
+        <div className="space-y-3">
+          <div className="h-4 w-28 animate-pulse rounded bg-muted" />
 
+          <div className="h-8 w-64 animate-pulse rounded bg-muted" />
+
+          <div className="space-y-2">
+            <div className="h-4 w-full animate-pulse rounded bg-muted/70" />
+            <div className="h-4 w-4/5 animate-pulse rounded bg-muted/70" />
+          </div>
+        </div>
+
+        <div className="flex gap-2">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <div
+              key={index}
+              className="h-20 flex-1 animate-pulse rounded-lg bg-muted/50"
+            />
+          ))}
+        </div>
+
+        <div className="flex gap-3">
+          <div className="h-9 w-28 animate-pulse rounded-md bg-muted" />
+          <div className="h-9 w-32 animate-pulse rounded-md bg-muted" />
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
   const {
     data: profile,
@@ -52,17 +83,13 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
       ),
   });
 
-  if (
-    isProfilePending ||
-    isProfileError ||
-    !profile ||
-    isSalesPending ||
-    isSalesError ||
-    !sales
-  ) {
-    return null;
+  if (isProfilePending || isSalesPending) {
+    return <SalesOverviewSkeleton />;
   }
 
+  if (isProfileError || isSalesError || !profile || !sales) {
+    return null;
+  }
   const numberFormatter = new Intl.NumberFormat(
     locale === "fa" ? "fa-IR" : "en-US",
   );
@@ -72,7 +99,7 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
   return (
     <Card>
       <CardContent className="flex flex-col gap-4 justify-between h-full w-full">
-        <div className="flex  flex-wrap items-center justify-between gap-4">
+        <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="w-full space-y-3">
             <p className="text-sm font-medium text-muted-foreground">
               {dictionary.label}
@@ -96,8 +123,8 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
             </p>
           </div>
 
-          <div className="flex shrink-0 flex-row gap-2 items-center justify-center text-center max-w-xs w-full">
-            <div className="flex flex-col gap-2 items-center justify-center w-full bg-secondary/30 p-px rounded-lg py-2">
+          <div className="flex shrink-0 flex-wrap gap-2 items-center justify-center text-center w-full">
+            <div className="flex flex-col gap-2 items-center justify-center max-w-[210px] w-full bg-secondary/30 p-px rounded-lg py-2">
               <p className="text-sm text-muted-foreground items-center justify-center">
                 {dictionary.stats.targetHit}
               </p>
@@ -107,7 +134,7 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
               </p>
             </div>
 
-            <div className="flex flex-col gap-2 items-center justify-center w-full bg-secondary/30 p-px rounded-lg py-2">
+            <div className="flex flex-col gap-2 items-center justify-center max-w-[210px] w-full bg-secondary/30 p-px rounded-lg py-2">
               <p className="text-sm text-muted-foreground items-center justify-center">
                 {dictionary.stats.dealsWon}
               </p>
@@ -117,7 +144,7 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
               </p>
             </div>
 
-            <div className="flex flex-col gap-2 items-center justify-center w-full bg-secondary/30 p-px rounded-lg py-2">
+            <div className="flex flex-col gap-2 items-center justify-center max-w-[210px] w-full bg-secondary/30 p-px rounded-lg py-2">
               <p className="text-sm text-muted-foreground items-center justify-center">
                 {dictionary.stats.stillOpen}
               </p>
@@ -129,7 +156,7 @@ export function SalesOverview({ dictionary, locale }: SalesOverviewProps) {
           </div>
         </div>
 
-        <div className="flex flex-row items-center gap-3">
+        <div className="flex sm:flex-row flex-wrap items-center gap-3">
           <Button>{dictionary.actions.createInvoice}</Button>
 
           <Button variant="secondary">{dictionary.actions.viewPipeline}</Button>

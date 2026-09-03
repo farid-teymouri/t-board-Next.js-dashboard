@@ -16,7 +16,7 @@ const notifications: UserNotificationsResponse = [
   {
     id: 2,
     type: "server-event",
-    username: "admin",
+    username: "johnsmith748",
     event: "high-cpu",
     cpuUsage: 92,
     types: ["server", "warning"],

@@ -21,7 +21,7 @@ export function UserSidebarFooter({ logoutLabel }: UserSidebarFooterProps) {
     isPending,
     isError,
   } = useQuery({
-    queryKey: ["admin", "profile"],
+    queryKey: ["user", "profile"],
     queryFn: () => apiGet<UserProfile>("/api/profile"),
   });
 

@@ -22,5 +22,54 @@
     "transactions": "تراکنش‌ها",
     "averageOrderValue": "میانگین ارزش سفارش",
     "refundRate": "نرخ بازپرداخت"
+  },
+  "performance": {
+    "title": "آمار فروش",
+    "description": "درآمد ماهانه در مقایسه با دوره قبل",
+    "thisPeriod": "این دوره",
+    "previousPeriod": "دوره قبل",
+    "year": "سال",
+    "month": "ماه",
+    "week": "هفته",
+    "months": [
+      "فروردین",
+      "اردیبهشت",
+      "خرداد",
+      "تیر",
+      "مرداد",
+      "شهریور",
+      "مهر",
+      "آبان",
+      "آذر",
+      "دی",
+      "بهمن",
+      "اسفند"
+    ]
+  },
+  "totalBalance": {
+    "title": "مجموع موجودی",
+    "currencies": {
+      "usd": "USD",
+      "eur": "EUR",
+      "gbp": "GBP",
+      "irt": "تومان"
+    },
+    "actions": {
+      "deposit": "واریز",
+      "withdraw": "برداشت"
+    },
+    "summary": {
+      "income": "درآمد",
+      "spend": "هزینه",
+      "saved": "پس‌انداز"
+    }
+  },
+  "visitorDevices": {
+    "title": "بازدیدکنندگان بر اساس دستگاه",
+    "description": "توزیع بازدید کنندگان میان دستگاه‌ ها",
+    "mobile": "موبایل",
+    "desktop": "دسکتاپ",
+    "tablet": "تبلت",
+    "visitors": "بازدید کننده"
   }
 }

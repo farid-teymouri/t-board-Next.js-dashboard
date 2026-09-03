@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { ChevronUp } from "lucide-react";
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid } from "recharts";
 
 import {
   ChartContainer,
@@ -28,6 +28,23 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
+function TotalRevenueSkeleton() {
+  return (
+    <Card className="pb-0 w-full sm:w-[385px] xl:w-full">
+      <CardHeader>
+        <div className="space-y-3">
+          <div className="h-4 w-24 animate-pulse rounded bg-muted" />
+          <div className="h-9 w-36 animate-pulse rounded bg-muted" />
+          <div className="h-6 w-32 animate-pulse rounded bg-muted" />
+        </div>
+      </CardHeader>
+
+      <CardContent>
+        <div className="h-[122px] animate-pulse rounded-md bg-muted/50" />
+      </CardContent>
+    </Card>
+  );
+}
 export function TotalRevenueWidget({ locale }: Props) {
   const { data, isPending } = useQuery({
     queryKey: ["dashboards", "sales", "total-revenue", locale],
@@ -37,19 +54,25 @@ export function TotalRevenueWidget({ locale }: Props) {
       ),
   });
 
-  if (isPending || !data) return null;
+  if (isPending) {
+    return <TotalRevenueSkeleton />;
+  }
+
+  if (!data) {
+    return null;
+  }
 
   const formatter = new Intl.NumberFormat(locale === "fa" ? "fa-IR" : "en-US");
 
   return (
-    <Card className="pb-0 w-[385px] xl:w-full flex flex-col justify-between">
+    <Card className="pb-0  h-full w-full sm:w-[385px] xl:w-full flex flex-col justify-between">
       <CardHeader>
         <div className="flex items-start justify-between">
           <div className="rtl:text-right flex flex-col gap-2">
             <p className="text-sm text-muted-foreground">{data.labels.title}</p>
-            <h2 className="text-3xl font-bold">
-              <div className="flex items-center gap-2">
-                <h2 className="text-3xl font-bold">
+            <h2 className=" text-3xl font-bold">
+              <div className="flex flex-wrap items-center gap-2">
+                <h2 className="sm:text-3xl text-xl  font-bold">
                   {formatter.format(data.totalRevenue)}
                 </h2>
 
@@ -58,7 +81,7 @@ export function TotalRevenueWidget({ locale }: Props) {
                 </span>
               </div>
             </h2>
-            <p className=" text-green-600 flex items-center gap-2">
+            <p className="flex flex-wrap text-green-600 items-center gap-2">
               <span className="bg-background py-1 px-2 rounded-lg flex items-center gap-0">
                 <ChevronUp className="h-4 w-4" />
                 {formatter.format(data.growth)}%
