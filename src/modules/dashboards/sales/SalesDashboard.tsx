@@ -6,7 +6,7 @@ import { OverviewMetrics } from "./widgets/overview-metrics";
 import { Performance } from "./widgets/performance";
 import { TotalBalance } from "./widgets/total-balance";
 import { VisitorDevices } from "./widgets/visitor-devices";
-
+import { PerformanceRanking } from "./widgets/performance-ranking";
 type SalesDashboardProps = {
   dictionary: SalesDashboardDictionary;
   locale: "fa" | "en";
@@ -31,10 +31,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
         <section className="xl:col-span-2 col-span-3">
           <Performance locale={locale} translations={dictionary.performance} />
         </section>
-        <section
-          className="lg:col-span-1 col-span-3  
-        group-data-[sidebar-state=collapsed]/dashboard-grid:md:col-span-1 "
-        >
+        <section className="xl:col-span-1 lg:col-span-2 col-span-3">
           <TotalBalance
             locale={locale}
             translations={dictionary.totalBalance}
@@ -42,15 +39,44 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
         </section>
         <section
           className="lg:col-span-1 col-span-3  
-        group-data-[sidebar-state=collapsed]/dashboard-grid:md:col-span-1"
+        group-data-[sidebar-state=collapsed]/dashboard-grid:lg:col-span-1"
         >
           <VisitorDevices
             locale={locale}
             translations={dictionary.visitorDevices}
           />
         </section>
-        <section className=" sm:col-span-1 col-span-3"></section>
-        <section className=" sm:col-span-1 col-span-3"></section>
+        <section
+          className="xl:col-span-1 col-span-3  
+        group-data-[sidebar-state=collapsed]/dashboard-grid:xl:col-span-1"
+        >
+          <PerformanceRanking
+            locale={locale}
+            translations={dictionary.topSellingProducts}
+            apiUrl={`/api/dashboards/sales/top-selling-products?locale=${locale}`}
+            queryKey={["dashboards", "sales", "top-selling-products", locale]}
+            variant="classic"
+            valueMode="amount"
+            showProgress
+            showMeta
+            showRank
+            highlightTopRank
+          />
+        </section>
+
+        <section className="xl:col-span-1 col-span-3">
+          <PerformanceRanking
+            locale={locale}
+            translations={dictionary.trafficSource}
+            apiUrl={`/api/dashboards/sales/traffic-source?locale=${locale}`}
+            queryKey={["dashboards", "sales", "traffic-source", locale]}
+            variant="colorful"
+            valueMode="percentage"
+            showProgress
+            showMeta={false}
+            showRank={false}
+          />
+        </section>
       </div>
     </div>
   );

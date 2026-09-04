@@ -71,5 +71,16 @@
     "desktop": "Desktop",
     "tablet": "Tablet",
     "visitors": "Visitors"
+  },
+  "topSellingProducts": {
+    "title": "Top Selling Products",
+    "description": "By units sold this month",
+    "action": "View all",
+    "valueSuffix": "sold"
+  },
+  "trafficSource": {
+    "title": "Traffic Source",
+    "description": "Where your visitors are coming from",
+    "action": "Reports"
   }
 }

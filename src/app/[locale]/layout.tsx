@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
+
 import { QueryProvider } from "@/components/providers/query-provider";
 import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
@@ -29,6 +30,16 @@ const shabnam = localFont({
     },
   ],
   variable: "--font-shabnam",
+});
+
+const geist = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -90,6 +101,8 @@ export default async function RootLayout({
     ? storedOrientation
     : "vertical";
 
+  const fontClassName = locale === "fa" ? shabnam.className : geist.className;
+
   return (
     <html
       lang={locale}
@@ -98,7 +111,13 @@ export default async function RootLayout({
       data-theme={themePreset}
       data-theme-width={themeWidth}
       data-menu-orientation={themeOrientation}
-      className={cn(shabnam.className, "h-full", "antialiased")}
+      className={cn(
+        fontClassName,
+        geist.variable,
+        geistMono.variable,
+        "h-full",
+        "antialiased",
+      )}
     >
       <body className="flex min-h-full flex-col">
         <ThemeProvider

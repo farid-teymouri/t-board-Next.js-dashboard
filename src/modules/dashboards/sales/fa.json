@@ -71,5 +71,16 @@
     "desktop": "دسکتاپ",
     "tablet": "تبلت",
     "visitors": "بازدید کننده"
+  },
+  "topSellingProducts": {
+    "title": "پرفروش‌ترین محصولات",
+    "description": "بر اساس تعداد فروش در این ماه",
+    "action": "مشاهده همه",
+    "valueSuffix": "فروش"
+  },
+  "trafficSource": {
+    "title": "منابع ترافیک",
+    "description": "بازدیدکنندگان شما از کجا وارد شده‌اند",
+    "action": "گزارش‌ها"
   }
 }
