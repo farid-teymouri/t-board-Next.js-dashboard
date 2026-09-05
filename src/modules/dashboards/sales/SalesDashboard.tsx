@@ -7,6 +7,7 @@ import { Performance } from "./widgets/performance";
 import { TotalBalance } from "./widgets/total-balance";
 import { VisitorDevices } from "./widgets/visitor-devices";
 import { PerformanceRanking } from "./widgets/performance-ranking";
+import { RecentTransactions } from "./widgets/recent-transactions";
 type SalesDashboardProps = {
   dictionary: SalesDashboardDictionary;
   locale: "fa" | "en";
@@ -75,6 +76,12 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
             showProgress
             showMeta={false}
             showRank={false}
+          />
+        </section>
+        <section className="col-span-3">
+          <RecentTransactions
+            locale={locale}
+            translations={dictionary.recentTransactions}
           />
         </section>
       </div>

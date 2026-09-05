@@ -82,5 +82,10 @@
     "title": "Traffic Source",
     "description": "Where your visitors are coming from",
     "action": "Reports"
+  },
+  "recentTransactions": {
+    "title": "Recent Transactions",
+    "description": "Latest payments & payouts",
+    "viewAll": "View all"
   }
 }

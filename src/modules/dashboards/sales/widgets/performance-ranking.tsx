@@ -236,7 +236,7 @@ export function PerformanceRanking({
                       >
                         <div
                           className={cn(
-                            "absolute inset-y-0 start-0 transition-[width] duration-500",
+                            "absolute inset-y-0 inset-s-0 transition-[width] duration-500",
                             variant === "classic"
                               ? "rounded-sm bg-primary"
                               : "rounded-full",

@@ -40,7 +40,7 @@ function TotalRevenueSkeleton() {
       </CardHeader>
 
       <CardContent>
-        <div className="h-[122px] animate-pulse rounded-md bg-muted/50" />
+        <div className="h-[122px] animate-pulse rounded-md bg-muted/50 mb-3" />
       </CardContent>
     </Card>
   );
