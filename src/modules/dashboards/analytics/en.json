@@ -1,0 +1,18 @@
+{
+  "acquisition": {
+    "label": "Acquisition",
+    "title": "Audience Overview",
+    "description": "Sessions trend with new vs. returning visitors",
+    "period": {
+      "year": "Year",
+      "month": "Month",
+      "week": "Week"
+    },
+    "series": {
+      "sessions": "Sessions",
+      "newVisitors": "New visitors",
+      "returning": "Returning"
+    },
+    "error": "Failed to load data."
+  }
+}

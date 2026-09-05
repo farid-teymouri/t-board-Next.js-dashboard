@@ -2,15 +2,14 @@ import { getDictionary } from "@/i18n/dictionaries";
 
 import { SalesDashboard } from "@/modules/dashboards/sales";
 
-export default async function SalesPage({
-  params,
-}: {
+interface SalesPageProps {
   params: Promise<{
-    locale: "fa" | "en";
+    locale: "en" | "fa";
   }>;
-}) {
-  const { locale } = await params;
+}
 
+export default async function SalesPage({ params }: SalesPageProps) {
+  const { locale } = await params;
   const dictionary = await getDictionary(locale);
 
   return (

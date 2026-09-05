@@ -149,10 +149,6 @@ export function Performance({ locale, translations }: PerformanceProps) {
     }
 
     const handleWheel = (event: WheelEvent) => {
-      /*
-       * Prevent the browser from scrolling the page while the cursor
-       * is inside the Performance chart.
-       */
       event.preventDefault();
       event.stopPropagation();
 
@@ -160,22 +156,81 @@ export function Performance({ locale, translations }: PerformanceProps) {
         return;
       }
 
+      const element = chartContainerRef.current;
+
+      if (!element) {
+        return;
+      }
+
+      const rect = element.getBoundingClientRect();
+
+      // Position of the mouse inside the chart container (0 → 1)
+      const relativeX = Math.max(
+        0,
+        Math.min(event.clientX - rect.left, rect.width),
+      );
+
+      const position = rect.width > 0 ? relativeX / rect.width : 0;
+
       setZoomLevel((currentZoom) => {
         const currentIndex = ZOOM_LEVELS.indexOf(currentZoom);
 
+        let nextZoom = currentZoom;
+
+        // Scroll up → Zoom in
         if (event.deltaY < 0) {
           if (currentIndex >= ZOOM_LEVELS.length - 1) {
             return currentZoom;
           }
 
-          return ZOOM_LEVELS[currentIndex + 1];
+          nextZoom = ZOOM_LEVELS[currentIndex + 1];
         }
 
-        if (currentIndex <= 0) {
+        // Scroll down → Zoom out
+        if (event.deltaY > 0) {
+          if (currentIndex <= 0) {
+            return currentZoom;
+          }
+
+          nextZoom = ZOOM_LEVELS[currentIndex - 1];
+        }
+
+        if (nextZoom === currentZoom) {
           return currentZoom;
         }
 
-        return ZOOM_LEVELS[currentIndex - 1];
+        const total = data.data.length;
+
+        // Current visible range
+        let currentStart = centerIndex - Math.floor(currentZoom / 2);
+        let currentEnd = currentStart + currentZoom;
+
+        if (currentStart < 0) {
+          currentStart = 0;
+          currentEnd = currentZoom;
+        }
+
+        if (currentEnd > total) {
+          currentEnd = total;
+          currentStart = total - currentZoom;
+        }
+
+        const currentVisibleCount = currentEnd - currentStart;
+
+        // Find the data index under the mouse
+        const pointerOffset = Math.round(
+          position * Math.max(currentVisibleCount - 1, 0),
+        );
+
+        const pointerIndex = Math.max(
+          0,
+          Math.min(currentStart + pointerOffset, total - 1),
+        );
+
+        // Keep the mouse position as the center of the next zoom
+        setCenterIndex(pointerIndex);
+
+        return nextZoom;
       });
     };
 

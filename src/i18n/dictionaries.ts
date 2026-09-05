@@ -29,6 +29,8 @@ const dictionaries = {
 
     dashboards: {
       sales: (await import("@/modules/dashboards/sales/en.json")).default,
+      analytics: (await import("@/modules/dashboards/analytics/en.json"))
+        .default,
     },
   }),
 
@@ -57,6 +59,8 @@ const dictionaries = {
 
     dashboards: {
       sales: (await import("@/modules/dashboards/sales/fa.json")).default,
+      analytics: (await import("@/modules/dashboards/analytics/fa.json"))
+        .default,
     },
   }),
 };
@@ -66,7 +70,8 @@ export type Dictionary = Awaited<ReturnType<(typeof dictionaries)["fa"]>>;
 export type UserSettingsDictionary = Dictionary["settings"];
 
 export type SalesDashboardDictionary = Dictionary["dashboards"]["sales"];
-
+export type AnalyticsDashboardDictionary =
+  Dictionary["dashboards"]["analytics"];
 export const getDictionary = async (locale: Locale) => {
   if (!hasLocale(locale)) {
     notFound();

@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 
-import type { UserSalesOverview } from "@/app/api/types/dashboards/sales";
+import type { SalesOverview } from "@/app/api/types/dashboards/sales/overview";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const locale = searchParams.get("locale") ?? "en";
 
-  const salesOverview: UserSalesOverview = {
+  const salesOverview: SalesOverview = {
     revenueGrowth: 12.4,
     topProducts: locale === "fa" ? ["کتاب", "میز"] : ["Book", "Desk"],
     targetHit: 86,
