@@ -22,8 +22,8 @@ export function GrowthIndicator({ growth, locale }: GrowthIndicatorProps) {
     <span
       className={
         isPositive
-          ? "inline-flex items-center gap-1 font-medium text-emerald-600"
-          : "inline-flex items-center gap-1 font-medium text-red-600"
+          ? "inline-flex items-center gap-1 font-medium text-emerald-600 border-b border-emerald-600 px-4"
+          : "inline-flex items-center gap-1 font-medium text-red-600 border-b border-red-600 px-4"
       }
     >
       <Icon className="h-4 w-4" />
