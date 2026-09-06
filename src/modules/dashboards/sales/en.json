@@ -1,7 +1,7 @@
 {
   "label": "Sales overview",
   "welcome": "Welcome back, {name}",
-  "description": "Revenue {currentPeriod} compared with {previousPeriod} {growth}, and this growth mainly comes from {product1} and {product2}.{pendingInvoices}",
+  "description": "Revenue {currentPeriod} compared to {previousPeriod} {growth}.{topProducts}{pendingInvoices}",
   "pendingInvoices": "{count} invoices are still pending.",
   "growth": {
     "day": "today",
@@ -17,7 +17,8 @@
     },
 
     "increased": "increased",
-    "decreased": "decreased"
+    "decreased": "decreased",
+    "topProducts": " This growth is mainly driven by sales of {product1} and {product2}."
   },
   "comparison": {
     "day": "yesterday",

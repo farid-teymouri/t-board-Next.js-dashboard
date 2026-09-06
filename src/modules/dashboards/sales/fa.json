@@ -1,7 +1,7 @@
 {
   "label": "نمای کلی فروش",
   "welcome": "خوش برگشتی، {name}",
-  "description": "درآمد {currentPeriod} نسبت به {previousPeriod} {growth} و این رشد عمدتاً از طریق {product1} و {product2} به دست آمده است.{pendingInvoices}",
+  "description": "درآمد {currentPeriod} نسبت به {previousPeriod} {growth}.{topProducts}{pendingInvoices}",
   "pendingInvoices": "{count} فاکتور همچنان در انتظار تسویه هستند.",
   "growth": {
     "day": "امروز",
@@ -17,7 +17,8 @@
     },
 
     "increased": "افزایش داشته است",
-    "decreased": "کاهش داشته است"
+    "decreased": "کاهش داشته است",
+    "topProducts": " این رشد عمدتاً از طریق {product1} و {product2} به دست آمده است."
   },
   "stats": {
     "targetHit": "تحقق هدف",

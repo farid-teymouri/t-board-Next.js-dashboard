@@ -49,16 +49,16 @@ export function SalesSummary({
 
   const formatNumber = (value: number) => numberFormatter.format(value);
 
+  const currentPeriod = dictionary.growth[sales.revenueGrowth.period];
+
+  const previousPeriod = dictionary.growth.previous[sales.revenueGrowth.period];
   return (
     <SummaryWidget
       eyebrow={dictionary.label}
       title={dictionary.welcome.replace("{name}", profile.name)}
       description={renderTemplate(dictionary.description, {
-        currentPeriod: dictionary.growth[sales.revenueGrowth.period],
-
-        comparisonPeriod:
-          dictionary.growth.previous[sales.revenueGrowth.period],
-
+        currentPeriod,
+        previousPeriod,
         growth: (
           <>
             <GrowthIndicator growth={sales.revenueGrowth} locale={locale} />{" "}
@@ -67,16 +67,22 @@ export function SalesSummary({
               : dictionary.growth.decreased}
           </>
         ),
-
-        product1: <Badge variant="default">{sales.topProducts[0]}</Badge>,
-
-        product2: <Badge variant="default">{sales.topProducts[1]}</Badge>,
-
+        topProducts:
+          sales.revenueGrowth.trend === "up"
+            ? renderTemplate(dictionary.growth.topProducts, {
+                product1: (
+                  <Badge variant="default">{sales.topProducts[0]}</Badge>
+                ),
+                product2: (
+                  <Badge variant="default">{sales.topProducts[1]}</Badge>
+                ),
+              })
+            : "",
         pendingInvoices:
           sales.pendingInvoices > 0
-            ? renderTemplate(dictionary.pendingInvoices, {
-                count: formatNumber(sales.pendingInvoices),
-              })
+            ? locale === "fa"
+              ? ` ${formatNumber(sales.pendingInvoices)} فاکتور همچنان در انتظار تسویه هستند.`
+              : ` ${formatNumber(sales.pendingInvoices)} invoices are still pending.`
             : "",
       })}
       metrics={[
