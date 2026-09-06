@@ -39,10 +39,17 @@
     "createInvoice": "Create invoice",
     "viewPipeline": "View pipeline"
   },
-  "totalRevenue": {
+  "revenue": {
     "title": "Total revenue",
-    "description": "Revenue performance over the last 12 months",
-    "growth": "vs. last year"
+    "comparison": {
+      "day": "vs. yesterday",
+      "week": "vs. last week",
+      "month": "vs. last month",
+      "year": "vs. last year"
+    },
+    "units": {
+      "IRT": "Toman"
+    }
   },
   "overviewMetrics": {
     "customers": "Customers",

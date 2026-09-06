@@ -274,7 +274,7 @@ export function TotalBalance({ locale, translations }: TotalBalanceProps) {
               {translations.summary.income}
             </p>
 
-            <p className="text-sm font-semibold dark:text-emerald-500 text-emerald-700 tabular-nums">
+            <p className="text-sm font-semibold text-chart-3 tabular-nums">
               {formatter.format(data.summary.income)} +{" "}
               <span className="text-xs opacity-70">{data.currency.label}</span>
             </p>

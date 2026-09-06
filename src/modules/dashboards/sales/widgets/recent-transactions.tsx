@@ -97,7 +97,7 @@ export function RecentTransactions({
           <div
             className={
               isPositive
-                ? "flex items-center gap-1.5 text-sm font-medium text-emerald-600 dark:text-emerald-400"
+                ? "flex items-center gap-1.5 text-sm font-medium text-chart-3 dark:text-chart-3"
                 : "flex items-center gap-1.5 text-sm font-medium text-red-600 dark:text-red-400"
             }
           >
@@ -119,7 +119,7 @@ export function RecentTransactions({
       render: (row) => {
         const statusClassName = {
           completed:
-            "border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
+            "border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-chart-3",
 
           pending:
             "border-transparent bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",

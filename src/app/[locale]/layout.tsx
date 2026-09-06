@@ -101,7 +101,7 @@ export default async function RootLayout({
     ? storedOrientation
     : "vertical";
 
-  const fontClassName = locale === "fa" ? shabnam.className : geist.className;
+  const fontClassName = locale === "fa" ? shabnam.className : "font-sans";
 
   return (
     <html
@@ -111,13 +111,7 @@ export default async function RootLayout({
       data-theme={themePreset}
       data-theme-width={themeWidth}
       data-menu-orientation={themeOrientation}
-      className={cn(
-        fontClassName,
-        geist.variable,
-        geistMono.variable,
-        "h-full",
-        "antialiased",
-      )}
+      className={cn(fontClassName, "h-full", "antialiased")}
     >
       <body className="flex min-h-full flex-col">
         <ThemeProvider

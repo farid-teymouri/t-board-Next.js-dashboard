@@ -74,7 +74,7 @@ function formatChange(change: number, locale: string) {
 
 function getChangeClass(change: number) {
   return change >= 0
-    ? "text-emerald-600 dark:text-emerald-400"
+    ? "text-chart-3 dark:text-chart-3"
     : "text-rose-600 dark:text-rose-400";
 }
 
