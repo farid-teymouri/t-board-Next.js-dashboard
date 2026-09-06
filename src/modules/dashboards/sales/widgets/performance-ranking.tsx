@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { useQuery } from "@tanstack/react-query";
 
-import type { PerformanceRankingResponse } from "@/app/api/types/dashboards/sales/performance-ranking";
+import type { PerformanceRankingResponse } from "@/types/dashboards/sales/performance-ranking";
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";

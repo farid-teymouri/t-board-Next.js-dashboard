@@ -1,1 +1,1 @@
-export { SalesOverview } from "./sales-overview";
+export { SalesSummary } from "./sales-summary";

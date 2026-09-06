@@ -14,7 +14,7 @@ import type {
   OverviewMetric,
   OverviewMetricId,
   OverviewMetricsResponse,
-} from "@/app/api/types/dashboards/sales/overview-metrics";
+} from "@/types/dashboards/sales/overview-metrics";
 
 type OverviewMetricsProps = {
   locale: string;

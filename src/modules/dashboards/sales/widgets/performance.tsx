@@ -15,7 +15,7 @@ import {
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-import type { SalesPerformanceResponse } from "@/app/api/types/dashboards/sales/performance";
+import type { SalesPerformanceResponse } from "@/types/dashboards/sales/performance";
 
 interface PerformanceProps {
   locale: "en" | "fa";
@@ -244,7 +244,7 @@ export function Performance({ locale, translations }: PerformanceProps) {
         capture: true,
       });
     };
-  }, [data]);
+  }, [data, centerIndex]);
 
   const visibleData = useMemo(() => {
     if (!data?.data?.length) {

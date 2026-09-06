@@ -2,26 +2,30 @@
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
-interface BarLineSkeletonProps {
-  locale: "en" | "fa";
+interface ComposedChartWidgetSkeletonProps {
+  locale: "fa" | "en";
 }
 
-export function BarLineSkeleton({ locale }: BarLineSkeletonProps) {
+export function ComposedChartWidgetSkeleton({
+  locale,
+}: ComposedChartWidgetSkeletonProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-row items-start justify-between gap-4">
-        <div className="min-w-0 space-y-2">
-          <div className="h-4 w-20 animate-pulse rounded-md bg-muted" />
+      <CardHeader>
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div className="space-y-2">
+            <div className="h-5 w-40 animate-pulse rounded-md bg-muted" />
 
-          <div className="h-5 w-40 animate-pulse rounded-md bg-muted" />
+            <div className="h-4 w-72 max-w-full animate-pulse rounded-md bg-muted" />
 
-          <div className="h-4 w-72 max-w-full animate-pulse rounded-md bg-muted" />
-        </div>
+            <div className="h-4 w-96 max-w-full animate-pulse rounded-md bg-muted" />
+          </div>
 
-        <div className="flex shrink-0 items-center gap-1 rounded-lg border p-0.5 py-1">
-          <div className="h-7 w-14 animate-pulse rounded-md bg-muted" />
-          <div className="h-7 w-14 animate-pulse rounded-md bg-muted" />
-          <div className="h-7 w-14 animate-pulse rounded-md bg-muted" />
+          <div className="flex shrink-0 items-center gap-1 rounded-lg border p-0.5 py-1">
+            <div className="h-7 w-14 animate-pulse rounded-md bg-muted" />
+            <div className="h-7 w-14 animate-pulse rounded-md bg-muted" />
+            <div className="h-7 w-14 animate-pulse rounded-md bg-muted" />
+          </div>
         </div>
       </CardHeader>
 

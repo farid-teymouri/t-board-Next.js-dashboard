@@ -3,7 +3,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { getDictionary } from "@/i18n/dictionaries";
 import { ThemeCustomizer } from "@/components/layout/theme-customizer/theme-customizer";
-import { DashboardGrid } from "./dashboard-grid";
+import { DashboardGrid } from "../dashboards/dashboard-grid";
 import { Header } from "./header/header";
 import { UserSidebar } from "./sidebar/user-sidebar";
 import { UserNavigationMenu } from "./sidebar/user-navigation-menu";

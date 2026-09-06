@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { UserStorage } from "../types/storage";
+import type { UserStorage } from "../../../types/storage";
 
 const storage: UserStorage = {
   usedBytes: 7_516_192_768,

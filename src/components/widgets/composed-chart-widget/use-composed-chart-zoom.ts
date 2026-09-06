@@ -6,11 +6,13 @@ type ZoomLevel = 12 | 6 | 4 | 3;
 
 const ZOOM_LEVELS: ZoomLevel[] = [12, 6, 4, 3];
 
-interface UseBarLineZoomOptions {
+interface UseComposedChartZoomOptions {
   dataLength: number;
 }
 
-export function useBarLineZoom({ dataLength }: UseBarLineZoomOptions) {
+export function useComposedChartZoom({
+  dataLength,
+}: UseComposedChartZoomOptions) {
   const [zoomLevel, setZoomLevel] = useState<ZoomLevel>(12);
   const [centerIndex, setCenterIndex] = useState(5);
 
@@ -41,26 +43,22 @@ export function useBarLineZoom({ dataLength }: UseBarLineZoomOptions) {
 
         let nextZoom: ZoomLevel = currentZoom;
 
-        // Scroll up → Zoom In
         if (event.deltaY < 0) {
           if (currentZoomIndex < ZOOM_LEVELS.length - 1) {
             nextZoom = ZOOM_LEVELS[currentZoomIndex + 1];
           }
         }
 
-        // Scroll down → Zoom Out
         if (event.deltaY > 0) {
           if (currentZoomIndex > 0) {
             nextZoom = ZOOM_LEVELS[currentZoomIndex - 1];
           }
         }
 
-        // No zoom level change.
         if (nextZoom === currentZoom) {
           return currentZoom;
         }
 
-        // Find the data index currently under the mouse.
         let currentStart = centerIndex - Math.floor(currentZoom / 2);
         let currentEnd = currentStart + currentZoom;
 
@@ -85,7 +83,6 @@ export function useBarLineZoom({ dataLength }: UseBarLineZoomOptions) {
           Math.min(currentStart + pointerOffset, dataLength - 1),
         );
 
-        // Keep the mouse position as the center of the next zoom level.
         setCenterIndex(pointerIndex);
 
         return nextZoom;

@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import type { AnalyticsAcquisitionResponse } from "@/app/api/types/dashboards/analytics/acquisition";
+import type { AnalyticsAcquisitionResponse } from "@/types/dashboards/analytics/acquisition";
 
 export function useAcquisition() {
   return useQuery<AnalyticsAcquisitionResponse>({

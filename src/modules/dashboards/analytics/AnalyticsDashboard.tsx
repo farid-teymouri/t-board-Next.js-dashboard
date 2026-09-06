@@ -2,7 +2,7 @@
 
 import type { AnalyticsDashboardDictionary } from "@/i18n/dictionaries";
 
-import { BarLine } from "./widgets/bar-line";
+import { AcquisitionChart } from "./widgets";
 
 type AnalyticsDashboardProps = {
   dictionary: AnalyticsDashboardDictionary;
@@ -17,7 +17,10 @@ export function AnalyticsDashboard({
     <div className="space-y-8">
       <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
         <section className="col-span-3 xl:col-span-2">
-          <BarLine translations={dictionary.acquisition} locale={locale} />
+          <AcquisitionChart
+            translations={dictionary.acquisition}
+            locale={locale}
+          />
         </section>
       </div>
     </div>

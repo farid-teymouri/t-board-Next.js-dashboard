@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { RecentTransactionsResponse } from "@/app/api/types/dashboards/sales/recent-transactions";
+import type { RecentTransactionsResponse } from "@/types/dashboards/sales/recent-transactions";
 
 type Locale = "en" | "fa";
 

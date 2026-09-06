@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { SalesPerformanceResponse } from "@/app/api/types/dashboards/sales/performance";
+import type { SalesPerformanceResponse } from "@/types/dashboards/sales/performance";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

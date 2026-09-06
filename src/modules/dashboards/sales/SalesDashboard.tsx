@@ -1,6 +1,6 @@
 import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
 
-import { SalesOverview } from "./widgets/sales-overview";
+import { SalesSummary } from "./widgets/sales-summary";
 import { TotalRevenueWidget } from "./widgets/total-revenue";
 import { OverviewMetrics } from "./widgets/overview-metrics";
 import { Performance } from "./widgets/performance";
@@ -18,7 +18,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
     <div className="space-y-8">
       <div className="grid gap-6 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full">
         <section className="xl:col-span-2 col-span-3">
-          <SalesOverview dictionary={dictionary} locale={locale} />
+          <SalesSummary dictionary={dictionary} locale={locale} period="day" />
         </section>
         <section className="xl:col-span-1 col-span-3">
           <TotalRevenueWidget locale={locale} />

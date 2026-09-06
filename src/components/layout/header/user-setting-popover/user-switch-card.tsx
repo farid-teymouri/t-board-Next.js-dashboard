@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { apiGet } from "@/lib/api/client";
 
 import type { UserSettingsDictionary } from "@/i18n/dictionaries";
-import type { UserPreferences } from "@/app/api/types/preferences";
+import type { UserPreferences } from "@/types/preferences";
 
 import { UserSwitchers } from "@/components/layout/header/user-setting-popover/user-switchers";
 

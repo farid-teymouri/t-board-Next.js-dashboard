@@ -20,7 +20,7 @@ import {
 
 import { apiGet } from "@/lib/api/client";
 
-import type { VisitorDevicesResponse } from "@/app/api/types/dashboards/sales/visitor-devices";
+import type { VisitorDevicesResponse } from "@/types/dashboards/sales/visitor-devices";
 import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
 
 type VisitorDevicesProps = {

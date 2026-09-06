@@ -15,7 +15,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 import { apiGet } from "@/lib/api/client";
 
-import type { TotalRevenue } from "@/app/api/types/dashboards/sales/total-revenue";
+import type { TotalRevenue } from "@/types/dashboards/sales/total-revenue";
 
 type Props = {
   locale: "fa" | "en";

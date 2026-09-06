@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/popover";
 
 import type { UserSettingsDictionary } from "@/i18n/dictionaries";
-import type { UserProfile } from "@/app/api/types/profile";
-import type { UserDashboardUnreadCount } from "@/app/api/types/public-page/unread-count";
+import type { UserProfile } from "@/types/profile";
+import type { UserDashboardUnreadCount } from "@/types/public-page/unread-count";
 
 import { UserAvatar } from "./user-avatar";
 import { UserCloudCard } from "./user-cloud-card";

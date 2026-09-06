@@ -9,7 +9,7 @@ import { apiGet } from "@/lib/api/client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { buttonVariants } from "@/components/ui/button";
 
-import type { UserProfile } from "@/app/api/types/profile";
+import type { UserProfile } from "@/types/profile";
 
 type UserSidebarFooterProps = {
   logoutLabel: string;

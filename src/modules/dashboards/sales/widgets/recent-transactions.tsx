@@ -8,7 +8,7 @@ import {
   type TableWidgetColumn,
 } from "@/components/widgets/table-widget";
 import { CreditCard, Layers3, Mail, Shapes, ShoppingBag } from "lucide-react";
-import type { RecentTransaction } from "@/app/api/types/dashboards/sales/recent-transactions";
+import type { RecentTransaction } from "@/types/dashboards/sales/recent-transactions";
 
 import { useRecentTransactions } from "../hooks/use-recent-transactions";
 

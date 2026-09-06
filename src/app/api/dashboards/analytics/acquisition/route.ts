@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { AnalyticsAcquisitionResponse } from "@/app/api/types/dashboards/analytics/acquisition";
+import type { AnalyticsAcquisitionResponse } from "@/types/dashboards/analytics/acquisition";
 
 export async function GET() {
   const acquisition: AnalyticsAcquisitionResponse = {

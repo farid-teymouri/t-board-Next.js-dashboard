@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { UserNotificationsResponse } from "../types/notifications";
+import type { UserNotificationsResponse } from "../../../types/notifications";
 
 const notifications: UserNotificationsResponse = [
   {

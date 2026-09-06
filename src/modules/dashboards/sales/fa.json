@@ -1,7 +1,24 @@
 {
   "label": "نمای کلی فروش",
   "welcome": "خوش برگشتی، {name}",
-  "description": "درآمد این ماه {growth}٪ بیشتر از مدت مشابه سال گذشته بوده و رشد آن را فروش {product1} و {product2} رقم زده‌اند. {pendingInvoices} فاکتور همچنان در انتظار تسویه هستند.",
+  "description": "درآمد {currentPeriod} نسبت به {previousPeriod} {growth} و این رشد عمدتاً از طریق {product1} و {product2} به دست آمده است.{pendingInvoices}",
+  "pendingInvoices": "{count} فاکتور همچنان در انتظار تسویه هستند.",
+  "growth": {
+    "day": "امروز",
+    "week": "این هفته",
+    "month": "این ماه",
+    "year": "امسال",
+
+    "previous": {
+      "day": "دیروز",
+      "week": "هفته پیش",
+      "month": "ماه قبل",
+      "year": "سال پیش"
+    },
+
+    "increased": "افزایش داشته است",
+    "decreased": "کاهش داشته است"
+  },
   "stats": {
     "targetHit": "تحقق هدف",
     "dealsWon": "معاملات موفق",

@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { apiGet } from "@/lib/api/client";
 
-import type { TotalBalanceResponse } from "@/app/api/types/dashboards/sales/total-balance";
+import type { TotalBalanceResponse } from "@/types/dashboards/sales/total-balance";
 import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
 
 type TotalBalanceProps = {

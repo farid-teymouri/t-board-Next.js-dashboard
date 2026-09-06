@@ -20,7 +20,7 @@ import type {
   TimeDictionary,
 } from "../types/dictionary";
 
-import type { UserNotificationsResponse } from "@/app/api/types/notifications";
+import type { UserNotificationsResponse } from "@/types/notifications";
 
 import {
   Popover,

@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 
 import type { UserSettingsDictionary } from "@/i18n/dictionaries";
-import type { UserStorage } from "@/app/api/types/storage";
+import type { UserStorage } from "@/types/storage";
 
 import "./user-cloud-card.css";
 

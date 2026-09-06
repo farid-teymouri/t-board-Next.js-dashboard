@@ -1,7 +1,34 @@
 {
   "label": "Sales overview",
   "welcome": "Welcome back, {name}",
-  "description": "Revenue closed the month {growth}% ahead of the same period last year, carried by {product1} and {product2}. {pendingInvoices} invoices are still awaiting settlement.",
+  "description": "Revenue {currentPeriod} compared with {previousPeriod} {growth}, and this growth mainly comes from {product1} and {product2}.{pendingInvoices}",
+  "pendingInvoices": "{count} invoices are still pending.",
+  "growth": {
+    "day": "today",
+    "week": "this week",
+    "month": "this month",
+    "year": "this year",
+
+    "previous": {
+      "day": "yesterday",
+      "week": "last week",
+      "month": "last month",
+      "year": "last year"
+    },
+
+    "increased": "increased",
+    "decreased": "decreased"
+  },
+  "comparison": {
+    "day": "yesterday",
+    "week": "last week",
+    "month": "last month",
+    "year": "last year"
+  },
+  "direction": {
+    "up": "higher",
+    "down": "lower"
+  },
   "stats": {
     "targetHit": "Target hit",
     "dealsWon": "Deals won",

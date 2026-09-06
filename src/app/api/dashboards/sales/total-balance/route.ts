@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { TotalBalanceResponse } from "@/app/api/types/dashboards/sales/total-balance";
+import type { TotalBalanceResponse } from "@/types/dashboards/sales/total-balance";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

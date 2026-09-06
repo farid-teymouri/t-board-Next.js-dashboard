@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { UserProfile } from "../types/profile";
+import type { UserProfile } from "../../../types/profile";
 
 const profile: UserProfile = {
   name: "John Smith",

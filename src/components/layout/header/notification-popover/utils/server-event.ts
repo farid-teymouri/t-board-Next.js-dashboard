@@ -1,4 +1,4 @@
-import type { ServerEventNotification } from "@/app/api/types/notifications";
+import type { ServerEventNotification } from "@/types/notifications";
 
 import type { NotificationDictionary } from "../types/dictionary";
 

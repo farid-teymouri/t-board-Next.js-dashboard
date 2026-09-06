@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import type { VisitorDevicesResponse } from "@/app/api/types/dashboards/sales/visitor-devices";
+import type { VisitorDevicesResponse } from "@/types/dashboards/sales/visitor-devices";
 export async function GET() {
   const visitorDevices: VisitorDevicesResponse = {
     totalVisitors: 56_020,

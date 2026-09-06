@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { UserPreferences } from "../types/preferences";
+import type { UserPreferences } from "../../../types/preferences";
 
 const preferences: UserPreferences = {
   notifications: {

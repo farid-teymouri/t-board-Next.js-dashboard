@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { OverviewMetricsResponse } from "@/app/api/types/dashboards/sales/overview-metrics";
+import type { OverviewMetricsResponse } from "@/types/dashboards/sales/overview-metrics";
 
 export async function GET() {
   const data: OverviewMetricsResponse = {

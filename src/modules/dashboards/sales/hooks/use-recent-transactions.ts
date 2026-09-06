@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import type { RecentTransactionsResponse } from "@/app/api/types/dashboards/sales/recent-transactions";
+import type { RecentTransactionsResponse } from "@/types/dashboards/sales/recent-transactions";
 import { apiGet } from "@/lib/api/client";
 
 type UseRecentTransactionsParams = {
