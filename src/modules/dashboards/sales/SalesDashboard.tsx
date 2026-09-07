@@ -2,7 +2,7 @@ import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
 
 import { SalesSummary, Revenue, SalesMetrics } from "./widgets";
 
-import { Performance } from "./widgets/performance";
+import { SalesPerformance } from "./widgets";
 import { TotalBalance } from "./widgets/total-balance";
 import { VisitorDevices } from "./widgets/visitor-devices";
 import { PerformanceRanking } from "./widgets/performance-ranking";
@@ -17,9 +17,11 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
     <div className="space-y-8">
       <div className="grid gap-6 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full">
         <section className="xl:col-span-2 col-span-3">
+          {/* → Generic: SummaryWidget */}
           <SalesSummary dictionary={dictionary} locale={locale} period="year" />
         </section>
         <section className="xl:col-span-1 col-span-3">
+          {/* → Generic: MetricWidget */}
           <Revenue
             locale={locale}
             labels={dictionary.revenue}
@@ -28,14 +30,22 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           />
         </section>
         <section className="col-span-3">
+          {/* → Generic: MetricGroup */}
           <SalesMetrics
             locale={locale}
-            translations={dictionary.metrics}
+            translations={dictionary.salesMetrics}
             currency="IRT"
           />
         </section>
         <section className="xl:col-span-2 col-span-3">
-          <Performance locale={locale} translations={dictionary.performance} />
+          {/* → Generic: ComparisonChartWidget */}
+          <SalesPerformance
+            locale={locale}
+            translations={dictionary.salesPerformance}
+            initialPeriod="month"
+            currency="IRT"
+            valueFormat="compact"
+          />
         </section>
         <section className="xl:col-span-1 lg:col-span-2 col-span-3">
           <TotalBalance

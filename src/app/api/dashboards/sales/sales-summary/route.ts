@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { SalesOverview } from "@/types/dashboards/sales/overview";
+import type { SalesSummary } from "@/types/dashboards/sales/sales-summary";
 import type { GrowthMetric, GrowthPeriod } from "@/types/metrics/growth";
 
 export async function GET(request: Request) {
@@ -77,7 +77,7 @@ export async function GET(request: Request) {
     },
   };
 
-  const salesOverview: SalesOverview = {
+  const salesSummary: SalesSummary = {
     revenueGrowth: salesByPeriod[period].revenueGrowth,
     topProducts:
       salesByPeriod[period].topProducts[locale === "fa" ? "fa" : "en"],
@@ -89,5 +89,5 @@ export async function GET(request: Request) {
     pendingInvoices: 2,
   };
 
-  return NextResponse.json(salesOverview);
+  return NextResponse.json(salesSummary);
 }

@@ -1,6 +1,6 @@
 import type { GrowthMetric } from "@/types/metrics/growth";
 
-export type SalesOverview = {
+export type SalesSummary = {
   revenueGrowth: GrowthMetric;
 
   topProducts: string[];

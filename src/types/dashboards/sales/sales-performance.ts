@@ -1,7 +1,7 @@
-export type SalesPerformancePeriod = "month";
+export type SalesPerformancePeriod = "year" | "month" | "week";
 
 export interface SalesPerformanceDataPoint {
-  month: number;
+  label: string | number;
   thisPeriod: number;
   previousPeriod: number;
 }

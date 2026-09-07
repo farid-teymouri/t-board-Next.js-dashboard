@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { apiGet } from "@/lib/api/client";
-import type { SalesOverview } from "@/types/dashboards/sales/overview";
+import type { SalesSummary } from "@/types/dashboards/sales/sales-summary";
 import type { GrowthPeriod } from "@/types/metrics/growth";
 
 export function useSalesSummary(
@@ -11,7 +11,7 @@ export function useSalesSummary(
   return useQuery({
     queryKey: ["dashboards", "sales", "sales-summary", locale, period],
     queryFn: () =>
-      apiGet<SalesOverview>(
+      apiGet<SalesSummary>(
         `/api/dashboards/sales/sales-summary?locale=${locale}&period=${period}`,
       ),
   });

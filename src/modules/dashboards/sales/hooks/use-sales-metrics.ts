@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import type { SalesMetricsResponse } from "@/types/dashboards/sales/metrics";
+import type { SalesMetricsResponse } from "@/types/dashboards/sales/sales-metrics";
 
 async function getSalesMetrics(): Promise<SalesMetricsResponse> {
   const response = await fetch("/api/dashboards/sales/metrics");

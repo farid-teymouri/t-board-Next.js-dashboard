@@ -52,14 +52,14 @@
       "IRT": "Toman"
     }
   },
-  "metrics": {
+  "salesMetrics": {
     "customers": "Customers",
     "products": "Products",
     "transactions": "Transactions",
     "averageOrderValue": "Avg. order value",
     "refundRate": "Refund rate"
   },
-  "performance": {
+  "salesPerformance": {
     "title": "Sales Statistics",
     "description": "Monthly revenue vs. previous period",
     "thisPeriod": "This period",
@@ -67,6 +67,7 @@
     "year": "Year",
     "month": "Month",
     "week": "Week",
+    "error": "Unable to load performance data.",
     "months": [
       "January",
       "February",
