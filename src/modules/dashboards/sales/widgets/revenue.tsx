@@ -24,7 +24,7 @@ export function Revenue({
   trend = "up",
 }: RevenueProps) {
   const apiUrl =
-    `/api/dashboards/sales/total-revenue` +
+    `/api/dashboards/sales/revenue` +
     `?locale=${locale}` +
     `&period=${period}` +
     `&trend=${trend}`;

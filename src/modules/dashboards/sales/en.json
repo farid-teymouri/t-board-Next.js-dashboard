@@ -39,6 +39,7 @@
     "createInvoice": "Create invoice",
     "viewPipeline": "View pipeline"
   },
+
   "revenue": {
     "title": "Total revenue",
     "comparison": {
@@ -51,7 +52,7 @@
       "IRT": "Toman"
     }
   },
-  "overviewMetrics": {
+  "metrics": {
     "customers": "Customers",
     "products": "Products",
     "transactions": "Transactions",

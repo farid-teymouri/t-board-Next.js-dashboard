@@ -41,7 +41,7 @@
       "IRT": "تومان"
     }
   },
-  "overviewMetrics": {
+  "metrics": {
     "customers": "مشتریان",
     "products": "محصولات",
     "transactions": "تراکنش‌ها",

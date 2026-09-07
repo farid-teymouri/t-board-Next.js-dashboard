@@ -1,8 +1,7 @@
 import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
 
-import { SalesSummary } from "./widgets";
-import { Revenue } from "./widgets/revenue";
-import { OverviewMetrics } from "./widgets/overview-metrics";
+import { SalesSummary, Revenue, SalesMetrics } from "./widgets";
+
 import { Performance } from "./widgets/performance";
 import { TotalBalance } from "./widgets/total-balance";
 import { VisitorDevices } from "./widgets/visitor-devices";
@@ -29,9 +28,10 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           />
         </section>
         <section className="col-span-3">
-          <OverviewMetrics
+          <SalesMetrics
             locale={locale}
-            translations={dictionary.overviewMetrics}
+            translations={dictionary.metrics}
+            currency="IRT"
           />
         </section>
         <section className="xl:col-span-2 col-span-3">

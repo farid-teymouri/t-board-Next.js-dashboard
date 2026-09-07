@@ -9,10 +9,10 @@ export function useSalesSummary(
   period: GrowthPeriod = "month",
 ) {
   return useQuery({
-    queryKey: ["dashboards", "sales", "sales-overview", locale, period],
+    queryKey: ["dashboards", "sales", "sales-summary", locale, period],
     queryFn: () =>
       apiGet<SalesOverview>(
-        `/api/dashboards/sales/sales-overview?locale=${locale}&period=${period}`,
+        `/api/dashboards/sales/sales-summary?locale=${locale}&period=${period}`,
       ),
   });
 }

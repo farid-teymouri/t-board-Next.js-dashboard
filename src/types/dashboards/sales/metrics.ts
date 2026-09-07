@@ -1,17 +1,17 @@
-export type OverviewMetricId =
+export type SalesMetricId =
   | "customers"
   | "products"
   | "transactions"
   | "averageOrderValue"
   | "refundRate";
 
-export type OverviewMetric = {
-  id: OverviewMetricId;
+export type SalesMetric = {
+  id: SalesMetricId;
   value: number;
   change: number;
   format: "number" | "currency" | "percent";
 };
 
-export type OverviewMetricsResponse = {
-  items: OverviewMetric[];
+export type SalesMetricsResponse = {
+  items: SalesMetric[];
 };

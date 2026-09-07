@@ -14,7 +14,7 @@ export function MetricWidgetSkeleton() {
       </CardHeader>
 
       <CardContent className="p-0">
-        <div className="mb-3 h-[122px] animate-pulse rounded-md bg-muted/50" />
+        <div className="mb-3 h-[122px] animate-pulse rounded-md bg-muted/50 mx-3" />
       </CardContent>
     </Card>
   );
