@@ -172,6 +172,7 @@ export function SalesPerformance({
 
   return (
     <ComparisonChartWidget
+      key={activePeriod}
       title={translations.title}
       description={translations.description}
       locale={locale}

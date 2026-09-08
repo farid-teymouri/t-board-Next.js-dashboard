@@ -2,55 +2,79 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-type ZoomLevel = 12 | 6 | 4 | 3;
+const MIN_ZOOM_LEVEL = 3;
 
-const ZOOM_LEVELS: ZoomLevel[] = [12, 6, 4, 3];
+function getZoomLevels(total: number) {
+  if (total <= MIN_ZOOM_LEVEL) {
+    return [total];
+  }
+
+  const levels = new Set<number>([
+    total,
+    Math.ceil(total / 2),
+    Math.ceil(total / 3),
+    MIN_ZOOM_LEVEL,
+  ]);
+
+  return Array.from(levels)
+    .filter((level) => level >= MIN_ZOOM_LEVEL && level <= total)
+    .sort((a, b) => b - a);
+}
 
 export function useChartZoom<T>(data: T[]) {
-  const [zoomLevel, setZoomLevel] = useState<ZoomLevel>(12);
-  const [centerIndex, setCenterIndex] = useState(5);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const containerRef = useRef<HTMLDivElement>(null);
+  const zoomLevels = useMemo(() => getZoomLevels(data.length), [data.length]);
+
+  const [zoomLevel, setZoomLevel] = useState(data.length);
+
+  const [centerIndex, setCenterIndex] = useState(() =>
+    Math.max(0, Math.floor((data.length - 1) / 2)),
+  );
+
+  const effectiveZoomLevel = Math.min(zoomLevel, data.length);
+
+  const effectiveCenterIndex = Math.min(
+    Math.max(0, centerIndex),
+    Math.max(0, data.length - 1),
+  );
 
   const visibleData = useMemo(() => {
     if (!data.length) {
       return [];
     }
 
-    const total = data.length;
-
-    if (zoomLevel >= total) {
+    if (effectiveZoomLevel >= data.length) {
       return data;
     }
 
-    const half = Math.floor(zoomLevel / 2);
+    const half = Math.floor(effectiveZoomLevel / 2);
 
-    let start = centerIndex - half;
-    let end = start + zoomLevel;
+    let start = effectiveCenterIndex - half;
+    let end = start + effectiveZoomLevel;
 
     if (start < 0) {
       start = 0;
-      end = zoomLevel;
+      end = effectiveZoomLevel;
     }
 
-    if (end > total) {
-      end = total;
-      start = total - zoomLevel;
+    if (end > data.length) {
+      end = data.length;
+      start = Math.max(0, data.length - effectiveZoomLevel);
     }
 
     return data.slice(start, end);
-  }, [data, zoomLevel, centerIndex]);
+  }, [data, effectiveZoomLevel, effectiveCenterIndex]);
 
   useEffect(() => {
     const container = containerRef.current;
 
-    if (!container || data.length <= 1) {
+    if (!container || data.length <= MIN_ZOOM_LEVEL) {
       return;
     }
 
     const handleWheel = (event: WheelEvent) => {
       event.preventDefault();
-      event.stopPropagation();
 
       const rect = container.getBoundingClientRect();
 
@@ -59,59 +83,55 @@ export function useChartZoom<T>(data: T[]) {
         Math.max(0, (event.clientX - rect.left) / rect.width),
       );
 
-      const currentZoom = Math.min(zoomLevel, data.length);
+      const currentZoom = Math.min(effectiveZoomLevel, data.length);
 
-      const currentHalf = currentZoom / 2;
-
-      let currentStart = centerIndex - currentHalf;
+      let currentStart = effectiveCenterIndex - Math.floor(currentZoom / 2);
 
       if (currentStart < 0) {
         currentStart = 0;
       }
 
       if (currentStart + currentZoom > data.length) {
-        currentStart = data.length - currentZoom;
+        currentStart = Math.max(0, data.length - currentZoom);
       }
 
       const pointerIndex = Math.round(
         currentStart + pointerRatio * Math.max(currentZoom - 1, 0),
       );
 
-      setZoomLevel((current) => {
-        const currentIndex = ZOOM_LEVELS.indexOf(current);
+      const currentIndex = zoomLevels.indexOf(currentZoom);
 
-        const nextIndex =
-          event.deltaY < 0 ? currentIndex + 1 : currentIndex - 1;
+      if (currentIndex === -1) {
+        return;
+      }
 
-        const nextZoom = ZOOM_LEVELS[nextIndex];
+      const nextIndex = event.deltaY < 0 ? currentIndex + 1 : currentIndex - 1;
 
-        if (!nextZoom) {
-          return current;
-        }
+      const nextZoom = zoomLevels[nextIndex];
 
-        const actualNextZoom = Math.min(nextZoom, data.length) as ZoomLevel;
+      if (!nextZoom) {
+        return;
+      }
 
-        setCenterIndex(Math.min(data.length - 1, Math.max(0, pointerIndex)));
+      setCenterIndex(Math.min(data.length - 1, Math.max(0, pointerIndex)));
 
-        return actualNextZoom;
-      });
+      setZoomLevel(nextZoom);
     };
 
     container.addEventListener("wheel", handleWheel, {
       passive: false,
-      capture: true,
     });
 
     return () => {
-      container.removeEventListener("wheel", handleWheel, true);
+      container.removeEventListener("wheel", handleWheel);
     };
-  }, [data.length, zoomLevel, centerIndex]);
+  }, [data.length, effectiveZoomLevel, effectiveCenterIndex, zoomLevels]);
 
   return {
     containerRef,
     visibleData,
-    zoomLevel,
-    centerIndex,
+    zoomLevel: effectiveZoomLevel,
+    centerIndex: effectiveCenterIndex,
     setCenterIndex,
     setZoomLevel,
   };
