@@ -99,7 +99,9 @@
       "income": "Income",
       "spend": "Spend",
       "saved": "Saved"
-    }
+    },
+    "availableBalance": "Available balance",
+    "insufficientBalance": "Insufficient balance"
   },
   "visitorDevices": {
     "title": "Visitors by device",

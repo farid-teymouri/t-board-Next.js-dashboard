@@ -100,7 +100,7 @@ export function RecentTransactions({
             className={
               isPositive
                 ? "flex items-center gap-1.5 text-sm font-medium text-chart-3 dark:text-chart-3"
-                : "flex items-center gap-1.5 text-sm font-medium text-red-600 dark:text-red-400"
+                : "flex items-center gap-1.5 text-sm font-medium text-destructive"
             }
           >
             {isPositive ? (
@@ -132,7 +132,7 @@ export function RecentTransactions({
             "border-transparent bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
 
           failed:
-            "border-transparent bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
+            "border-transparent bg-destructive text-destructive dark:bg-destructive/10 bg-destructive/5",
         }[row.status.value];
 
         return (

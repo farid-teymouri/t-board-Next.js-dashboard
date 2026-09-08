@@ -47,5 +47,5 @@ export function formatMetricChange(change: MetricChange, locale: string) {
 export function getMetricChangeClass(change: MetricChange) {
   return change.value >= 0
     ? "text-chart-3 dark:text-chart-3"
-    : "text-rose-600 dark:text-rose-400";
+    : "text-destructive";
 }

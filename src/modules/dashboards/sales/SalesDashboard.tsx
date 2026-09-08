@@ -46,6 +46,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           />
         </section>
         <section className="xl:col-span-1 lg:col-span-2 col-span-3">
+          {/* → Generic: FeaturedMetricWidget */}
           <TotalBalance
             locale={locale}
             translations={dictionary.totalBalance}
@@ -53,7 +54,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
         </section>
         <section
           className="lg:col-span-1 col-span-3  
-        group-data-[sidebar-state=collapsed]/dashboard-grid:lg:col-span-1"
+          group-data-[sidebar-state=collapsed]/dashboard-grid:lg:col-span-1"
         >
           <VisitorDevices
             locale={locale}
@@ -62,7 +63,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
         </section>
         <section
           className="xl:col-span-1 col-span-3  
-        group-data-[sidebar-state=collapsed]/dashboard-grid:xl:col-span-1"
+          group-data-[sidebar-state=collapsed]/dashboard-grid:xl:col-span-1"
         >
           <PerformanceRanking
             locale={locale}

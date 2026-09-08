@@ -23,7 +23,7 @@ export function GrowthIndicator({ growth, locale }: GrowthIndicatorProps) {
       className={
         isPositive
           ? "inline-flex items-center gap-1 font-medium text-chart-3 border-b border-chart-3 px-2"
-          : "inline-flex items-center gap-1 font-medium text-red-600 border-b border-red-600 px-4"
+          : "inline-flex items-center gap-1 font-medium text-destructive border-b border-destructive px-4"
       }
     >
       <Icon className="h-4 w-4" />

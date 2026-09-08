@@ -145,7 +145,7 @@
   --spacing: 0.25rem;
 
   --metric-up: var(--chart-3);
-  --metric-down: oklch(0.62 0.2 25);
+  --metric-down: var(--destructive);
   --metric-neutral: var(--muted-foreground);
 }
 
