@@ -21,7 +21,7 @@ const transactionsByLocale: Record<Locale, RecentTransactionsResponse> = {
         date: "Jun 11",
         amount: {
           value: -1250000,
-          formatted: "-1,250,000 toman",
+          currency: "IRT",
           type: "negative",
         },
         status: { value: "completed", label: "Completed" },
@@ -37,7 +37,7 @@ const transactionsByLocale: Record<Locale, RecentTransactionsResponse> = {
         date: "Jun 9",
         amount: {
           value: 850000,
-          formatted: "+850,000 toman",
+          currency: "IRT",
           type: "positive",
         },
         status: { value: "pending", label: "Pending" },
@@ -49,7 +49,7 @@ const transactionsByLocale: Record<Locale, RecentTransactionsResponse> = {
         date: "Jun 7",
         amount: {
           value: -420000,
-          formatted: "-420,000 toman",
+          currency: "IRT",
           type: "negative",
         },
         status: { value: "failed", label: "Failed" },
@@ -61,7 +61,7 @@ const transactionsByLocale: Record<Locale, RecentTransactionsResponse> = {
         date: "Jun 5",
         amount: {
           value: 2300000,
-          formatted: "+2,300,000 toman",
+          currency: "IRT",
           type: "positive",
         },
         status: { value: "completed", label: "Completed" },
@@ -77,7 +77,7 @@ const transactionsByLocale: Record<Locale, RecentTransactionsResponse> = {
         date: "Jun 2",
         amount: {
           value: -680000,
-          formatted: "-680,000 toman",
+          currency: "IRT",
           type: "negative",
         },
         status: { value: "completed", label: "Completed" },
@@ -106,7 +106,7 @@ const transactionsByLocale: Record<Locale, RecentTransactionsResponse> = {
         date: "۲۱ خرداد",
         amount: {
           value: -1250000,
-          formatted: "-۱٬۲۵۰٬۰۰۰ تومان",
+          currency: "IRT",
           type: "negative",
         },
         status: {
@@ -125,7 +125,7 @@ const transactionsByLocale: Record<Locale, RecentTransactionsResponse> = {
         date: "۱۹ خرداد",
         amount: {
           value: 850000,
-          formatted: "+۸۵۰٬۰۰۰ تومان",
+          currency: "IRT",
           type: "positive",
         },
         status: {
@@ -144,7 +144,7 @@ const transactionsByLocale: Record<Locale, RecentTransactionsResponse> = {
         date: "۱۷ خرداد",
         amount: {
           value: -420000,
-          formatted: "-۴۲۰٬۰۰۰ تومان",
+          currency: "IRT",
           type: "negative",
         },
         status: {
@@ -163,7 +163,7 @@ const transactionsByLocale: Record<Locale, RecentTransactionsResponse> = {
         date: "۱۵ خرداد",
         amount: {
           value: 2300000,
-          formatted: "+۲٬۳۰۰٬۰۰۰ تومان",
+          currency: "IRT",
           type: "positive",
         },
         status: {
@@ -182,7 +182,7 @@ const transactionsByLocale: Record<Locale, RecentTransactionsResponse> = {
         date: "۱۲ خرداد",
         amount: {
           value: -680000,
-          formatted: "-۶۸۰٬۰۰۰ تومان",
+          currency: "IRT",
           type: "negative",
         },
         status: {

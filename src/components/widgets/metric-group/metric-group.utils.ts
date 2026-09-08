@@ -1,32 +1,23 @@
-import type { MetricChange, MetricValueFormat, MetricCurrency } from "./types";
+import { formatCurrency, type Currency } from "@/utils/currency";
+import type { MetricChange, MetricValueFormat } from "./types";
 
 export function formatMetricValue(
   value: number,
   format: MetricValueFormat = "number",
   locale: string,
-  currency?: MetricCurrency,
+  currency?: Currency,
 ) {
-  const numberLocale = locale === "fa" ? "fa-IR" : "en-US";
+  const currencyLocale = locale === "fa" ? "fa" : "en";
 
-  if (format === "currency") {
-    if (currency === "IRT") {
-      const formattedValue = new Intl.NumberFormat(numberLocale, {
-        maximumFractionDigits: 0,
-      }).format(value);
-
-      return locale === "fa"
-        ? `${formattedValue} تومان`
-        : `${formattedValue} toman`;
-    }
-
-    if (currency) {
-      return new Intl.NumberFormat(numberLocale, {
-        style: "currency",
-        currency,
-        maximumFractionDigits: 2,
-      }).format(value);
-    }
+  if (format === "currency" && currency) {
+    return formatCurrency(value, {
+      locale: currencyLocale,
+      currency,
+      maximumFractionDigits: 2,
+    });
   }
+
+  const numberLocale = locale === "fa" ? "fa-IR" : "en-US";
 
   const formatter = new Intl.NumberFormat(numberLocale, {
     minimumFractionDigits: format === "number" ? 0 : 1,

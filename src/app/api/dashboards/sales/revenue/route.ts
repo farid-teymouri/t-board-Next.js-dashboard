@@ -81,9 +81,7 @@ export async function GET(request: NextRequest) {
   const data: MetricData = {
     value,
 
-    unit: {
-      code: "IRT",
-    },
+    currency: "IRT",
 
     growth: {
       value: growth,

@@ -1,3 +1,5 @@
+import type { Currency } from "@/utils/currency";
+
 export type SalesPerformancePeriod = "year" | "month" | "week";
 
 export interface SalesPerformanceDataPoint {
@@ -8,5 +10,6 @@ export interface SalesPerformanceDataPoint {
 
 export interface SalesPerformanceResponse {
   period: SalesPerformancePeriod;
+  currency: Currency;
   data: SalesPerformanceDataPoint[];
 }

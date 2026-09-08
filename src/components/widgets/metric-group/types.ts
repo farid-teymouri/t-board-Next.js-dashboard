@@ -1,12 +1,11 @@
 import type { LucideIcon } from "lucide-react";
+import type { Currency } from "@/utils/currency";
 
 export type MetricValueFormat = "number" | "currency" | "percent";
 
 export type MetricChange = {
   value: number;
 };
-
-export type MetricCurrency = "USD" | "EUR" | "GBP" | "IRR" | "IRT";
 
 export type MetricItem = {
   id: string;
@@ -15,7 +14,7 @@ export type MetricItem = {
   format?: MetricValueFormat;
   icon?: LucideIcon;
   change?: MetricChange;
-  currency?: MetricCurrency;
+  currency?: Currency;
 };
 
 export type MetricGroupProps = {

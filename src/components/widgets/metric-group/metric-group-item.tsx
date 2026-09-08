@@ -29,7 +29,7 @@ export function MetricGroupItem({ item, locale }: MetricGroupItemProps) {
           </div>
 
           <div className="mt-1 flex items-baseline justify-between gap-3">
-            <span className="text-xl font-semibold tracking-tight">
+            <span className="text-lg font-semibold tracking-tight">
               {formatMetricValue(
                 item.value,
                 item.format,

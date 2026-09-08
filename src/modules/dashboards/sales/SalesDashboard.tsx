@@ -34,7 +34,6 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           <SalesMetrics
             locale={locale}
             translations={dictionary.salesMetrics}
-            currency="IRT"
           />
         </section>
         <section className="xl:col-span-2 col-span-3">
@@ -43,7 +42,6 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
             locale={locale}
             translations={dictionary.salesPerformance}
             initialPeriod="month"
-            currency="IRT"
             valueFormat="compact"
           />
         </section>
@@ -94,6 +92,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           />
         </section>
         <section className="col-span-3">
+          {/* → Generic: TableWidget */}
           <RecentTransactions
             locale={locale}
             translations={dictionary.recentTransactions}

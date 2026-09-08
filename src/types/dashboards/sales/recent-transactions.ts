@@ -1,11 +1,11 @@
 export type TransactionStatus = "completed" | "pending" | "failed";
+import type { Currency } from "@/utils/currency";
 
 export type TransactionAmount = {
   value: number;
-  formatted: string;
+  currency: Currency;
   type: "positive" | "negative";
 };
-
 export type TransactionMerchant = {
   name: string;
   provider: string;

@@ -56,6 +56,7 @@ export async function GET(request: Request) {
 
   const response: SalesPerformanceResponse = {
     period,
+    currency: "IRT",
     data,
   };
 

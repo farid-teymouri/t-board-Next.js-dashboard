@@ -5,7 +5,6 @@ export { MetricGroupSkeleton } from "./metric-group-skeleton";
 export type {
   MetricChange,
   MetricItem,
-  MetricCurrency,
   MetricGroupProps,
   MetricValueFormat,
 } from "./types";

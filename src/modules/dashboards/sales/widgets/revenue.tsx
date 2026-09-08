@@ -6,6 +6,8 @@ import {
   type MetricWidgetLabels,
 } from "@/components/widgets/metric-widget";
 
+import { formatCurrency } from "@/utils/currency";
+
 import { useMetric } from "@/hooks/use-metric";
 
 import type { GrowthPeriod, GrowthTrend } from "@/types/metrics/growth";
@@ -42,5 +44,25 @@ export function Revenue({
     return null;
   }
 
-  return <MetricWidget locale={locale} labels={labels} data={data} />;
+  const valueFormatter = (value: number) => {
+    if (!data.currency) {
+      return new Intl.NumberFormat(locale === "fa" ? "fa-IR" : "en-US").format(
+        value,
+      );
+    }
+
+    return formatCurrency(value, {
+      locale,
+      currency: data.currency,
+    });
+  };
+
+  return (
+    <MetricWidget
+      locale={locale}
+      labels={labels}
+      data={data}
+      valueFormatter={valueFormatter}
+    />
+  );
 }

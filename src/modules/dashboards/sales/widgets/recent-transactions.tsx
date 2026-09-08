@@ -2,6 +2,8 @@
 
 import { ArrowDownLeft, ArrowUpRight } from "lucide-react";
 
+import { formatCurrency } from "@/utils/currency";
+
 import { Badge } from "@/components/ui/badge";
 import {
   TableWidget,
@@ -107,7 +109,12 @@ export function RecentTransactions({
               <ArrowDownLeft className="size-3.5" />
             )}
 
-            <span>{row.amount.formatted}</span>
+            <span>
+              {formatCurrency(row.amount.value, {
+                locale,
+                currency: row.amount.currency,
+              })}
+            </span>
           </div>
         );
       },

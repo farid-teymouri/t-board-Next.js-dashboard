@@ -1,11 +1,13 @@
 "use client";
+
 import { useState } from "react";
+
 import type {
   SalesPerformancePeriod,
   SalesPerformanceResponse,
 } from "@/types/dashboards/sales/sales-performance";
 
-import { formatCurrency, type Currency } from "@/utils/format-currency";
+import { formatCurrency } from "@/utils/currency";
 
 import { useSalesPerformance } from "../hooks/use-sales-performance";
 
@@ -37,8 +39,6 @@ interface SalesPerformanceProps {
   };
 
   initialPeriod: SalesPerformancePeriod;
-
-  currency?: Currency;
   valueFormat?: "compact" | "full";
 }
 
@@ -62,11 +62,11 @@ function mapPerformanceData(
     };
   });
 }
+
 export function SalesPerformance({
   locale,
   translations,
   initialPeriod,
-  currency = "IRT",
   valueFormat = "compact",
 }: SalesPerformanceProps) {
   const [activePeriod, setActivePeriod] =
@@ -146,6 +146,7 @@ export function SalesPerformance({
       </Card>
     );
   }
+
   const handlePeriodChange = (period: string) => {
     if (period === "year" || period === "month" || period === "week") {
       setActivePeriod(period);
@@ -185,7 +186,7 @@ export function SalesPerformance({
       valueFormatter={(value) =>
         formatCurrency(value, {
           locale,
-          currency,
+          currency: data?.currency ?? "IRT",
         })
       }
     />

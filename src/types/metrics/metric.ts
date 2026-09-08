@@ -1,3 +1,4 @@
+import type { Currency } from "@/utils/currency";
 import type { GrowthMetric } from "./growth";
 
 export type MetricUnit = {
@@ -11,6 +12,7 @@ export type MetricSeriesPoint = {
 
 export type MetricData = {
   value: number;
+  currency?: Currency;
   unit?: MetricUnit;
   growth?: GrowthMetric;
   series?: MetricSeriesPoint[];

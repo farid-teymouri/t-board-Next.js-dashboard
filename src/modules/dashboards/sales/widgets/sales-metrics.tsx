@@ -9,19 +9,15 @@ import {
 } from "lucide-react";
 
 import {
-  MetricCurrency,
   MetricGroup,
   type MetricItem,
 } from "@/components/widgets/metric-group";
-
 import { useSalesMetrics } from "../hooks/use-sales-metrics";
 
 type SalesMetricsProps = {
-  locale: string;
+  locale: "fa" | "en";
   translations: Record<string, string>;
-  currency: MetricCurrency;
 };
-
 const metricIcons = {
   customers: Users,
   products: Package,
@@ -30,11 +26,7 @@ const metricIcons = {
   refundRate: Banknote,
 } as const;
 
-export function SalesMetrics({
-  locale,
-  translations,
-  currency,
-}: SalesMetricsProps) {
+export function SalesMetrics({ locale, translations }: SalesMetricsProps) {
   const { data, isLoading, isError } = useSalesMetrics(locale);
 
   if (isError) {
@@ -51,7 +43,7 @@ export function SalesMetrics({
       label: translations[metric.id],
       value: metric.value,
       format: metric.format,
-      currency: metric.format === "currency" ? currency : undefined,
+      currency: metric.currency,
       icon: metricIcons[metric.id],
       change: {
         value: metric.change,
