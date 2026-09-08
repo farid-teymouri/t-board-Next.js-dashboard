@@ -13,7 +13,7 @@ const balances: Record<SupportedCurrency, TotalBalanceResponse> = {
     currency: "IRT",
     cardNumber: "6280 •••• •••• 1035",
     summary: {
-      income: -284_650_000,
+      income: 284_650_000,
       spend: 47_820_000,
       saved: 236_830_000,
     },
