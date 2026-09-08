@@ -10,6 +10,7 @@ export interface SalesPerformanceDataPoint {
 
 export interface SalesPerformanceResponse {
   period: SalesPerformancePeriod;
+  availablePeriods: SalesPerformancePeriod[];
   currency: Currency;
   data: SalesPerformanceDataPoint[];
 }

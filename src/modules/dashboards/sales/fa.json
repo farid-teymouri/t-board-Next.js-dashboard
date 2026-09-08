@@ -49,8 +49,8 @@
     "refundRate": "نرخ بازپرداخت"
   },
   "salesPerformance": {
-    "title": "آمار فروش",
-    "description": "درآمد ماهانه در مقایسه با دوره قبل",
+    "title": "عملکرد فروش",
+    "description": "درآمد {period} در مقایسه با دوره قبل",
     "thisPeriod": "این دوره",
     "previousPeriod": "دوره قبل",
     "year": "سال",
@@ -90,7 +90,8 @@
       "saved": "پس‌انداز"
     },
     "availableBalance": "موجودی قابل برداشت",
-    "insufficientBalance": "کسری موجودی"
+    "insufficientBalance": "کسری موجودی",
+    "error": "بارگذاری موجودی کل امکان‌پذیر نیست."
   },
   "visitorDevices": {
     "title": "بازدیدکنندگان بر اساس دستگاه",

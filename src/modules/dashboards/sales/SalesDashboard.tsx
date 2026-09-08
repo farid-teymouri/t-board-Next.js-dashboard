@@ -42,7 +42,6 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
             locale={locale}
             translations={dictionary.salesPerformance}
             initialPeriod="month"
-            valueFormat="compact"
           />
         </section>
         <section className="xl:col-span-1 lg:col-span-2 col-span-3">

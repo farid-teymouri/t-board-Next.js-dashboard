@@ -18,7 +18,7 @@ import { useChartZoom } from "./use-chart-zoom";
 
 import type { ComparisonChartWidgetProps } from "./types";
 
-export function ComparisonChartWidget({
+export function ComparisonChartWidget<TPeriod extends string = string>({
   title,
   description,
   data,
@@ -31,7 +31,7 @@ export function ComparisonChartWidget({
   valueFormatter,
   axisValueFormatter,
   height = 360,
-}: ComparisonChartWidgetProps) {
+}: ComparisonChartWidgetProps<TPeriod>) {
   const chartData = data.map((item) => ({
     label: item.label,
     ...item.values,
@@ -53,7 +53,7 @@ export function ComparisonChartWidget({
             )}
           </div>
 
-          {periods.length > 0 && (
+          {periods.length > 1 && (
             <div className="flex shrink-0 items-center gap-1 rounded-lg border p-0.5 py-1">
               {periods.map((period) => (
                 <button

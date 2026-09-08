@@ -2,26 +2,22 @@
 
 import { useState } from "react";
 
-import type {
-  SalesPerformancePeriod,
-  SalesPerformanceResponse,
-} from "@/types/dashboards/sales/sales-performance";
-
-import { formatCurrency } from "@/utils/currency";
-
-import { useSalesPerformance } from "../hooks/use-sales-performance";
-
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   ComparisonChartWidget,
   ComparisonChartWidgetSkeleton,
 } from "@/components/widgets/comparison-chart-widget";
-
 import type {
   ComparisonChartPeriod,
   ComparisonChartSeries,
 } from "@/components/widgets/comparison-chart-widget";
+import type {
+  SalesPerformancePeriod,
+  SalesPerformanceResponse,
+} from "@/types/dashboards/sales/sales-performance";
+import { formatCurrency } from "@/utils/currency";
 
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { useSalesPerformance } from "../hooks/use-sales-performance";
 
 interface SalesPerformanceProps {
   locale: "fa" | "en";
@@ -69,16 +65,15 @@ export function SalesPerformance({
   initialPeriod,
   valueFormat = "compact",
 }: SalesPerformanceProps) {
-  const [activePeriod, setActivePeriod] =
+  const [selectedPeriod, setSelectedPeriod] =
     useState<SalesPerformancePeriod>(initialPeriod);
 
-  const { data, isLoading, isError } = useSalesPerformance(
-    locale,
-    activePeriod,
-  );
+  const { data, isLoading, isError } = useSalesPerformance(selectedPeriod);
+
+  const activePeriod = data?.period ?? selectedPeriod;
 
   const chartData = data
-    ? mapPerformanceData(data.data, activePeriod, translations.months)
+    ? mapPerformanceData(data.data, data.period, translations.months)
     : [];
 
   const currentTotal = chartData.reduce(
@@ -92,22 +87,8 @@ export function SalesPerformance({
   );
 
   const trend = currentTotal >= previousTotal ? "up" : "down";
-  const currentColor = trend === "up" ? "var(--color-chart-3)" : "#ef4444";
 
-  const periods: ComparisonChartPeriod[] = [
-    {
-      value: "year",
-      label: translations.year,
-    },
-    {
-      value: "month",
-      label: translations.month,
-    },
-    {
-      value: "week",
-      label: translations.week,
-    },
-  ];
+  const currentColor = trend === "up" ? "var(--color-chart-3)" : "#ef4444";
 
   const series: ComparisonChartSeries[] = [
     {
@@ -127,7 +108,7 @@ export function SalesPerformance({
     return <ComparisonChartWidgetSkeleton />;
   }
 
-  if (isError) {
+  if (isError || !data) {
     return (
       <Card className="h-full">
         <CardHeader>
@@ -147,23 +128,43 @@ export function SalesPerformance({
     );
   }
 
-  const handlePeriodChange = (period: string) => {
-    if (period === "year" || period === "month" || period === "week") {
-      setActivePeriod(period);
+  const periodLabels: Record<SalesPerformancePeriod, string> = {
+    year: translations.year,
+    month: translations.month,
+    week: translations.week,
+  };
+
+  const periods: ComparisonChartPeriod<SalesPerformancePeriod>[] =
+    data.availablePeriods.map((period) => ({
+      value: period,
+      label: periodLabels[period],
+    }));
+
+  const description = translations.description.replace(
+    "{period}",
+    periodLabels[activePeriod],
+  );
+
+  const handlePeriodChange = (period: SalesPerformancePeriod) => {
+    if (!data.availablePeriods.includes(period)) {
+      return;
     }
+
+    setSelectedPeriod(period);
   };
 
   const formatAxisValue = (value: number) => {
     if (valueFormat === "compact") {
-      if (locale === "fa") {
-        return `${new Intl.NumberFormat("fa-IR", {
+      const formatter = new Intl.NumberFormat(
+        locale === "fa" ? "fa-IR" : "en-US",
+        {
           maximumFractionDigits: 0,
-        }).format(value / 1000)} هزار`;
-      }
+        },
+      );
 
-      return `${new Intl.NumberFormat("en-US", {
-        maximumFractionDigits: 0,
-      }).format(value / 1000)}k`;
+      return locale === "fa"
+        ? `${formatter.format(value / 1000)} هزار`
+        : `${formatter.format(value / 1000)}k`;
     }
 
     return new Intl.NumberFormat(locale === "fa" ? "fa-IR" : "en-US").format(
@@ -173,9 +174,9 @@ export function SalesPerformance({
 
   return (
     <ComparisonChartWidget
-      key={activePeriod}
+      key={data.period}
       title={translations.title}
-      description={translations.description}
+      description={description}
       locale={locale}
       data={chartData}
       series={series}
@@ -186,7 +187,7 @@ export function SalesPerformance({
       valueFormatter={(value) =>
         formatCurrency(value, {
           locale,
-          currency: data?.currency ?? "IRT",
+          currency: data.currency,
         })
       }
     />

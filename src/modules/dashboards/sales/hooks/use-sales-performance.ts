@@ -19,12 +19,9 @@ async function fetchSalesPerformance(
   return response.json();
 }
 
-export function useSalesPerformance(
-  locale: "fa" | "en",
-  period: SalesPerformancePeriod,
-) {
+export function useSalesPerformance(period: SalesPerformancePeriod) {
   return useQuery({
-    queryKey: ["dashboards", "sales", "performance", locale, period],
+    queryKey: ["dashboards", "sales", "performance", period],
     queryFn: () => fetchSalesPerformance(period),
     staleTime: 5 * 60 * 1000,
   });

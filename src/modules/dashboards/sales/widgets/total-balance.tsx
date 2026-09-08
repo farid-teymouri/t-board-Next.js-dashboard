@@ -8,7 +8,8 @@ import { formatCurrency } from "@/utils/currency";
 import type { Currency } from "@/utils/currency";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+
 import { FeaturedMetricWidget } from "@/components/widgets/featured-metric-widget";
 
 import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
@@ -39,64 +40,11 @@ const currencies = [
   },
 ] as const;
 
-function TotalBalanceSkeleton() {
-  return (
-    <Card className="h-full overflow-hidden">
-      <CardHeader className="space-y-4">
-        <div className="flex items-center justify-between gap-4">
-          <div className="h-6 w-32 animate-pulse rounded-md bg-muted" />
-
-          <div className="flex gap-1 rounded-lg border p-1">
-            {currencies.map((currency) => (
-              <div
-                key={currency.code}
-                className="h-8 w-12 animate-pulse rounded-md bg-muted"
-              />
-            ))}
-          </div>
-        </div>
-      </CardHeader>
-
-      <CardContent className="space-y-5">
-        <div className="relative h-[210px] overflow-hidden rounded-2xl bg-muted/50">
-          <div className="absolute inset-0 animate-pulse bg-muted/60" />
-
-          <div className="absolute inset-x-5 top-5 space-y-3">
-            <div className="h-5 w-24 animate-pulse rounded bg-muted" />
-            <div className="h-4 w-36 animate-pulse rounded bg-muted" />
-            <div className="h-8 w-44 animate-pulse rounded bg-muted" />
-
-            <div className="pt-16">
-              <div className="h-5 w-52 animate-pulse rounded bg-muted" />
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3">
-          <div className="h-10 animate-pulse rounded-lg bg-muted" />
-          <div className="h-10 animate-pulse rounded-lg bg-muted" />
-        </div>
-
-        <div className="grid grid-cols-3 gap-3">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <div key={index} className="space-y-2">
-              <div className="h-4 w-16 animate-pulse rounded bg-muted" />
-              <div className="h-6 w-24 animate-pulse rounded bg-muted" />
-            </div>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
-function TotalBalanceError() {
+function TotalBalanceError({ message }: { message: string }) {
   return (
     <Card className="h-full">
       <CardContent className="flex min-h-[420px] items-center justify-center p-6">
-        <p className="text-sm text-muted-foreground">
-          Unable to load total balance.
-        </p>
+        <p className="text-sm text-muted-foreground">{message}</p>
       </CardContent>
     </Card>
   );
@@ -107,12 +55,29 @@ export function TotalBalance({ locale, translations }: TotalBalanceProps) {
 
   const { data, isPending, isError } = useTotalBalance(selectedCurrency);
 
-  if (isPending) {
-    return <TotalBalanceSkeleton />;
+  if (isError) {
+    return <TotalBalanceError message={translations.error} />;
   }
-
-  if (isError || !data) {
-    return <TotalBalanceError />;
+  if (isPending || !data) {
+    return (
+      <FeaturedMetricWidget
+        header={{
+          title: translations.title,
+          selector: {
+            options: currencies.map((currency) => ({
+              value: currency.code,
+              label: translations.currencies[currency.key],
+            })),
+            value: selectedCurrency,
+            onChange: (value) => setSelectedCurrency(value as Currency),
+          },
+        }}
+        content={{
+          type: "card",
+          loading: true,
+        }}
+      />
+    );
   }
 
   const isNegativeBalance = data.availableBalance < 0;
@@ -123,34 +88,17 @@ export function TotalBalance({ locale, translations }: TotalBalanceProps) {
 
   return (
     <FeaturedMetricWidget
-      header={
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <h3 className="font-semibold">{translations.title}</h3>
-
-          <div className="flex shrink-0 items-center gap-1 rounded-lg border bg-muted/20 p-1">
-            {currencies.map((currency) => {
-              const isActive = currency.code === selectedCurrency;
-
-              return (
-                <Button
-                  key={currency.code}
-                  type="button"
-                  variant={isActive ? "default" : "ghost"}
-                  size="sm"
-                  onClick={() => setSelectedCurrency(currency.code)}
-                  className={`h-8 rounded-lg px-3 text-xs ${
-                    !isActive
-                      ? "cursor-pointer hover:bg-secondary hover:text-foreground"
-                      : ""
-                  }`}
-                >
-                  {translations.currencies[currency.key]}
-                </Button>
-              );
-            })}
-          </div>
-        </div>
-      }
+      header={{
+        title: translations.title,
+        selector: {
+          options: currencies.map((currency) => ({
+            value: currency.code,
+            label: translations.currencies[currency.key],
+          })),
+          value: selectedCurrency,
+          onChange: (value) => setSelectedCurrency(value as Currency),
+        },
+      }}
       content={{
         type: "card",
         label: data.bankName,

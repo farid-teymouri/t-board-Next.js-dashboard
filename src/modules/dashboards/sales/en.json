@@ -60,8 +60,8 @@
     "refundRate": "Refund rate"
   },
   "salesPerformance": {
-    "title": "Sales Statistics",
-    "description": "Monthly revenue vs. previous period",
+    "title": "Sales Performance",
+    "description": "{period} revenue compared with the previous period",
     "thisPeriod": "This period",
     "previousPeriod": "Previous period",
     "year": "Year",
@@ -101,7 +101,8 @@
       "saved": "Saved"
     },
     "availableBalance": "Available balance",
-    "insufficientBalance": "Insufficient balance"
+    "insufficientBalance": "Insufficient balance",
+    "error": "Unable to load total balance."
   },
   "visitorDevices": {
     "title": "Visitors by device",
