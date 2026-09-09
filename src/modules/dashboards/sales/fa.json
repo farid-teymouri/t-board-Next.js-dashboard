@@ -99,7 +99,8 @@
     "mobile": "موبایل",
     "desktop": "دسکتاپ",
     "tablet": "تبلت",
-    "visitors": "بازدید کننده"
+    "visitors": "بازدید کننده",
+    "error": "دریافت اطلاعات با خطا مواجه شد"
   },
   "topSellingProducts": {
     "title": "پرفروش‌ترین محصولات",

@@ -110,7 +110,8 @@
     "mobile": "Mobile",
     "desktop": "Desktop",
     "tablet": "Tablet",
-    "visitors": "Visitors"
+    "visitors": "Visitors",
+    "error": "Failed to load data"
   },
   "topSellingProducts": {
     "title": "Top Selling Products",

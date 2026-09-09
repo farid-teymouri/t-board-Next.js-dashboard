@@ -1,12 +1,15 @@
 import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
 
-import { SalesSummary, Revenue, SalesMetrics } from "./widgets";
-
-import { SalesPerformance } from "./widgets";
-import { TotalBalance } from "./widgets/total-balance";
-import { VisitorDevices } from "./widgets/visitor-devices";
-import { PerformanceRanking } from "./widgets/performance-ranking";
-import { RecentTransactions } from "./widgets/recent-transactions";
+import {
+  PerformanceRanking,
+  RecentTransactions,
+  Revenue,
+  SalesMetrics,
+  SalesPerformance,
+  SalesSummary,
+  TotalBalance,
+  VisitorDevices,
+} from "./widgets";
 type SalesDashboardProps = {
   dictionary: SalesDashboardDictionary;
   locale: "fa" | "en";
@@ -55,6 +58,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           className="lg:col-span-1 col-span-3  
           group-data-[sidebar-state=collapsed]/dashboard-grid:lg:col-span-1"
         >
+          {/* → Generic: BreakdownWidget */}
           <VisitorDevices
             locale={locale}
             translations={dictionary.visitorDevices}
