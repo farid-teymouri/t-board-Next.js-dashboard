@@ -12,4 +12,6 @@ export { RecentTransactions } from "./recent-transactions";
 
 export { VisitorDevices } from "./visitor-devices";
 
-export { PerformanceRanking } from "./performance-ranking";
+export { TopSellingProducts } from "./top-selling-products";
+
+export { TrafficSources } from "./traffic-sources";

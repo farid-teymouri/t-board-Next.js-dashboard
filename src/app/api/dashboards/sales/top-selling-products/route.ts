@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { PerformanceRankingResponse } from "@/types/dashboards/sales/performance-ranking";
+import type { TopSellingProductsResponse } from "@/types/dashboards/sales/top-selling-products";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -9,7 +9,7 @@ export async function GET(request: Request) {
 
   const isRTL = locale === "fa";
 
-  const topSellingProducts: PerformanceRankingResponse = {
+  const topSellingProducts: TopSellingProductsResponse = {
     currency: {
       code: "IRT",
       label: isRTL ? "تومان" : "IRT",

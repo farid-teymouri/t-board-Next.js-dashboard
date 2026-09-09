@@ -1,7 +1,6 @@
 import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
 
 import {
-  PerformanceRanking,
   RecentTransactions,
   Revenue,
   SalesMetrics,
@@ -9,6 +8,8 @@ import {
   SalesSummary,
   TotalBalance,
   VisitorDevices,
+  TopSellingProducts,
+  TrafficSources,
 } from "./widgets";
 type SalesDashboardProps = {
   dictionary: SalesDashboardDictionary;
@@ -68,32 +69,13 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           className="xl:col-span-1 col-span-3  
           group-data-[sidebar-state=collapsed]/dashboard-grid:xl:col-span-1"
         >
-          <PerformanceRanking
-            locale={locale}
-            translations={dictionary.topSellingProducts}
-            apiUrl={`/api/dashboards/sales/top-selling-products?locale=${locale}`}
-            queryKey={["dashboards", "sales", "top-selling-products", locale]}
-            variant="classic"
-            valueMode="amount"
-            showProgress
-            showMeta
-            showRank
-            highlightTopRank
-          />
+          {/* → Generic: ProgressListWidget */}
+          <TopSellingProducts locale={locale} dictionary={dictionary} />
         </section>
 
         <section className="xl:col-span-1 col-span-3">
-          <PerformanceRanking
-            locale={locale}
-            translations={dictionary.trafficSource}
-            apiUrl={`/api/dashboards/sales/traffic-source?locale=${locale}`}
-            queryKey={["dashboards", "sales", "traffic-source", locale]}
-            variant="colorful"
-            valueMode="percentage"
-            showProgress
-            showMeta={false}
-            showRank={false}
-          />
+          {/* → Generic: ProgressListWidget */}
+          <TrafficSources dictionary={dictionary} locale={locale} />
         </section>
         <section className="col-span-3">
           {/* → Generic: TableWidget */}

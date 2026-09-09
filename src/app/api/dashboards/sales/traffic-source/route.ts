@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { PerformanceRankingResponse } from "@/types/dashboards/sales/performance-ranking";
+import type { TrafficSourcesResponse } from "@/types/dashboards/sales/traffic-source";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -9,7 +9,7 @@ export async function GET(request: Request) {
 
   const isRTL = locale === "fa";
 
-  const trafficSource: PerformanceRankingResponse = {
+  const trafficSource: TrafficSourcesResponse = {
     items: [
       {
         id: 1,
