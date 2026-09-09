@@ -1,25 +1,24 @@
-export type ChartSeries = {
-  dataKey: string;
+export type ChartPeriod = "week" | "month" | "year";
+
+export type ChartKey<T> = Extract<keyof T, string>;
+
+export type ChartSeries<T> = {
+  dataKey: ChartKey<T>;
   label: string;
   color: string;
   type: "bar" | "line";
   radius?: number;
 };
 
-export type ChartData = {
-  [key: string]: string | number;
-};
-
 export type ChartPeriodOption = {
   label: string;
-  value: string;
-  disabled?: boolean;
+  value: ChartPeriod;
 };
 
 export type ChartPeriods = {
   options: ChartPeriodOption[];
-  value: string;
-  onChange: (value: string) => void;
+  value: ChartPeriod;
+  onChange: (value: ChartPeriod) => void;
 };
 
 export type ComposedChartWidgetHeader = {
@@ -28,18 +27,12 @@ export type ComposedChartWidgetHeader = {
   description?: string;
 };
 
-export interface ComposedChartWidgetProps {
+export interface ComposedChartWidgetProps<T> {
   header: ComposedChartWidgetHeader;
-
-  data: ChartData[];
-
-  series: ChartSeries[];
-
-  xAxisDataKey: string;
-
+  data: T[];
+  series: ChartSeries<T>[];
+  xAxisDataKey: ChartKey<T>;
   periods?: ChartPeriods;
-
   formatter?: (value: number, locale: "fa" | "en") => string;
-
   locale: "fa" | "en";
 }

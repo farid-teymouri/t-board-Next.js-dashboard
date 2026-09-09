@@ -4,8 +4,8 @@ import type { ChartPeriodOption } from "./types";
 
 interface ComposedChartPeriodProps {
   options: ChartPeriodOption[];
-  value: string;
-  onChange?: (value: string) => void;
+  value: ChartPeriodOption["value"];
+  onChange?: (value: ChartPeriodOption["value"]) => void;
 }
 
 export function ComposedChartPeriod({
@@ -13,6 +13,10 @@ export function ComposedChartPeriod({
   value,
   onChange,
 }: ComposedChartPeriodProps) {
+  if (options.length < 2) {
+    return null;
+  }
+
   return (
     <div className="flex shrink-0 items-center gap-1 rounded-lg border p-0.5">
       {options.map((option) => {
@@ -22,17 +26,13 @@ export function ComposedChartPeriod({
           <button
             key={option.value}
             type="button"
-            disabled={option.disabled}
             onClick={() => onChange?.(option.value)}
             className={[
               "h-7 rounded-md px-3 text-xs font-medium transition-colors",
               isActive
                 ? "bg-muted text-foreground"
                 : "text-muted-foreground hover:text-foreground",
-              option.disabled && "cursor-pointer opacity-50",
-            ]
-              .filter(Boolean)
-              .join(" ")}
+            ].join(" ")}
           >
             {option.label}
           </button>

@@ -1,26 +1,25 @@
 import type { ChartSeries } from "./types";
 
-interface ComposedChartTooltipProps {
+type ComposedChartTooltipItem = {
+  dataKey?: string | number;
+  value?: number | string;
+};
+
+interface ComposedChartTooltipProps<T> {
   active?: boolean;
-  payload?: Array<{
-    dataKey?: string;
-    value?: number;
-    payload?: {
-      label?: string;
-    };
-  }>;
-  series: ChartSeries[];
+  payload?: ComposedChartTooltipItem[];
   locale: "fa" | "en";
+  series: ChartSeries<T>[];
   formatter?: (value: number, locale: "fa" | "en") => string;
 }
 
-export function ComposedChartTooltip({
+export function ComposedChartTooltip<T>({
   active,
   payload,
-  series,
   locale,
+  series,
   formatter,
-}: ComposedChartTooltipProps) {
+}: ComposedChartTooltipProps<T>) {
   if (!active || !payload?.length) {
     return null;
   }
@@ -40,7 +39,7 @@ export function ComposedChartTooltip({
 
         return (
           <div
-            key={item.dataKey}
+            key={String(item.dataKey)}
             className="flex items-center justify-between gap-6 text-sm"
           >
             <div className="flex items-center gap-2">

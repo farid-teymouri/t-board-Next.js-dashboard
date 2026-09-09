@@ -19,7 +19,7 @@ import { ComposedChartTooltip } from "./composed-chart-tooltip";
 import { useComposedChartZoom } from "./use-composed-chart-zoom";
 import type { ComposedChartWidgetProps } from "./types";
 
-export function ComposedChartWidget({
+export function ComposedChartWidget<T>({
   data,
   series,
   locale,
@@ -27,7 +27,7 @@ export function ComposedChartWidget({
   header,
   periods,
   formatter,
-}: ComposedChartWidgetProps) {
+}: ComposedChartWidgetProps<T>) {
   const chartConfig = series.reduce<ChartConfig>((config, item) => {
     config[item.dataKey] = {
       label: item.label,

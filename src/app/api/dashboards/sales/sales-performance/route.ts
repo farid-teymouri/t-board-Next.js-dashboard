@@ -24,14 +24,15 @@ export async function GET(request: Request) {
     SalesPerformancePeriod,
     SalesPerformanceResponse["data"]
   > = {
-    year: [
-      { label: 2022, thisPeriod: 520000, previousPeriod: 480000 },
-      { label: 2023, thisPeriod: 610000, previousPeriod: 550000 },
-      { label: 2024, thisPeriod: 720000, previousPeriod: 640000 },
-      { label: 2025, thisPeriod: 810000, previousPeriod: 730000 },
-      { label: 2026, thisPeriod: 890000, previousPeriod: 790000 },
+    week: [
+      { label: 1, thisPeriod: 10000, previousPeriod: 14000 },
+      { label: 2, thisPeriod: 11000, previousPeriod: 14500 },
+      { label: 3, thisPeriod: 10500, previousPeriod: 15000 },
+      { label: 4, thisPeriod: 11500, previousPeriod: 15500 },
+      { label: 5, thisPeriod: 10800, previousPeriod: 16000 },
+      { label: 6, thisPeriod: 12000, previousPeriod: 16500 },
+      { label: 7, thisPeriod: 11800, previousPeriod: 17000 },
     ],
-
     month: [
       { label: 1, thisPeriod: 48200, previousPeriod: 42100 },
       { label: 2, thisPeriod: 51800, previousPeriod: 44900 },
@@ -46,15 +47,12 @@ export async function GET(request: Request) {
       { label: 11, thisPeriod: 72400, previousPeriod: 61700 },
       { label: 12, thisPeriod: 76800, previousPeriod: 65300 },
     ],
-
-    week: [
-      { label: 1, thisPeriod: 10000, previousPeriod: 14000 },
-      { label: 2, thisPeriod: 11000, previousPeriod: 14500 },
-      { label: 3, thisPeriod: 10500, previousPeriod: 15000 },
-      { label: 4, thisPeriod: 11500, previousPeriod: 15500 },
-      { label: 5, thisPeriod: 10800, previousPeriod: 16000 },
-      { label: 6, thisPeriod: 12000, previousPeriod: 16500 },
-      { label: 7, thisPeriod: 11800, previousPeriod: 17000 },
+    year: [
+      { label: 2022, thisPeriod: 520000, previousPeriod: 480000 },
+      { label: 2023, thisPeriod: 610000, previousPeriod: 550000 },
+      { label: 2024, thisPeriod: 720000, previousPeriod: 640000 },
+      { label: 2025, thisPeriod: 810000, previousPeriod: 730000 },
+      { label: 2026, thisPeriod: 890000, previousPeriod: 790000 },
     ],
   };
 

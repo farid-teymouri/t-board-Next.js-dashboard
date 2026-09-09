@@ -1,7 +1,5 @@
 "use client";
 
-import { useMemo, useState } from "react";
-
 import {
   ComposedChartWidget,
   ComposedChartWidgetSkeleton,
@@ -9,8 +7,7 @@ import {
 } from "@/components/widgets/composed-chart-widget";
 
 import { useAcquisition } from "../hooks/use-acquisition";
-
-import { getMonthLabel } from "../utils/date-label";
+import { getAcquisitionChartLabel } from "../utils/chart-label";
 
 interface AcquisitionChartTranslations {
   label: string;
@@ -38,33 +35,30 @@ export function AcquisitionChart({
   translations,
   locale,
 }: AcquisitionChartProps) {
-  const [period, setPeriod] = useState("month");
-  const { data, isLoading, isError } = useAcquisition();
-
-  const chartData = useMemo(() => {
-    if (!data) {
-      return [];
-    }
-
-    return data.data.map((item) => ({
-      label: getMonthLabel(item.month, locale),
-      sessions: item.sessions,
-      newVisitors: item.newVisitors,
-      returning: item.returning,
-    }));
-  }, [data, locale]);
+  const { data, availablePeriods, period, setPeriod, isLoading, isError } =
+    useAcquisition();
 
   if (isLoading) {
     return <ComposedChartWidgetSkeleton locale={locale} />;
   }
 
-  if (isError) {
+  if (isError || !data || !period) {
     return (
       <div className="rounded-lg border p-6 text-sm text-destructive">
         {translations.error}
       </div>
     );
   }
+
+  const chartData = data.data.map((item) => ({
+    ...item,
+    label: getAcquisitionChartLabel(period, item.key, locale),
+  }));
+
+  const periodOptions = availablePeriods.map((value) => ({
+    value,
+    label: translations.period[value],
+  }));
 
   return (
     <ComposedChartWidget
@@ -98,26 +92,15 @@ export function AcquisitionChart({
           color: "var(--chart-3)",
         },
       ]}
-      periods={{
-        value: period,
-        onChange: setPeriod,
-        options: [
-          {
-            value: "year",
-            label: translations.period.year,
-            disabled: true,
-          },
-          {
-            value: "month",
-            label: translations.period.month,
-          },
-          {
-            value: "week",
-            label: translations.period.week,
-            disabled: true,
-          },
-        ],
-      }}
+      periods={
+        periodOptions.length >= 2
+          ? {
+              value: period,
+              onChange: setPeriod,
+              options: periodOptions,
+            }
+          : undefined
+      }
       formatter={formatChartValue}
     />
   );

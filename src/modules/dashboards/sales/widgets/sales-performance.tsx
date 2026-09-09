@@ -134,8 +134,11 @@ export function SalesPerformance({
     week: translations.week,
   };
 
-  const periods: ComparisonChartPeriod<SalesPerformancePeriod>[] =
-    data.availablePeriods.map((period) => ({
+  const periodOrder: SalesPerformancePeriod[] = ["week", "month", "year"];
+
+  const periods: ComparisonChartPeriod<SalesPerformancePeriod>[] = periodOrder
+    .filter((period) => data.availablePeriods.includes(period))
+    .map((period) => ({
       value: period,
       label: periodLabels[period],
     }));

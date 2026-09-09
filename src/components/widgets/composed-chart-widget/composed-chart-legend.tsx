@@ -1,10 +1,11 @@
 import type { ChartSeries } from "./types";
 
-interface ComposedChartLegendProps {
-  series: ChartSeries[];
+interface ComposedChartLegendProps<T> {
+  series: ChartSeries<T>[];
 }
-
-export function ComposedChartLegend({ series }: ComposedChartLegendProps) {
+export function ComposedChartLegend<T>({
+  series,
+}: ComposedChartLegendProps<T>) {
   return (
     <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
       {series.map((item) => (
