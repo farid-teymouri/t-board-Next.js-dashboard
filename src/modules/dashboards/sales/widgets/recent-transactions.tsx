@@ -125,8 +125,7 @@ export function RecentTransactions({
       header: data?.columns.status ?? "",
       render: (row) => {
         const statusClassName = {
-          completed:
-            "border-transparent bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-chart-3",
+          completed: "border-transparent bg-chart-3/10 text-chart-3",
 
           pending:
             "border-transparent bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",

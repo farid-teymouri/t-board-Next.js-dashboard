@@ -53,7 +53,7 @@ export function MetricWidget({
 
   return (
     <Card
-      className={`flex h-full w-full flex-col justify-between pb-0 sm:w-[385px] xl:w-full ${
+      className={`flex h-full w-full flex-col justify-between pb-0 ${
         className ?? ""
       }`}
     >

@@ -11,6 +11,7 @@ import {
   TopSellingProducts,
   TrafficSources,
 } from "./widgets";
+
 type SalesDashboardProps = {
   dictionary: SalesDashboardDictionary;
   locale: "fa" | "en";
@@ -19,12 +20,12 @@ type SalesDashboardProps = {
 export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
   return (
     <div className="space-y-8">
-      <div className="grid gap-6 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full">
-        <section className="xl:col-span-2 col-span-3">
+      <div className="grid gap-6 xl:grid-cols-3 lg:grid-cols-4 grid-cols-1 w-full">
+        <section className="xl:col-span-2 lg:col-span-4 col-span-1">
           {/* → Generic: SummaryWidget */}
           <SalesSummary dictionary={dictionary} locale={locale} period="year" />
         </section>
-        <section className="xl:col-span-1 col-span-3">
+        <section className="xl:col-span-1 lg:col-span-2 col-span-1">
           {/* → Generic: MetricWidget */}
           <Revenue
             locale={locale}
@@ -33,14 +34,14 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
             trend="up"
           />
         </section>
-        <section className="col-span-3">
+        <section className="xl:col-span-3 lg:col-span-4 col-span-1">
           {/* → Generic: MetricGroup */}
           <SalesMetrics
             locale={locale}
             translations={dictionary.salesMetrics}
           />
         </section>
-        <section className="xl:col-span-2 col-span-3">
+        <section className="xl:col-span-2 lg:col-span-4 col-span-1">
           {/* → Generic: ComparisonChartWidget */}
           <SalesPerformance
             locale={locale}
@@ -48,7 +49,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
             initialPeriod="month"
           />
         </section>
-        <section className="xl:col-span-1 lg:col-span-2 col-span-3">
+        <section className="xl:col-span-1 lg:col-span-2 col-span-1">
           {/* → Generic: FeaturedMetricWidget */}
           <TotalBalance
             locale={locale}
@@ -56,8 +57,8 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           />
         </section>
         <section
-          className="lg:col-span-1 col-span-3  
-          group-data-[sidebar-state=collapsed]/dashboard-grid:lg:col-span-1"
+          className="xl:col-span-1 lg:col-span-2 col-span-1  
+          group-data-[sidebar-state=collapsed]/dashboard-grid:xl:col-span-1"
         >
           {/* → Generic: BreakdownWidget */}
           <VisitorDevices
@@ -66,18 +67,18 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           />
         </section>
         <section
-          className="xl:col-span-1 col-span-3  
+          className="xl:col-span-1 lg:col-span-2 col-span-1  
           group-data-[sidebar-state=collapsed]/dashboard-grid:xl:col-span-1"
         >
           {/* → Generic: ProgressListWidget */}
           <TopSellingProducts locale={locale} dictionary={dictionary} />
         </section>
 
-        <section className="xl:col-span-1 col-span-3">
+        <section className="xl:col-span-1 lg:col-span-2 col-span-1">
           {/* → Generic: ProgressListWidget */}
           <TrafficSources dictionary={dictionary} locale={locale} />
         </section>
-        <section className="col-span-3">
+        <section className="xl:col-span-3 lg:col-span-4 col-span-1">
           {/* → Generic: TableWidget */}
           <RecentTransactions
             locale={locale}

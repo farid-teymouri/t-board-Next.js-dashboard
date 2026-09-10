@@ -34,11 +34,11 @@ export const bubblegum: ThemePreset = {
     input: "oklch(0.9189 0 0)",
     ring: "oklch(0.7002 0.1597 350.7532)",
 
-    chart1: "oklch(0.7002 0.1597 350.7532)",
-    chart2: "oklch(0.8189 0.0799 212.0892)",
-    chart3: "oklch(0.9195 0.0801 87.6670)",
-    chart4: "oklch(0.7998 0.1110 348.1791)",
-    chart5: "oklch(0.6197 0.1899 353.9091)",
+    chart1: "oklch(0.6209 0.1801 348.1385)",
+    chart2: "oklch(0.7000 0.1000 210)",
+    chart3: "oklch(0.7000 0.1300 88)",
+    chart4: "oklch(0.7600 0.1400 350)",
+    chart5: "oklch(0.5600 0.1200 215)",
 
     sidebar: "oklch(0.9140 0.0424 343.0913)",
     sidebarForeground: "oklch(0.3211 0 0)",
@@ -79,11 +79,11 @@ export const bubblegum: ThemePreset = {
     input: "oklch(0.3093 0.0305 232.0027)",
     ring: "oklch(0.6998 0.0896 201.8672)",
 
-    chart1: "oklch(0.6998 0.0896 201.8672)",
-    chart2: "oklch(0.7794 0.0803 4.1330)",
-    chart3: "oklch(0.6699 0.0988 356.9762)",
-    chart4: "oklch(0.4408 0.0702 217.0848)",
-    chart5: "oklch(0.2713 0.0086 255.5780)",
+    chart1: "oklch(0.8200 0.1200 200)",
+    chart2: "oklch(0.7800 0.1300 4)",
+    chart3: "oklch(0.8500 0.1000 88)",
+    chart4: "oklch(0.7000 0.1300 357)",
+    chart5: "oklch(0.5200 0.0900 217)",
 
     sidebar: "oklch(0.2303 0.0270 235.9743)",
     sidebarForeground: "oklch(0.9670 0.0029 264.5419)",

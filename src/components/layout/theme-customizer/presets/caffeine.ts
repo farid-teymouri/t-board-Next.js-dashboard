@@ -26,10 +26,10 @@ export const caffeine: ThemePreset = {
     ring: "oklch(0.4341 0.0392 41.9938)",
 
     chart1: "oklch(0.4341 0.0392 41.9938)",
-    chart2: "oklch(0.9200 0.0651 74.3695)",
-    chart3: "oklch(0.9310 0 0)",
-    chart4: "oklch(0.9367 0.0523 75.5009)",
-    chart5: "oklch(0.4338 0.0437 41.6746)",
+    chart2: "oklch(0.6200 0.0750 72)",
+    chart3: "oklch(0.5504 0.0642 129.79)",
+    chart4: "oklch(0.6800 0.0900 85)",
+    chart5: "oklch(0.5200 0.0450 48)",
 
     sidebar: "oklch(0.9881 0 0)",
     sidebarForeground: "oklch(0.2645 0 0)",
@@ -63,10 +63,10 @@ export const caffeine: ThemePreset = {
     ring: "oklch(0.9247 0.0524 66.1732)",
 
     chart1: "oklch(0.9247 0.0524 66.1732)",
-    chart2: "oklch(0.3163 0.0190 63.6992)",
-    chart3: "oklch(0.2850 0 0)",
-    chart4: "oklch(0.3481 0.0219 67.0001)",
-    chart5: "oklch(0.9245 0.0533 67.0855)",
+    chart2: "oklch(0.7600 0.0800 75)",
+    chart3: "oklch(0.6500 0.0850 130)",
+    chart4: "oklch(0.8200 0.0900 85)",
+    chart5: "oklch(0.7000 0.0650 48)",
 
     sidebar: "oklch(0.2103 0.0059 285.8852)",
     sidebarForeground: "oklch(0.9674 0.0013 286.3752)",

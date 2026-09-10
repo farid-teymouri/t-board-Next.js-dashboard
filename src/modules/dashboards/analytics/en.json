@@ -14,5 +14,15 @@
       "returning": "Returning Visitors"
     },
     "error": "Failed to load acquisition data."
+  },
+  "overviewMetrics": {
+    "title": "At a glance",
+    "metrics": {
+      "sessions": "Sessions",
+      "uniqueVisitors": "Unique visitors",
+      "bounceRate": "Bounce rate",
+      "avgSession": "Avg. session"
+    },
+    "error": "Failed to load overview metrics."
   }
 }
