@@ -1,7 +1,7 @@
 "use client";
 
 import type { ChartPeriodOption } from "./types";
-
+import { Button } from "@/components/ui/button";
 interface ComposedChartPeriodProps {
   options: ChartPeriodOption[];
   value: ChartPeriodOption["value"];
@@ -23,19 +23,17 @@ export function ComposedChartPeriod({
         const isActive = option.value === value;
 
         return (
-          <button
+          <Button
             key={option.value}
             type="button"
+            variant={isActive ? "default" : "ghost"}
+            disabled={isActive}
+            size="sm"
             onClick={() => onChange?.(option.value)}
-            className={[
-              "h-7 rounded-md px-3 text-xs font-medium transition-colors",
-              isActive
-                ? "bg-muted text-foreground"
-                : "text-muted-foreground hover:text-foreground",
-            ].join(" ")}
+            className="h-7 rounded-md px-3 text-xs font-medium"
           >
             {option.label}
-          </button>
+          </Button>
         );
       })}
     </div>

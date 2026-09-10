@@ -9,7 +9,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -56,20 +56,17 @@ export function ComparisonChartWidget<TPeriod extends string = string>({
           {periods.length > 1 && (
             <div className="flex shrink-0 items-center gap-1 rounded-lg border p-0.5 py-1">
               {periods.map((period) => (
-                <button
+                <Button
                   key={period.value}
                   type="button"
+                  variant={activePeriod === period.value ? "default" : "ghost"}
+                  disabled={activePeriod === period.value}
+                  size="sm"
                   onClick={() => onPeriodChange?.(period.value)}
-                  className={cn(
-                    "rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
-                    activePeriod === period.value &&
-                      "bg-primary text-primary-foreground",
-                    activePeriod !== period.value &&
-                      "text-muted-foreground hover:bg-secondary hover:text-foreground",
-                  )}
+                  className="rounded-md px-3 py-1.5 text-xs font-medium"
                 >
                   {period.label}
-                </button>
+                </Button>
               ))}
             </div>
           )}

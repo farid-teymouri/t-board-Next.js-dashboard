@@ -30,6 +30,7 @@ export function CurrencySelector({
             key={currency.value}
             type="button"
             variant={isActive ? "default" : "ghost"}
+            disabled={isActive}
             size="sm"
             onClick={() => onChange(currency.value)}
             className={`h-8 rounded-lg px-3 text-xs ${
