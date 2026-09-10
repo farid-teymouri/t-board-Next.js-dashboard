@@ -6,8 +6,12 @@ import type { AnalyticsOverviewMetricsResponse } from "@/types/dashboards/analyt
 
 const overviewMetricsQueryKey = ["dashboards", "analytics", "overview-metrics"];
 
-async function fetchOverviewMetrics(): Promise<AnalyticsOverviewMetricsResponse> {
-  const response = await fetch("/api/dashboards/analytics/overview-metrics");
+async function fetchOverviewMetrics(
+  locale: "fa" | "en",
+): Promise<AnalyticsOverviewMetricsResponse> {
+  const response = await fetch(
+    `/api/dashboards/analytics/overview-metrics?locale=${locale}`,
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch overview metrics");
@@ -16,9 +20,9 @@ async function fetchOverviewMetrics(): Promise<AnalyticsOverviewMetricsResponse>
   return response.json();
 }
 
-export function useOverviewMetrics() {
+export function useOverviewMetrics(locale: "fa" | "en") {
   return useQuery({
-    queryKey: overviewMetricsQueryKey,
-    queryFn: fetchOverviewMetrics,
+    queryKey: ["dashboards", "analytics", "overview-metrics", locale],
+    queryFn: () => fetchOverviewMetrics(locale),
   });
 }

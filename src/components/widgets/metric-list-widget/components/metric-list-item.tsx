@@ -1,9 +1,12 @@
 import { cn } from "@/lib/utils";
 
+import { formatNumber } from "@/utils/formatters";
+
 import type { MetricListItem as MetricListItemType } from "../types";
 
 interface MetricListItemProps extends Omit<MetricListItemType, "value"> {
   value: string;
+  locale: "fa" | "en";
   iconClassName?: string;
 }
 
@@ -12,10 +15,16 @@ export function MetricListItem({
   value,
   change,
   icon: Icon,
+  locale,
   iconClassName,
 }: MetricListItemProps) {
   const isPositive = change > 0;
   const isNegative = change < 0;
+
+  const formattedChange = `${change > 0 ? "+" : change < 0 ? "-" : ""}${formatNumber(
+    Math.abs(change),
+    locale,
+  )}%`;
 
   return (
     <div className="flex items-center gap-3 py-4 first:pt-0 last:pb-0">
@@ -33,7 +42,7 @@ export function MetricListItem({
       <div className="min-w-0 flex-1">
         <p className="text-sm text-muted-foreground">{label}</p>
 
-        <p className="mt-1 text-lg font-semibold tracking-tight">{value}</p>
+        <p className="mt-1 text-md font-semibold tracking-tight">{value}</p>
       </div>
 
       <span
@@ -44,8 +53,7 @@ export function MetricListItem({
           !isPositive && !isNegative && "text-muted-foreground",
         )}
       >
-        {change > 0 ? "+" : ""}
-        {change}%
+        {formattedChange}
       </span>
     </div>
   );

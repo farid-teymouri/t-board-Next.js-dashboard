@@ -31,7 +31,7 @@ export function OverviewMetrics({
   translations,
   locale,
 }: OverviewMetricsProps) {
-  const { data, isLoading, isError } = useOverviewMetrics();
+  const { data, isLoading, isError } = useOverviewMetrics(locale);
 
   if (isLoading) {
     return <MetricListWidgetSkeleton />;

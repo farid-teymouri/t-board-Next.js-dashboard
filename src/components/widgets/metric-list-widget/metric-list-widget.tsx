@@ -58,6 +58,7 @@ export function MetricListWidget({
               {...item}
               value={formatMetricValue(item.value, item.valueType, locale)}
               iconClassName={iconColors[index % iconColors.length]}
+              locale={locale}
             />
           ))}
         </div>
