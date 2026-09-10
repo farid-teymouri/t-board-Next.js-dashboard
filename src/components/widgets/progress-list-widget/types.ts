@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
+
 import type { Currency } from "@/utils/currency";
-export type ProgressListVariant = "classic" | "colorful";
+
+export type ProgressListVariant = "classic" | "colorful" | "funnel";
 
 export type ProgressListValueMode = "value" | "amount" | "percentage";
 
@@ -9,15 +11,22 @@ export type ProgressListRank = "hidden" | "visible" | "highlighted";
 export type ProgressListTranslations = {
   title: string;
   description: string;
-  action: string;
+  action?: string;
   valueSuffix?: string;
+  stages?: string[];
+  conversionLabel?: string;
+};
+
+export type FunnelProgressListTranslations = ProgressListTranslations & {
+  stages: string[];
+  conversionLabel: string;
 };
 
 export type ProgressListItem = {
   id: number | string;
   name: string;
   value: number;
-  progress: number;
+  progress?: number;
   category?: string;
   description?: string;
   amount?: number;
@@ -35,12 +44,16 @@ export type ProgressListWidgetProps = {
   translations: ProgressListTranslations;
   items: ProgressListItem[];
   locale: "fa" | "en";
+
   currency?: Currency;
+
   variant?: ProgressListVariant;
+
   valueMode?: ProgressListValueMode;
+
   display?: ProgressListDisplay;
+
   action?: ReactNode;
-  currencyLabel?: string;
 
   isLoading?: boolean;
   isError?: boolean;

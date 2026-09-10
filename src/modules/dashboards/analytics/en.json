@@ -24,5 +24,11 @@
       "avgSession": "Avg. session"
     },
     "error": "Failed to load overview metrics."
+  },
+  "conversionFunnel": {
+    "title": "Conversion Funnel",
+    "description": "Visit → Paid this period",
+    "stages": ["Visited", "Signed up", "Activated", "Paid"],
+    "conversionLabel": "Visit-to-paid conversion"
   }
 }

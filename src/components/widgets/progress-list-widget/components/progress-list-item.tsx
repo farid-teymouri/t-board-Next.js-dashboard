@@ -1,39 +1,25 @@
 import { cn } from "@/lib/utils";
 import { formatCurrency, type Currency } from "@/utils/currency";
+import { formatNumber } from "@/utils/formatters";
 
 import type {
   ProgressListItem as ProgressListItemData,
   ProgressListRank,
   ProgressListValueMode,
-  ProgressListVariant,
 } from "../types";
 
 type ProgressListItemProps = {
   item: ProgressListItemData;
   index: number;
   locale: "fa" | "en";
-  variant: ProgressListVariant;
   valueMode: ProgressListValueMode;
   rank: ProgressListRank;
   showProgress: boolean;
   showMeta: boolean;
   valueSuffix?: string;
   currency?: Currency;
+  progressColor?: string;
 };
-
-const progressColors = [
-  "var(--chart-1)",
-  "var(--chart-2)",
-  "var(--chart-3)",
-  "var(--chart-4)",
-  "var(--chart-5)",
-];
-
-function formatNumber(value: number, locale: "fa" | "en") {
-  return new Intl.NumberFormat(locale === "fa" ? "fa-IR" : "en-US").format(
-    value,
-  );
-}
 
 function formatValue({
   item,
@@ -46,10 +32,8 @@ function formatValue({
   valueMode: ProgressListValueMode;
   currency?: Currency;
 }) {
-  const formatter = (value: number) => formatNumber(value, locale);
-
   if (valueMode === "percentage") {
-    return `${formatter(item.progress)}%`;
+    return `${formatNumber(item.progress ?? 0, locale)}%`;
   }
 
   if (valueMode === "amount" && item.amount !== undefined && currency) {
@@ -59,20 +43,20 @@ function formatValue({
     });
   }
 
-  return formatter(item.value);
+  return formatNumber(item.value, locale);
 }
 
 export function ProgressListItem({
   item,
   index,
   locale,
-  variant,
   valueMode,
   rank,
   showProgress,
   showMeta,
   valueSuffix,
   currency,
+  progressColor,
 }: ProgressListItemProps) {
   const value = formatValue({
     item,
@@ -81,18 +65,11 @@ export function ProgressListItem({
     currency,
   });
 
-  const progressColor = progressColors[index % progressColors.length];
-
   const showRank = rank !== "hidden";
   const highlightRank = rank === "highlighted" && index === 0;
 
   return (
-    <div
-      className={cn(
-        "space-y-2 py-2 first:pt-0 last:pb-0",
-        variant === "colorful" && "rounded-xl p-3",
-      )}
-    >
+    <div className="space-y-2 py-2 first:pt-0 last:pb-0">
       <div className="flex items-start gap-3">
         {showRank && (
           <span
@@ -138,26 +115,12 @@ export function ProgressListItem({
 
       {showProgress && (
         <div className={cn("flex items-center gap-3", showRank && "ms-8")}>
-          <div
-            className={cn(
-              "relative flex-1 overflow-hidden bg-muted",
-              variant === "classic" ? "h-1.5 rounded-sm" : "h-2.5 rounded-full",
-            )}
-          >
+          <div className="relative h-1.5 flex-1 overflow-hidden rounded-sm bg-muted">
             <div
-              className={cn(
-                "absolute inset-y-0 inset-s-0 transition-[width] duration-500",
-                variant === "classic"
-                  ? "rounded-sm bg-primary"
-                  : "rounded-full",
-              )}
+              className="absolute inset-y-0 inset-s-0 rounded-sm transition-[width] duration-500"
               style={{
-                width: `${Math.min(Math.max(item.progress, 0), 100)}%`,
-                ...(variant === "colorful"
-                  ? {
-                      backgroundColor: progressColor,
-                    }
-                  : {}),
+                width: `${Math.min(Math.max(item.progress ?? 0, 0), 100)}%`,
+                backgroundColor: progressColor,
               }}
             />
           </div>

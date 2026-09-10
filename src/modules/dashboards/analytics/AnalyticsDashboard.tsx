@@ -2,7 +2,7 @@
 
 import type { AnalyticsDashboardDictionary } from "@/i18n/dictionaries";
 
-import { AcquisitionChart, OverviewMetrics } from "./widgets";
+import { AcquisitionChart, ConversionFunnel, OverviewMetrics } from "./widgets";
 
 type AnalyticsDashboardProps = {
   dictionary: AnalyticsDashboardDictionary;
@@ -34,9 +34,9 @@ export function AnalyticsDashboard({
           className="xl:col-span-1 lg:col-span-2 col-span-4  
          "
         >
-          {/* → Generic: MetricListWidget */}
-          <OverviewMetrics
-            translations={dictionary.overviewMetrics}
+          {/* → Generic: ProgressListWidget */}
+          <ConversionFunnel
+            translations={dictionary.conversionFunnel}
             locale={locale}
           />
         </section>
