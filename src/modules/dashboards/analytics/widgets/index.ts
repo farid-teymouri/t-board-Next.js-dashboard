@@ -9,3 +9,5 @@ export { TrafficChannels } from "./traffic-channels";
 export { VisitorDevices } from "./visitor-devices";
 
 export { RightNow } from "./right-now";
+
+export { TopPages } from "./top-pages";

@@ -62,5 +62,24 @@
       "checkout": "Checkout reached"
     },
     "error": "Unable to load live activity data."
+  },
+  "topPages": {
+    "title": "Top Pages",
+    "description": "Most-viewed pages this period",
+    "viewAll": "View all",
+    "columns": {
+      "page": "Page",
+      "pageviews": "Pageviews",
+      "avgTime": "Avg. time",
+      "bounce": "Bounce",
+      "share": "Share"
+    },
+    "pageTitles": {
+      "homepage": "Homepage",
+      "pricing": "Plans & pricing",
+      "scalingAurora": "Article",
+      "signup": "Registration",
+      "docsApi": "Documentation"
+    }
   }
 }

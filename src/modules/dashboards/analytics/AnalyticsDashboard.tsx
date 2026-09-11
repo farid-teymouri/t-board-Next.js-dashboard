@@ -9,6 +9,7 @@ import {
   RightNow,
   TrafficChannels,
   VisitorDevices,
+  TopPages,
 } from "./widgets";
 
 type AnalyticsDashboardProps = {
@@ -68,6 +69,14 @@ export function AnalyticsDashboard({
             locale={locale}
             translations={dictionary.visitorDevices}
           />
+        </section>
+
+        <section
+          className="xl:col-span-2 lg:col-span-4 col-span-1  
+          group-data-[sidebar-state=collapsed]/dashboard-grid:xl:col-span-1"
+        >
+          {/* → Generic: TableWidget */}
+          <TopPages locale={locale} translations={dictionary.topPages} />
         </section>
       </div>
     </div>

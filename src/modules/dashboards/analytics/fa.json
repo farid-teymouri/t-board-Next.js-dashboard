@@ -62,5 +62,24 @@
       "checkout": "رسیدن به پرداخت"
     },
     "error": "دریافت اطلاعات لحظه‌ای با خطا مواجه شد."
+  },
+  "topPages": {
+    "title": "صفحات برتر",
+    "description": "پربازدیدترین صفحات این دوره",
+    "viewAll": "مشاهده همه",
+    "columns": {
+      "page": "صفحه",
+      "pageviews": "بازدید",
+      "avgTime": "میانگین زمان",
+      "bounce": "پرش",
+      "share": "سهم"
+    },
+    "pageTitles": {
+      "homepage": "صفحه اصلی",
+      "pricing": "قیمت‌گذاری",
+      "scalingAurora": "مقاله",
+      "signup": "ثبت‌نام",
+      "docsApi": "مستندات"
+    }
   }
 }

@@ -17,13 +17,34 @@ import { cn } from "@/lib/utils";
 import { TableWidgetSkeleton } from "./table-widget-skeleton";
 import type { TableWidgetProps } from "./types";
 
+function TableWidgetProgress({
+  value,
+  className,
+}: {
+  value: number;
+  className?: string;
+}) {
+  const percentage = Math.min(100, Math.max(0, value));
+
+  return (
+    <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
+      <div
+        className={cn("h-full rounded-full transition-all", className)}
+        style={{ width: `${percentage}%` }}
+      />
+    </div>
+  );
+}
+
 export function TableWidget<T>({
+  variant = "default",
   title,
   description,
   viewAll,
   columns,
   data,
   getRowKey,
+  progress,
   isLoading = false,
   skeletonRows = 5,
 }: TableWidgetProps<T>) {
@@ -75,7 +96,7 @@ export function TableWidget<T>({
               </TableHeader>
 
               <TableBody>
-                {data.map((row) => (
+                {data.map((row, rowIndex) => (
                   <TableRow
                     key={getRowKey(row)}
                     className={cn(
@@ -91,7 +112,16 @@ export function TableWidget<T>({
                           column.className,
                         )}
                       >
-                        {column.render(row)}
+                        {variant === "progress" &&
+                        column.type === "progress" &&
+                        progress ? (
+                          <TableWidgetProgress
+                            value={progress.getValue(row)}
+                            className={progress.getClassName?.(row, rowIndex)}
+                          />
+                        ) : (
+                          column.render(row, rowIndex)
+                        )}
                       </TableCell>
                     ))}
                   </TableRow>
