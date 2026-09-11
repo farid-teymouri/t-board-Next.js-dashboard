@@ -11,19 +11,10 @@ import type { MetricListItem } from "@/components/widgets/metric-list-widget/typ
 
 import { useOverviewMetrics } from "../hooks/use-overview-metrics";
 
-interface OverviewMetricsTranslations {
-  title: string;
-  metrics: {
-    sessions: string;
-    uniqueVisitors: string;
-    bounceRate: string;
-    avgSession: string;
-  };
-  error: string;
-}
+import type { AnalyticsDashboardDictionary } from "@/i18n/dictionaries";
 
 interface OverviewMetricsProps {
-  translations: OverviewMetricsTranslations;
+  translations: AnalyticsDashboardDictionary["overviewMetrics"];
   locale: "fa" | "en";
 }
 

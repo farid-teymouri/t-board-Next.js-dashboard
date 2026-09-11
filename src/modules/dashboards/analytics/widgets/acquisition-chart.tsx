@@ -9,25 +9,10 @@ import {
 import { useAcquisition } from "../hooks/use-acquisition";
 import { getAcquisitionChartLabel } from "../utils/chart-label";
 
-interface AcquisitionChartTranslations {
-  label: string;
-  title: string;
-  description: string;
-  period: {
-    year: string;
-    month: string;
-    week: string;
-  };
-  series: {
-    sessions: string;
-    newVisitors: string;
-    returning: string;
-  };
-  error: string;
-}
+import type { AnalyticsDashboardDictionary } from "@/i18n/dictionaries";
 
 interface AcquisitionChartProps {
-  translations: AcquisitionChartTranslations;
+  translations: AnalyticsDashboardDictionary["acquisition"];
   locale: "fa" | "en";
 }
 

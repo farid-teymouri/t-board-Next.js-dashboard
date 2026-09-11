@@ -4,15 +4,10 @@ import { ProgressListWidget } from "@/components/widgets/progress-list-widget";
 
 import { useConversionFunnel } from "../hooks/use-conversion-funnel";
 
-interface ConversionFunnelTranslations {
-  title: string;
-  description: string;
-  stages: string[];
-  conversionLabel: string;
-}
+import type { AnalyticsDashboardDictionary } from "@/i18n/dictionaries";
 
 type ConversionFunnelProps = {
-  translations: ConversionFunnelTranslations;
+  translations: AnalyticsDashboardDictionary["conversionFunnel"];
   locale: "fa" | "en";
 };
 
