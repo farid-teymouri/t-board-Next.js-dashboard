@@ -6,6 +6,7 @@ import {
   AcquisitionChart,
   ConversionFunnel,
   OverviewMetrics,
+  RightNow,
   TrafficChannels,
   VisitorDevices,
 } from "./widgets";
@@ -29,6 +30,12 @@ export function AnalyticsDashboard({
             locale={locale}
           />
         </section>
+
+        <section className="xl:col-span-1 lg:col-span-2 col-span-1">
+          {/* → Generic: LiveLineChartWidget */}
+          <RightNow translations={dictionary.rightNow} locale={locale} />
+        </section>
+
         <section className="xl:col-span-1 lg:col-span-2 col-span-1">
           {/* → Generic: MetricListWidget */}
           <OverviewMetrics
@@ -36,6 +43,7 @@ export function AnalyticsDashboard({
             locale={locale}
           />
         </section>
+
         <section className="xl:col-span-1 lg:col-span-2 col-span-1">
           {/* → Generic: ProgressListWidget */}
           <ConversionFunnel

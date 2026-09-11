@@ -44,7 +44,7 @@ export function ComposedChartWidget<T>({
   const visibleData = data.slice(visibleRange.start, visibleRange.end);
 
   return (
-    <Card>
+    <Card className="h-full flex justify-between">
       <CardHeader>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0">
@@ -77,7 +77,7 @@ export function ComposedChartWidget<T>({
           className="min-w-0 select-none overscroll-contain"
           dir={locale === "fa" ? "rtl" : "ltr"}
         >
-          <ChartContainer config={chartConfig} className="h-[300px] w-full">
+          <ChartContainer config={chartConfig} className="h-full w-full">
             <ComposedChart
               accessibilityLayer
               data={visibleData}

@@ -50,5 +50,17 @@
     "tablet": "Tablet",
     "visitors": "Visitors",
     "error": "Failed to load data"
+  },
+  "rightNow": {
+    "title": "Right now",
+    "description": "Active users on site",
+    "live": "Live",
+    "goals": {
+      "title": "Goal Completions",
+      "newsletter": "Newsletter signups",
+      "demo": "Demo requests",
+      "checkout": "Checkout reached"
+    },
+    "error": "Unable to load live activity data."
   }
 }

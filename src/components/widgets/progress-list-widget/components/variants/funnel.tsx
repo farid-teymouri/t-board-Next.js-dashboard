@@ -33,7 +33,7 @@ export function FunnelProgressList({
   const conversionRate = firstValue > 0 ? (lastValue / firstValue) * 100 : 0;
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full justify-between">
       <div className="space-y-4">
         {items.map((item, index) => {
           const progress = firstValue > 0 ? (item.value / firstValue) * 100 : 0;
