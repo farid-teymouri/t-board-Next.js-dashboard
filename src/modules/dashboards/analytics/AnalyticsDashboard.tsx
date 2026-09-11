@@ -7,6 +7,7 @@ import {
   ConversionFunnel,
   OverviewMetrics,
   TrafficChannels,
+  VisitorDevices,
 } from "./widgets";
 
 type AnalyticsDashboardProps = {
@@ -21,21 +22,21 @@ export function AnalyticsDashboard({
   return (
     <div className="space-y-8">
       <div className="grid gap-6 xl:grid-cols-3 lg:grid-cols-4 grid-cols-1 w-full">
-        <section className="xl:col-span-2 col-span-4">
+        <section className="xl:col-span-2 lg:col-span-4 col-span-1">
           {/* → Generic: ComposedChartWidget */}
           <AcquisitionChart
             translations={dictionary.acquisition}
             locale={locale}
           />
         </section>
-        <section className="xl:col-span-1 lg:col-span-2 col-span-4">
+        <section className="xl:col-span-1 lg:col-span-2 col-span-1">
           {/* → Generic: MetricListWidget */}
           <OverviewMetrics
             translations={dictionary.overviewMetrics}
             locale={locale}
           />
         </section>
-        <section className="xl:col-span-1 lg:col-span-2 col-span-4">
+        <section className="xl:col-span-1 lg:col-span-2 col-span-1">
           {/* → Generic: ProgressListWidget */}
           <ConversionFunnel
             translations={dictionary.conversionFunnel}
@@ -43,11 +44,21 @@ export function AnalyticsDashboard({
           />
         </section>
 
-        <section className="xl:col-span-1 lg:col-span-2 col-span-4">
+        <section className="xl:col-span-1 lg:col-span-2 col-span-1">
           {/* → Generic: BreakdownWidget */}
           <TrafficChannels
             locale={locale}
             translations={dictionary.trafficChannels}
+          />
+        </section>
+        <section
+          className="xl:col-span-1 lg:col-span-2 col-span-1  
+          group-data-[sidebar-state=collapsed]/dashboard-grid:xl:col-span-1"
+        >
+          {/* → Generic: BreakdownWidget */}
+          <VisitorDevices
+            locale={locale}
+            translations={dictionary.visitorDevices}
           />
         </section>
       </div>

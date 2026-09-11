@@ -40,9 +40,63 @@ export function BreakdownWidget({
     ]),
   ) satisfies ChartConfig;
 
-  const chartData = items.map((item) => ({
+  /**
+   * Calculate display percentages with two decimal places
+   * while ensuring the final displayed total is exactly 100%.
+   *
+   * Uses the Largest Remainder Method.
+   */
+  const percentages = (() => {
+    if (total.value <= 0) {
+      return items.map(() => 0);
+    }
+
+    const totalUnits = 10_000;
+
+    const values = items.map((item) => {
+      const exact = (item.value / total.value) * totalUnits;
+      const floor = Math.floor(exact);
+
+      return {
+        floor,
+        remainder: exact - floor,
+      };
+    });
+
+    let allocatedUnits = values.reduce((sum, item) => sum + item.floor, 0);
+
+    const remainingUnits = totalUnits - allocatedUnits;
+
+    const rankedIndexes = values
+      .map((item, index) => ({
+        index,
+        remainder: item.remainder,
+      }))
+      .sort((a, b) => {
+        if (b.remainder !== a.remainder) {
+          return b.remainder - a.remainder;
+        }
+
+        return a.index - b.index;
+      });
+
+    for (let i = 0; i < remainingUnits; i++) {
+      values[rankedIndexes[i].index].floor += 1;
+      allocatedUnits += 1;
+    }
+
+    return values.map((item) => item.floor / 100);
+  })();
+
+  const chartData = items.map((item, index) => ({
     name: item.id,
+
+    // Keep the exact value for Pie geometry.
     value: total.value > 0 ? (item.value / total.value) * 100 : 0,
+
+    // Use the adjusted percentage only for display.
+    percentage: percentages[index],
+
     amount: item.value,
     fill: item.color,
   }));
@@ -65,13 +119,13 @@ export function BreakdownWidget({
         <div className="relative size-[260px] min-h-0 min-w-0 shrink-0">
           <div className="pointer-events-none absolute inset-0 z-0 flex flex-col items-center justify-center">
             <span
-              className="text-3xl font-bold leading-none tabular-nums"
+              className="text-2xl font-bold leading-none tabular-nums"
               style={{
                 color: activeItem?.fill,
               }}
             >
               {activeItem
-                ? `${formatNumber(activeItem.value, locale)}%`
+                ? `${formatNumber(activeItem.percentage, locale, "decimal")}%`
                 : formatNumber(total.value, locale, "compact")}
             </span>
 
@@ -114,7 +168,12 @@ export function BreakdownWidget({
                             </span>
 
                             <span className="text-xs text-muted-foreground">
-                              {formatNumber(Number(value), locale)}%
+                              {formatNumber(
+                                Number(item?.payload?.percentage ?? value ?? 0),
+                                locale,
+                                "decimal",
+                              )}
+                              %
                             </span>
                           </div>
                         </div>
@@ -151,34 +210,29 @@ export function BreakdownWidget({
           dir={locale === "fa" ? "rtl" : "ltr"}
           className="flex flex-col gap-3 px-6 py-4"
         >
-          {items.map((item) => {
-            const percentage =
-              total.value > 0 ? (item.value / total.value) * 100 : 0;
+          {items.map((item, index) => (
+            <div
+              key={item.id}
+              className="flex items-center justify-between gap-4"
+            >
+              <div className="flex min-w-0 items-center gap-2">
+                <span
+                  className="size-2 shrink-0 rounded-full"
+                  style={{
+                    backgroundColor: item.color,
+                  }}
+                />
 
-            return (
-              <div
-                key={item.id}
-                className="flex items-center justify-between gap-4"
-              >
-                <div className="flex min-w-0 items-center gap-2">
-                  <span
-                    className="size-2 shrink-0 rounded-full"
-                    style={{
-                      backgroundColor: item.color,
-                    }}
-                  />
-
-                  <span className="truncate text-sm text-muted-foreground">
-                    {item.label}
-                  </span>
-                </div>
-
-                <span className="shrink-0 text-sm font-semibold tabular-nums">
-                  {formatNumber(percentage, locale)}%
+                <span className="truncate text-sm text-muted-foreground">
+                  {item.label}
                 </span>
               </div>
-            );
-          })}
+
+              <span className="shrink-0 text-sm font-semibold tabular-nums">
+                {formatNumber(percentages[index], locale, "decimal")}%
+              </span>
+            </div>
+          ))}
         </div>
       ) : (
         <div

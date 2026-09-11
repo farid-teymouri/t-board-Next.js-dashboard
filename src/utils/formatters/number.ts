@@ -1,4 +1,4 @@
-export type NumberFormatStyle = "default" | "compact";
+export type NumberFormatStyle = "default" | "compact" | "decimal";
 
 export function formatNumber(
   value: number,
@@ -25,6 +25,11 @@ export function formatNumber(
 
   const formatted = new Intl.NumberFormat(
     locale === "fa" ? "fa-IR" : "en-US",
+    style === "decimal"
+      ? {
+          maximumFractionDigits: 2,
+        }
+      : undefined,
   ).format(value);
 
   if (locale === "fa") {

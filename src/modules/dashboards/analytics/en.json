@@ -41,5 +41,14 @@
     "referral": "Referral",
     "paid": "Paid",
     "error": "Failed to load traffic channels."
+  },
+  "visitorDevices": {
+    "title": "Visitors by device",
+    "description": "Visitor distribution across devices",
+    "mobile": "Mobile",
+    "desktop": "Desktop",
+    "tablet": "Tablet",
+    "visitors": "Visitors",
+    "error": "Failed to load data"
   }
 }

@@ -5,3 +5,5 @@ export { OverviewMetrics } from "./overview-metrics";
 export { ConversionFunnel } from "./conversion-funnel";
 
 export { TrafficChannels } from "./traffic-channels";
+
+export { VisitorDevices } from "./visitor-devices";

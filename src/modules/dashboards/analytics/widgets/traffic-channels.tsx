@@ -6,21 +6,10 @@ import {
 } from "@/components/widgets/breakdown-widget";
 
 import { useTrafficChannels } from "../hooks/use-traffic-channels";
-
-interface TrafficChannelsTranslations {
-  title: string;
-  description: string;
-  visitors: string;
-  organicSearch: string;
-  direct: string;
-  social: string;
-  referral: string;
-  paid: string;
-  error: string;
-}
+import type { AnalyticsDashboardDictionary } from "@/i18n/dictionaries";
 
 type TrafficChannelsProps = {
-  translations: TrafficChannelsTranslations;
+  translations: AnalyticsDashboardDictionary["trafficChannels"];
   locale: "fa" | "en";
 };
 
