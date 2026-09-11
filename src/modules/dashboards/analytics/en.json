@@ -30,5 +30,16 @@
     "description": "Visit → Paid this period",
     "stages": ["Visited", "Signed up", "Activated", "Paid"],
     "conversionLabel": "Visit-to-paid conversion"
+  },
+  "trafficChannels": {
+    "title": "Traffic Channels",
+    "description": "Visitor acquisition by channel",
+    "visitors": "Visitors",
+    "organicSearch": "Organic search",
+    "direct": "Direct",
+    "social": "Social",
+    "referral": "Referral",
+    "paid": "Paid",
+    "error": "Failed to load traffic channels."
   }
 }
