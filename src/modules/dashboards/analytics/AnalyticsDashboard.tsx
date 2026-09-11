@@ -6,6 +6,7 @@ import {
   AcquisitionChart,
   ConversionFunnel,
   OverviewMetrics,
+  ReferrersEvents,
   RightNow,
   TrafficChannels,
   VisitorDevices,
@@ -77,6 +78,14 @@ export function AnalyticsDashboard({
         >
           {/* → Generic: TableWidget */}
           <TopPages locale={locale} translations={dictionary.topPages} />
+        </section>
+
+        <section className="xl:col-span-3 lg:col-span-4 col-span-1">
+          {/* → Generic: MetricListWidget / sections variant */}
+          <ReferrersEvents
+            translations={dictionary.referrersEvents}
+            locale={locale}
+          />
         </section>
       </div>
     </div>

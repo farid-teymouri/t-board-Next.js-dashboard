@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { formatDuration, formatNumber } from "@/utils/formatters";
 
 import { MetricListItem } from "./components/metric-list-item";
+import { MetricListSection } from "./components/metric-list-section";
+
 import type {
   MetricListItem as MetricListItemType,
   MetricListWidgetProps,
@@ -31,16 +33,16 @@ function formatMetricValue(
   }
 }
 
-export function MetricListWidget({
+function MetricsVariant({
   header,
   items,
   locale,
-}: MetricListWidgetProps) {
+}: Extract<MetricListWidgetProps, { variant?: "metrics" }>) {
   return (
-    <Card className="flex h-full w-full flex-col">
-      <CardHeader className="space-y-1">
+    <>
+      <CardHeader>
         {header.label && (
-          <p className="text-xs text-muted-foreground">{header.label}</p>
+          <p className="text-sm text-muted-foreground">{header.label}</p>
         )}
 
         <h3 className="text-lg font-semibold">{header.title}</h3>
@@ -63,6 +65,39 @@ export function MetricListWidget({
           ))}
         </div>
       </CardContent>
+    </>
+  );
+}
+
+function SectionsVariant({
+  sections,
+  locale,
+}: Extract<MetricListWidgetProps, { variant: "sections" }>) {
+  return (
+    <CardContent className="space-y-6">
+      {sections.map((section, index) => (
+        <div key={section.id}>
+          {index > 0 && <div className="mb-6 border-t" />}
+
+          <MetricListSection {...section} locale={locale} />
+        </div>
+      ))}
+    </CardContent>
+  );
+}
+
+export function MetricListWidget(props: MetricListWidgetProps) {
+  if (props.variant === "sections") {
+    return (
+      <Card className="h-full">
+        <SectionsVariant {...props} />
+      </Card>
+    );
+  }
+
+  return (
+    <Card className="h-full">
+      <MetricsVariant {...props} />
     </Card>
   );
 }

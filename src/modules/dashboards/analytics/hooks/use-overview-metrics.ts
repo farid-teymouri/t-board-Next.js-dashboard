@@ -4,8 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 
 import type { AnalyticsOverviewMetricsResponse } from "@/types/dashboards/analytics/overview-metrics";
 
-const overviewMetricsQueryKey = ["dashboards", "analytics", "overview-metrics"];
-
 async function fetchOverviewMetrics(
   locale: "fa" | "en",
 ): Promise<AnalyticsOverviewMetricsResponse> {

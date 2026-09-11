@@ -81,5 +81,16 @@
       "signup": "Registration",
       "docsApi": "Documentation"
     }
+  },
+  "referrersEvents": {
+    "topReferrers": {
+      "title": "Top Referrers",
+      "action": "All"
+    },
+    "recentEvents": {
+      "title": "Recent Events",
+      "action": "View all"
+    },
+    "error": "Failed to load referrers and recent events."
   }
 }

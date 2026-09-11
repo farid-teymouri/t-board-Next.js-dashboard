@@ -11,3 +11,5 @@ export { VisitorDevices } from "./visitor-devices";
 export { RightNow } from "./right-now";
 
 export { TopPages } from "./top-pages";
+
+export { ReferrersEvents } from "./referrers-events";
