@@ -16,5 +16,21 @@
       "fulfil": "Fulfil",
       "collections": "Collections"
     }
+  },
+  "monthlyTarget": {
+    "title": "Monthly target",
+    "ofTarget": "of target",
+    "monthly": "Monthly",
+    "quarterly": "Quarter",
+    "booked": "Booked",
+    "remaining": "Remaining",
+    "dailyRunRate": "Daily run-rate",
+    "progressMessage": "{achieved} of the {target} target — on pace to close {daysAhead} days early."
+  },
+  "kpiCards": {
+    "totalSales": "Total Sales",
+    "orders": "Orders",
+    "averageOrderValue": "Avg. Order Value",
+    "cartAbandonment": "Cart Abandonment"
   }
 }
