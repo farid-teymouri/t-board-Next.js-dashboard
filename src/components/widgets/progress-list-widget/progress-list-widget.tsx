@@ -72,6 +72,7 @@ export function ProgressListWidget({
           items={items}
           locale={locale}
           translations={translations}
+          currency={currency}
         />
       )}
     </>

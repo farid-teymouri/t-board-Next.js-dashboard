@@ -7,3 +7,5 @@ export { KpiCards } from "./kpi-cards";
 export { RevenueOrders } from "./revenue-orders";
 
 export { SalesByCategory } from "./sales-by-category";
+
+export { SalesByChannel } from "./sales-by-channel";

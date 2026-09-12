@@ -1,3 +1,5 @@
+import { formatCurrency } from "@/utils/currency";
+import type { Currency } from "@/utils/currency";
 import { formatNumber } from "@/utils/formatters";
 
 import type { ProgressListItem, ProgressListTranslations } from "../../types";
@@ -6,6 +8,7 @@ type FunnelProgressListProps = {
   items: ProgressListItem[];
   locale: "fa" | "en";
   translations: ProgressListTranslations;
+  currency?: Currency;
 };
 
 const progressColors = [
@@ -26,6 +29,7 @@ export function FunnelProgressList({
   items,
   locale,
   translations,
+  currency,
 }: FunnelProgressListProps) {
   const firstValue = items[0]?.value ?? 0;
   const lastValue = items[items.length - 1]?.value ?? 0;
@@ -33,10 +37,12 @@ export function FunnelProgressList({
   const conversionRate = firstValue > 0 ? (lastValue / firstValue) * 100 : 0;
 
   return (
-    <div className="flex flex-col h-full justify-between">
+    <div className="flex h-full flex-col justify-between">
       <div className="space-y-4">
         {items.map((item, index) => {
-          const progress = firstValue > 0 ? (item.value / firstValue) * 100 : 0;
+          const progress =
+            item.progress ??
+            (firstValue > 0 ? (item.value / firstValue) * 100 : 0);
 
           return (
             <div key={item.id} className="space-y-2">
@@ -46,13 +52,14 @@ export function FunnelProgressList({
                 </span>
 
                 <span className="shrink-0 text-sm font-medium tabular-nums">
-                  {formatNumber(item.value, locale)}
+                  {formatCurrency(item.value, {
+                    locale,
+                    currency: currency ?? "IRT",
+                  })}
 
-                  {index > 0 && (
-                    <span className="ms-1 text-xs font-normal text-foreground/70">
-                      · {formatPercentage(progress, locale)}
-                    </span>
-                  )}
+                  <span className="ms-1 text-xs font-normal text-foreground/70">
+                    · {formatPercentage(progress, locale)}
+                  </span>
                 </span>
               </div>
 
@@ -71,17 +78,19 @@ export function FunnelProgressList({
         })}
       </div>
 
-      <div className="mt-4 border-t pt-4">
-        <div className="flex items-center justify-between gap-4">
-          <span className="text-sm text-muted-foreground">
-            {translations.conversionLabel}
-          </span>
+      {translations.conversionLabel && (
+        <div className="mt-4 border-t pt-4">
+          <div className="flex items-center justify-between gap-4">
+            <span className="text-sm text-muted-foreground">
+              {translations.conversionLabel}
+            </span>
 
-          <span className="shrink-0 rounded-full bg-chart-3/10 px-2.5 py-1 text-xs font-medium tabular-nums text-chart-3">
-            {formatPercentage(conversionRate, locale)}
-          </span>
+            <span className="shrink-0 rounded-full bg-chart-3/10 px-2.5 py-1 text-xs font-medium tabular-nums text-chart-3">
+              {formatPercentage(conversionRate, locale)}
+            </span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

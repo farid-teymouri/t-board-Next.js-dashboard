@@ -8,6 +8,7 @@ import {
   KpiCards,
   RevenueOrders,
   SalesByCategory,
+  SalesByChannel,
 } from "./widgets";
 
 type EcommerceDashboardProps = {
@@ -53,6 +54,13 @@ export function EcommerceDashboard({
           {/* → Generic: BreakdownWidget */}
           <SalesByCategory
             translations={dictionary.salesByCategory}
+            locale={locale}
+          />
+        </section>
+        <section className="col-span-1 lg:col-span-4 xl:col-span-1">
+          {/* → Generic: BreakdownWidget */}
+          <SalesByChannel
+            translations={dictionary.salesByChannel}
             locale={locale}
           />
         </section>

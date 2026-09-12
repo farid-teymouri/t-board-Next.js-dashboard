@@ -58,5 +58,10 @@
     "beauty": "Beauty",
     "other": "Other",
     "error": "Failed to load sales by category"
+  },
+  "salesByChannel": {
+    "title": "Sales by Channel",
+    "description": "Revenue distribution across sales channels",
+    "valueSuffix": "IRT"
   }
 }
