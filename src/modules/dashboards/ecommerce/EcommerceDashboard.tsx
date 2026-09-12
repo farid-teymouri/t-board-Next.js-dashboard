@@ -11,12 +11,12 @@ import {
 } from "./widgets";
 
 type EcommerceDashboardProps = {
-  translations: EcommerceDashboardDictionary;
+  dictionary: EcommerceDashboardDictionary;
   locale: "fa" | "en";
 };
 
 export function EcommerceDashboard({
-  translations,
+  dictionary,
   locale,
 }: EcommerceDashboardProps) {
   return (
@@ -25,7 +25,7 @@ export function EcommerceDashboard({
         <section className="col-span-1 lg:col-span-4 xl:col-span-2">
           {/* → Generic: QuickActionsWidget */}
           <EcommerceQuickActions
-            translations={translations.quickActions}
+            translations={dictionary.quickActions}
             locale={locale}
           />
         </section>
@@ -33,26 +33,26 @@ export function EcommerceDashboard({
         <section className="col-span-1 lg:col-span-4 xl:col-span-1">
           {/* → Generic: TargetWidget */}
           <MonthlyTarget
-            translations={translations.monthlyTarget}
+            translations={dictionary.monthlyTarget}
             locale={locale}
           />
         </section>
 
         <section className="col-span-1 lg:col-span-4 xl:col-span-3">
-          <KpiCards translations={translations.kpiCards} locale={locale} />
+          <KpiCards translations={dictionary.kpiCards} locale={locale} />
         </section>
 
         <section className="col-span-1 lg:col-span-4 xl:col-span-2">
           {/* → Generic: ComposedChartWidget */}
           <RevenueOrders
-            translations={translations.revenueOrders}
+            translations={dictionary.revenueOrders}
             locale={locale}
           />
         </section>
         <section className="col-span-1 lg:col-span-4 xl:col-span-1">
           {/* → Generic: BreakdownWidget */}
           <SalesByCategory
-            translations={translations.salesByCategory}
+            translations={dictionary.salesByCategory}
             locale={locale}
           />
         </section>
