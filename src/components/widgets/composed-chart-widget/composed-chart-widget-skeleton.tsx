@@ -21,10 +21,10 @@ export function ComposedChartWidgetSkeleton({
             <div className="h-4 w-96 max-w-full animate-pulse rounded-md bg-muted" />
           </div>
 
-          <div className="flex shrink-0 items-center gap-1 rounded-lg border p-0.5 py-1">
-            <div className="h-7 w-14 animate-pulse rounded-md bg-muted" />
-            <div className="h-7 w-14 animate-pulse rounded-md bg-muted" />
-            <div className="h-7 w-14 animate-pulse rounded-md bg-muted" />
+          <div className="flex shrink-0 items-center gap-1 rounded-lg border p-1 py-1">
+            <div className="h-8 w-14 animate-pulse rounded-md bg-muted" />
+            <div className="h-8 w-14 animate-pulse rounded-md bg-muted" />
+            <div className="h-8 w-14 animate-pulse rounded-md bg-muted" />
           </div>
         </div>
       </CardHeader>

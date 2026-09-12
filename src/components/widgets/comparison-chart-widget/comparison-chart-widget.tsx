@@ -54,7 +54,7 @@ export function ComparisonChartWidget<TPeriod extends string = string>({
           </div>
 
           {periods.length > 1 && (
-            <div className="flex shrink-0 items-center gap-1 rounded-lg border p-0.5 py-1">
+            <div className="flex shrink-0 items-center gap-1 rounded-lg border p-1 py-1">
               {periods.map((period) => (
                 <Button
                   key={period.value}
@@ -63,7 +63,7 @@ export function ComparisonChartWidget<TPeriod extends string = string>({
                   disabled={activePeriod === period.value}
                   size="sm"
                   onClick={() => onPeriodChange?.(period.value)}
-                  className="rounded-md px-3 py-1.5 text-xs font-medium"
+                  className="rounded-md px-3 py-1.5 text-xs font-medium h-8"
                 >
                   {period.label}
                 </Button>

@@ -18,6 +18,9 @@ export type {
   ChartPeriodOption,
   ChartPeriods,
   ChartSeries,
+  ChartValueFormatter,
+  ChartYAxis,
+  ChartAxisPosition,
   ComposedChartWidgetHeader,
   ComposedChartWidgetProps,
 } from "./types";

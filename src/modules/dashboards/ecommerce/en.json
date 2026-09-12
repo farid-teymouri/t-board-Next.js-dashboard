@@ -32,5 +32,20 @@
     "orders": "Orders",
     "averageOrderValue": "Avg. Order Value",
     "cartAbandonment": "Cart Abandonment"
+  },
+  "revenueOrders": {
+    "label": "Performance",
+    "title": "Revenue & Orders",
+    "description": "Monthly revenue against order volume",
+    "period": {
+      "week": "Week",
+      "month": "Month",
+      "year": "Year"
+    },
+    "series": {
+      "revenue": "Revenue",
+      "orders": "Orders"
+    },
+    "error": "Failed to load revenue and orders data."
   }
 }

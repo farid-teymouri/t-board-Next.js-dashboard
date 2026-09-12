@@ -1,4 +1,4 @@
-import type { ChartSeries } from "./types";
+import type { ChartSeries, ChartValueFormatter } from "./types";
 
 type ComposedChartTooltipItem = {
   dataKey?: string | number;
@@ -10,7 +10,7 @@ interface ComposedChartTooltipProps<T> {
   payload?: ComposedChartTooltipItem[];
   locale: "fa" | "en";
   series: ChartSeries<T>[];
-  formatter?: (value: number, locale: "fa" | "en") => string;
+  formatter?: ChartValueFormatter;
 }
 
 export function ComposedChartTooltip<T>({
@@ -37,6 +37,9 @@ export function ComposedChartTooltip<T>({
 
         const value = Number(item.value ?? 0);
 
+        const valueFormatter =
+          currentSeries.formatter ?? formatter ?? ((value) => String(value));
+
         return (
           <div
             key={String(item.dataKey)}
@@ -55,9 +58,7 @@ export function ComposedChartTooltip<T>({
               </span>
             </div>
 
-            <span className="font-medium">
-              {formatter ? formatter(value, locale) : value}
-            </span>
+            <span className="font-medium">{valueFormatter(value, locale)}</span>
           </div>
         );
       })}

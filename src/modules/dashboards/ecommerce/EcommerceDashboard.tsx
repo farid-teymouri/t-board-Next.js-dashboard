@@ -2,7 +2,12 @@
 
 import type { EcommerceDashboardDictionary } from "@/i18n/dictionaries";
 
-import { EcommerceQuickActions, MonthlyTarget, KpiCards } from "./widgets";
+import {
+  EcommerceQuickActions,
+  MonthlyTarget,
+  KpiCards,
+  RevenueOrders,
+} from "./widgets";
 
 type EcommerceDashboardProps = {
   dictionary: EcommerceDashboardDictionary;
@@ -33,8 +38,15 @@ export function EcommerceDashboard({
         </section>
 
         <section className="col-span-1 lg:col-span-4 xl:col-span-3">
-          {/* → Generic: KpiCardsWidget */}
           <KpiCards dictionary={dictionary.kpiCards} locale={locale} />
+        </section>
+
+        <section className="col-span-1 lg:col-span-4 xl:col-span-2">
+          {/* → Generic: ComposedChartWidget */}
+          <RevenueOrders
+            dictionary={dictionary.revenueOrders}
+            locale={locale}
+          />
         </section>
       </div>
     </div>

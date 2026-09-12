@@ -27,6 +27,7 @@ export function ComposedChartWidget<T>({
   header,
   periods,
   formatter,
+  yAxes,
 }: ComposedChartWidgetProps<T>) {
   const chartConfig = series.reduce<ChartConfig>((config, item) => {
     config[item.dataKey] = {
@@ -42,6 +43,20 @@ export function ComposedChartWidget<T>({
   });
 
   const visibleData = data.slice(visibleRange.start, visibleRange.end);
+
+  const resolvedYAxes =
+    yAxes && yAxes.length > 0
+      ? yAxes
+      : [
+          {
+            id: "default",
+            position: "left" as const,
+            formatter,
+          },
+        ];
+
+  const getSeriesAxisId = (item: (typeof series)[number]) =>
+    item.yAxisId ?? resolvedYAxes[0]?.id ?? "default";
 
   return (
     <Card className="h-full flex justify-between">
@@ -96,14 +111,23 @@ export function ComposedChartWidget<T>({
                 axisLine={false}
                 tickMargin={12}
               />
-              <YAxis
-                tickLine={false}
-                axisLine={false}
-                tickMargin={40}
-                tickFormatter={(value) =>
-                  formatter ? formatter(Number(value), locale) : String(value)
-                }
-              />
+              {resolvedYAxes.map((axis) => (
+                <YAxis
+                  key={axis.id}
+                  yAxisId={axis.id}
+                  orientation={axis.position ?? "left"}
+                  tickLine={false}
+                  axisLine={false}
+                  tickMargin={axis.position === "right" ? 12 : 40}
+                  ticks={axis.ticks}
+                  domain={axis.domain}
+                  tickFormatter={(value) =>
+                    axis.formatter
+                      ? axis.formatter(Number(value), locale)
+                      : String(value)
+                  }
+                />
+              ))}
 
               <Tooltip
                 cursor={{
@@ -120,13 +144,17 @@ export function ComposedChartWidget<T>({
               />
 
               {series.map((item) => {
+                const axisId = getSeriesAxisId(item);
+
                 if (item.type === "bar") {
                   return (
                     <Bar
                       key={item.dataKey}
                       dataKey={item.dataKey}
+                      yAxisId={axisId}
                       fill={item.color}
                       radius={item.radius}
+                      barSize={item.barSize}
                     />
                   );
                 }
@@ -135,6 +163,7 @@ export function ComposedChartWidget<T>({
                   <Line
                     key={item.dataKey}
                     dataKey={item.dataKey}
+                    yAxisId={axisId}
                     type="natural"
                     stroke={item.color}
                     strokeWidth={3}

@@ -18,7 +18,7 @@ export function ComposedChartPeriod({
   }
 
   return (
-    <div className="flex shrink-0 items-center gap-1 rounded-lg border p-0.5">
+    <div className="flex shrink-0 items-center gap-1 rounded-lg border p-1">
       {options.map((option) => {
         const isActive = option.value === value;
 
@@ -30,7 +30,7 @@ export function ComposedChartPeriod({
             disabled={isActive}
             size="sm"
             onClick={() => onChange?.(option.value)}
-            className="h-7 rounded-md px-3 text-xs font-medium"
+            className="h-8 rounded-md px-3 text-xs font-medium"
           >
             {option.label}
           </Button>

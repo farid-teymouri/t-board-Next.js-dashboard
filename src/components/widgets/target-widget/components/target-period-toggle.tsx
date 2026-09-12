@@ -17,13 +17,14 @@ export function TargetPeriodToggle({
   onChange,
 }: TargetPeriodToggleProps) {
   return (
-    <div className="flex shrink-0 items-center gap-1 rounded-lg border p-0.5 py-1">
+    <div className="flex shrink-0 items-center gap-1 rounded-lg border p-1 py-1">
       <Button
         type="button"
         size="sm"
         variant={value === "monthly" ? "default" : "ghost"}
         disabled={value === "monthly"}
         onClick={() => onChange("monthly")}
+        className="h-8"
       >
         {monthly}
       </Button>
@@ -34,6 +35,7 @@ export function TargetPeriodToggle({
         variant={value === "quarterly" ? "default" : "ghost"}
         disabled={value === "quarterly"}
         onClick={() => onChange("quarterly")}
+        className="h-8"
       >
         {quarterly}
       </Button>
