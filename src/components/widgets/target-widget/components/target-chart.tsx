@@ -45,7 +45,7 @@ export function TargetChart({
     .replace(/٫/g, "/");
 
   return (
-    <div className="relative mx-auto size-56">
+    <div className="relative mx-auto size-38">
       <ChartContainer config={chartConfig} className="size-full">
         <RadialBarChart
           data={chartData}
