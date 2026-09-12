@@ -6,17 +6,17 @@ import type { EcommerceDashboardDictionary } from "@/i18n/dictionaries";
 import { useMonthlyTarget } from "../hooks/use-monthly-target";
 
 type MonthlyTargetProps = {
-  dictionary: EcommerceDashboardDictionary["monthlyTarget"];
+  translations: EcommerceDashboardDictionary["monthlyTarget"];
   locale: "fa" | "en";
 };
 
-export function MonthlyTarget({ dictionary, locale }: MonthlyTargetProps) {
+export function MonthlyTarget({ translations, locale }: MonthlyTargetProps) {
   const { data, isLoading, isError } = useMonthlyTarget();
 
   return (
     <TargetWidget
       data={data}
-      dictionary={dictionary}
+      translations={translations}
       locale={locale}
       isLoading={isLoading}
       isError={isError}

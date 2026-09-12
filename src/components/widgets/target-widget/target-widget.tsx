@@ -16,7 +16,7 @@ import type {
 
 type TargetWidgetProps = {
   data?: TargetWidgetData;
-  dictionary: TargetWidgetDictionary;
+  translations: TargetWidgetDictionary;
   locale: "fa" | "en";
   isLoading?: boolean;
   isError?: boolean;
@@ -24,7 +24,7 @@ type TargetWidgetProps = {
 
 export function TargetWidget({
   data,
-  dictionary,
+  translations,
   locale,
   isLoading = false,
   isError = false,
@@ -80,13 +80,13 @@ export function TargetWidget({
           <div className="space-y-1">
             <p className="text-muted-foreground text-sm">{periodLabel}</p>
 
-            <h3 className="text-base font-semibold">{dictionary.title}</h3>
+            <h3 className="text-base font-semibold">{translations.title}</h3>
           </div>
 
           <TargetPeriodToggle
             value={period}
-            monthly={dictionary.monthly}
-            quarterly={dictionary.quarterly}
+            monthly={translations.monthly}
+            quarterly={translations.quarterly}
             onChange={setPeriod}
           />
         </div>
@@ -96,20 +96,20 @@ export function TargetWidget({
         <TargetChart
           percentage={percentage}
           locale={locale}
-          ofTarget={dictionary.ofTarget}
+          ofTarget={translations.ofTarget}
         />
 
         <TargetSummary
           data={periodData}
           locale={locale}
-          template={dictionary.progressMessage}
+          template={translations.progressMessage}
         />
 
         <div className="border-t pt-5">
           <div className="grid grid-cols-3 gap-4">
             <div className="space-y-1">
               <p className="text-muted-foreground text-xs">
-                {dictionary.booked}
+                {translations.booked}
               </p>
               <p className="font-semibold">
                 {formatCurrency(periodData.achieved, {
@@ -121,7 +121,7 @@ export function TargetWidget({
 
             <div className="space-y-1">
               <p className="text-muted-foreground text-xs">
-                {dictionary.remaining}
+                {translations.remaining}
               </p>
               <p className="font-semibold">
                 {formatCurrency(periodData.remaining, {
@@ -133,7 +133,7 @@ export function TargetWidget({
 
             <div className="space-y-1">
               <p className="text-muted-foreground text-xs">
-                {dictionary.dailyRunRate}
+                {translations.dailyRunRate}
               </p>
               <p className="font-semibold">
                 {formatCurrency(periodData.dailyRunRate, {

@@ -16,7 +16,7 @@ import {
 import { useKpiCards } from "../hooks/use-kpi-cards";
 
 type KpiCardsProps = {
-  dictionary: {
+  translations: {
     totalSales: string;
     orders: string;
     averageOrderValue: string;
@@ -63,7 +63,7 @@ const kpiCardLabels: Record<KpiCardId, KpiCardLabelKey> = {
   "cart-abandonment": "cartAbandonment",
 };
 
-export function KpiCards({ dictionary, locale }: KpiCardsProps) {
+export function KpiCards({ translations, locale }: KpiCardsProps) {
   const { data, isLoading } = useKpiCards();
 
   const items =
@@ -74,7 +74,7 @@ export function KpiCards({ dictionary, locale }: KpiCardsProps) {
 
         return {
           ...item,
-          label: dictionary[labelKey],
+          label: translations[labelKey],
           icon: config.icon,
           color: config.color,
         };

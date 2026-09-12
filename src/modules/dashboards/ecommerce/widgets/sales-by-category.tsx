@@ -10,11 +10,14 @@ import { useSalesByCategory } from "../hooks/use-sales-by-category";
 import type { EcommerceDashboardDictionary } from "@/i18n/dictionaries";
 
 type SalesByCategoryProps = {
-  dictionary: EcommerceDashboardDictionary["salesByCategory"];
+  translations: EcommerceDashboardDictionary["salesByCategory"];
   locale: "fa" | "en";
 };
 
-export function SalesByCategory({ locale, dictionary }: SalesByCategoryProps) {
+export function SalesByCategory({
+  locale,
+  translations,
+}: SalesByCategoryProps) {
   const { data, isLoading, isError } = useSalesByCategory(locale);
 
   if (isLoading) {
@@ -23,7 +26,7 @@ export function SalesByCategory({ locale, dictionary }: SalesByCategoryProps) {
 
   if (isError || !data) {
     return (
-      <div className="text-sm text-muted-foreground">{dictionary.error}</div>
+      <div className="text-sm text-muted-foreground">{translations.error}</div>
     );
   }
 
@@ -32,31 +35,31 @@ export function SalesByCategory({ locale, dictionary }: SalesByCategoryProps) {
   const items = [
     {
       id: "apparel",
-      label: dictionary.apparel,
+      label: translations.apparel,
       value: categories.apparel,
       color: "var(--chart-1)",
     },
     {
       id: "electronics",
-      label: dictionary.electronics,
+      label: translations.electronics,
       value: categories.electronics,
       color: "var(--chart-2)",
     },
     {
       id: "homeLiving",
-      label: dictionary.homeLiving,
+      label: translations.homeLiving,
       value: categories.homeLiving,
       color: "var(--chart-3)",
     },
     {
       id: "beauty",
-      label: dictionary.beauty,
+      label: translations.beauty,
       value: categories.beauty,
       color: "var(--chart-4)",
     },
     {
       id: "other",
-      label: dictionary.other,
+      label: translations.other,
       value: categories.other,
       color: "var(--chart-5)",
     },
@@ -65,11 +68,11 @@ export function SalesByCategory({ locale, dictionary }: SalesByCategoryProps) {
   return (
     <BreakdownWidget
       locale={locale}
-      title={dictionary.title}
-      description={dictionary.description}
+      title={translations.title}
+      description={translations.description}
       total={{
         value: netSales,
-        label: dictionary.netSales,
+        label: translations.netSales,
       }}
       items={items}
       variant="list"

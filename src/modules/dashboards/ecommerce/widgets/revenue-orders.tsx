@@ -15,7 +15,7 @@ import type { EcommerceDashboardDictionary } from "@/i18n/dictionaries";
 import { useRevenueOrders } from "../hooks/use-revenue-orders";
 
 type RevenueOrdersProps = {
-  dictionary: EcommerceDashboardDictionary["revenueOrders"];
+  translations: EcommerceDashboardDictionary["revenueOrders"];
   locale: "fa" | "en";
 };
 
@@ -73,7 +73,7 @@ function getRevenueOrdersLabel(
   return key;
 }
 
-export function RevenueOrders({ dictionary, locale }: RevenueOrdersProps) {
+export function RevenueOrders({ translations, locale }: RevenueOrdersProps) {
   const { data, availablePeriods, period, setPeriod, isLoading, isError } =
     useRevenueOrders();
 
@@ -84,7 +84,7 @@ export function RevenueOrders({ dictionary, locale }: RevenueOrdersProps) {
   if (isError || !data || !period) {
     return (
       <div className="rounded-lg border p-6 text-sm text-destructive">
-        {dictionary.error}
+        {translations.error}
       </div>
     );
   }
@@ -93,7 +93,7 @@ export function RevenueOrders({ dictionary, locale }: RevenueOrdersProps) {
     .filter((value) => availablePeriods.includes(value))
     .map((value) => ({
       value,
-      label: dictionary.period[value],
+      label: translations.period[value],
     }));
 
   const chartData = data.data.map((item) => ({
@@ -107,14 +107,14 @@ export function RevenueOrders({ dictionary, locale }: RevenueOrdersProps) {
       xAxisDataKey="label"
       locale={locale}
       header={{
-        label: dictionary.label,
-        title: dictionary.title,
-        description: dictionary.description,
+        label: translations.label,
+        title: translations.title,
+        description: translations.description,
       }}
       series={[
         {
           dataKey: "orders",
-          label: dictionary.series.orders,
+          label: translations.series.orders,
           type: "bar",
           color: "var(--chart-2)",
           radius: 4,
@@ -124,7 +124,7 @@ export function RevenueOrders({ dictionary, locale }: RevenueOrdersProps) {
         },
         {
           dataKey: "revenue",
-          label: dictionary.series.revenue,
+          label: translations.series.revenue,
           type: "line",
           color: "var(--chart-3)",
           yAxisId: "revenue",
