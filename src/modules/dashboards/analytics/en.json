@@ -1,4 +1,9 @@
 {
+  "header": {
+    "exportReport": "Export report",
+    "refresh": "Refresh",
+    "last30Days": "Last 30 days"
+  },
   "acquisition": {
     "label": "Acquisition",
     "title": "User Acquisition",

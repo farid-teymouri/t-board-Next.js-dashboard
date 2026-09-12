@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 
 import { sidebarMenuGroups } from "@/components/layout/sidebar/data/menu-items";
 import type { SidebarDictionary } from "@/components/layout/sidebar/types/sidebar";
-
 import { findBreadcrumbPath } from "@/components/layout/breadcrumb/utils/breadcrumb-path";
 
 type PageHeaderProps = {

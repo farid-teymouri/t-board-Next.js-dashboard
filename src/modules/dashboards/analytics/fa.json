@@ -1,4 +1,9 @@
 {
+  "header": {
+    "exportReport": "خروجی گزارش",
+    "refresh": "بروزرسانی",
+    "last30Days": "۳۰ روز گذشته"
+  },
   "acquisition": {
     "label": "جذب کاربران",
     "title": "جذب کاربران",

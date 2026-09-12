@@ -31,6 +31,9 @@ const dictionaries = {
       sales: (await import("@/modules/dashboards/sales/en.json")).default,
       analytics: (await import("@/modules/dashboards/analytics/en.json"))
         .default,
+      ecommerce: (await import("@/modules/dashboards/ecommerce/en.json"))
+        .default,
+      finance: (await import("@/modules/dashboards/finance/en.json")).default,
     },
   }),
 
@@ -61,6 +64,9 @@ const dictionaries = {
       sales: (await import("@/modules/dashboards/sales/fa.json")).default,
       analytics: (await import("@/modules/dashboards/analytics/fa.json"))
         .default,
+      ecommerce: (await import("@/modules/dashboards/ecommerce/fa.json"))
+        .default,
+      finance: (await import("@/modules/dashboards/finance/fa.json")).default,
     },
   }),
 };
@@ -70,8 +76,15 @@ export type Dictionary = Awaited<ReturnType<(typeof dictionaries)["fa"]>>;
 export type UserSettingsDictionary = Dictionary["settings"];
 
 export type SalesDashboardDictionary = Dictionary["dashboards"]["sales"];
+
 export type AnalyticsDashboardDictionary =
   Dictionary["dashboards"]["analytics"];
+
+export type EcommerceDashboardDictionary =
+  Dictionary["dashboards"]["ecommerce"];
+
+export type FinanceDashboardDictionary = Dictionary["dashboards"]["finance"];
+
 export const getDictionary = async (locale: Locale) => {
   if (!hasLocale(locale)) {
     notFound();

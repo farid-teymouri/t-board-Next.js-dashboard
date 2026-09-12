@@ -1,8 +1,14 @@
 {
+  "header": {
+    "newImport": "New Import",
+    "export": "Export",
+    "last30Days": "Last 30 days"
+  },
   "label": "Sales overview",
   "welcome": "Welcome back, {name}",
   "description": "Revenue {currentPeriod} compared to {previousPeriod} {growth}.{topProducts}{pendingInvoices}",
   "pendingInvoices": "{count} invoices are still pending.",
+
   "growth": {
     "day": "today",
     "week": "this week",

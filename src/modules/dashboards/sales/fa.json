@@ -1,4 +1,9 @@
 {
+  "header": {
+    "newImport": "درون‌ریزی جدید",
+    "export": "خروجی",
+    "last30Days": "۳۰ روز گذشته"
+  },
   "label": "نمای کلی فروش",
   "welcome": "خوش برگشتی، {name}",
   "description": "درآمد {currentPeriod} نسبت به {previousPeriod} {growth}.{topProducts}{pendingInvoices}",
