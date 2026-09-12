@@ -11,7 +11,6 @@ import {
 } from "recharts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 import { ComparisonChartTooltip } from "./comparison-chart-tooltip";
 import { useChartZoom } from "./use-chart-zoom";
