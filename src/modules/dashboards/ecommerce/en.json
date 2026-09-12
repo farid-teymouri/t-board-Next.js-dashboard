@@ -3,5 +3,18 @@
     "addProduct": "Add Product",
     "refresh": "Refresh",
     "last30Days": "Last 30 days"
+  },
+  "quickActions": {
+    "eyebrow": "Storefront",
+    "title": "Quick actions",
+    "customise": "Customise",
+    "actions": {
+      "addProduct": "Add product",
+      "newOrder": "New order",
+      "exportCsv": "Export CSV",
+      "discount": "Discount",
+      "fulfil": "Fulfil",
+      "collections": "Collections"
+    }
   }
 }

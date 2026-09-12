@@ -7,16 +7,17 @@ import { EcommerceHeaderActions } from "@/modules/dashboards/ecommerce/component
 interface EcommercesLayoutProps {
   children: React.ReactNode;
   params: Promise<{
-    locale: "en" | "fa";
+    locale: string;
   }>;
 }
 
-export default async function AnalyticsLayout({
+export default async function EcommercesLayout({
   children,
   params,
 }: EcommercesLayoutProps) {
-  const { locale } = await params;
+  const { locale: routeLocale } = await params;
 
+  const locale = routeLocale === "fa" ? "fa" : "en";
   const dictionary = await getDictionary(locale);
 
   return (

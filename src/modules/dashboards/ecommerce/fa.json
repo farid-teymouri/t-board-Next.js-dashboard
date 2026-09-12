@@ -3,5 +3,18 @@
     "addProduct": "محصول جدید",
     "refresh": "بروزرسانی",
     "last30Days": "۳۰ روز گذشته"
+  },
+  "quickActions": {
+    "eyebrow": "فروشگاه",
+    "title": "دسترسی‌های سریع",
+    "customise": "سفارشی‌سازی",
+    "actions": {
+      "addProduct": "افزودن محصول",
+      "newOrder": "سفارش جدید",
+      "exportCsv": "خروجی CSV",
+      "discount": "تخفیف",
+      "fulfil": "تکمیل سفارش",
+      "collections": "مجموعه‌ها"
+    }
   }
 }

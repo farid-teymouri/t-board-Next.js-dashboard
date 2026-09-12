@@ -7,7 +7,7 @@ import { SalesHeaderActions } from "@/modules/dashboards/sales/components/sales-
 interface SalesLayoutProps {
   children: React.ReactNode;
   params: Promise<{
-    locale: "en" | "fa";
+    locale: string;
   }>;
 }
 
@@ -15,8 +15,9 @@ export default async function SalesLayout({
   children,
   params,
 }: SalesLayoutProps) {
-  const { locale } = await params;
+  const { locale: routeLocale } = await params;
 
+  const locale = routeLocale === "fa" ? "fa" : "en";
   const dictionary = await getDictionary(locale);
 
   return (

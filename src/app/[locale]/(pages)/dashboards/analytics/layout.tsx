@@ -7,7 +7,7 @@ import { AnalyticsHeaderActions } from "@/modules/dashboards/analytics/component
 interface AnalyticsLayoutProps {
   children: React.ReactNode;
   params: Promise<{
-    locale: "en" | "fa";
+    locale: string;
   }>;
 }
 
@@ -15,8 +15,9 @@ export default async function AnalyticsLayout({
   children,
   params,
 }: AnalyticsLayoutProps) {
-  const { locale } = await params;
+  const { locale: routeLocale } = await params;
 
+  const locale = routeLocale === "fa" ? "fa" : "en";
   const dictionary = await getDictionary(locale);
 
   return (

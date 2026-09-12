@@ -7,16 +7,17 @@ import { FinanceHeaderActions } from "@/modules/dashboards/finance/components/fi
 interface FinanceLayoutProps {
   children: React.ReactNode;
   params: Promise<{
-    locale: "en" | "fa";
+    locale: string;
   }>;
 }
 
-export default async function AnalyticsLayout({
+export default async function FinanceLayout({
   children,
   params,
 }: FinanceLayoutProps) {
-  const { locale } = await params;
+  const { locale: routeLocale } = await params;
 
+  const locale = routeLocale === "fa" ? "fa" : "en";
   const dictionary = await getDictionary(locale);
 
   return (
