@@ -47,5 +47,16 @@
       "orders": "Orders"
     },
     "error": "Failed to load revenue and orders data."
+  },
+  "salesByCategory": {
+    "title": "Sales by Category",
+    "description": "Net sales distribution by product category",
+    "netSales": "Net Sales",
+    "apparel": "Apparel",
+    "electronics": "Electronics",
+    "homeLiving": "Home & Living",
+    "beauty": "Beauty",
+    "other": "Other",
+    "error": "Failed to load sales by category"
   }
 }

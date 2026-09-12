@@ -7,6 +7,7 @@ import {
   MonthlyTarget,
   KpiCards,
   RevenueOrders,
+  SalesByCategory,
 } from "./widgets";
 
 type EcommerceDashboardProps = {
@@ -45,6 +46,13 @@ export function EcommerceDashboard({
           {/* → Generic: ComposedChartWidget */}
           <RevenueOrders
             dictionary={dictionary.revenueOrders}
+            locale={locale}
+          />
+        </section>
+        <section className="col-span-1 lg:col-span-4 xl:col-span-1">
+          {/* → Generic: BreakdownWidget */}
+          <SalesByCategory
+            dictionary={dictionary.salesByCategory}
             locale={locale}
           />
         </section>
