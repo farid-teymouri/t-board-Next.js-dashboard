@@ -16,5 +16,11 @@
       "transfer": "Transfer",
       "payBills": "Pay bills"
     }
+  },
+  "kpiCards": {
+    "totalBalance": "Total Balance",
+    "monthlyIncome": "Monthly Income",
+    "monthlyExpenses": "Monthly Expenses",
+    "netSavingsRate": "Net Savings Rate"
   }
 }

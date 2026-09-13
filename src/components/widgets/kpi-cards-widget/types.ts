@@ -46,9 +46,3 @@ export type KpiCardsWidgetProps = {
   locale: "fa" | "en";
   isLoading?: boolean;
 };
-
-export type KpiCardId =
-  | "total-sales"
-  | "orders"
-  | "average-order-value"
-  | "cart-abandonment";

@@ -16,5 +16,11 @@
       "transfer": "انتقال",
       "payBills": "پرداخت قبض‌ ها"
     }
+  },
+  "kpiCards": {
+    "totalBalance": "موجودی کل",
+    "monthlyIncome": "درآمد ماهانه",
+    "monthlyExpenses": "هزینه‌های ماهانه",
+    "netSavingsRate": "نرخ پس‌انداز خالص"
   }
 }

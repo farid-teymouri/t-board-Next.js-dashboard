@@ -1,7 +1,6 @@
 export { KpiCardsWidget } from "./kpi-cards-widget";
 
 export type {
-  KpiCardId,
   KpiCardColor,
   KpiChangeDirection,
   KpiChangeTone,

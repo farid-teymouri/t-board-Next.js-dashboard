@@ -2,7 +2,7 @@
 
 import type { FinanceDashboardDictionary } from "@/i18n/dictionaries";
 
-import { FinanceSummary } from "./widgets";
+import { FinanceSummary, KpiCards } from "./widgets";
 
 type FinanceDashboardProps = {
   dictionary: FinanceDashboardDictionary;
@@ -21,6 +21,9 @@ export function FinanceDashboard({
             dictionary={dictionary.financeSummary}
             locale={locale}
           />
+        </section>{" "}
+        <section className="col-span-1 lg:col-span-4 xl:col-span-3">
+          <KpiCards translations={dictionary.kpiCards} locale={locale} />
         </section>
       </div>
     </div>
