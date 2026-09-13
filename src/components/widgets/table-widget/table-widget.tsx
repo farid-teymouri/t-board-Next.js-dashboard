@@ -1,5 +1,5 @@
 "use client";
-
+import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 
 import {
@@ -51,23 +51,36 @@ export function TableWidget<T>({
   return (
     <Card className="flex h-full flex-col gap-6">
       <CardHeader className="flex flex-row items-start justify-between gap-4 space-y-0">
-        <div className="min-w-0 space-y-1">
-          <h2 className="font-display text-base font-medium">{title}</h2>
+        {isLoading ? (
+          <>
+            <div className="min-w-0 space-y-1">
+              <Skeleton className="h-5 w-32" />
+              <Skeleton className="h-4 w-48" />
+            </div>
 
-          <p className="text-sm text-muted-foreground">{description}</p>
-        </div>
+            {viewAll && <Skeleton className="h-4 w-16 shrink-0" />}
+          </>
+        ) : (
+          <>
+            <div className="min-w-0 space-y-1">
+              <h2 className="font-display text-base font-medium">{title}</h2>
 
-        {viewAll ? (
-          <Link
-            href={viewAll.href}
-            className={cn(
-              "shrink-0 text-sm font-medium text-primary",
-              "underline-offset-4 transition-colors hover:underline",
-            )}
-          >
-            {viewAll.label}
-          </Link>
-        ) : null}
+              <p className="text-sm text-muted-foreground">{description}</p>
+            </div>
+
+            {viewAll ? (
+              <Link
+                href={viewAll.href}
+                className={cn(
+                  "shrink-0 text-sm font-medium text-primary",
+                  "underline-offset-4 transition-colors hover:underline",
+                )}
+              >
+                {viewAll.label}
+              </Link>
+            ) : null}
+          </>
+        )}
       </CardHeader>
 
       <CardContent className="min-w-0">

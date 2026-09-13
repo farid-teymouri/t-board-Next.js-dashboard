@@ -7,15 +7,7 @@
   "quickActions": {
     "eyebrow": "فروشگاه",
     "title": "دسترسی‌ های سریع",
-    "customise": "سفارشی‌ سازی",
-    "actions": {
-      "addProduct": "افزودن محصول",
-      "newOrder": "سفارش جدید",
-      "exportCsv": "خروجی CSV",
-      "discount": "تخفیف",
-      "fulfil": "تکمیل سفارش",
-      "collections": "مجموعه‌ ها"
-    }
+    "customise": "سفارشی‌ سازی"
   },
   "monthlyTarget": {
     "title": "هدف ماهانه",
@@ -94,5 +86,13 @@
   "recentOrders": {
     "title": "سفارش‌های اخیر",
     "description": "آخرین سفارش‌های فروشگاه"
+  },
+  "customerInsights": {
+    "lowStock": {
+      "left": "باقی‌مانده"
+    },
+    "topCustomers": {
+      "orders": "سفارش"
+    }
   }
 }

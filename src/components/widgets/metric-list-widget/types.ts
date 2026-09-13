@@ -30,7 +30,10 @@ export interface MetricListSectionItem {
   label: ReactNode;
   meta?: ReactNode;
   value?: number;
+  valueDisplay?: ReactNode;
+  badge?: ReactNode;
   icon?: LucideIcon;
+  iconContent?: ReactNode;
   iconClassName?: string;
 }
 

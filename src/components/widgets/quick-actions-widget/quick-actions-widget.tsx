@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
+import { QuickActionsWidgetSkeleton } from "./components/quick-actions-widget-skeleton";
+
 import type { QuickActionsWidgetProps } from "./types";
 
 export function QuickActionsWidget({
@@ -12,8 +14,14 @@ export function QuickActionsWidget({
   onActionClick,
   actions,
   locale,
+  isLoading = false,
+  actionCount,
 }: QuickActionsWidgetProps) {
   const isRtl = locale === "fa";
+
+  if (isLoading) {
+    return <QuickActionsWidgetSkeleton actionCount={actionCount} />;
+  }
 
   return (
     <Card dir={isRtl ? "rtl" : "ltr"} className="h-full">

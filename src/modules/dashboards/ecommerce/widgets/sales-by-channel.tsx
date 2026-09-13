@@ -8,7 +8,6 @@ import type { EcommerceDashboardDictionary } from "@/i18n/dictionaries";
 
 type SalesByChannelProps = {
   translations: EcommerceDashboardDictionary["salesByChannel"];
-
   locale: "fa" | "en";
 };
 

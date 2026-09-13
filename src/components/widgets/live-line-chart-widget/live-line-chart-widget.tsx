@@ -35,7 +35,7 @@ export function LiveLineChartWidget({
   locale,
 }: LiveLineChartWidgetProps) {
   return (
-    <Card className="h-full ">
+    <Card className="flex h-full min-w-0 flex-col">
       <CardHeader className="space-y-1">
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
@@ -61,12 +61,12 @@ export function LiveLineChartWidget({
         </div>
       </CardHeader>
 
-      <CardContent>
-        <div className="w-full" dir={locale === "fa" ? "rtl" : "ltr"}>
-          <ChartContainer
-            config={chartConfig}
-            className="h-full w-full max-h-[250px]"
-          >
+      <CardContent className="min-w-0">
+        <div
+          className="h-[250px] min-h-0 min-w-0 w-full"
+          dir={locale === "fa" ? "rtl" : "ltr"}
+        >
+          <ChartContainer config={chartConfig} className="h-full w-full">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart
                 data={data}

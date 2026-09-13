@@ -11,7 +11,10 @@ export function MetricListSectionItem({
   label,
   meta,
   value,
+  valueDisplay,
+  badge,
   icon: Icon,
+  iconContent,
   iconClassName,
   locale,
 }: MetricListSectionItemProps) {
@@ -20,14 +23,18 @@ export function MetricListSectionItem({
 
   return (
     <div className="flex items-center gap-3 py-3">
-      {Icon && (
+      {(Icon || iconContent) && (
         <div
           className={cn(
             "flex size-9 shrink-0 items-center justify-center rounded-md",
             iconClassName,
           )}
         >
-          <Icon className="size-5" />
+          {Icon ? (
+            <Icon className="size-5" />
+          ) : (
+            <span className="text-xs font-semibold">{iconContent}</span>
+          )}
         </div>
       )}
 
@@ -37,8 +44,16 @@ export function MetricListSectionItem({
         {meta && <p className="mt-1 text-xs text-muted-foreground">{meta}</p>}
       </div>
 
-      {formattedValue !== undefined && (
-        <span className="text-sm font-semibold tracking-tight">
+      {badge}
+
+      {valueDisplay !== undefined && (
+        <span className="shrink-0 text-sm font-semibold tracking-tight">
+          {valueDisplay}
+        </span>
+      )}
+
+      {valueDisplay === undefined && formattedValue !== undefined && (
+        <span className="shrink-0 text-sm font-semibold tracking-tight">
           {formattedValue}
         </span>
       )}

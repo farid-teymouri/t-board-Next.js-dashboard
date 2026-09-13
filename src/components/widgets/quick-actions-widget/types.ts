@@ -13,4 +13,6 @@ export type QuickActionsWidgetProps = {
   onActionClick?: () => void;
   actions: QuickAction[];
   locale: "fa" | "en";
+  isLoading?: boolean;
+  actionCount?: number;
 };

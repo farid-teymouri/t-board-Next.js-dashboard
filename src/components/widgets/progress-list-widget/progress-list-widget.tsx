@@ -90,25 +90,38 @@ export function ProgressListWidget({
   return (
     <Card className="flex h-full flex-col gap-6">
       <CardHeader className="flex flex-row items-start justify-between gap-4 space-y-0">
-        <div className="min-w-0 space-y-1">
-          <h3 className="font-display text-base font-medium group-data-[size=sm]/card:text-sm">
-            {translations.title}
-          </h3>
+        {isLoading ? (
+          <>
+            <div className="min-w-0 space-y-1">
+              <div className="h-5 w-32 animate-pulse rounded-md bg-muted" />
+              <div className="h-4 w-48 animate-pulse rounded-md bg-muted" />
+            </div>
 
-          <p className="text-sm text-muted-foreground">
-            {translations.description}
-          </p>
-        </div>
+            <div className="h-4 w-16 shrink-0 animate-pulse rounded-md bg-muted" />
+          </>
+        ) : (
+          <>
+            <div className="min-w-0 space-y-1">
+              <h3 className="font-display text-base font-medium group-data-[size=sm]/card:text-sm">
+                {translations.title}
+              </h3>
 
-        {action ??
-          (translations.action && (
-            <Link
-              href="#"
-              className="shrink-0 text-sm font-medium text-primary underline-offset-auto transition-colors hover:underline"
-            >
-              {translations.action}
-            </Link>
-          ))}
+              <p className="text-sm text-muted-foreground">
+                {translations.description}
+              </p>
+            </div>
+
+            {action ??
+              (translations.action && (
+                <Link
+                  href="#"
+                  className="shrink-0 text-sm font-medium text-primary underline-offset-auto transition-colors hover:underline"
+                >
+                  {translations.action}
+                </Link>
+              ))}
+          </>
+        )}
       </CardHeader>
 
       <CardContent className="flex flex-1 flex-col">{content}</CardContent>

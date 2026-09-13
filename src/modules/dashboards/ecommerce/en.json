@@ -7,15 +7,7 @@
   "quickActions": {
     "eyebrow": "Storefront",
     "title": "Quick actions",
-    "customise": "Customise",
-    "actions": {
-      "addProduct": "Add product",
-      "newOrder": "New order",
-      "exportCsv": "Export CSV",
-      "discount": "Discount",
-      "fulfil": "Fulfil",
-      "collections": "Collections"
-    }
+    "customise": "Customise"
   },
   "monthlyTarget": {
     "title": "Monthly target",
@@ -89,5 +81,13 @@
   "recentOrders": {
     "title": "Recent Orders",
     "description": "Latest store orders"
+  },
+  "customerInsights": {
+    "lowStock": {
+      "left": "left"
+    },
+    "topCustomers": {
+      "orders": "orders"
+    }
   }
 }

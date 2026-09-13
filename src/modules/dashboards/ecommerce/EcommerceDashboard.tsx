@@ -12,6 +12,7 @@ import {
   InventoryStatus,
   TopProducts,
   RecentOrders,
+  CustomerInsights,
 } from "./widgets";
 
 type EcommerceDashboardProps = {
@@ -27,13 +28,12 @@ export function EcommerceDashboard({
     <div className="space-y-8">
       <div className="grid w-full grid-cols-1 gap-6 lg:grid-cols-4 xl:grid-cols-3">
         <section className="col-span-1 lg:col-span-4 xl:col-span-2">
-          {/* → Generic: QuickActionsWidget */}
+          {/* → Generic:   */}
           <EcommerceQuickActions
             translations={dictionary.quickActions}
             locale={locale}
           />
         </section>
-
         <section className="col-span-1 lg:col-span-4 xl:col-span-1">
           {/* → Generic: TargetWidget */}
           <MonthlyTarget
@@ -41,11 +41,10 @@ export function EcommerceDashboard({
             locale={locale}
           />
         </section>
-
         <section className="col-span-1 lg:col-span-4 xl:col-span-3">
+          {/* → Generic: KpiCardsWidget */}
           <KpiCards translations={dictionary.kpiCards} locale={locale} />
         </section>
-
         <section className="col-span-1 lg:col-span-4 xl:col-span-2">
           {/* → Generic: ComposedChartWidget */}
           <RevenueOrders
@@ -78,13 +77,21 @@ export function EcommerceDashboard({
           {/* → Generic: ProgressListWidget */}
           <TopProducts translations={dictionary.topProducts} locale={locale} />
         </section>
-        <section className="col-span-1 lg:col-span-4 xl:col-span-3">
+        <section className="col-span-1 lg:col-span-4 xl:col-span-2">
           {/* → Generic: TableWidget */}
           <RecentOrders
             translations={dictionary.recentOrders}
             locale={locale}
           />
         </section>
+        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
+          {/* → Generic: MetricListWidget */}
+          <CustomerInsights
+            translations={dictionary.customerInsights}
+            locale={locale}
+          />
+        </section>
+        s
       </div>
     </div>
   );

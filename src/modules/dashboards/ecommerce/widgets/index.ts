@@ -15,3 +15,5 @@ export { InventoryStatus } from "./inventory-status";
 export { TopProducts } from "./top-products";
 
 export { RecentOrders } from "./recent-orders";
+
+export { CustomerInsights } from "./customer-insights";
