@@ -1,19 +1,19 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import {
-  GrowthIndicator,
   SummaryWidget,
   SummaryWidgetSkeleton,
 } from "@/components/widgets/summary-widget";
-import { useProfile } from "../hooks/use-profile";
-import { useSalesSummary } from "../hooks/use-sales-summary";
-import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
-import type { GrowthPeriod } from "@/types/metrics/growth";
 import { renderTemplate } from "@/lib/utils/render-template";
 
+import type { SalesDashboardDictionary } from "@/i18n/dictionaries";
+import type { GrowthPeriod } from "@/types/metrics/growth";
+
+import { useProfile } from "../hooks/use-profile";
+import { useSalesSummary } from "../hooks/use-sales-summary";
+
 type SalesSummaryProps = {
-  dictionary: SalesDashboardDictionary;
+  dictionary: SalesDashboardDictionary["salesSummary"];
   locale: "fa" | "en";
   period?: GrowthPeriod;
 };
@@ -52,6 +52,7 @@ export function SalesSummary({
   const currentPeriod = dictionary.growth[sales.revenueGrowth.period];
 
   const previousPeriod = dictionary.growth.previous[sales.revenueGrowth.period];
+
   return (
     <SummaryWidget
       eyebrow={dictionary.label}
@@ -59,30 +60,38 @@ export function SalesSummary({
       description={renderTemplate(dictionary.description, {
         currentPeriod,
         previousPeriod,
-        growth: (
-          <>
-            <GrowthIndicator growth={sales.revenueGrowth} locale={locale} />{" "}
-            {sales.revenueGrowth.trend === "up"
-              ? dictionary.growth.increased
-              : dictionary.growth.decreased}
-          </>
-        ),
+        growth:
+          sales.revenueGrowth.trend === "up"
+            ? renderTemplate(dictionary.growth.increased, {
+                currentPeriod,
+                previousPeriod,
+                value: (
+                  <span className="font-medium text-chart-3">
+                    {formatNumber(sales.revenueGrowth.value)}%
+                  </span>
+                ),
+              })
+            : renderTemplate(dictionary.growth.decreased, {
+                currentPeriod,
+                previousPeriod,
+                value: (
+                  <span className="font-medium text-destructive">
+                    {formatNumber(sales.revenueGrowth.value)}%
+                  </span>
+                ),
+              }),
         topProducts:
           sales.revenueGrowth.trend === "up"
             ? renderTemplate(dictionary.growth.topProducts, {
-                product1: (
-                  <Badge variant="default">{sales.topProducts[0]}</Badge>
-                ),
-                product2: (
-                  <Badge variant="default">{sales.topProducts[1]}</Badge>
-                ),
+                product1: <>{sales.topProducts[0]}</>,
+                product2: <>{sales.topProducts[1]}</>,
               })
             : "",
         pendingInvoices:
           sales.pendingInvoices > 0
-            ? locale === "fa"
-              ? ` ${formatNumber(sales.pendingInvoices)} فاکتور همچنان در انتظار تسویه هستند.`
-              : ` ${formatNumber(sales.pendingInvoices)} invoices are still pending.`
+            ? renderTemplate(dictionary.pendingInvoices, {
+                count: formatNumber(sales.pendingInvoices),
+              })
             : "",
       })}
       metrics={[
@@ -90,12 +99,10 @@ export function SalesSummary({
           label: dictionary.stats.targetHit,
           value: `${formatNumber(sales.targetHit)}%`,
         },
-
         {
           label: dictionary.stats.dealsWon,
           value: formatNumber(sales.dealsWon),
         },
-
         {
           label: dictionary.stats.stillOpen,
           value: formatNumber(sales.stillOpen),
@@ -105,7 +112,6 @@ export function SalesSummary({
         {
           label: dictionary.actions.createInvoice,
         },
-
         {
           label: dictionary.actions.viewPipeline,
           variant: "secondary",

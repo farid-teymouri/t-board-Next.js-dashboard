@@ -4,35 +4,35 @@
     "export": "خروجی",
     "last30Days": "۳۰ روز گذشته"
   },
-  "label": "نمای کلی فروش",
-  "welcome": "خوش برگشتی، {name}",
-  "description": "درآمد {currentPeriod} نسبت به {previousPeriod} {growth}.{topProducts}{pendingInvoices}",
-  "pendingInvoices": "{count} فاکتور همچنان در انتظار تسویه هستند.",
-  "growth": {
-    "day": "امروز",
-    "week": "این هفته",
-    "month": "این ماه",
-    "year": "امسال",
-
-    "previous": {
-      "day": "دیروز",
-      "week": "هفته پیش",
-      "month": "ماه قبل",
-      "year": "سال پیش"
+  "salesSummary": {
+    "label": "مرور کلی فروش",
+    "welcome": "خوش آمدید، {name}",
+    "description": "{growth}{topProducts}{pendingInvoices}",
+    "pendingInvoices": "{count} فاکتور همچنان در انتظار تسویه هستند.",
+    "growth": {
+      "day": "امروز",
+      "week": "این هفته",
+      "month": "این ماه",
+      "year": "امسال",
+      "previous": {
+        "day": "دیروز",
+        "week": "هفته گذشته",
+        "month": "ماه گذشته",
+        "year": "سال گذشته"
+      },
+      "increased": "درآمد {currentPeriod} در مقایسه با {previousPeriod} {value} افزایش یافته است.",
+      "decreased": "درآمد {currentPeriod} در مقایسه با {previousPeriod} {value} کاهش یافته است.",
+      "topProducts": " این رشد عمدتاً به دلیل فروش {product1} و {product2} است."
     },
-
-    "increased": "افزایش داشته است",
-    "decreased": "کاهش داشته است",
-    "topProducts": " این رشد عمدتاً از طریق {product1} و {product2} به دست آمده است."
-  },
-  "stats": {
-    "targetHit": "تحقق هدف",
-    "dealsWon": "معاملات موفق",
-    "stillOpen": "باز"
-  },
-  "actions": {
-    "createInvoice": "ایجاد فاکتور",
-    "viewPipeline": "مشاهده فرایند فروش"
+    "stats": {
+      "targetHit": "تحقق هدف",
+      "dealsWon": "معاملات موفق",
+      "stillOpen": "در انتظار"
+    },
+    "actions": {
+      "createInvoice": "ایجاد فاکتور",
+      "viewPipeline": "مشاهده قیف فروش"
+    }
   },
   "revenue": {
     "title": "درآمد کل",

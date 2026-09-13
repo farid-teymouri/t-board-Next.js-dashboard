@@ -23,7 +23,11 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
       <div className="grid gap-6 xl:grid-cols-3 lg:grid-cols-4 grid-cols-1 w-full">
         <section className="xl:col-span-2 lg:col-span-4 col-span-1">
           {/* → Generic: SummaryWidget */}
-          <SalesSummary dictionary={dictionary} locale={locale} period="year" />
+          <SalesSummary
+            dictionary={dictionary.salesSummary}
+            locale={locale}
+            period="year"
+          />
         </section>
 
         <section className="xl:col-span-1 lg:col-span-2 col-span-1">

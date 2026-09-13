@@ -4,46 +4,35 @@
     "export": "Export",
     "last30Days": "Last 30 days"
   },
-  "label": "Sales overview",
-  "welcome": "Welcome back, {name}",
-  "description": "Revenue {currentPeriod} compared to {previousPeriod} {growth}.{topProducts}{pendingInvoices}",
-  "pendingInvoices": "{count} invoices are still pending.",
-
-  "growth": {
-    "day": "today",
-    "week": "this week",
-    "month": "this month",
-    "year": "this year",
-
-    "previous": {
-      "day": "yesterday",
-      "week": "last week",
-      "month": "last month",
-      "year": "last year"
+  "salesSummary": {
+    "label": "Sales overview",
+    "welcome": "Welcome back, {name}",
+    "description": "{growth}{topProducts}{pendingInvoices}",
+    "pendingInvoices": "{count} invoices are still pending.",
+    "growth": {
+      "day": "today",
+      "week": "this week",
+      "month": "this month",
+      "year": "this year",
+      "previous": {
+        "day": "yesterday",
+        "week": "last week",
+        "month": "last month",
+        "year": "last year"
+      },
+      "increased": "Revenue {currentPeriod} increased by {value} compared to {previousPeriod}.",
+      "decreased": "Revenue {currentPeriod} decreased by {value} compared to {previousPeriod}.",
+      "topProducts": " This growth is mainly driven by sales of {product1} and {product2}."
     },
-
-    "increased": "increased",
-    "decreased": "decreased",
-    "topProducts": " This growth is mainly driven by sales of {product1} and {product2}."
-  },
-  "comparison": {
-    "day": "yesterday",
-    "week": "last week",
-    "month": "last month",
-    "year": "last year"
-  },
-  "direction": {
-    "up": "higher",
-    "down": "lower"
-  },
-  "stats": {
-    "targetHit": "Target hit",
-    "dealsWon": "Deals won",
-    "stillOpen": "Still open"
-  },
-  "actions": {
-    "createInvoice": "Create invoice",
-    "viewPipeline": "View pipeline"
+    "stats": {
+      "targetHit": "Target hit",
+      "dealsWon": "Deals won",
+      "stillOpen": "Still open"
+    },
+    "actions": {
+      "createInvoice": "Create invoice",
+      "viewPipeline": "View pipeline"
+    }
   },
 
   "revenue": {
