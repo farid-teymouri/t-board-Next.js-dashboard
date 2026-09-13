@@ -18,7 +18,7 @@ export function LiveLineChartWidgetSkeleton() {
       </CardHeader>
 
       <CardContent>
-        <Skeleton className="h-[260px] w-full" />
+        <Skeleton className="h-[250px] w-full" />
 
         <div className="my-5 border-t" />
 

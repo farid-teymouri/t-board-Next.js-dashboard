@@ -92,7 +92,10 @@ export function ComposedChartWidget<T>({
           className="min-w-0 select-none overscroll-contain"
           dir={locale === "fa" ? "rtl" : "ltr"}
         >
-          <ChartContainer config={chartConfig} className="h-full w-full">
+          <ChartContainer
+            config={chartConfig}
+            className="h-full w-full max-h-[350px]"
+          >
             <ComposedChart
               accessibilityLayer
               data={visibleData}

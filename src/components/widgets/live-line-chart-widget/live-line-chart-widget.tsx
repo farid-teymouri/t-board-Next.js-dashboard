@@ -62,8 +62,11 @@ export function LiveLineChartWidget({
       </CardHeader>
 
       <CardContent>
-        <div className="h-[260px] w-full" dir={locale === "fa" ? "rtl" : "ltr"}>
-          <ChartContainer config={chartConfig} className="h-full w-full">
+        <div className="w-full" dir={locale === "fa" ? "rtl" : "ltr"}>
+          <ChartContainer
+            config={chartConfig}
+            className="h-full w-full max-h-[250px]"
+          >
             <ResponsiveContainer width="100%" height="100%">
               <LineChart
                 data={data}

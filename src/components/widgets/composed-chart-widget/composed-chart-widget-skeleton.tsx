@@ -31,7 +31,7 @@ export function ComposedChartWidgetSkeleton({
 
       <CardContent>
         <div
-          className="h-[300px] w-full animate-pulse rounded-md bg-muted/50"
+          className="h-[250px] w-full animate-pulse rounded-md bg-muted/50"
           dir={locale === "fa" ? "rtl" : "ltr"}
         />
 
