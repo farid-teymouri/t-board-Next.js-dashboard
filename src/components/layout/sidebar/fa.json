@@ -1,11 +1,11 @@
 {
   "groups": {
     "overview": "نمای کلی",
-    "applications": "برنامه‌ها",
-    "modules": "ماژول‌ها"
+    "applications": "برنامه‌ ها",
+    "modules": "ماژول‌ ها"
   },
   "items": {
-    "dashboards": "داشبوردها",
+    "dashboards": "داشبورد ها",
     "sales": "فروش",
     "analytics": "تحلیل و آمار",
     "ecommerce": "فروشگاه",
@@ -14,7 +14,7 @@
     "products": "محصولات",
     "productDetails": "جزئیات محصول",
     "checkout": "پرداخت",
-    "invoices": "فاکتورها",
+    "invoices": "فاکتور ها",
 
     "jobs": "استخدام و کاریابی",
     "jobsDashboard": "استخدام",
@@ -33,15 +33,15 @@
     },
     "analytics": {
       "title": "تحلیل و آمار",
-      "description": "نمایی روشن از رشد مخاطبان، جذب کاربران و رفتار آن‌ها."
+      "description": "نمایی روشن از رشد مخاطبان، جذب کاربران و رفتار آن‌ ها."
     },
     "ecommerce": {
       "title": "فروشگاه",
-      "description": "عملکرد فروشگاه، سفارش‌ها و وضعیت کالاها را یکجا بررسی کنید."
+      "description": "عملکرد فروشگاه، سفارش‌ ها و وضعیت کالا ها را یکجا بررسی کنید."
     },
     "finance": {
       "title": "مالی و بانکی",
-      "description": "موجودی حساب‌ها، جریان نقدی و بودجه‌ها را در یک نگاه مدیریت کنید."
+      "description": "موجودی حساب‌ ها، جریان نقدی و بودجه‌ ها را در یک نگاه مدیریت کنید."
     },
     "products": {
       "title": "محصولات",
@@ -56,7 +56,7 @@
       "description": "پرداخت امن — {count} مورد در سبد خرید شما."
     },
     "invoices": {
-      "title": "فاکتورها",
+      "title": "فاکتور ها",
       "description": "{count} فاکتور — {overdue} مورد سررسید گذشته با مجموع {amount}."
     },
     "jobsDashboard": {
@@ -64,8 +64,8 @@
       "description": "وضعیت فرایند استخدام در {count} موقعیت شغلی فعال."
     },
     "jobsList": {
-      "title": "فهرست موقعیت‌های شغلی",
-      "description": "{open} موقعیت باز · {applicants} متقاضی · {closing} موقعیت در حال بسته‌شدن."
+      "title": "فهرست موقعیت‌ های شغلی",
+      "description": "{open} موقعیت باز · {applicants} متقاضی · {closing} موقعیت در حال بسته‌ شدن."
     },
     "jobDetails": {
       "title": "{title}",
@@ -73,7 +73,7 @@
     },
     "blogList": {
       "title": "بلاگ",
-      "description": "{published} مقاله منتشرشده · {drafts} پیش‌نویس · {reads} بازدید."
+      "description": "{published} مقاله منتشر شده · {drafts} پیش ‌نویس · {reads} بازدید."
     },
     "blogDetails": {
       "title": "{title}",

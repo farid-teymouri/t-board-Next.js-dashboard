@@ -1,7 +1,20 @@
 {
   "header": {
     "addTransacton": "تراکنش جدید",
-    "refresh": "بروزرسانی",
+    "refresh": "بروز رسانی",
     "last30Days": "۳۰ روز گذشته"
+  },
+  "financeSummary": {
+    "label": "مالی شخصی",
+    "title": "این ماه {amount} پس‌ انداز کردید",
+    "stats": {
+      "savingsRate": "نرخ پس‌ انداز",
+      "billsDue": "قبض‌ های سر رسید شده",
+      "budgetsOver": "بودجه‌ های عبور کرده"
+    },
+    "actions": {
+      "transfer": "انتقال",
+      "payBills": "پرداخت قبض‌ ها"
+    }
   }
 }

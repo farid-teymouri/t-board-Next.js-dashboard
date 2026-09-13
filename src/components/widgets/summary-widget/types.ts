@@ -7,6 +7,7 @@ export type SummaryMetric = {
 
 export type SummaryAction = {
   label: string;
+  icon?: ReactNode;
   onClick?: () => void;
   variant?: "default" | "secondary";
 };

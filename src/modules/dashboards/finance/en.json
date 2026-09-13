@@ -3,5 +3,18 @@
     "addTransacton": "Add Transacton",
     "refresh": "Refresh",
     "last30Days": "Last 30 days"
+  },
+  "financeSummary": {
+    "label": "Personal finance",
+    "title": "You saved {amount} this month",
+    "stats": {
+      "savingsRate": "Savings rate",
+      "billsDue": "Bills due",
+      "budgetsOver": "Budgets over"
+    },
+    "actions": {
+      "transfer": "Transfer",
+      "payBills": "Pay bills"
+    }
   }
 }

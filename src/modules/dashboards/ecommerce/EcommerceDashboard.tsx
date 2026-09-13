@@ -91,7 +91,6 @@ export function EcommerceDashboard({
             locale={locale}
           />
         </section>
-        s
       </div>
     </div>
   );

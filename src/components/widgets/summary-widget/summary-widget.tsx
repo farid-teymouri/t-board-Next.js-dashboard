@@ -33,7 +33,7 @@ export function SummaryWidget({
           </div>
 
           {metrics.length > 0 && (
-            <div className="flex w-full shrink-0 flex-wrap items-center justify-center gap-2 text-center">
+            <div className="flex w-full shrink-0 flex-wrap items-center sm:justify-end justify-center gap-2 text-center">
               {metrics.map((metric) => (
                 <SummaryMetric
                   key={metric.label}
@@ -53,6 +53,7 @@ export function SummaryWidget({
                 variant={action.variant ?? "default"}
                 onClick={action.onClick}
               >
+                {action.icon}
                 {action.label}
               </Button>
             ))}
