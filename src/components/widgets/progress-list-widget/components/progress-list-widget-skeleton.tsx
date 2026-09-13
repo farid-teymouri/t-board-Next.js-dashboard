@@ -24,26 +24,48 @@ export function ProgressListWidgetSkeleton({
             variant === "colorful" && "rounded-xl p-3",
           )}
         >
-          <div className="flex items-start gap-3">
-            {showRank && (
-              <Skeleton className="mt-1 size-6 shrink-0 rounded-full" />
-            )}
+          {variant === "products" ? (
+            <>
+              <div className="flex items-center gap-3">
+                <Skeleton className="size-9 shrink-0 rounded-lg" />
 
-            <div className="min-w-0 flex-1 space-y-2">
-              <Skeleton className="h-4 w-2/3" />
-              <Skeleton className="h-3 w-1/3" />
-            </div>
+                <div className="min-w-0 flex-1 space-y-2">
+                  <Skeleton className="h-4 w-2/3" />
+                  <Skeleton className="h-3 w-1/3" />
+                </div>
+              </div>
 
-            <Skeleton className="h-4 w-16 shrink-0" />
-          </div>
+              <div className="flex items-center gap-3">
+                <Skeleton className="h-1.5 flex-1 rounded-sm" />
+                <Skeleton className="h-4 w-20 shrink-0" />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="flex items-start gap-3">
+                {showRank && (
+                  <Skeleton className="mt-1 size-6 shrink-0 rounded-full" />
+                )}
 
-          <Skeleton
-            className={cn(
-              showRank && "ms-8 w-[calc(100%-2rem)]",
-              !showRank && "w-full",
-              variant === "classic" ? "h-1.5 rounded-sm" : "h-2.5 rounded-full",
-            )}
-          />
+                <div className="min-w-0 flex-1 space-y-2">
+                  <Skeleton className="h-4 w-2/3" />
+                  <Skeleton className="h-3 w-1/3" />
+                </div>
+
+                <Skeleton className="h-4 w-16 shrink-0" />
+              </div>
+
+              <Skeleton
+                className={cn(
+                  showRank && "ms-8 w-[calc(100%-2rem)]",
+                  !showRank && "w-full",
+                  variant === "classic"
+                    ? "h-1.5 rounded-sm"
+                    : "h-2.5 rounded-full",
+                )}
+              />
+            </>
+          )}
         </div>
       ))}
     </div>

@@ -10,7 +10,7 @@ import { ProgressListWidgetSkeleton } from "./components/progress-list-widget-sk
 import { ClassicProgressList } from "./components/variants/classic";
 import { ColorfulProgressList } from "./components/variants/colorful";
 import { FunnelProgressList } from "./components/variants/funnel";
-
+import { ProductsProgressList } from "./components/variants/products";
 import type { ProgressListWidgetProps } from "./types";
 
 export function ProgressListWidget({
@@ -69,6 +69,15 @@ export function ProgressListWidget({
 
       {variant === "funnel" && (
         <FunnelProgressList
+          items={items}
+          locale={locale}
+          translations={translations}
+          currency={currency}
+        />
+      )}
+
+      {variant === "products" && (
+        <ProductsProgressList
           items={items}
           locale={locale}
           translations={translations}

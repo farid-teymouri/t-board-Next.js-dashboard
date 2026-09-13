@@ -25,6 +25,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           {/* → Generic: SummaryWidget */}
           <SalesSummary dictionary={dictionary} locale={locale} period="year" />
         </section>
+
         <section className="xl:col-span-1 lg:col-span-2 col-span-1">
           {/* → Generic: MetricWidget */}
           <Revenue
@@ -34,6 +35,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
             trend="up"
           />
         </section>
+
         <section className="xl:col-span-3 lg:col-span-4 col-span-1">
           {/* → Generic: MetricGroup */}
           <SalesMetrics
@@ -41,6 +43,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
             translations={dictionary.salesMetrics}
           />
         </section>
+
         <section className="xl:col-span-2 lg:col-span-4 col-span-1">
           {/* → Generic: ComparisonChartWidget */}
           <SalesPerformance
@@ -49,6 +52,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
             initialPeriod="month"
           />
         </section>
+
         <section className="xl:col-span-1 lg:col-span-2 col-span-1">
           {/* → Generic: FeaturedMetricWidget */}
           <TotalBalance
@@ -56,6 +60,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
             translations={dictionary.totalBalance}
           />
         </section>
+
         <section
           className="xl:col-span-1 lg:col-span-2 col-span-1  
           group-data-[sidebar-state=collapsed]/dashboard-grid:xl:col-span-1"
@@ -66,6 +71,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
             translations={dictionary.visitorDevices}
           />
         </section>
+
         <section
           className="xl:col-span-1 lg:col-span-2 col-span-1  
           group-data-[sidebar-state=collapsed]/dashboard-grid:xl:col-span-1"
@@ -78,6 +84,7 @@ export function SalesDashboard({ dictionary, locale }: SalesDashboardProps) {
           {/* → Generic: ProgressListWidget */}
           <TrafficSources dictionary={dictionary} locale={locale} />
         </section>
+
         <section className="xl:col-span-3 lg:col-span-4 col-span-1">
           {/* → Generic: TableWidget */}
           <RecentTransactions

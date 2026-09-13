@@ -10,6 +10,7 @@ import {
   SalesByCategory,
   SalesByChannel,
   InventoryStatus,
+  TopProducts,
 } from "./widgets";
 
 type EcommerceDashboardProps = {
@@ -59,7 +60,7 @@ export function EcommerceDashboard({
           />
         </section>
         <section className="col-span-1 lg:col-span-4 xl:col-span-1">
-          {/* → Generic: BreakdownWidget */}
+          {/* → Generic: ProgressListWidget */}
           <SalesByChannel
             translations={dictionary.salesByChannel}
             locale={locale}
@@ -71,6 +72,10 @@ export function EcommerceDashboard({
             translations={dictionary.inventoryStatus}
             locale={locale}
           />
+        </section>
+        <section className="col-span-1 lg:col-span-4 xl:col-span-1">
+          {/* → Generic: ProgressListWidget */}
+          <TopProducts translations={dictionary.topProducts} locale={locale} />
         </section>
       </div>
     </div>

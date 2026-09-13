@@ -27,7 +27,7 @@ export function SegmentedProgressWidget({
   }
 
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader className="pb-4">
         <CardTitle>{translations.title}</CardTitle>
 
@@ -38,15 +38,15 @@ export function SegmentedProgressWidget({
         )}
       </CardHeader>
 
-      <CardContent className="space-y-5">
-        <SegmentedProgressBar segments={segments} total={resolvedTotal} />
-
-        {showLegend && (
-          <SegmentedProgressLegend segments={segments} locale={locale} />
-        )}
-
+      <CardContent className="space-y-5 h-full flex flex-col justify-between">
+        <div className="space-y-5">
+          <SegmentedProgressBar segments={segments} total={resolvedTotal} />
+          {showLegend && (
+            <SegmentedProgressLegend segments={segments} locale={locale} />
+          )}
+        </div>
         {showAlert && alert && (
-          <>
+          <div className="space-y-5">
             <Separator />
 
             <div
@@ -60,7 +60,7 @@ export function SegmentedProgressWidget({
 
               <span>{alert}</span>
             </div>
-          </>
+          </div>
         )}
       </CardContent>
     </Card>

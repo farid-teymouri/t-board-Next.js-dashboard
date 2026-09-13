@@ -2,7 +2,11 @@ import type { ReactNode } from "react";
 
 import type { Currency } from "@/utils/currency";
 
-export type ProgressListVariant = "classic" | "colorful" | "funnel";
+export type ProgressListVariant =
+  | "classic"
+  | "colorful"
+  | "funnel"
+  | "products";
 
 export type ProgressListValueMode = "value" | "amount" | "percentage";
 
@@ -13,6 +17,8 @@ export type ProgressListTranslations = {
   description: string;
   action?: string;
   valueSuffix?: string;
+  sold?: string;
+  categories?: Record<string, string>;
   stages?: string[];
   conversionLabel?: string;
 };
@@ -30,6 +36,7 @@ export type ProgressListItem = {
   category?: string;
   description?: string;
   amount?: number;
+  icon?: ReactNode;
 };
 
 export type ProgressListDisplay = {

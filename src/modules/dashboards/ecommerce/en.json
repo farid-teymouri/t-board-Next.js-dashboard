@@ -62,7 +62,7 @@
   "salesByChannel": {
     "title": "Sales by Channel",
     "description": "Revenue distribution across sales channels",
-    "valueSuffix": "IRT"
+    "stages": ["Web store", "Mobile app", "Marketplace", "POS / in-store"]
   },
   "inventoryStatus": {
     "title": "Inventory Status",
@@ -73,5 +73,17 @@
       "outOfStock": "Out of stock"
     },
     "reorderThreshold": "SKUs below reorder threshold."
+  },
+  "topProducts": {
+    "title": "Top Products",
+    "description": "Best-selling products by units sold",
+    "action": "View all",
+    "sold": "sold",
+    "categories": {
+      "electronics": "Electronics",
+      "apparel": "Apparel",
+      "beauty": "Beauty",
+      "home": "Home"
+    }
   }
 }
