@@ -63,5 +63,15 @@
     "title": "فروش بر اساس کانال",
     "description": "توزیع درآمد بر اساس کانال‌های فروش",
     "valueSuffix": "تومان"
+  },
+  "inventoryStatus": {
+    "title": "وضعیت موجودی",
+    "skusTracked": "کالا تحت ردیابی",
+    "items": {
+      "inStock": "موجود",
+      "lowStock": "موجودی کم",
+      "outOfStock": "ناموجود"
+    },
+    "reorderThreshold": "کالا پایین‌تر از حد سفارش مجدد است."
   }
 }

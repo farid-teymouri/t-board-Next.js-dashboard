@@ -63,5 +63,15 @@
     "title": "Sales by Channel",
     "description": "Revenue distribution across sales channels",
     "valueSuffix": "IRT"
+  },
+  "inventoryStatus": {
+    "title": "Inventory Status",
+    "skusTracked": "SKUs tracked",
+    "items": {
+      "inStock": "In stock",
+      "lowStock": "Low stock",
+      "outOfStock": "Out of stock"
+    },
+    "reorderThreshold": "SKUs below reorder threshold."
   }
 }
