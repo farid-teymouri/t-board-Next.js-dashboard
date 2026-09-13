@@ -3,9 +3,14 @@ import { cn } from "@/lib/utils";
 type RadioBadgeProps = {
   children: React.ReactNode;
   className?: string;
+  animated?: boolean;
 };
 
-export function RadioBadge({ children, className }: RadioBadgeProps) {
+export function RadioBadge({
+  children,
+  className,
+  animated = true,
+}: RadioBadgeProps) {
   return (
     <span
       className={cn(
@@ -17,7 +22,10 @@ export function RadioBadge({ children, className }: RadioBadgeProps) {
     >
       <span
         aria-hidden="true"
-        className="size-1.5 rounded-full bg-chart-3 animate-pulse"
+        className={cn(
+          "size-1.5 rounded-full bg-current",
+          animated && "animate-pulse",
+        )}
       />
 
       {children}

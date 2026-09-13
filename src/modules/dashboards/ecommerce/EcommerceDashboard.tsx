@@ -11,6 +11,7 @@ import {
   SalesByChannel,
   InventoryStatus,
   TopProducts,
+  RecentOrders,
 } from "./widgets";
 
 type EcommerceDashboardProps = {
@@ -52,30 +53,37 @@ export function EcommerceDashboard({
             locale={locale}
           />
         </section>
-        <section className="col-span-1 lg:col-span-4 xl:col-span-1">
+        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
           {/* → Generic: BreakdownWidget */}
           <SalesByCategory
             translations={dictionary.salesByCategory}
             locale={locale}
           />
         </section>
-        <section className="col-span-1 lg:col-span-4 xl:col-span-1">
+        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
           {/* → Generic: ProgressListWidget */}
           <SalesByChannel
             translations={dictionary.salesByChannel}
             locale={locale}
           />
         </section>
-        <section className="col-span-1 lg:col-span-4 xl:col-span-1">
+        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
           {/* → Generic: SegmentedProgressWidget */}
           <InventoryStatus
             translations={dictionary.inventoryStatus}
             locale={locale}
           />
         </section>
-        <section className="col-span-1 lg:col-span-4 xl:col-span-1">
+        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
           {/* → Generic: ProgressListWidget */}
           <TopProducts translations={dictionary.topProducts} locale={locale} />
+        </section>
+        <section className="col-span-1 lg:col-span-4 xl:col-span-3">
+          {/* → Generic: TableWidget */}
+          <RecentOrders
+            translations={dictionary.recentOrders}
+            locale={locale}
+          />
         </section>
       </div>
     </div>

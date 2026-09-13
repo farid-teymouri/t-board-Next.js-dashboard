@@ -85,5 +85,9 @@
       "beauty": "Beauty",
       "home": "Home"
     }
+  },
+  "recentOrders": {
+    "title": "Recent Orders",
+    "description": "Latest store orders"
   }
 }

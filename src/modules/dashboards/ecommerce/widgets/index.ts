@@ -13,3 +13,5 @@ export { SalesByChannel } from "./sales-by-channel";
 export { InventoryStatus } from "./inventory-status";
 
 export { TopProducts } from "./top-products";
+
+export { RecentOrders } from "./recent-orders";
