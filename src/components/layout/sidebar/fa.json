@@ -73,7 +73,7 @@
     },
     "blogList": {
       "title": "بلاگ",
-      "description": "{published} مقاله منتشر شده · {drafts} پیش ‌نویس · {reads} بازدید."
+      "description": "{published} مقاله منتشر سشده · {drafts} پیش ‌نویس · {reads} بازدید."
     },
     "blogDetails": {
       "title": "{title}",
