@@ -22,5 +22,18 @@
     "monthlyIncome": "Monthly Income",
     "monthlyExpenses": "Monthly Expenses",
     "netSavingsRate": "Net Savings Rate"
+  },
+  "cashFlow": {
+    "label": "Cash flow",
+    "title": "Income vs. Expenses",
+    "description": "Monthly inflow, outflow & net position",
+    "income": "Income",
+    "expenses": "Expenses",
+    "net": "Net",
+    "periods": {
+      "sixMonths": "6M",
+      "twelveMonths": "12M",
+      "ytd": "YTD"
+    }
   }
 }

@@ -97,7 +97,7 @@ export function ComposedChartWidget<T>({
               accessibilityLayer
               data={visibleData}
               margin={{
-                left: 0,
+                left: 16,
                 right: 12,
                 top: 8,
                 bottom: 0,

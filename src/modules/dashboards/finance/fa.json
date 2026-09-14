@@ -22,5 +22,18 @@
     "monthlyIncome": "درآمد ماهانه",
     "monthlyExpenses": "هزینه‌های ماهانه",
     "netSavingsRate": "نرخ پس‌انداز خالص"
+  },
+  "cashFlow": {
+    "label": "جریان نقدی",
+    "title": "درآمد در برابر هزینه‌ها",
+    "description": "ورودی، خروجی و موقعیت خالص ماهانه",
+    "income": "درآمد",
+    "expenses": "هزینه‌ها",
+    "net": "خالص",
+    "periods": {
+      "sixMonths": "۶ ماه",
+      "twelveMonths": "۱۲ ماه",
+      "ytd": "از ابتدای سال"
+    }
   }
 }
