@@ -21,14 +21,14 @@
     "totalBalance": "موجودی کل",
     "monthlyIncome": "درآمد ماهانه",
     "monthlyExpenses": "هزینه‌های ماهانه",
-    "netSavingsRate": "نرخ پس‌انداز خالص"
+    "netSavingsRate": "نرخ پس‌ انداز خالص"
   },
   "cashFlow": {
     "label": "جریان نقدی",
-    "title": "درآمد در برابر هزینه‌ها",
+    "title": "درآمد در برابر هزینه‌ ها",
     "description": "ورودی، خروجی و موقعیت خالص ماهانه",
     "income": "درآمد",
-    "expenses": "هزینه‌ها",
+    "expenses": "هزینه‌ ها",
     "net": "خالص",
     "periods": {
       "sixMonths": "۶ ماه",
@@ -38,10 +38,22 @@
   },
   "totalBalance": {
     "title": "موجودی کل",
+    "availableBalance": "موجودی قابل برداشت",
     "transfer": "انتقال",
     "deposit": "واریز",
     "income": "درآمد",
-    "expenses": "هزینه‌ها",
-    "saved": "پس‌انداز"
+    "expenses": "هزینه‌ ها",
+    "saved": "پس‌ انداز"
+  },
+  "spendingByCategory": {
+    "title": "هزینه بر اساس دسته‌ بندی",
+    "totalLabel": "کل هزینه‌ ها",
+    "categories": {
+      "payroll": "حقوق و دستمزد",
+      "software": "نرم‌ افزار",
+      "marketing": "بازار یابی",
+      "office": "دفتر",
+      "other": "سایر هزینه ها"
+    }
   }
 }

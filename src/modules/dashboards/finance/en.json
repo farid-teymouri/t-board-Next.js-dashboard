@@ -38,10 +38,22 @@
   },
   "totalBalance": {
     "title": "Total Balance",
+    "availableBalance": "Available balance",
     "transfer": "Transfer",
     "deposit": "Deposit",
     "income": "Income",
     "expenses": "Expenses",
     "saved": "Saved"
+  },
+  "spendingByCategory": {
+    "title": "Spending by Category",
+    "totalLabel": "Total spending",
+    "categories": {
+      "payroll": "Payroll",
+      "software": "Software",
+      "marketing": "Marketing",
+      "office": "Office",
+      "other": "Other"
+    }
   }
 }

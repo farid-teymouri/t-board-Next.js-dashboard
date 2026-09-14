@@ -2,7 +2,13 @@
 
 import type { FinanceDashboardDictionary } from "@/i18n/dictionaries";
 
-import { FinanceSummary, KpiCards, CashFlow, TotalBalance } from "./widgets";
+import {
+  FinanceSummary,
+  KpiCards,
+  CashFlow,
+  TotalBalance,
+  SpendingByCategory,
+} from "./widgets";
 
 type FinanceDashboardProps = {
   dictionary: FinanceDashboardDictionary;
@@ -36,6 +42,14 @@ export function FinanceDashboard({
         <section className="col-span-1 lg:col-span-2 xl:col-span-1">
           {/* → Generic: FeaturedMetricWidget */}
           <TotalBalance dictionary={dictionary.totalBalance} locale={locale} />
+        </section>
+
+        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
+          {/* → Generic: BreakdownWidget */}
+          <SpendingByCategory
+            dictionary={dictionary.spendingByCategory}
+            locale={locale}
+          />
         </section>
       </div>
     </div>

@@ -95,7 +95,7 @@ export function TotalBalance({ dictionary, locale }: TotalBalanceProps) {
   return (
     <FeaturedMetricWidget
       header={{
-        title: data.title,
+        title: dictionary.title,
         selector: {
           options: currencyOptions,
           value: selectedCurrency,
@@ -105,7 +105,7 @@ export function TotalBalance({ dictionary, locale }: TotalBalanceProps) {
       content={{
         type: "card",
         label: account.bankName,
-        amountLabel: account.amountLabel,
+        amountLabel: dictionary.availableBalance,
         amount: formatAmount(account.amount),
         currency: account.currency,
         identifier: account.cardNumber,
