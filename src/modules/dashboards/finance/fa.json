@@ -35,5 +35,13 @@
       "twelveMonths": "۱۲ ماه",
       "ytd": "از ابتدای سال"
     }
+  },
+  "totalBalance": {
+    "title": "موجودی کل",
+    "transfer": "انتقال",
+    "deposit": "واریز",
+    "income": "درآمد",
+    "expenses": "هزینه‌ها",
+    "saved": "پس‌انداز"
   }
 }

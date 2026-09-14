@@ -35,5 +35,13 @@
       "twelveMonths": "12M",
       "ytd": "YTD"
     }
+  },
+  "totalBalance": {
+    "title": "Total Balance",
+    "transfer": "Transfer",
+    "deposit": "Deposit",
+    "income": "Income",
+    "expenses": "Expenses",
+    "saved": "Saved"
   }
 }
