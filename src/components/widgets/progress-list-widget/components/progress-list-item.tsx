@@ -58,12 +58,14 @@ export function ProgressListItem({
   currency,
   progressColor,
 }: ProgressListItemProps) {
-  const value = formatValue({
-    item,
-    locale,
-    valueMode,
-    currency,
-  });
+  const value =
+    item.valueLabel ??
+    formatValue({
+      item,
+      locale,
+      valueMode,
+      currency,
+    });
 
   const showRank = rank !== "hidden";
   const highlightRank = rank === "highlighted" && index === 0;
@@ -99,9 +101,9 @@ export function ProgressListItem({
             </div>
 
             {!showProgress && (
-              <span className="shrink-0 text-sm font-medium tabular-nums">
-                {value}
-              </span>
+              <div className="shrink-0 text-sm font-medium tabular-nums">
+                {item.valueLabel ?? value}
+              </div>
             )}
           </div>
 
@@ -125,9 +127,9 @@ export function ProgressListItem({
             />
           </div>
 
-          <span className="shrink-0 text-xs font-medium tabular-nums text-muted-foreground">
-            {value}
-          </span>
+          <div className="shrink-0 text-xs font-medium tabular-nums text-muted-foreground">
+            {item.valueLabel ?? value}
+          </div>
         </div>
       )}
     </div>

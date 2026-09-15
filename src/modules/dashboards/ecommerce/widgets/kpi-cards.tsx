@@ -10,8 +10,9 @@ import {
 import {
   KpiCardsWidget,
   type KpiCardColor,
-  type KpiCardId,
 } from "@/components/widgets/kpi-cards-widget";
+
+import type { EcommerceKpiCardId } from "@/types/dashboards/ecommerce/kpi-cards";
 
 import { useKpiCards } from "../hooks/use-kpi-cards";
 
@@ -49,14 +50,14 @@ const kpiCardConfig = {
     color: "chart-5" as KpiCardColor,
   },
 } satisfies Record<
-  KpiCardId,
+  EcommerceKpiCardId,
   {
     icon: typeof CircleDollarSign;
     color: KpiCardColor;
   }
 >;
 
-const kpiCardLabels: Record<KpiCardId, KpiCardLabelKey> = {
+const kpiCardLabels: Record<EcommerceKpiCardId, KpiCardLabelKey> = {
   "total-sales": "totalSales",
   orders: "orders",
   "average-order-value": "averageOrderValue",

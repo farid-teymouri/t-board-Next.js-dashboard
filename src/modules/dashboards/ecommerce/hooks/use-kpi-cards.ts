@@ -3,14 +3,15 @@
 import { useQuery } from "@tanstack/react-query";
 
 import {
-  type KpiCardId,
   type KpiChangeDirection,
   type KpiChangeTone,
 } from "@/components/widgets/kpi-cards-widget";
+
+import type { EcommerceKpiCardId } from "@/types/dashboards/ecommerce/kpi-cards";
 import type { Currency } from "@/utils/currency";
 
 type KpiCardApiItem = {
-  id: KpiCardId;
+  id: EcommerceKpiCardId;
   value: number;
   valueType: "number" | "currency" | "percentage";
   currency?: Currency;

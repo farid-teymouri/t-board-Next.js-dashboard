@@ -23,6 +23,12 @@ export type ProgressListTranslations = {
   conversionLabel?: string;
 };
 
+export type ProgressListAlert = {
+  message: string;
+  icon?: ReactNode;
+  variant?: "default" | "destructive";
+};
+
 export type FunnelProgressListTranslations = ProgressListTranslations & {
   stages: string[];
   conversionLabel: string;
@@ -37,6 +43,7 @@ export type ProgressListItem = {
   description?: string;
   amount?: number;
   icon?: ReactNode;
+  valueLabel?: ReactNode;
 };
 
 export type ProgressListDisplay = {
@@ -61,6 +68,8 @@ export type ProgressListWidgetProps = {
   display?: ProgressListDisplay;
 
   action?: ReactNode;
+
+  alert?: ProgressListAlert;
 
   isLoading?: boolean;
   isError?: boolean;

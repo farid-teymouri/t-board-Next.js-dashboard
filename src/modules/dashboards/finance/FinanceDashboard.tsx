@@ -9,6 +9,7 @@ import {
   TotalBalance,
   SpendingByCategory,
   Accounts,
+  BudgetUtilization,
 } from "./widgets";
 
 type FinanceDashboardProps = {
@@ -54,7 +55,16 @@ export function FinanceDashboard({
         </section>
 
         <section className="col-span-1 lg:col-span-2 xl:col-span-1">
+          {/* → Generic: MetricListWidget */}
           <Accounts locale={locale} dictionary={dictionary.accounts} />
+        </section>
+
+        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
+          {/* → Generic: ProgressListWidget */}
+          <BudgetUtilization
+            dictionary={dictionary.budgetUtilization}
+            locale={locale}
+          />
         </section>
       </div>
     </div>

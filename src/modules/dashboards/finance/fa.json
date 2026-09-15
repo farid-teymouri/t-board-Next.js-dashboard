@@ -57,7 +57,11 @@
     }
   },
   "accounts": {
-    "title": "حساب‌ها",
+    "title": "حساب‌ ها",
     "manage": "مدیریت"
+  },
+  "budgetUtilization": {
+    "title": "استفاده از بودجه",
+    "description": "سقف‌های بودجه خرداد"
   }
 }

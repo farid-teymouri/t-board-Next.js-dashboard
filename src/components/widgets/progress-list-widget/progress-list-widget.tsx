@@ -11,6 +11,7 @@ import { ClassicProgressList } from "./components/variants/classic";
 import { ColorfulProgressList } from "./components/variants/colorful";
 import { FunnelProgressList } from "./components/variants/funnel";
 import { ProductsProgressList } from "./components/variants/products";
+import { ProgressListWidgetAlert } from "./components/progress-list-widget-alert";
 import type { ProgressListWidgetProps } from "./types";
 
 export function ProgressListWidget({
@@ -25,6 +26,7 @@ export function ProgressListWidget({
     meta: true,
   },
   action,
+  alert,
   currency,
   isLoading = false,
   isError = false,
@@ -124,7 +126,13 @@ export function ProgressListWidget({
         )}
       </CardHeader>
 
-      <CardContent className="flex flex-1 flex-col">{content}</CardContent>
+      <CardContent className="flex flex-1 flex-col gap-4">
+        {content}
+
+        {!isLoading && !isError && alert && (
+          <ProgressListWidgetAlert alert={alert} />
+        )}
+      </CardContent>
     </Card>
   );
 }

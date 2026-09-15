@@ -9,3 +9,5 @@ export { TotalBalance } from "./total-balance";
 export { SpendingByCategory } from "./spending-by-category";
 
 export { Accounts } from "./accounts";
+
+export { BudgetUtilization } from "./budget-utilization";

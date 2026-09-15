@@ -59,5 +59,9 @@
   "accounts": {
     "title": "Accounts",
     "manage": "Manage"
+  },
+  "budgetUtilization": {
+    "title": "Budget Utilization",
+    "description": "June envelopes"
   }
 }
