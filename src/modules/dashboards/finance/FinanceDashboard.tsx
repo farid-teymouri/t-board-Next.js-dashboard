@@ -8,6 +8,7 @@ import {
   CashFlow,
   TotalBalance,
   SpendingByCategory,
+  Accounts,
 } from "./widgets";
 
 type FinanceDashboardProps = {
@@ -50,6 +51,10 @@ export function FinanceDashboard({
             dictionary={dictionary.spendingByCategory}
             locale={locale}
           />
+        </section>
+
+        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
+          <Accounts locale={locale} dictionary={dictionary.accounts} />
         </section>
       </div>
     </div>

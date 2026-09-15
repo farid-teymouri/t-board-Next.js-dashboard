@@ -55,5 +55,9 @@
       "office": "Office",
       "other": "Other"
     }
+  },
+  "accounts": {
+    "title": "Accounts",
+    "manage": "Manage"
   }
 }
