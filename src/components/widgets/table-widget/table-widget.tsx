@@ -1,5 +1,6 @@
 "use client";
 import { Skeleton } from "@/components/ui/skeleton";
+
 import Link from "next/link";
 
 import {
@@ -10,11 +11,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 import { cn } from "@/lib/utils";
 
 import { TableWidgetSkeleton } from "./table-widget-skeleton";
+
 import type { TableWidgetProps } from "./types";
 
 function TableWidgetProgress({
@@ -69,15 +72,26 @@ export function TableWidget<T>({
             </div>
 
             {viewAll ? (
-              <Link
-                href={viewAll.href}
-                className={cn(
-                  "shrink-0 text-sm font-medium text-primary",
-                  "underline-offset-4 transition-colors hover:underline",
-                )}
-              >
-                {viewAll.label}
-              </Link>
+              viewAll.href ? (
+                <Link
+                  href={viewAll.href}
+                  className={cn(
+                    "shrink-0 text-sm font-medium text-primary",
+                    "underline-offset-4 transition-colors hover:underline",
+                  )}
+                >
+                  {viewAll.label}
+                </Link>
+              ) : (
+                <span
+                  className={cn(
+                    "shrink-0 text-sm font-medium text-primary",
+                    "cursor-default",
+                  )}
+                >
+                  {viewAll.label}
+                </span>
+              )
             ) : null}
           </>
         )}

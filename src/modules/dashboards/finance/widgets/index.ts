@@ -11,3 +11,5 @@ export { SpendingByCategory } from "./spending-by-category";
 export { Accounts } from "./accounts";
 
 export { BudgetUtilization } from "./budget-utilization";
+
+export { RecentTransactions } from "./recent-transactions";

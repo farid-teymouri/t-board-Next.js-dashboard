@@ -63,5 +63,17 @@
   "budgetUtilization": {
     "title": "استفاده از بودجه",
     "description": "سقف‌های بودجه خرداد"
+  },
+  "recentTransactions": {
+    "title": "تراکنش‌های اخیر",
+    "description": "آخرین جابه‌جایی‌ها بین حساب‌ها",
+    "viewAll": "مشاهده همه",
+    "columns": {
+      "date": "تاریخ",
+      "payee": "دریافت‌کننده",
+      "category": "دسته‌بندی",
+      "account": "حساب",
+      "amount": "مبلغ"
+    }
   }
 }

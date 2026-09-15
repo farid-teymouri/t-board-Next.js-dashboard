@@ -63,5 +63,17 @@
   "budgetUtilization": {
     "title": "Budget Utilization",
     "description": "June envelopes"
+  },
+  "recentTransactions": {
+    "title": "Recent Transactions",
+    "description": "Latest movements across accounts",
+    "viewAll": "View all",
+    "columns": {
+      "date": "Date",
+      "payee": "Payee",
+      "category": "Category",
+      "account": "Account",
+      "amount": "Amount"
+    }
   }
 }

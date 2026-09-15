@@ -18,7 +18,7 @@ export type TableWidgetProps<T> = {
 
   viewAll?: {
     label: string;
-    href: string;
+    href?: string;
   };
 
   columns: TableWidgetColumn<T>[];
