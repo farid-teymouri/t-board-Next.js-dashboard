@@ -1,160 +1,548 @@
+<p align="center">
+  <img src="./t-board-banner.png" alt="T-Board Banner" width="100%" />
+</p>
+
+<p align="center">
+  <strong>Modern • Responsive • Multilingual Admin Dashboard</strong>
+</p>
+
+<p align="center">
+  <a href="#live-demo">Live Demo</a> •
+  <a href="#features">Features</a> •
+  <a href="#dashboards">Dashboards</a> •
+  <a href="#running-locally">Running Locally</a>
+</p>
+
+---
+
 # T-Board
 
-> **T-Board** is a modern and responsive admin dashboard UI built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui.
+**T-Board** is a modern, responsive, and multilingual admin dashboard platform built with **Next.js, TypeScript, Tailwind CSS, shadcn/ui, TanStack Query, and Recharts**.
+The project focuses on building a scalable dashboard architecture with reusable data-driven widgets, mock API contracts, responsive layouts, localization, RTL/LTR support, theme customization, and client-side preferences.
 
-A UI-focused admin dashboard demo designed to showcase a clean dashboard architecture, responsive layouts, reusable components, localization, navigation, notifications, and client-side preferences.
+T-Board is developed as a **portfolio and engineering project**, with an emphasis on reusable architecture, separation of concerns, type safety, and maintainable frontend development.
 
-## ✨ Demo
+---
 
-🌐 **Live Demo:** Coming soon
+## Live Demo
 
-The free version of T-Board focuses on the frontend experience and does not require a backend, database, or external API.
+**Coming soon**
 
-## 💎 Premium Version
+---
 
-The free version of T-Board is focused on showcasing the dashboard UI and core frontend features.
+## Features
 
-For purchasing the **Premium Version**, custom development, or business inquiries, feel free to contact the developer:
+- Modern responsive admin dashboard UI
+- Multiple dashboard experiences
+- Reusable and configurable dashboard widgets
+- Data-driven UI powered by mock API contracts
+- Next.js App Router architecture
+- TypeScript throughout the project
+- TanStack Query for client-side data fetching and caching
+- Recharts-powered data visualization
+- Tailwind CSS
+- shadcn/ui components
+- English and Persian localization
+- Full RTL/LTR support
+- Light and dark modes
+- Custom theme presets
+- Responsive dashboard layouts
+- Loading and skeleton states
+- Typed API response models
+- Modular feature-based architecture
+- Reusable formatting utilities for numbers, currencies, and durations
+- Client-side UI preferences
 
-- **Telegram:** [@faridteymouri](https://t.me/faridteymouri)
-- **Email:** [senior.farid72@gmail.com](mailto:senior.farid72@gmail.com)
+---
 
-## 🚀 Features
+## Dashboards
 
-### 📊 Dashboard
+T-Board currently includes four dashboard experiences.
 
-- Dashboard overview
-- User statistics
-- Analytics overview
-- Traffic insights
-- Responsive dashboard layout
+### Sales Dashboard
 
-### 👥 Users
+A sales-focused dashboard for monitoring business performance, revenue, customers, traffic sources, products, and recent activity.
 
-- User management interface
-- User listing UI
-- Responsive user views
+Includes:
 
-### 💬 Community
+- Sales summary
+- Sales metrics
+- Revenue
+- Sales performance
+- Top-selling products
+- Total balance
+- Traffic sources
+- Visitor devices
+- Recent transactions
 
-- Forum interface
-- Posts management
-- Reports management
+---
 
-### 📈 Analytics
+### Analytics Dashboard
 
-- User analytics
-- Music analytics
-- Traffic analytics
+An analytics-focused dashboard for understanding traffic, acquisition, visitor behavior, conversions, and real-time activity.
 
-### 🔔 Notifications
+Includes:
 
-- Notification center
-- Notification popover
-- Notification categories
-- Notification filtering
-- Responsive notification UI
+- Overview metrics
+- Acquisition analytics
+- Traffic channels
+- Visitor devices
+- Top pages
+- Referrers and events
+- Real-time activity
+- Conversion funnel
 
-### ⚙️ Settings
+---
 
-- Dashboard settings
-- Theme preferences
-- Notification preferences
-- UI preferences
-- Client-side settings persistence
+### Ecommerce Dashboard
 
-### 🌐 Localization
+An ecommerce-focused dashboard for monitoring revenue, orders, products, inventory, sales channels, and customer insights.
 
-- English
-- فارسی
-- RTL support
-- LTR support
-- Localized navigation and UI
+Includes:
 
-### 📱 Responsive UI
+- Monthly target
+- KPI cards
+- Revenue and orders
+- Sales by category
+- Sales by channel
+- Inventory status
+- Top products
+- Recent orders
+- Customer insights
+- Quick actions
 
-- Desktop sidebar
-- Collapsible sidebar
-- Responsive header
-- Mobile search
-- Responsive navigation
-- Mobile-friendly components
+---
 
-## 🛠️ Tech Stack
+### Finance Dashboard
 
-- **Next.js**
-- **React**
-- **TypeScript**
-- **Tailwind CSS**
-- **shadcn/ui**
-- **Lucide React**
-- **Zustand**
-- **React Hook Form**
-- **Zod**
+A personal/business finance dashboard focused on balances, cash flow, budgets, spending, accounts, and transactions.
 
-## 🎯 Project Scope
+Includes:
 
-This repository contains the **free UI demo version** of T-Board.
+- Finance summary
+- KPI cards
+- Cash flow
+- Total balance
+- Accounts
+- Budget utilization
+- Spending by category
+- Recent transactions
 
-The current version focuses on the frontend experience:
+---
 
-- Dashboard UI
-- Navigation
-- Responsive layouts
-- Reusable components
-- Localization
-- RTL / LTR support
-- Notifications
-- Theme preferences
-- UI preferences
-- Client-side interactions
+## Widget Architecture
 
-The demo currently does **not** include:
+One of the main goals of T-Board is to avoid building every dashboard widget as a completely independent UI implementation.
 
-- Backend services
-- Database integration
-- Authentication
-- Authorization
-- Real API integration
-- Server-side business logic
+Instead, dashboards are composed from reusable generic widgets.
 
-The goal of this version is to provide a polished and functional UI demonstration of the T-Board dashboard.
+Current widget primitives include:
 
-## 💾 Client-Side Preferences
+- `SummaryWidget`
+- `KpiCardsWidget`
+- `MetricWidget`
+- `MetricGroup`
+- `MetricListWidget`
+- `ProgressListWidget`
+- `BreakdownWidget`
+- `TableWidget`
+- `TargetWidget`
+- `QuickActionsWidget`
+- `FeaturedMetricWidget`
+- `ComposedChartWidget`
+- `ComparisonChartWidget`
+- `LiveLineChartWidget`
+- `SegmentedProgressWidget`
 
-T-Board is designed to support persistent client-side preferences without requiring a backend.
+Dashboard-specific modules provide the data, configuration, translations, and API integration while the reusable widget layer handles presentation.
 
-Examples include:
+This makes it possible to reuse the same UI architecture across different dashboard domains without coupling components to a specific business use case.
 
-- Theme selection
-- Sidebar state
-- Notification preferences
-- UI preferences
+---
 
-These preferences can be stored locally in the browser and restored when the user returns to the dashboard.
+## Architecture
 
-## 📂 Project Structure
+The project follows a modular architecture that separates application routing, reusable UI, dashboard modules, API contracts, and shared types.
+
+```text
+app/
+├── api/
+│   └── dashboards/
+│       ├── analytics/
+│       ├── ecommerce/
+│       ├── finance/
+│       └── sales/
+│
+├── [locale]/
+│   └── (pages)/
+│       ├── dashboards/
+│       ├── ecommerce/
+│       ├── jobs/
+│       └── blog/
+│
+components/
+├── dashboards/
+├── layout/
+├── providers/
+├── ui/
+└── widgets/
+
+modules/
+└── dashboards/
+    ├── analytics/
+    ├── ecommerce/
+    ├── finance/
+    └── sales/
+
+types/
+└── dashboards/
+    ├── analytics/
+    ├── ecommerce/
+    ├── finance/
+    └── sales/
+
+hooks/
+lib/
+i18n/
+utils/
+```
+
+### Application Routes
+
+Next.js App Router is used for the application structure and localized routes.
+
+```text
+/[locale]/dashboards/sales
+/[locale]/dashboards/analytics
+/[locale]/dashboards/ecommerce
+/[locale]/dashboards/finance
+
+/[locale]/ecommerce/products
+/[locale]/ecommerce/product-details
+/[locale]/ecommerce/invoices
+/[locale]/ecommerce/checkout
+
+/[locale]/jobs/list
+/[locale]/jobs/job-details
+/[locale]/jobs/dashboards
+
+/[locale]/blog/list
+/[locale]/blog/blog-details
+```
+
+The dashboard experiences are currently the primary implemented part of the project. The remaining application sections are being developed incrementally.
+
+---
+
+## Mock API Architecture
+
+The dashboard data layer is designed around backend-like API contracts.
+
+For example:
+
+```text
+/api/dashboards/finance/kpi-cards
+/api/dashboards/finance/cash-flow
+/api/dashboards/finance/accounts
+/api/dashboards/finance/recent-transactions
+
+/api/dashboards/ecommerce/kpi-cards
+/api/dashboards/ecommerce/revenue-orders
+/api/dashboards/ecommerce/recent-orders
+
+/api/dashboards/analytics/traffic-channels
+/api/dashboards/analytics/conversion-funnel
+
+/api/dashboards/sales/sales-summary
+/api/dashboards/sales/sales-performance
+```
+
+These endpoints currently provide mock data but intentionally follow a backend-oriented contract structure.
+
+This allows the dashboard modules to consume data through the same patterns that can later be connected to a real backend.
+
+---
+
+## Data Fetching
+
+Dashboard data is fetched using **TanStack Query**.
+
+The architecture separates:
+
+```text
+API Route
+   ↓
+API Client
+   ↓
+Query Hook
+   ↓
+Dashboard Widget
+```
+
+For example:
+
+```text
+/api/dashboards/finance/cash-flow
+            ↓
+useCashFlow()
+            ↓
+CashFlow Widget
+            ↓
+ComposedChartWidget
+```
+
+This keeps data fetching concerns separate from reusable presentation components.
+
+---
+
+## Internationalization
+
+T-Board supports:
+
+- English (`en`)
+- Persian (`fa`)
+
+The application supports both:
+
+```text
+LTR
+```
+
+and:
+
+```text
+RTL
+```
+
+Dashboard modules maintain their own translation dictionaries where appropriate, while shared application components have their own localized resources.
+
+The architecture is designed so that adding additional locales does not require rewriting dashboard components.
+
+---
+
+## Theme System
+
+T-Board includes a customizable theme system supporting:
+
+- Light mode
+- Dark mode
+- Multiple visual presets
+- Configurable dashboard width
+- Configurable layout orientation
+- Chart color variables
+
+Current theme presets include:
+
+- Default
+- Amber Minimal
+- Bold Tech
+- Bubblegum
+- Caffeine
+- Rose Pine
+
+The theme system is separated from dashboard data so visual preferences can evolve independently from backend-driven content.
+
+---
+
+## Responsive Design
+
+The dashboard layouts are designed for:
+
+- Mobile
+- Tablet
+- Desktop
+- Wide desktop screens
+
+Dashboard grids and widgets adapt to the available viewport while maintaining consistent spacing, hierarchy, and visual structure.
+
+---
+
+## Technology Stack
+
+### Core
+
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+### UI
+
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- Lucide Icons
+
+### Data
+
+- [TanStack Query](https://tanstack.com/query)
+- Mock Next.js API routes
+
+### Charts
+
+- [Recharts](https://recharts.org/)
+
+### Internationalization
+
+- i18next / i18n routing
+- English / Persian
+- RTL / LTR
+
+---
+
+## Project Structure
 
 ```text
 src/
 ├── app/
+│   ├── api/
 │   └── [locale]/
+│
 ├── components/
+│   ├── dashboards/
 │   ├── layout/
-│   │   ├── header/
-│   │   └── sidebar/
-│   └── ui/
+│   ├── providers/
+│   ├── ui/
+│   └── widgets/
+│
 ├── hooks/
+│
 ├── i18n/
-└── lib/
+│
+├── lib/
+│   ├── api/
+│   └── utils/
+│
+├── modules/
+│   └── dashboards/
+│       ├── analytics/
+│       ├── ecommerce/
+│       ├── finance/
+│       └── sales/
+│
+├── types/
+│   └── dashboards/
+│
+└── utils/
 ```
 
-## 🚀 Getting Started
+The project intentionally separates **generic reusable components** from **domain-specific dashboard modules**.
 
-Make sure you have the following installed:
+---
 
-- Node.js 20+
-- npm
+## Development Principles
+
+The project is being developed around several engineering principles:
+
+### Reusability
+
+Generic widgets are designed to support different dashboard use cases through configuration and typed data rather than title-specific implementations.
+
+### Separation of Concerns
+
+Data fetching, presentation, routing, translations, API contracts, and domain modules are kept separate.
+
+### Type Safety
+
+Dashboard API responses and widget configurations are represented through TypeScript types.
+
+### Scalability
+
+New dashboards and widgets should be possible without restructuring the existing application.
+
+### Localization
+
+Text and formatting are treated as part of the application architecture rather than being hardcoded into individual components.
+
+### Backend-Oriented Contracts
+
+Mock endpoints are structured similarly to real API resources so the frontend can later be connected to a production backend with minimal architectural changes.
+
+---
+
+## Current Status
+
+### Completed
+
+- [x] Core application layout
+- [x] Responsive sidebar
+- [x] Header and navigation
+- [x] Breadcrumb system
+- [x] Theme customization
+- [x] Light / dark mode
+- [x] English / Persian localization
+- [x] RTL / LTR support
+- [x] Reusable widget architecture
+- [x] Mock API architecture
+- [x] Sales Dashboard
+- [x] Analytics Dashboard
+- [x] Ecommerce Dashboard
+- [x] Finance Dashboard
+
+### In Progress
+
+- [ ] Ecommerce management pages
+- [ ] Jobs module
+- [ ] Blog module
+- [ ] Additional reusable widgets
+- [ ] Additional dashboard interactions
+- [ ] Production backend integration
+
+---
+
+## Roadmap
+
+The project is intentionally being developed incrementally.
+
+```text
+[x] Dashboard foundation
+[x] Sales Dashboard
+[x] Analytics Dashboard
+[x] Ecommerce Dashboard
+[x] Finance Dashboard
+
+[ ] Ecommerce management
+    [ ] Products
+    [ ] Product details
+    [ ] Invoices
+    [ ] Checkout
+
+[ ] Jobs
+    [ ] Jobs dashboard
+    [ ] Jobs list
+    [ ] Job details
+
+[ ] Blog
+    [ ] Blog list
+    [ ] Blog details
+
+[ ] Production backend integration
+[ ] Authentication
+[ ] Role-based access control
+[ ] Additional dashboard modules
+```
+
+---
+
+## Why This Project?
+
+T-Board is built as a practical exploration of how to structure a modern frontend application that can grow beyond a collection of pages.
+
+The main focus is not only visual design, but also:
+
+- reusable component architecture
+- data-driven interfaces
+- scalable module boundaries
+- typed API contracts
+- frontend data fetching
+- localization
+- responsive design
+- theme systems
+- maintainable application structure
+
+The project serves as a portfolio case study demonstrating how these concepts can work together in a larger Next.js application.
+
+---
+
+## Running Locally
 
 Clone the repository:
 
@@ -166,105 +554,39 @@ cd t-board-Next.js-dashboard
 Install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 Start the development server:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
-The development server will start on:
+Then open:
 
-```
-http://localhost:3001
-```
-
-Open the URL in your browser to explore T-Board.
-
-Build for production:
-
-```bash
-npm run build
+```text
+http://localhost:3000
 ```
 
-Start the production server:
+---
 
-```bash
-npm run start
-```
+## Project Status
 
-Run ESLint:
+T-Board is an actively developed portfolio project.
 
-```bash
-npm run lint
-```
+The current release focuses on the dashboard platform and its reusable architecture. Additional application modules will be introduced incrementally without changing the core dashboard architecture.
 
-## 🌍 Localization
+---
 
-T-Board currently supports:
+## Author
 
-- English (en)
-- Persian (fa)
+**Farid Teymouri**
 
-The dashboard supports both:
+Frontend Developer focused on building modern web applications with **React, Next.js, TypeScript, and scalable frontend architectures**.
 
-- **LTR** → English
-- **RTL** → فارسی
+---
 
-## 🎨 UI & Design
+## License
 
-T-Board is built with a modern component-based UI architecture using:
-
-- Tailwind CSS
-- shadcn/ui
-- Lucide icons
-- Responsive design principles
-
-The interface is designed to work across desktop, tablet, and mobile screen sizes.
-
-## 🧩 Component Architecture
-
-The dashboard UI is organized into reusable components.
-
-Major areas include:
-
-**Header**
-
-- Search
-- Language Switcher
-- Notifications
-- Settings
-- Fullscreen
-
-**Sidebar**
-
-- Overview
-- Management
-- Community
-- Analytics
-- System
-
-This structure makes it easier to extend the dashboard with additional sections and features.
-
-## 📌 Current Status
-
-T-Board is currently under active development.  
-The public repository represents the **free UI/demo version** of the project.
-
-New dashboard sections, components, interactions, and client-side features will be added over time.
-
-## 🗺️ Roadmap
-
-Planned improvements include:
-
-- More dashboard pages
-- More reusable UI components
-- Advanced theme customization
-- Persistent client-side preferences
-- Additional notification settings
-- More localization support
-- Improved accessibility
-- Additional charts and data visualizations
-- Production-ready backend integration in future versions
+This project is currently maintained as a personal portfolio and engineering project.
