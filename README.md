@@ -164,6 +164,10 @@ This makes it possible to reuse the same UI architecture across different dashbo
 
 The project follows a modular architecture that separates application routing, reusable UI, dashboard modules, API contracts, and shared types.
 
+<p align="center">
+  <img src="./diagram.svg" alt="T-Board Architecture Diagram" width="900" />
+</p>
+
 ```text
 app/
 ├── api/
