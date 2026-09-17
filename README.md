@@ -26,7 +26,42 @@ T-Board is developed as a **portfolio and engineering project**, with an emphasi
 
 ## Live Demo
 
-**Coming soon**
+[Open T-Board Live](https://tboard.faridteymouri.com)
+
+The application is deployed on a VPS using Docker and Traefik with HTTPS.
+
+---
+
+## Deployment
+
+T-Board is deployed as a Dockerized Next.js application.
+
+Production deployment uses:
+
+- Docker
+- Docker Compose
+- Traefik
+- GitHub Actions
+- VPS
+- HTTPS with Let's Encrypt
+
+Every push to the `main` branch triggers the deployment workflow:
+
+```text
+         GitHub
+           ↓
+     GitHub Actions
+           ↓
+          SSH
+           ↓
+          VPS
+           ↓
+     Docker Compose
+           ↓
+        Traefik
+           ↓
+         HTTPS
+```
 
 ---
 
