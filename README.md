@@ -570,7 +570,7 @@ pnpm dev
 Then open:
 
 ```text
-http://localhost:3000
+http://localhost:3001
 ```
 
 ---

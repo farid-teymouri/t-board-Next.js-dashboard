@@ -1,0 +1,20 @@
+services:
+  t-board:
+    container_name: t-board
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.t-board.rule=Host(`tboard.faridteymouri.com`)"
+      - "traefik.http.routers.t-board.entrypoints=websecure"
+      - "traefik.http.routers.t-board.tls=true"
+      - "traefik.http.routers.t-board.tls.certresolver=letsencrypt"
+      - "traefik.http.services.t-board.loadbalancer.server.port=3001"
+
+networks:
+  proxy:
+    external: true
