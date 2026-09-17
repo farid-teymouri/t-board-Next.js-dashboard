@@ -46,7 +46,15 @@ export function UserSidebarMenuItem({
   const Icon = item.icon;
   const hasSubItems = Boolean(item.items?.length);
 
-  const { state, isMobile } = useSidebar();
+  const { state, isMobile, setOpenMobile } = useSidebar();
+
+  const handleMobileNavigation = () => {
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+
+    setOpenPopoverId(null);
+  };
 
   const hasActiveSubItem =
     item.items?.some((subItem) => isActive(subItem.href)) ?? false;
@@ -121,7 +129,7 @@ export function UserSidebarMenuItem({
                     <Link
                       key={subItem.id}
                       href={createLocalePath(subItem.href)}
-                      onClick={() => setOpenPopoverId(null)}
+                      onClick={handleMobileNavigation}
                       className={[
                         "flex w-full items-center rounded-lg px-3 py-2 text-sm",
                         "text-muted-foreground transition-colors",
@@ -170,7 +178,12 @@ export function UserSidebarMenuItem({
         </SidebarMenuButton>
       ) : item.href ? (
         <SidebarMenuButton
-          render={<Link href={createLocalePath(item.href)} />}
+          render={
+            <Link
+              href={createLocalePath(item.href)}
+              onClick={handleMobileNavigation}
+            />
+          }
           tooltip={dictionary.items[item.id]}
           isActive={isActive(item.href)}
           className="h-10 rounded-xl px-3 text-base text-muted-foreground hover:bg-accent hover:text-sidebar-accent-foreground data-active:text-primary group-data-[collapsible=icon]:h-12! group-data-[collapsible=icon]:w-full! group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:px-0!"
@@ -192,7 +205,12 @@ export function UserSidebarMenuItem({
               <SidebarMenuSubButton
                 isActive={isActive(subItem.href)}
                 className="h-8! rounded-lg hover:bg-accent"
-                render={<Link href={createLocalePath(subItem.href)} />}
+                render={
+                  <Link
+                    href={createLocalePath(subItem.href)}
+                    onClick={handleMobileNavigation}
+                  />
+                }
               >
                 <span>{dictionary.items[subItem.id]}</span>
               </SidebarMenuSubButton>
