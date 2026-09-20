@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "Blog",
+    "description": "{published} published articles · {drafts} drafts · {reads} reads."
+  },
+  "header": {
+    "newPost": "New Post",
+    "manageTags": "Manage Tags"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "محصولات",
+    "description": "{count} محصول در کاتالوگ."
+  },
+  "header": {
+    "addProduct": "افزودن محصول",
+    "exportReport": "خروجی گرفتن"
+  }
+}

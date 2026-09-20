@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "{title}",
+    "description": "{company} · {department} · {applicants} applicants."
+  },
+  "header": {
+    "edit": "Edit",
+    "save": "Save",
+    "allJobs": "All Jobs"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "فهرست موقعیت‌های شغلی",
+    "description": "{open} موقعیت باز · {applicants} متقاضی · {closing} موقعیت در حال بسته‌شدن."
+  },
+  "header": {
+    "postJob": "ثبت موقعیت شغلی",
+    "exportReport": "خروجی گرفتن"
+  }
+}

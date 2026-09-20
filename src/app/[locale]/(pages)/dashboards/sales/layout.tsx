@@ -23,7 +23,7 @@ export default async function SalesLayout({
   return (
     <>
       <PageHeaderContent>
-        <PageHeader dictionary={dictionary.sidebar} />
+        <PageHeader dictionary={dictionary.dashboards.sales.page} />
 
         <SalesHeaderActions dictionary={dictionary.dashboards.sales.header} />
       </PageHeaderContent>

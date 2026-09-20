@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "{title}",
+    "description": "{category}."
+  },
+  "header": {
+    "edit": "ویرایش",
+    "save": "ذخیره",
+    "allPosts": "همه نوشته‌ها"
+  }
+}

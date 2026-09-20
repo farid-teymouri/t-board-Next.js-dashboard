@@ -1,4 +1,8 @@
 {
+  "page": {
+    "title": "Finance & Banking",
+    "description": "Monitor balances, cash flow, and budgets in one place."
+  },
   "header": {
     "addTransacton": "Add Transacton",
     "refresh": "Refresh",

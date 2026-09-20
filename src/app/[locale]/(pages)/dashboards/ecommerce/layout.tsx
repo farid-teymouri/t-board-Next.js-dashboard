@@ -23,7 +23,7 @@ export default async function EcommercesLayout({
   return (
     <>
       <PageHeaderContent>
-        <PageHeader dictionary={dictionary.sidebar} />
+        <PageHeader dictionary={dictionary.dashboards.ecommerce.page} />
 
         <EcommerceHeaderActions
           dictionary={dictionary.dashboards.ecommerce.header}

@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "Products",
+    "description": "{count} products in the catalog."
+  },
+  "header": {
+    "addProduct": "Add Product",
+    "exportReport": "Export"
+  }
+}

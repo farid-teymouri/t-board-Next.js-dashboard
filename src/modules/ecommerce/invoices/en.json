@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "Invoices",
+    "description": "{count} invoices — {overdue} overdue totalling {amount}."
+  },
+  "header": {
+    "createInvoice": "Create Invoice",
+    "exportReport": "Export"
+  }
+}

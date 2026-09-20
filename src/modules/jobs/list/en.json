@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "Jobs List",
+    "description": "{open} open postings · {applicants} applicants · {closing} closing."
+  },
+  "header": {
+    "postJob": "Post a Job",
+    "exportReport": "Export"
+  }
+}

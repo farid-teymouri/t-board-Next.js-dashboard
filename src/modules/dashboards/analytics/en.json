@@ -1,4 +1,8 @@
 {
+  "page": {
+    "title": "Analytics",
+    "description": "A clear view of audience growth, acquisition, and behavior."
+  },
   "header": {
     "exportReport": "Export report",
     "refresh": "Refresh",
@@ -33,7 +37,12 @@
   "conversionFunnel": {
     "title": "Conversion Funnel",
     "description": "Visit → Paid this period",
-    "stages": ["Visited", "Signed up", "Activated", "Paid"],
+    "stages": [
+      "Visited",
+      "Signed up",
+      "Activated",
+      "Paid"
+    ],
     "conversionLabel": "Visit-to-paid conversion"
   },
   "trafficChannels": {

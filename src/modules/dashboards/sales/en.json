@@ -1,4 +1,8 @@
 {
+  "page": {
+    "title": "Sales",
+    "description": "Here's a quick look at how revenue is trending."
+  },
   "header": {
     "newImport": "New Import",
     "export": "Export",
@@ -34,7 +38,6 @@
       "viewPipeline": "View pipeline"
     }
   },
-
   "revenue": {
     "title": "Total revenue",
     "comparison": {

@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "بلاگ",
+    "description": "{published} مقاله منتشر سشده · {drafts} پیش ‌نویس · {reads} بازدید."
+  },
+  "header": {
+    "newPost": "نوشته جدید",
+    "manageTags": "مدیریت برچسب‌ها"
+  }
+}

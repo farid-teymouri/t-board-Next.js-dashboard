@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "فاکتور ها",
+    "description": "{count} فاکتور — {overdue} مورد سررسید گذشته با مجموع {amount}."
+  },
+  "header": {
+    "createInvoice": "ایجاد فاکتور",
+    "exportReport": "خروجی گرفتن"
+  }
+}

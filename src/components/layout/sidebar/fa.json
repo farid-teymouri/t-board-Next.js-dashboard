@@ -10,74 +10,18 @@
     "analytics": "تحلیل و آمار",
     "ecommerce": "فروشگاه",
     "finance": "مالی",
-
     "products": "محصولات",
     "productDetails": "جزئیات محصول",
     "checkout": "پرداخت",
     "invoices": "فاکتور ها",
-
     "jobs": "استخدام و کاریابی",
     "jobsDashboard": "استخدام",
     "jobsList": "فهرست",
     "jobDetails": "جزئیات موقعیت شغلی",
-
     "blog": "وبلاگ",
     "blogList": "فهرست",
     "blogDetails": "جزئیات مطلب"
   },
   "logout": "خروج",
-  "pages": {
-    "sales": {
-      "title": "فروش",
-      "description": "نگاهی سریع به روند درآمد و عملکرد فروش."
-    },
-    "analytics": {
-      "title": "تحلیل و آمار",
-      "description": "نمایی روشن از رشد مخاطبان، جذب کاربران و رفتار آن‌ ها."
-    },
-    "ecommerce": {
-      "title": "فروشگاه",
-      "description": "عملکرد فروشگاه، سفارش‌ ها و وضعیت کالا ها را یکجا بررسی کنید."
-    },
-    "finance": {
-      "title": "مالی و بانکی",
-      "description": "موجودی حساب‌ ها، جریان نقدی و بودجه‌ ها را در یک نگاه مدیریت کنید."
-    },
-    "products": {
-      "title": "محصولات",
-      "description": "{count} محصول در کاتالوگ."
-    },
-    "productDetails": {
-      "title": "{name}",
-      "description": "SKU {sku} · {category}."
-    },
-    "checkout": {
-      "title": "پرداخت",
-      "description": "پرداخت امن — {count} مورد در سبد خرید شما."
-    },
-    "invoices": {
-      "title": "فاکتور ها",
-      "description": "{count} فاکتور — {overdue} مورد سررسید گذشته با مجموع {amount}."
-    },
-    "jobsDashboard": {
-      "title": "استخدام",
-      "description": "وضعیت فرایند استخدام در {count} موقعیت شغلی فعال."
-    },
-    "jobsList": {
-      "title": "فهرست موقعیت‌ های شغلی",
-      "description": "{open} موقعیت باز · {applicants} متقاضی · {closing} موقعیت در حال بسته‌ شدن."
-    },
-    "jobDetails": {
-      "title": "{title}",
-      "description": "{company} · {department} · {applicants} متقاضی."
-    },
-    "blogList": {
-      "title": "بلاگ",
-      "description": "{published} مقاله منتشر سشده · {drafts} پیش ‌نویس · {reads} بازدید."
-    },
-    "blogDetails": {
-      "title": "{title}",
-      "description": "{category}."
-    }
-  }
+  "page": {}
 }

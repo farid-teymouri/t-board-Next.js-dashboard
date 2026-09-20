@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "{title}",
+    "description": "{category}."
+  },
+  "header": {
+    "edit": "Edit",
+    "save": "Save",
+    "allPosts": "All Posts"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "{title}",
+    "description": "{company} · {department} · {applicants} متقاضی."
+  },
+  "header": {
+    "edit": "ویرایش",
+    "save": "ذخیره",
+    "allJobs": "همه موقعیت‌ها"
+  }
+}

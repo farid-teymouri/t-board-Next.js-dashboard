@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "{name}",
+    "description": "کد محصول {sku} · دسته‌بندی {category}."
+  },
+  "header": {
+    "backToProducts": "بازگشت به محصولات",
+    "editProduct": "ویرایش محصول"
+  }
+}

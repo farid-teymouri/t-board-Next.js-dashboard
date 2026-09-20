@@ -23,7 +23,7 @@ export default async function AnalyticsLayout({
   return (
     <>
       <PageHeaderContent>
-        <PageHeader dictionary={dictionary.sidebar} />
+        <PageHeader dictionary={dictionary.dashboards.analytics.page} />
 
         <AnalyticsHeaderActions
           dictionary={dictionary.dashboards.analytics.header}

@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "{name}",
+    "description": "Product code: {sku} · Category: {category}."
+  },
+  "header": {
+    "backToProducts": "Back to Products",
+    "editProduct": "Edit Product"
+  }
+}

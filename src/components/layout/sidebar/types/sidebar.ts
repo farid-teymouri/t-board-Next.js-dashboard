@@ -21,7 +21,7 @@ export type SidebarDictionary = {
   groups: Record<string, string>;
   items: Record<string, string>;
   logout: string;
-  pages: Record<
+  page: Record<
     string,
     {
       title: string;

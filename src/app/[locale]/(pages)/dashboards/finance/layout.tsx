@@ -23,7 +23,7 @@ export default async function FinanceLayout({
   return (
     <>
       <PageHeaderContent>
-        <PageHeader dictionary={dictionary.sidebar} />
+        <PageHeader dictionary={dictionary.dashboards.finance.page} />
 
         <FinanceHeaderActions
           dictionary={dictionary.dashboards.finance.header}

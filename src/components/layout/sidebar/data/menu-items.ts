@@ -75,10 +75,6 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
         icon: BriefcaseBusiness,
         items: [
           {
-            id: "jobsDashboard",
-            href: "/jobs/dashboards",
-          },
-          {
             id: "jobsList",
             href: "/jobs/list",
           },

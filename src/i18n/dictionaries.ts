@@ -35,6 +35,25 @@ const dictionaries = {
         .default,
       finance: (await import("@/modules/dashboards/finance/en.json")).default,
     },
+
+    ecommerce: {
+      checkout: (await import("@/modules/ecommerce/checkout/en.json")).default,
+      products: (await import("@/modules/ecommerce/products/en.json")).default,
+      productDetails: (
+        await import("@/modules/ecommerce/product-details/en.json")
+      ).default,
+      invoices: (await import("@/modules/ecommerce/invoices/en.json")).default,
+    },
+    blog: {
+      blogDetails: (await import("@/modules/blog/blog-details/en.json"))
+        .default,
+      list: (await import("@/modules/blog/list/en.json")).default,
+    },
+
+    jobs: {
+      jobDetails: (await import("@/modules/jobs/job-details/en.json")).default,
+      list: (await import("@/modules/jobs/list/en.json")).default,
+    },
   }),
 
   fa: async () => ({
@@ -68,6 +87,26 @@ const dictionaries = {
         .default,
       finance: (await import("@/modules/dashboards/finance/fa.json")).default,
     },
+
+    ecommerce: {
+      checkout: (await import("@/modules/ecommerce/checkout/fa.json")).default,
+      products: (await import("@/modules/ecommerce/products/fa.json")).default,
+      productDetails: (
+        await import("@/modules/ecommerce/product-details/fa.json")
+      ).default,
+      invoices: (await import("@/modules/ecommerce/invoices/fa.json")).default,
+    },
+
+    blog: {
+      blogDetails: (await import("@/modules/blog/blog-details/fa.json"))
+        .default,
+      list: (await import("@/modules/blog/list/fa.json")).default,
+    },
+
+    jobs: {
+      jobDetails: (await import("@/modules/jobs/job-details/fa.json")).default,
+      list: (await import("@/modules/jobs/list/fa.json")).default,
+    },
   }),
 };
 
@@ -84,6 +123,27 @@ export type EcommerceDashboardDictionary =
   Dictionary["dashboards"]["ecommerce"];
 
 export type FinanceDashboardDictionary = Dictionary["dashboards"]["finance"];
+
+export type EcommerceProductsDictionary = Dictionary["ecommerce"]["products"];
+
+export type EcommerceProductDetailsDictionary =
+  Dictionary["ecommerce"]["productDetails"];
+
+export type EcommerceInvoicesDictionary = Dictionary["ecommerce"]["invoices"];
+
+export type EcommerceCheckoutDictionary = Dictionary["ecommerce"]["checkout"];
+
+export type BlogDictionary = Dictionary["blog"];
+
+export type BlogListDictionary = Dictionary["blog"]["list"];
+
+export type BlogDetailsDictionary = Dictionary["blog"]["blogDetails"];
+
+export type JobsDictionary = Dictionary["jobs"];
+
+export type JobListDictionary = Dictionary["jobs"]["list"];
+
+export type JobDetailsDictionary = Dictionary["jobs"]["jobDetails"];
 
 export const getDictionary = async (locale: Locale) => {
   if (!hasLocale(locale)) {

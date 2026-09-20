@@ -1,4 +1,8 @@
 {
+  "page": {
+    "title": "E-commerce",
+    "description": "Track store performance, orders, and merchandising at a glance."
+  },
   "header": {
     "addProduct": "Add Product",
     "refresh": "Refresh",
@@ -54,7 +58,12 @@
   "salesByChannel": {
     "title": "Sales by Channel",
     "description": "Revenue distribution across sales channels",
-    "stages": ["Web store", "Mobile app", "Marketplace", "POS / in-store"]
+    "stages": [
+      "Web store",
+      "Mobile app",
+      "Marketplace",
+      "POS / in-store"
+    ]
   },
   "inventoryStatus": {
     "title": "Inventory Status",

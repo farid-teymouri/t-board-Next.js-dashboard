@@ -1,0 +1,9 @@
+{
+  "page": {
+    "title": "Checkout",
+    "description": "Secure checkout — {count} items in your bag."
+  },
+  "header": {
+    "backToCart": "Back to Cart"
+  }
+}

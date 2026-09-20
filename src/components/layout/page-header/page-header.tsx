@@ -3,17 +3,20 @@
 import { usePathname } from "next/navigation";
 
 import { sidebarMenuGroups } from "@/components/layout/sidebar/data/menu-items";
-import type { SidebarDictionary } from "@/components/layout/sidebar/types/sidebar";
 import { findBreadcrumbPath } from "@/components/layout/breadcrumb/utils/breadcrumb-path";
-
+import { renderTemplate } from "@/lib/utils/render-template";
 type PageHeaderProps = {
-  dictionary: SidebarDictionary;
+  dictionary: {
+    title: string;
+    description: string;
+  };
+
+  variables?: Record<string, string | number>;
 };
 
-export function PageHeader({ dictionary }: PageHeaderProps) {
+export function PageHeader({ dictionary, variables = {} }: PageHeaderProps) {
   const pathname = usePathname();
 
-  // Remove the locale prefix before matching the current route.
   const normalizedPathname = pathname.replace(/^\/(fa|en)/, "");
 
   const items = findBreadcrumbPath(sidebarMenuGroups, normalizedPathname);
@@ -22,19 +25,15 @@ export function PageHeader({ dictionary }: PageHeaderProps) {
     return null;
   }
 
-  const currentItem = items[items.length - 1];
-
-  const page = dictionary.pages[currentItem.id];
-
-  if (!page) {
-    return null;
-  }
-
   return (
     <div className="space-y-1">
-      <h1 className="text-3xl font-semibold tracking-tight">{page.title}</h1>
+      <h1 className="text-3xl font-semibold tracking-tight">
+        {renderTemplate(dictionary.title, variables)}
+      </h1>
 
-      <p className="text-sm text-muted-foreground">{page.description}</p>
+      <p className="text-sm text-muted-foreground">
+        {renderTemplate(dictionary.description, variables)}
+      </p>
     </div>
   );
 }
