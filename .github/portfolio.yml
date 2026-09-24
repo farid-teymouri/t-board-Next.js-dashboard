@@ -6,7 +6,7 @@ description:
   fa: "یک داشبورد مدیریت مدرن، واکنش‌گرا و چندزبانه."
   en: "A modern, responsive and multilingual admin dashboard."
 
-banner: "portfolio/t-board-banner.png"
+banner: "/t-board-banner.png"
 
 skills:
   - name: "Next.js"
