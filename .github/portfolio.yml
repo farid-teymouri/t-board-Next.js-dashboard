@@ -26,8 +26,13 @@ skills:
 
   - name: "TanStack Query"
     icon:
-      light: "skill-icons:reactquery"
-      dark: "skill-icons:reactquery"
+      light: "simple-icons:tanstack"
+      dark: "simple-icons:tanstack"
+
+  - name: "shadcn/ui"
+    icon:
+      light: "vscode-icons:file-type-light-shadcn"
+      dark: "vscode-icons:file-type-shadcn"
 
   - name: "Docker"
     icon:
