@@ -2,21 +2,32 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import type { EcommerceProductsData } from "@/types/ecommerce/products";
+import type {
+  EcommerceProductsData,
+} from "@/types/ecommerce/products";
 
-async function fetchProducts() {
-  const response = await fetch("/api/ecommerce/products");
+async function fetchProducts(
+  locale: "fa" | "en",
+): Promise<EcommerceProductsData> {
+  const response = await fetch(
+    `/api/ecommerce/products?locale=${locale}`,
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch products");
   }
 
-  return response.json() as Promise<EcommerceProductsData>;
+  return response.json();
 }
 
-export function useProducts() {
+export function useProducts(locale: "fa" | "en") {
   return useQuery({
-    queryKey: ["ecommerce-products"],
-    queryFn: fetchProducts,
+    queryKey: [
+      "ecommerce",
+      "products",
+      locale,
+    ],
+
+    queryFn: () => fetchProducts(locale),
   });
 }

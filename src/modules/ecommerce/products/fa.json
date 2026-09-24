@@ -6,5 +6,96 @@
   "header": {
     "addProduct": "افزودن محصول",
     "exportReport": "خروجی گرفتن"
+  },
+  "list": {
+    "title": "محصولات",
+    "loading": "در حال بارگذاری محصولات...",
+    "error": "دریافت محصولات با خطا مواجه شد.",
+    "empty": "محصولی پیدا نشد.",
+    "search": "جستجوی محصولات...",
+    "sort": {
+      "label": "مرتب‌سازی",
+      "featured": "پیشنهادی",
+      "newest": "جدیدترین",
+      "priceHighToLow": "قیمت: زیاد به کم",
+      "priceLowToHigh": "قیمت: کم به زیاد",
+      "bestSelling": "پرفروش‌ترین",
+      "topRated": "بیشترین امتیاز",
+      "nameAZ": "نام: الف تا ی"
+    },
+    "view": {
+      "grid": "نمایش شبکه‌ای",
+      "list": "نمایش لیستی"
+    },
+    "selection": {
+      "selected": "{count} انتخاب شده",
+      "setStatus": "تغییر وضعیت",
+      "setCategory": "تغییر دسته‌بندی",
+      "remove": "حذف محصولات انتخاب‌شده",
+      "clear": "پاک کردن"
+    },
+    "table": {
+      "product": "محصول",
+      "category": "دسته‌بندی",
+      "price": "قیمت",
+      "stock": "موجودی",
+      "sales": "فروش",
+      "status": "وضعیت",
+      "inStock": "موجود",
+      "outOfStock": "ناموجود",
+      "lowStock": "موجودی کم",
+      "selectAll": "انتخاب همه محصولات",
+      "selectProduct": "انتخاب محصول",
+      "actions": "عملیات"
+    },
+    "pagination": {
+      "showing": "نمایش {from} تا {to} از {total} محصول",
+      "previous": "صفحه قبل",
+      "next": "صفحه بعد"
+    },
+    "resultCount": "{count} محصول",
+    "status": {
+      "inStock": "موجود",
+      "outOfStock": "ناموجود",
+      "lowStock": "موجودی کم"
+    },
+    "card": {
+      "badges": {
+        "new": "جدید",
+        "bestseller": "پرفروش",
+        "sale": "تخفیف"
+      },
+      "rating": {
+        "ariaLabel": "{rating} از ۵"
+      },
+      "status": {
+        "inStock": "موجود",
+        "outOfStock": "ناموجود",
+        "lowStock": "موجودی کم",
+        "remaining": "{count} عدد باقی مانده"
+      },
+      "accessibility": {
+        "selectProduct": "انتخاب {name}",
+        "addToCart": "افزودن {name} به سبد"
+      }
+    }
+  },
+  "filters": {
+    "title": "فیلترها",
+    "categories": "دسته‌بندی‌ها",
+    "price": "قیمت",
+    "availability": "موجودی",
+    "rating": "امتیاز",
+    "reset": "پاک کردن فیلترها",
+    "statuses": {
+      "inStock": "موجود",
+      "lowStock": "موجودی کم",
+      "outOfStock": "ناموجود"
+    },
+    "ratings": {
+      "four": "۴+ ستاره",
+      "three": "۳+ ستاره",
+      "two": "۲+ ستاره"
+    }
   }
 }

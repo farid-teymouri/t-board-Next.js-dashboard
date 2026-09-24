@@ -6,5 +6,96 @@
   "header": {
     "addProduct": "Add Product",
     "exportReport": "Export"
+  },
+  "list": {
+    "title": "Products",
+    "loading": "Loading products...",
+    "error": "Failed to load products.",
+    "empty": "No products found.",
+    "search": "Search products...",
+    "sort": {
+      "label": "Sort by",
+      "featured": "Featured",
+      "newest": "Newest",
+      "priceHighToLow": "Price: high to low",
+      "priceLowToHigh": "Price: low to high",
+      "bestSelling": "Best selling",
+      "topRated": "Top rated",
+      "nameAZ": "Name: A-Z"
+    },
+    "view": {
+      "grid": "Grid view",
+      "list": "List view"
+    },
+    "selection": {
+      "selected": "{count} selected",
+      "setStatus": "Set status",
+      "setCategory": "Set category",
+      "remove": "Remove selected products",
+      "clear": "Clear"
+    },
+    "table": {
+      "product": "Product",
+      "category": "Category",
+      "price": "Price",
+      "stock": "Stock",
+      "sales": "Sales",
+      "status": "Status",
+      "inStock": "In stock",
+      "outOfStock": "Out of stock",
+      "lowStock": "Low stock",
+      "selectAll": "Select all products",
+      "selectProduct": "Select product",
+      "actions": "Actions"
+    },
+    "pagination": {
+      "showing": "Showing {from}–{to} of {total} products",
+      "previous": "Previous page",
+      "next": "Next page"
+    },
+    "resultCount": "{count} products",
+    "status": {
+      "inStock": "In stock",
+      "outOfStock": "Out of stock",
+      "lowStock": "Low stock"
+    },
+    "card": {
+      "badges": {
+        "new": "New",
+        "bestseller": "Bestseller",
+        "sale": "Sale"
+      },
+      "rating": {
+        "ariaLabel": "{rating} out of 5"
+      },
+      "status": {
+        "inStock": "In stock",
+        "outOfStock": "Out of stock",
+        "lowStock": "Low stock",
+        "remaining": "{count} items left"
+      },
+      "accessibility": {
+        "selectProduct": "Select {name}",
+        "addToCart": "Add {name} to cart"
+      }
+    }
+  },
+  "filters": {
+    "title": "Filters",
+    "categories": "Categories",
+    "price": "Price",
+    "availability": "Availability",
+    "rating": "Rating",
+    "reset": "Reset filters",
+    "statuses": {
+      "inStock": "In stock",
+      "lowStock": "Low stock",
+      "outOfStock": "Out of stock"
+    },
+    "ratings": {
+      "four": "4+ stars",
+      "three": "3+ stars",
+      "two": "2+ stars"
+    }
   }
 }
