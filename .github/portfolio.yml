@@ -1,0 +1,35 @@
+title:
+  fa: "داشبورد مدیریت T-Board"
+  en: "T-Board Admin Dashboard"
+
+description:
+  fa: "یک داشبورد مدیریت مدرن، واکنش‌گرا و چندزبانه."
+  en: "A modern, responsive and multilingual admin dashboard."
+
+banner: "portfolio/t-board-banner.png"
+
+skills:
+  - name: "Next.js"
+    icon:
+      light: "skill-icons:nextjs-light"
+      dark: "skill-icons:nextjs-dark"
+
+  - name: "TypeScript"
+    icon:
+      light: "skill-icons:typescript"
+      dark: "skill-icons:typescript"
+
+  - name: "Tailwind CSS"
+    icon:
+      light: "skill-icons:tailwindcss-light"
+      dark: "skill-icons:tailwindcss-dark"
+
+  - name: "TanStack Query"
+    icon:
+      light: "skill-icons:reactquery"
+      dark: "skill-icons:reactquery"
+
+  - name: "Docker"
+    icon:
+      light: "skill-icons:docker"
+      dark: "skill-icons:docker"
