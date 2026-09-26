@@ -305,7 +305,7 @@ export function ProductMedia({
   return (
     <>
       <Card className="overflow-hidden">
-        <CardContent className="p-4">
+        <CardContent>
           <div className="space-y-4">
             <div>
               <h2 className="text-base font-semibold">{dictionary.title}</h2>
@@ -315,7 +315,7 @@ export function ProductMedia({
               </p>
             </div>
             {/* Main media */}
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-muted/30">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-muted/30 p-4">
               {activeMedia ? (
                 activeMedia.type === "image" ? (
                   activeMedia.src.startsWith("blob:") ? (
