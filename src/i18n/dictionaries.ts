@@ -43,6 +43,8 @@ const dictionaries = {
         await import("@/modules/ecommerce/product-details/en.json")
       ).default,
       invoices: (await import("@/modules/ecommerce/invoices/en.json")).default,
+      editProduct: (await import("@/modules/ecommerce/edit-product/en.json"))
+        .default,
     },
     blog: {
       blogDetails: (await import("@/modules/blog/blog-details/en.json"))
@@ -95,6 +97,8 @@ const dictionaries = {
         await import("@/modules/ecommerce/product-details/fa.json")
       ).default,
       invoices: (await import("@/modules/ecommerce/invoices/fa.json")).default,
+      editProduct: (await import("@/modules/ecommerce/edit-product/fa.json"))
+        .default,
     },
 
     blog: {
@@ -130,6 +134,9 @@ export type EcommerceProductDetailsDictionary =
   Dictionary["ecommerce"]["productDetails"];
 
 export type EcommerceInvoicesDictionary = Dictionary["ecommerce"]["invoices"];
+
+export type EcommerceEditProductDictionary =
+  Dictionary["ecommerce"]["editProduct"];
 
 export type EcommerceCheckoutDictionary = Dictionary["ecommerce"]["checkout"];
 

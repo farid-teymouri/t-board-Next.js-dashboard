@@ -50,6 +50,10 @@ export const sidebarMenuGroups: SidebarMenuGroup[] = [
             href: "/ecommerce/products",
           },
           {
+            id: "editProduct",
+            href: "/ecommerce/edit-product",
+          },
+          {
             id: "productDetails",
             href: "/ecommerce/product-details",
           },

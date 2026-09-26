@@ -4,7 +4,7 @@ import { UserLayout } from "@/components/layout/user-layout";
 import { Breadcrumbs } from "@/components/layout/breadcrumb/breadcrumb";
 import { getDictionary } from "@/i18n/dictionaries";
 import { hasLocale } from "@/i18n/config";
-
+import { Toaster } from "@/components/ui/toast";
 export default async function AdminDashboardLayout({
   children,
   params,
@@ -28,6 +28,8 @@ export default async function AdminDashboardLayout({
         <Breadcrumbs dictionary={dictionary.sidebar} locale={locale} />
 
         {children}
+
+        <Toaster />
       </div>
     </UserLayout>
   );

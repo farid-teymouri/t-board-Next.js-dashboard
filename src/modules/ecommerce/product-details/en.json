@@ -6,5 +6,19 @@
   "header": {
     "backToProducts": "Back to Products",
     "editProduct": "Edit Product"
+  },
+  "content": {
+    "loading": "Loading product details...",
+    "error": "Failed to load product details.",
+    "noMedia": "No media available."
+  },
+  "media": {
+    "noMedia": "No media available.",
+    "openFullscreen": "Open fullscreen",
+    "image": "Image",
+    "video": "Video",
+    "playVideo": "Play video",
+    "pauseVideo": "Pause video",
+    "primary": "Primary"
   }
 }
