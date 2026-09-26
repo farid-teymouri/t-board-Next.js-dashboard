@@ -1,0 +1,36 @@
+{
+  "page": {
+    "title": "Edit Product",
+    "description": "SKU {sku} — {stock} in stock — Last saved {date}, {time}."
+  },
+  "header": {
+    "preview": "Preview",
+    "actions": "Product actions",
+    "duplicate": "Duplicate",
+    "unpublish": "Unpublish",
+    "deleteProduct": "Delete product",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "content": {
+    "loading": "Loading product details...",
+    "error": "Failed to load product details.",
+    "noMedia": "No media available."
+  },
+  "media": {
+    "title": "Media",
+    "description": "First image is the primary thumbnail. Drag to reorder.",
+    "addMedia": "Add product media",
+    "removeMedia": "Remove media",
+    "noMedia": "No media available.",
+    "openFullscreen": "Open fullscreen",
+    "image": "Image",
+    "video": "Video",
+    "playVideo": "Play video",
+    "pauseVideo": "Pause video",
+    "onlyImageVideo": "Only image and video files are allowed.",
+    "mediaLimit": "Maximum 5 images and 2 videos are allowed.",
+    "primary": "Primary",
+    "setAsPrimary": "Set as primary"
+  }
+}
