@@ -33,7 +33,6 @@ const MEDIA_COLORS = [
 
 export function ProductMedia({
   media: initialMedia,
-  locale,
   dictionary,
 }: ProductMediaItemProps) {
   const [draggedMediaId, setDraggedMediaId] = useState<string | null>(null);
@@ -320,6 +319,7 @@ export function ProductMedia({
               {activeMedia ? (
                 activeMedia.type === "image" ? (
                   activeMedia.src.startsWith("blob:") ? (
+                    // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={activeMedia.src}
                       alt={activeMedia.alt}

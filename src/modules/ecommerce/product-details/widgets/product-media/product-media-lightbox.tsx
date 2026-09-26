@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -36,7 +36,7 @@ export function ProductMediaLightbox({
 
   const isRtl = document.documentElement.dir === "rtl";
 
-  function goToPrevious() {
+  const goToPrevious = useCallback(() => {
     if (!media.length) return;
 
     const nextIndex = isRtl
@@ -48,9 +48,9 @@ export function ProductMediaLightbox({
         : activeIndex - 1;
 
     onIndexChange(nextIndex);
-  }
+  }, [activeIndex, isRtl, media.length, onIndexChange]);
 
-  function goToNext() {
+  const goToNext = useCallback(() => {
     if (!media.length) return;
 
     const nextIndex = isRtl
@@ -62,7 +62,7 @@ export function ProductMediaLightbox({
         : activeIndex + 1;
 
     onIndexChange(nextIndex);
-  }
+  }, [activeIndex, isRtl, media.length, onIndexChange]);
 
   useEffect(() => {
     if (!open) return;
@@ -84,7 +84,7 @@ export function ProductMediaLightbox({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [open, activeIndex, media.length]);
+  }, [open, goToNext, goToPrevious]);
 
   if (!activeMedia) {
     return null;
@@ -112,6 +112,7 @@ export function ProductMediaLightbox({
         <div className="relative flex size-full items-center justify-center overflow-hidden rounded-xl bg-muted/20">
           {activeMedia.type === "image" ? (
             activeMedia.src.startsWith("blob:") ? (
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={activeMedia.src}
                 alt={activeMedia.alt}
@@ -142,7 +143,7 @@ export function ProductMediaLightbox({
                 type="button"
                 onClick={goToPrevious}
                 aria-label="Previous media"
-                className="absolute start-4 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-background/80 shadow-lg backdrop-blur-sm transition-colors hover:bg-background"
+                className="absolute inset-s-4 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-background/80 shadow-lg backdrop-blur-sm transition-colors hover:bg-background"
               >
                 <ChevronLeft className="size-5 rtl:rotate-180" />
               </button>
@@ -151,7 +152,7 @@ export function ProductMediaLightbox({
                 type="button"
                 onClick={goToNext}
                 aria-label="Next media"
-                className="absolute end-4 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-background/80 shadow-lg backdrop-blur-sm transition-colors hover:bg-background"
+                className="absolute inset-e-4 top-1/2 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-background/80 shadow-lg backdrop-blur-sm transition-colors hover:bg-background"
               >
                 <ChevronRight className="size-5 rtl:rotate-180" />
               </button>

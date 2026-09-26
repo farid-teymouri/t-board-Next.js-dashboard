@@ -31,6 +31,7 @@ export function ProductMediaItem({
     >
       {media.type === "image" ? (
         media.src.startsWith("blob:") ? (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={media.src}
             alt={media.alt}
@@ -45,6 +46,7 @@ export function ProductMediaItem({
           </div>
         )
       ) : media.thumbnail ? (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={media.thumbnail}
           alt={media.alt}

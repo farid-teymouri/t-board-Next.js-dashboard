@@ -80,6 +80,7 @@ export function ProductMedia({ media, dictionary }: ProductMediaProps) {
           >
             {activeMedia?.type === "image" ? (
               activeMedia.src.startsWith("blob:") ? (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={activeMedia.src}
                   alt={activeMedia.alt}

@@ -53,6 +53,7 @@ export function ProductMediaLightbox({
         <div className="flex size-full items-center justify-center overflow-hidden rounded-xl bg-muted/20">
           {media.type === "image" ? (
             media.src.startsWith("blob:") ? (
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={media.src}
                 alt={media.alt}
