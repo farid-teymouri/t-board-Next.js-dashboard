@@ -20,6 +20,8 @@
   "media": {
     "title": "Media",
     "description": "First image is the primary thumbnail. Drag to reorder.",
+    "loading": "Loading product media...",
+    "error": "Failed to load product media.",
     "addMedia": "Add product media",
     "removeMedia": "Remove media",
     "noMedia": "No media available.",
