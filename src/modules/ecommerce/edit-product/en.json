@@ -59,5 +59,12 @@
     "onlineStore": "Online store",
     "pointOfSale": "Point of sale",
     "socialMarketplaces": "Social & marketplaces"
+  },
+  "performance": {
+    "title": "Performance",
+    "unitsSold": "Units sold",
+    "revenue": "Revenue",
+    "conversion": "Conversion",
+    "averageRatings": "Avg. ratings"
   }
 }

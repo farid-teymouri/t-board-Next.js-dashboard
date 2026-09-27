@@ -57,5 +57,12 @@
     "onlineStore": "فروشگاه آنلاین",
     "pointOfSale": "نقطه فروش",
     "socialMarketplaces": "شبکه‌های اجتماعی و مارکت‌ها"
+  },
+  "performance": {
+    "title": "عملکرد",
+    "unitsSold": "تعداد فروش",
+    "revenue": "درآمد",
+    "conversion": "نرخ تبدیل",
+    "averageRatings": "میانگین امتیاز"
   }
 }
