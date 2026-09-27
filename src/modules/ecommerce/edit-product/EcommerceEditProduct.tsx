@@ -2,7 +2,7 @@
 
 import type { EcommerceEditProductDictionary } from "@/i18n/dictionaries";
 import type { ContentEditorDictionary } from "@/components/ui/content-editor/dictionary";
-import { BasicInformation, ProductMedia } from "./widgets";
+import { BasicInformation, ProductMedia, Status } from "./widgets";
 
 type EcommerceEditProductProps = {
   dictionary: EcommerceEditProductDictionary;
@@ -25,13 +25,12 @@ export function EcommerceEditProduct({
             locale={locale}
           />
         </section>
+        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
+          <Status dictionary={dictionary.status} />
+        </section>
 
         <section className="col-span-1 lg:col-span-4 xl:col-span-2">
           <ProductMedia dictionary={dictionary.media} />
-        </section>
-
-        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
-          {/* → Generic: SummaryWidget */}
         </section>
 
         <section className="col-span-1 lg:col-span-2 xl:col-span-1">

@@ -44,5 +44,18 @@
     "mediaLimit": "حداکثر ۵ تصویر و ۲ ویدیو مجاز است.",
     "primary": "اصلی",
     "setAsPrimary": "انتخاب به‌ عنوان رسانه اصلی"
+  },
+  "status": {
+    "title": "وضعیت",
+    "active": "فعال",
+    "activeDescription": "قابل مشاهده و خرید",
+    "draft": "پیش‌نویس",
+    "draftDescription": "مخفی از فروشگاه",
+    "scheduled": "زمان‌بندی‌شده",
+    "scheduledDescription": "در تاریخ مشخص منتشر می‌شود",
+    "salesChannels": "کانال‌های فروش",
+    "onlineStore": "فروشگاه آنلاین",
+    "pointOfSale": "نقطه فروش",
+    "socialMarketplaces": "شبکه‌های اجتماعی و مارکت‌ها"
   }
 }

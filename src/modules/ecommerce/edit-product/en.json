@@ -46,5 +46,18 @@
     "mediaLimit": "Maximum 5 images and 2 videos are allowed.",
     "primary": "Primary",
     "setAsPrimary": "Set as primary"
+  },
+  "status": {
+    "title": "Status",
+    "active": "Active",
+    "activeDescription": "Visible & available to buy",
+    "draft": "Draft",
+    "draftDescription": "Hidden from the storefront",
+    "scheduled": "Scheduled",
+    "scheduledDescription": "Publishes on a set date",
+    "salesChannels": "Sales channels",
+    "onlineStore": "Online store",
+    "pointOfSale": "Point of sale",
+    "socialMarketplaces": "Social & marketplaces"
   }
 }
