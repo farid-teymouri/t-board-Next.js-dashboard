@@ -2,7 +2,13 @@
 
 import type { EcommerceEditProductDictionary } from "@/i18n/dictionaries";
 import type { ContentEditorDictionary } from "@/components/ui/content-editor/dictionary";
-import { BasicInformation, Performance, ProductMedia, Status } from "./widgets";
+import {
+  BasicInformation,
+  Organization,
+  Performance,
+  ProductMedia,
+  Status,
+} from "./widgets";
 
 type EcommerceEditProductProps = {
   dictionary: EcommerceEditProductDictionary;
@@ -18,24 +24,18 @@ export function EcommerceEditProduct({
   return (
     <div className="space-y-8">
       <div className="grid w-full grid-cols-1 gap-6 lg:grid-cols-4 xl:grid-cols-3">
-        <section className="col-span-1 lg:col-span-2 xl:col-span-2">
+        <section className="col-span-1 lg:col-span-4 xl:col-span-2 space-y-6">
           <BasicInformation
             dictionary={dictionary.basicInformation}
             contentEditorDictionary={contentEditorDictionary}
             locale={locale}
           />
-        </section>
-        <section className="col-span-1 lg:col-span-2 xl:col-span-1 space-y-8">
-          <Status dictionary={dictionary.status} />
-          <Performance dictionary={dictionary.performance} locale={locale} />
-        </section>
-
-        <section className="col-span-1 lg:col-span-4 xl:col-span-2">
           <ProductMedia dictionary={dictionary.media} />
         </section>
-
-        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
-          {/* → Generic: MetricWidget */}
+        <section className="col-span-1 lg:col-span-4 xl:col-span-1 space-y-6">
+          <Status dictionary={dictionary.status} />
+          <Performance dictionary={dictionary.performance} locale={locale} />
+          <Organization dictionary={dictionary.organization} locale={locale} />
         </section>
       </div>
     </div>

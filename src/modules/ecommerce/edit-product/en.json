@@ -66,5 +66,28 @@
     "revenue": "Revenue",
     "conversion": "Conversion",
     "averageRatings": "Avg. ratings"
+  },
+  "organization": {
+    "title": "Organization",
+    "error": "Unable to load organization data.",
+    "form": {
+      "category": "Category",
+      "categoryRequired": "Category is required.",
+      "categoryHint": "If you enter text in this field, a new category will be created for this product. It can be created as a child of the selected category or as a new parent category.",
+      "brand": "Brand",
+      "vendor": "Vendor",
+      "vendorHint": "If no vendor is selected, the website itself will be considered the vendor of this product.",
+      "selectBrand": "Select a brand",
+      "selectVendor": "Select a vendor",
+      "addBrand": "Add a new brand",
+      "addCategory": "Add a category..."
+    },
+    "collections": {
+      "title": "Collections"
+    },
+    "tags": {
+      "title": "Tags",
+      "placeholder": "Add a tag..."
+    }
   }
 }

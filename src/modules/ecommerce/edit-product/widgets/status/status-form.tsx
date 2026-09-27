@@ -64,7 +64,7 @@ export function StatusForm({ data, dictionary }: StatusFormProps) {
             <RadioGroupItem
               id={`status-${option.value}`}
               value={option.value}
-              className="mt-0.5 border-foreground/20 group-hover:border-foreground"
+              className="mt-0.5 border-foreground/15 group-hover:border-foreground"
             />
 
             <div className="grid gap-1">
@@ -90,10 +90,14 @@ export function StatusForm({ data, dictionary }: StatusFormProps) {
 
         <div className="grid gap-4">
           {salesChannels.map((channel) => (
-            <div key={channel.key} className="flex items-center gap-3">
+            <div
+              key={channel.key}
+              className="group flex cursor-pointer items-center gap-3"
+            >
               <Checkbox
                 id={`sales-channel-${channel.key}`}
                 defaultChecked={data.salesChannels[channel.key]}
+                className="border-foreground/15 group-hover:border-foreground"
               />
 
               <Label
