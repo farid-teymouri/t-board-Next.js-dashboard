@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useRef, useState } from "react";
+
 import { Maximize2, Pause, Play } from "lucide-react";
 
+import { useProductMedia } from "../../hooks/use-product-media";
+
 import { Card, CardContent } from "@/components/ui/card";
+
 import { ProductImageIcon } from "./product-image-icon";
 import { ProductMediaItem } from "./product-media-item";
 import { ProductMediaLightbox } from "./product-media-lightbox";
+import { ProductMediaSkeleton } from "./product-media-skeleton";
+
 import type { ProductMediaProps } from "./type";
 
 const MEDIA_COLORS = [
@@ -17,14 +23,21 @@ const MEDIA_COLORS = [
   "var(--chart-5)",
 ] as const;
 
-export function ProductMedia({ media, dictionary }: ProductMediaProps) {
-  const sortedMedia = [...media].sort(
-    (a, b) => Number(Boolean(b.isPrimary)) - Number(Boolean(a.isPrimary)),
+export function ProductMedia({ dictionary }: ProductMediaProps) {
+  const { data: media = [], isLoading, isError } = useProductMedia();
+
+  const sortedMedia = useMemo(
+    () =>
+      [...media].sort(
+        (a, b) => Number(Boolean(b.isPrimary)) - Number(Boolean(a.isPrimary)),
+      ),
+    [media],
   );
 
-  const [activeId, setActiveId] = useState(sortedMedia[0]?.id ?? "");
+  const [activeId, setActiveId] = useState<string | null>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const activeMedia =
     sortedMedia.find((item) => item.id === activeId) ?? sortedMedia[0] ?? null;
@@ -33,7 +46,21 @@ export function ProductMedia({ media, dictionary }: ProductMediaProps) {
     ? sortedMedia.findIndex((item) => item.id === activeMedia.id)
     : -1;
 
-  if (!sortedMedia.length) {
+  if (isLoading) {
+    return <ProductMediaSkeleton />;
+  }
+
+  if (isError) {
+    return (
+      <Card>
+        <CardContent className="flex min-h-40 items-center justify-center text-sm text-destructive">
+          Failed to load product media.
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (!sortedMedia.length || !activeMedia) {
     return (
       <Card>
         <CardContent className="flex min-h-96 items-center justify-center text-sm text-muted-foreground">
@@ -76,9 +103,9 @@ export function ProductMedia({ media, dictionary }: ProductMediaProps) {
         <CardContent className="space-y-4 p-4 sm:p-6">
           <div
             data-product-media-stage
-            className="relative flex items-center justify-center overflow-hidden rounded-xl bg-muted/20"
+            className="group relative flex items-center justify-center overflow-hidden rounded-xl bg-muted/20"
           >
-            {activeMedia?.type === "image" ? (
+            {activeMedia.type === "image" ? (
               activeMedia.src.startsWith("blob:") ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -91,19 +118,15 @@ export function ProductMedia({ media, dictionary }: ProductMediaProps) {
                   className="flex size-full items-center justify-center"
                   style={{ color: activeColor }}
                 >
-                  <div
-                    className="flex size-full items-center justify-center"
-                    style={{ color: activeColor }}
-                  >
-                    <ProductImageIcon className="size-[min(45vw,45vh)]" />
-                  </div>
+                  <ProductImageIcon className="size-[min(45vw,45vh)]" />
                 </div>
               )
             ) : (
               <>
                 <video
-                  key={activeMedia?.id}
-                  src={activeMedia?.src}
+                  ref={videoRef}
+                  key={activeMedia.id}
+                  src={activeMedia.src}
                   controls
                   playsInline
                   preload="metadata"
@@ -125,7 +148,7 @@ export function ProductMedia({ media, dictionary }: ProductMediaProps) {
                     "bg-background/80 shadow-lg backdrop-blur-sm",
                     "transition-opacity hover:bg-background",
                     videoPlaying
-                      ? "pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
+                      ? "opacity-0 group-hover:opacity-100"
                       : "opacity-100",
                   ].join(" ")}
                 >
@@ -138,7 +161,7 @@ export function ProductMedia({ media, dictionary }: ProductMediaProps) {
               </>
             )}
 
-            {activeMedia?.type === "image" && (
+            {activeMedia.type === "image" && (
               <button
                 type="button"
                 onClick={() => setLightboxOpen(true)}
@@ -157,8 +180,11 @@ export function ProductMedia({ media, dictionary }: ProductMediaProps) {
                 media={item}
                 color={MEDIA_COLORS[index % MEDIA_COLORS.length]}
                 index={index}
-                active={item.id === activeId}
-                onSelect={() => setActiveId(item.id)}
+                active={item.id === activeMedia.id}
+                onSelect={() => {
+                  setVideoPlaying(false);
+                  setActiveId(item.id);
+                }}
               />
             ))}
           </div>
@@ -170,7 +196,10 @@ export function ProductMedia({ media, dictionary }: ProductMediaProps) {
         activeIndex={activeIndex}
         open={lightboxOpen}
         onOpenChange={setLightboxOpen}
-        onIndexChange={(index) => setActiveId(sortedMedia[index]?.id ?? "")}
+        onIndexChange={(index) => {
+          setVideoPlaying(false);
+          setActiveId(sortedMedia[index]?.id ?? null);
+        }}
       />
     </>
   );
