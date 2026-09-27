@@ -72,7 +72,7 @@ function ProductRating({
             className={cn(
               "size-5",
               star <= Math.floor(rating)
-                ? "fill-chart-5 text-chart-5"
+                ? "fill-amber-500 text-amber-500"
                 : "text-muted-foreground/30",
             )}
           />

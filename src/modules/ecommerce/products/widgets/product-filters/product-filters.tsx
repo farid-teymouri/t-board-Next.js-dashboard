@@ -53,7 +53,7 @@ function RatingStars({ rating }: { rating: number }) {
           className={cn(
             "size-3.5",
             star <= rating
-              ? "fill-chart-5 text-chart-5"
+              ? "fill-amber-500 text-amber-500"
               : "text-muted-foreground/30",
           )}
         />
