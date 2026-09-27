@@ -15,6 +15,18 @@
   "content": {
     "noMedia": "رسانه‌ای برای نمایش وجود ندارد."
   },
+  "basicInformation": {
+    "title": "اطلاعات پایه",
+    "productTitle": "عنوان محصول",
+    "productTitleRequired": "عنوان محصول الزامی است.",
+    "urlHandle": "شناسه URL",
+    "urlPrefix": "/products/",
+    "shortDescription": "توضیح کوتاه",
+    "characters": "کاراکتر",
+    "description": "توضیحات",
+    "loading": "در حال بارگذاری اطلاعات محصول...",
+    "error": "بارگذاری اطلاعات محصول با خطا مواجه شد."
+  },
   "media": {
     "title": "رسانه",
     "description": "اولین تصویر به‌عنوان تصویر بندانگشتی اصلی استفاده می‌شود. برای تغییر ترتیب، رسانه‌ها را بکشید.",

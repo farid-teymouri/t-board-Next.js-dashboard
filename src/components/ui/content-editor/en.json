@@ -1,0 +1,9 @@
+{
+  "bold": "Bold",
+  "italic": "Italic",
+  "strikethrough": "Strikethrough",
+  "bulletList": "Bullet list",
+  "orderedList": "Ordered list",
+  "undo": "Undo",
+  "redo": "Redo"
+}

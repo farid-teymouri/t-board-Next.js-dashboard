@@ -17,6 +17,18 @@
     "error": "Failed to load product details.",
     "noMedia": "No media available."
   },
+  "basicInformation": {
+    "title": "Basic Information",
+    "productTitle": "Product title",
+    "productTitleRequired": "Product title is required.",
+    "urlHandle": "URL handle",
+    "urlPrefix": "/products/",
+    "shortDescription": "Short description",
+    "characters": "characters",
+    "description": "Description",
+    "loading": "Loading product information...",
+    "error": "Failed to load product information."
+  },
   "media": {
     "title": "Media",
     "description": "First image is the primary thumbnail. Drag to reorder.",
