@@ -7,3 +7,5 @@ export { Status } from "./status";
 export { Performance } from "./performance";
 
 export { Organization } from "./organization";
+
+export { Pricing } from "./pricing";
