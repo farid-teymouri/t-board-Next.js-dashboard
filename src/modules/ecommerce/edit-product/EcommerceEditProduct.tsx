@@ -13,6 +13,7 @@ import {
   Variants,
   SearchEngineListing,
   DangerZone,
+  SaveBar,
 } from "./widgets";
 
 type EcommerceEditProductProps = {
@@ -29,6 +30,12 @@ export function EcommerceEditProduct({
   return (
     <div className="space-y-8">
       <div className="grid w-full grid-cols-1 gap-6 lg:grid-cols-4 xl:grid-cols-3">
+        <section className="col-span-1 lg:col-span-4 xl:col-span-1 space-y-6">
+          <Status dictionary={dictionary.status} />
+          <Performance dictionary={dictionary.performance} locale={locale} />
+          <Organization dictionary={dictionary.organization} locale={locale} />
+          <Inventory dictionary={dictionary.inventory} locale={locale} />
+        </section>
         <section className="col-span-1 lg:col-span-4 xl:col-span-2 space-y-6">
           <BasicInformation
             dictionary={dictionary.basicInformation}
@@ -44,13 +51,8 @@ export function EcommerceEditProduct({
           />
           <DangerZone dictionary={dictionary.dangerZone} locale={locale} />
         </section>
-        <section className="col-span-1 lg:col-span-4 xl:col-span-1 space-y-6">
-          <Status dictionary={dictionary.status} />
-          <Performance dictionary={dictionary.performance} locale={locale} />
-          <Organization dictionary={dictionary.organization} locale={locale} />
-          <Inventory dictionary={dictionary.inventory} locale={locale} />
-        </section>
       </div>
+      <SaveBar dictionary={dictionary.saveBar} locale={locale} />
     </div>
   );
 }

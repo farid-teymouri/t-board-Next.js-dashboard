@@ -174,5 +174,11 @@
     "description": "Delete a product is permanent and removes it from all channels.",
     "salesAndReviews": "This product has {sales} lifetime sales and {reviews} reviews.",
     "deleteProduct": "Delete product"
+  },
+  "saveBar": {
+    "saved": "All Changes Saved",
+    "cancel": "Cancel",
+    "saveAsDraft": "Save as Draft",
+    "saveChanges": "Save Changes"
   }
 }
