@@ -2,8 +2,7 @@
 
 import type { EcommerceProductDetailsDictionary } from "@/i18n/dictionaries";
 
-import { ProductMedia } from "./widgets/product-media";
-
+import { ProductMedia } from "./widgets";
 type EcommerceProductDetailsProps = {
   dictionary: EcommerceProductDetailsDictionary;
   locale: "fa" | "en";
@@ -20,9 +19,7 @@ export function EcommerceProductDetails({
           <ProductMedia dictionary={dictionary.media} />
         </section>
 
-        <section className="col-span-1 lg:col-span-2 xl:col-span-1">
-          {/* → Product Metrics */}
-        </section>
+        <section className="col-span-1 lg:col-span-2 xl:col-span-1"></section>
 
         <section className="col-span-1 lg:col-span-2 xl:col-span-1">
           {/* → Product Inventory */}

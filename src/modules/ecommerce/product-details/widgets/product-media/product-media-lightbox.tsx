@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 import { ProductImageIcon } from "./product-image-icon";
 
-import type { ProductMedia } from "@/types/ecommerce/product-details";
+import type { ProductMedia } from "./types";
 
 type ProductMediaLightboxProps = {
   media: ProductMedia[];

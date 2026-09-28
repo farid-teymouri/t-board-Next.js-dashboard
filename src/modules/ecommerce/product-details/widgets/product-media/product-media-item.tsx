@@ -1,7 +1,7 @@
 "use client";
 
 import { ImageIcon, Play } from "lucide-react";
-import type { ProductMedia } from "@/types/ecommerce/product-details";
+import type { ProductMedia } from "./types";
 
 type ProductMediaItemProps = {
   media: ProductMedia;

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { ProductMedia } from "@/types/ecommerce/product-details";
+import type { ProductMedia } from "@/modules/ecommerce/product-details/widgets/product-media/types";
 
 const media: ProductMedia[] = [
   {

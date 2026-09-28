@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-import type { ProductMedia } from "@/types/ecommerce/product-details";
+import type { ProductMedia } from "../widgets/product-media/types";
 
 async function fetchProductMedia() {
   const response = await fetch("/api/ecommerce/product-details/media");

@@ -12,8 +12,7 @@ import { ProductImageIcon } from "./product-image-icon";
 import { ProductMediaItem } from "./product-media-item";
 import { ProductMediaLightbox } from "./product-media-lightbox";
 import { ProductMediaSkeleton } from "./product-media-skeleton";
-
-import type { ProductMediaProps } from "./type";
+import type { EcommerceProductDetailsDictionary } from "@/i18n/dictionaries";
 
 const MEDIA_COLORS = [
   "var(--chart-1)",
@@ -23,6 +22,9 @@ const MEDIA_COLORS = [
   "var(--chart-5)",
 ] as const;
 
+export type ProductMediaProps = {
+  dictionary: EcommerceProductDetailsDictionary["media"];
+};
 export function ProductMedia({ dictionary }: ProductMediaProps) {
   const { data: media = [], isLoading, isError } = useProductMedia();
 
