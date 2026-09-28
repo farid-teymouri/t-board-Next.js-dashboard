@@ -45,7 +45,6 @@ export function DangerZone({ dictionary, locale }: DangerZoneProps) {
             )
             .replace("{reviews}", numberFormatter.format(data?.reviews ?? 0))}
         </p>
-
         <Button variant="destructive">
           <Trash2 />
           {dictionary.deleteProduct}
