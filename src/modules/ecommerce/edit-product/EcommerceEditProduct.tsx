@@ -12,6 +12,7 @@ import {
   Inventory,
   Variants,
   SearchEngineListing,
+  DangerZone,
 } from "./widgets";
 
 type EcommerceEditProductProps = {
@@ -41,6 +42,7 @@ export function EcommerceEditProduct({
             dictionary={dictionary.searchEngineListing}
             locale={locale}
           />
+          <DangerZone dictionary={dictionary.dangerZone} locale={locale} />
         </section>
         <section className="col-span-1 lg:col-span-4 xl:col-span-1 space-y-6">
           <Status dictionary={dictionary.status} />

@@ -166,5 +166,11 @@
     "pageTitle": "عنوان صفحه",
     "metaDescription": "توضیحات متا",
     "characters": "{count} / {max} کاراکتر"
+  },
+  "dangerZone": {
+    "title": "منطقه خطر",
+    "description": "حذف محصول به شکل دائمی است و آن را از تمام کانال‌ها حذف می‌کند.",
+    "salesAndReviews": "این محصول {sales} فروش در طول عمر خود و {reviews} نظر دارد.",
+    "deleteProduct": "حذف محصول"
   }
 }

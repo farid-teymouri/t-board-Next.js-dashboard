@@ -168,5 +168,11 @@
     "pageTitle": "Page Title",
     "metaDescription": "Meta Description",
     "characters": "{count} / {max} characters"
+  },
+  "dangerZone": {
+    "title": "Danger Zone",
+    "description": "Delete a product is permanent and removes it from all channels.",
+    "salesAndReviews": "This product has {sales} lifetime sales and {reviews} reviews.",
+    "deleteProduct": "Delete product"
   }
 }
