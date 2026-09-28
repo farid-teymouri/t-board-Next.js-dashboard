@@ -1,2 +1,9 @@
 export { formatDuration } from "./duration";
-export { formatNumber } from "./number";
+
+export {
+  formatInputNumber,
+  formatNumber,
+  numberToPersianWords,
+  parseNumber,
+  sanitizeNumber,
+} from "./number";
