@@ -116,7 +116,7 @@ export function OrganizationTags({
                 className="rounded-full outline-none hover:bg-muted hover:text-destructive p-px"
                 aria-label={`Remove ${getName(tag, locale)}`}
               >
-                <X className="size-3" />
+                <X className="size-4" />
               </button>
             </Badge>
           ))}

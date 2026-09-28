@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 
+import { formatInputNumber, sanitizeNumber } from "@/utils/formatters/number";
+
 import {
   Select,
   SelectContent,
@@ -36,6 +38,10 @@ export function InventoryForm({
       setSelectedLocation(value);
     }
   };
+  const [quantity, setQuantity] = useState(String(data.quantity));
+  const [lowStockAlertAt, setLowStockAlertAt] = useState(
+    String(data.lowStockAlertAt),
+  );
   return (
     <div className="space-y-6">
       <div className="space-y-2">
@@ -68,14 +74,26 @@ export function InventoryForm({
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
           <Label>{dictionary.quantity}</Label>
-
-          <Input type="number" defaultValue={data.quantity} />
+          <Input
+            type="text"
+            inputMode="numeric"
+            value={formatInputNumber(quantity, locale)}
+            onChange={(event) => {
+              setQuantity(sanitizeNumber(event.target.value, false));
+            }}
+          />
         </div>
 
         <div className="space-y-2">
           <Label>{dictionary.lowStockAlertAt}</Label>
-
-          <Input type="number" defaultValue={data.lowStockAlertAt} />
+          <Input
+            type="text"
+            inputMode="numeric"
+            value={formatInputNumber(lowStockAlertAt, locale)}
+            onChange={(event) => {
+              setLowStockAlertAt(sanitizeNumber(event.target.value, false));
+            }}
+          />
         </div>
       </div>
 

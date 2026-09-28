@@ -215,7 +215,7 @@ export function OrganizationForm({
               aria-label={dictionary.categoryHint}
               onClick={() => setCategoryHintOpen((current) => !current)}
             >
-              <HelpCircle className="size-4" />
+              <HelpCircle className="size-5" />
             </TooltipTrigger>
 
             <TooltipContent>
@@ -318,7 +318,7 @@ export function OrganizationForm({
               aria-label={dictionary.vendorHint}
               onClick={() => setVendorHintOpen((current) => !current)}
             >
-              <HelpCircle className="size-4" />
+              <HelpCircle className="size-5" />
             </TooltipTrigger>
 
             <TooltipContent>
