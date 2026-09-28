@@ -191,3 +191,13 @@ export function numberToPersianWords(value: number): string {
 
   return parts.join(" و ");
 }
+
+const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
+
+const englishDigits = "0123456789";
+
+export function toPersianDigits(value: string): string {
+  return value.replace(/\d/g, (digit) => {
+    return persianDigits[englishDigits.indexOf(digit)];
+  });
+}

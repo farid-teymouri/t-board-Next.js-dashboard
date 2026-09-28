@@ -138,5 +138,28 @@
     "lowStockAlertAt": "Low Stock Alert at",
     "location": "Location",
     "required": "Required"
+  },
+  "variants": {
+    "title": "Variants",
+    "description": "Per variants price, SKU and quantity",
+    "addOption": "Add Option",
+    "optionTypes": {
+      "color": "Color",
+      "text": "Text"
+    },
+    "option": {
+      "name": "Option name",
+      "values": "Values",
+      "addValue": "Add Value",
+      "remove": "Remove",
+      "defaultName": "Option",
+      "defaultValue": "Value"
+    },
+    "table": {
+      "variant": "Variant",
+      "price": "Price",
+      "sku": "SKU",
+      "quantity": "QTY"
+    }
   }
 }

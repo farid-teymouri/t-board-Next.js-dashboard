@@ -136,5 +136,28 @@
     "lowStockAlertAt": "هشدار موجودی کم در",
     "location": "موقعیت انبار",
     "required": "اجباری"
+  },
+  "variants": {
+    "title": "تنوع‌ها",
+    "description": "قیمت، SKU و موجودی هر تنوع",
+    "addOption": "افزودن ویژگی",
+    "optionTypes": {
+      "color": "رنگ",
+      "text": "متن"
+    },
+    "option": {
+      "name": "نام ویژگی",
+      "values": "مقادیر",
+      "addValue": "افزودن مقدار",
+      "remove": "حذف",
+      "defaultName": "ویژگی",
+      "defaultValue": "مقدار"
+    },
+    "table": {
+      "variant": "تنوع",
+      "price": "قیمت",
+      "sku": "SKU",
+      "quantity": "موجودی"
+    }
   }
 }

@@ -6,4 +6,5 @@ export {
   numberToPersianWords,
   parseNumber,
   sanitizeNumber,
+  toPersianDigits,
 } from "./number";
