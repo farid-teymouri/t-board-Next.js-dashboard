@@ -127,5 +127,16 @@
     "paymentAmount": "Payment amount",
     "regularPayment": "Payment amount for",
     "finalPayment": "Final payment for"
+  },
+  "inventory": {
+    "title": "Inventory",
+    "sku": "SKU",
+    "barcode": "Barcode",
+    "trackQuantity": "Track Quantity",
+    "trackQuantityDescription": "Automatically Decrease Stock as Order Come in",
+    "quantity": "Quantity",
+    "lowStockAlertAt": "Low Stock Alert at",
+    "location": "Location",
+    "required": "Required"
   }
 }

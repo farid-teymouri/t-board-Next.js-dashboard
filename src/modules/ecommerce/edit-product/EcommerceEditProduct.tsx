@@ -9,6 +9,7 @@ import {
   ProductMedia,
   Status,
   Pricing,
+  Inventory,
 } from "./widgets";
 
 type EcommerceEditProductProps = {
@@ -38,6 +39,7 @@ export function EcommerceEditProduct({
           <Status dictionary={dictionary.status} />
           <Performance dictionary={dictionary.performance} locale={locale} />
           <Organization dictionary={dictionary.organization} locale={locale} />
+          <Inventory dictionary={dictionary.inventory} locale={locale} />
         </section>
       </div>
     </div>

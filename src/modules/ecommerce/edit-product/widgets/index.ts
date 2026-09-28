@@ -9,3 +9,5 @@ export { Performance } from "./performance";
 export { Organization } from "./organization";
 
 export { Pricing } from "./pricing";
+
+export { Inventory } from "./inventory";

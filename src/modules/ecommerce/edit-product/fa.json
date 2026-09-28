@@ -125,5 +125,16 @@
     "paymentAmount": "مبلغ هر پرداخت",
     "regularPayment": "مبلغ هر پرداخت در",
     "finalPayment": "پرداخت نهایی در"
+  },
+  "inventory": {
+    "title": "موجودی",
+    "sku": "شناسه محصول",
+    "barcode": "بارکد",
+    "trackQuantity": "پیگیری موجودی",
+    "trackQuantityDescription": "با ثبت سفارش، موجودی به صورت خودکار کاهش پیدا می‌کند",
+    "quantity": "تعداد موجودی",
+    "lowStockAlertAt": "هشدار موجودی کم در",
+    "location": "موقعیت انبار",
+    "required": "اجباری"
   }
 }
