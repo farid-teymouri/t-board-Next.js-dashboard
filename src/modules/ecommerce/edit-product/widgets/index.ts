@@ -13,3 +13,5 @@ export { Pricing } from "./pricing";
 export { Inventory } from "./inventory";
 
 export { Variants } from "./variants";
+
+export { SearchEngineListing } from "./search-engine-listing";

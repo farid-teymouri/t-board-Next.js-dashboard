@@ -161,5 +161,12 @@
       "sku": "SKU",
       "quantity": "QTY"
     }
+  },
+  "searchEngineListing": {
+    "title": "Search Engine Listing",
+    "websiteName": "My Website",
+    "pageTitle": "Page Title",
+    "metaDescription": "Meta Description",
+    "characters": "{count} / {max} characters"
   }
 }
