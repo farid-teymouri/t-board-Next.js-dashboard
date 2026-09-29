@@ -1,2 +1,1 @@
-export { ProductMedia } from "./product-media";
 export { ProductOverview } from "./product-overview";

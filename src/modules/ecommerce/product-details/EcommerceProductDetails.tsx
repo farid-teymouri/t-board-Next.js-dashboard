@@ -2,7 +2,7 @@
 
 import type { EcommerceProductDetailsDictionary } from "@/i18n/dictionaries";
 
-import { ProductMedia } from "./widgets";
+import { ProductMedia, ProductOverview } from "./widgets";
 type EcommerceProductDetailsProps = {
   dictionary: EcommerceProductDetailsDictionary;
   locale: "fa" | "en";
@@ -14,13 +14,15 @@ export function EcommerceProductDetails({
 }: EcommerceProductDetailsProps) {
   return (
     <div className="space-y-8">
-      <div className="grid w-full grid-cols-1 gap-6 lg:grid-cols-4 xl:grid-cols-3">
-        <section className="col-span-1 lg:col-span-4 xl:col-span-2">
+      <div className="grid w-full grid-cols-1 gap-6  xl:grid-cols-4">
+        <section className="col-span-1 xl:col-span-2">
           <ProductMedia dictionary={dictionary.media} />
         </section>
-
-        <section className="col-span-1 lg:col-span-2 xl:col-span-1"></section>
-
+        <section className="col-span-1  xl:col-span-2">
+          <ProductOverview dictionary={dictionary.overview} locale={locale} />
+        </section>
+      </div>
+      <div className="grid w-full grid-cols-1 gap-6 lg:grid-cols-4 xl:grid-cols-3">
         <section className="col-span-1 lg:col-span-2 xl:col-span-1">
           {/* → Product Inventory */}
         </section>

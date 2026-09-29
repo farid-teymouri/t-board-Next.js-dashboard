@@ -7,11 +7,7 @@
     "backToProducts": "Back to Products",
     "editProduct": "Edit Product"
   },
-  "content": {
-    "loading": "Loading product details...",
-    "error": "Failed to load product details.",
-    "noMedia": "No media available."
-  },
+
   "media": {
     "noMedia": "No media available.",
     "openFullscreen": "Open fullscreen",
@@ -20,5 +16,36 @@
     "playVideo": "Play video",
     "pauseVideo": "Pause video",
     "primary": "Primary"
+  },
+  "overview": {
+    "reviews": "Reviews",
+    "save": "Save",
+    "inStock": "In stock",
+    "available": "available",
+    "content": {
+      "loading": "Loading product details...",
+      "error": "Failed to load product details.",
+      "noMedia": "No media available.",
+      "rating": {
+        "reviews": "Reviews"
+      }
+    },
+    "favorite": {
+      "add": "Add to favorites",
+      "remove": "Remove from favorites"
+    },
+    "actions": {
+      "quantity": "Quantity",
+      "addToCart": "Add to Cart",
+      "buyItNow": "Buy It Now",
+      "decreaseQuantity": "Decrease quantity",
+      "increaseQuantity": "Increase quantity",
+      "details": {
+        "sku": "SKU",
+        "category": "Category",
+        "vendor": "Vendor",
+        "warranty": "Warranty"
+      }
+    }
   }
 }
