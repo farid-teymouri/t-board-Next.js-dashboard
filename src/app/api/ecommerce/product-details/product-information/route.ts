@@ -6,35 +6,39 @@ const productInformation: ProductInformation = {
   description: {
     paragraphs: [
       {
-        fa: "چراغ رومیزی آلومینیومی آرورا با تمرکز بر طراحی مینیمال، کیفیت ساخت بالا و ایجاد نور مناسب برای کار و مطالعه طراحی شده است. بدنه محصول از آلومینیوم ماشین‌کاری‌شده ساخته شده و در کنار ظاهر ساده و مدرن، استحکام و دوام مناسبی را فراهم می‌کند.",
-        en: "The Aurora Aluminium Task Lamp is designed around a minimalist form, high-quality construction, and comfortable lighting for focused work and reading. Its body is made from precision-machined aluminium, providing a clean and modern appearance while maintaining a durable and solid structure.",
+        fa: "ژاکت والُو، یکی از مدل‌های شاخص این برند، برای این فصل با خز مصنوعی نرم و لطیف به سبک تدی بازطراحی شده است. رنگ شکلاتی غنی این مدل، استایلی راحت و شیک به آن می‌بخشد و به‌راحتی با انواع لباس‌های روزمره هماهنگ می‌شود.",
+        en: "Meet the VALOU jacket — a signature piece reimagined for the season. Crafted in irresistibly soft teddy-style faux fur and finished in a rich chocolate shade, it brings effortless style and cozy sophistication to every look.",
       },
       {
-        fa: "بازوی مفصلی مغناطیسی امکان تنظیم زاویه تابش را در اختیار کاربر قرار می‌دهد و سیستم LED نیز امکان تنظیم شدت نور و دمای رنگ را فراهم می‌کند. به همین دلیل می‌توان نور را متناسب با موقعیت میز و نوع استفاده تنظیم کرد.",
-        en: "The magnetic articulating arm allows the lighting angle to be adjusted easily, while the LED system provides adjustable brightness and color temperature. This makes it possible to direct and tune the light according to the desk position and the user's needs.",
+        fa: "یقه ایستاده و نوارهای کشباف، ظاهری مدرن و جذاب به ژاکت می‌دهند، در حالی که فرم کاربردی و همه‌کاره آن، این مدل را به گزینه‌ای ایده‌آل برای پوشیدن در طول روز تا شب تبدیل می‌کند. ژاکت والُو انتخابی راحت و شیک برای تکمیل استایل‌های روزمره است.",
+        en: "The stand-up collar and ribbed trims add a modern edge, while its versatile silhouette makes it the perfect layer from day to night. Your everyday wardrobe just found its new favorite.",
       },
     ],
 
     features: [
       {
-        fa: "بدنه ساخته‌شده از آلومینیوم ماشین‌کاری‌شده با طراحی مینیمال",
-        en: "Precision-machined aluminium body with a minimalist design",
+        fa: "ژاکت کوتاه از خز مصنوعی نرم به سبک تدی",
+        en: "Short faux fur jacket",
       },
       {
-        fa: "تنظیم شدت نور برای استفاده در شرایط مختلف",
-        en: "Adjustable brightness for different lighting conditions",
+        fa: "یقه ایستاده با حلقه‌های کمربند",
+        en: "Stand-up collar with belt loops",
       },
       {
-        fa: "تنظیم دمای رنگ از ۲۷۰۰ تا ۴۰۰۰ کلوین",
-        en: "Tunable color temperature from 2700K to 4000K",
+        fa: "بسته‌شدن با زیپ",
+        en: "Zip closure",
       },
       {
-        fa: "بازوی مفصلی مغناطیسی برای تنظیم آسان زاویه نور",
-        en: "Magnetic articulating arm for easy light positioning",
+        fa: "جیب‌های کناری کاربردی",
+        en: "Side pockets",
       },
       {
-        fa: "پایه مجهز به عبوردهی USB-C برای مدیریت بهتر کابل",
-        en: "USB-C passthrough base for easier cable management",
+        fa: "نوار کشباف در سرآستین‌ها و لبه پایینی",
+        en: "Ribbed trim at the cuffs and hem",
+      },
+      {
+        fa: "رنگ شکلاتی",
+        en: "Chocolate color",
       },
     ],
   },
@@ -42,82 +46,89 @@ const productInformation: ProductInformation = {
   specifications: [
     {
       label: {
-        fa: "جنس بدنه",
-        en: "Body Material",
+        fa: "جنس",
+        en: "Material",
       },
       value: {
-        fa: "آلومینیوم ماشین‌کاری‌شده",
-        en: "Machined Aluminium",
+        fa: "خز مصنوعی به سبک تدی",
+        en: "Teddy-style faux fur",
       },
     },
+
     {
       label: {
-        fa: "کشور سازنده",
-        en: "Country of Manufacture",
+        fa: "رنگ",
+        en: "Color",
       },
       value: {
-        fa: "ایران",
-        en: "Iran",
+        fa: "شکلاتی",
+        en: "Chocolate",
       },
     },
+
     {
       label: {
-        fa: "نوع لامپ",
-        en: "Light Type",
+        fa: "مدل",
+        en: "Style",
       },
       value: {
-        fa: "LED",
-        en: "LED",
+        fa: "ژاکت کوتاه",
+        en: "Short jacket",
       },
     },
+
     {
       label: {
-        fa: "دمای رنگ",
-        en: "Color Temperature",
+        fa: "نوع بسته‌شدن",
+        en: "Closure Type",
       },
       value: {
-        fa: "۲۷۰۰ تا ۴۰۰۰ کلوین",
-        en: "2700K–4000K",
+        fa: "زیپ",
+        en: "Zip",
       },
     },
+
     {
       label: {
-        fa: "توان مصرفی",
-        en: "Power Consumption",
+        fa: "نوع یقه",
+        en: "Collar Type",
       },
       value: {
-        fa: "۱۲ وات",
-        en: "12W",
+        fa: "یقه ایستاده",
+        en: "Stand-up collar",
       },
     },
+
     {
       label: {
-        fa: "نوع اتصال",
-        en: "Connection Type",
+        fa: "جیب‌ها",
+        en: "Pockets",
       },
       value: {
-        fa: "USB-C",
-        en: "USB-C",
+        fa: "جیب‌های کناری",
+        en: "Side pockets",
       },
     },
+
     {
       label: {
-        fa: "قابلیت تنظیم نور",
-        en: "Dimming",
+        fa: "جزئیات لبه‌ها",
+        en: "Trim Details",
       },
       value: {
-        fa: "دارد",
-        en: "Yes",
+        fa: "نوار کشباف در سرآستین‌ها و لبه پایین",
+        en: "Ribbed trim at cuffs and hem",
       },
     },
+
     {
       label: {
-        fa: "وزن",
-        en: "Weight",
+        fa: "مناسب برای",
+        en: "Suitable For",
       },
       value: {
-        fa: "۱.۸ کیلوگرم",
-        en: "1.8 kg",
+        fa: "استایل روزمره",
+        en: "Everyday wear",
       },
     },
   ],
@@ -125,36 +136,48 @@ const productInformation: ProductInformation = {
   additionalInformation: [
     {
       label: {
-        fa: "نوع نصب",
-        en: "Installation Type",
+        fa: "نوع لباس",
+        en: "Garment Type",
       },
       value: {
-        fa: "رومیزی",
-        en: "Desk Mounted",
+        fa: "ژاکت کوتاه",
+        en: "Short jacket",
       },
     },
+
     {
       label: {
-        fa: "محتویات بسته",
-        en: "Package Contents",
-      },
-      value: {
-        fa: "چراغ، پایه، کابل USB-C و دفترچه راهنما",
-        en: "Lamp, base, USB-C cable, and user manual",
-      },
-    },
-    {
-      label: {
-        fa: "کاربری پیشنهادی",
+        fa: "مناسب برای",
         en: "Recommended Use",
       },
       value: {
-        fa: "کار، مطالعه و استفاده روزمره",
-        en: "Work, reading, and everyday use",
+        fa: "استفاده روزمره و استایل روز و شب",
+        en: "Everyday wear and day-to-night styling",
+      },
+    },
+
+    {
+      label: {
+        fa: "فصل",
+        en: "Season",
+      },
+      value: {
+        fa: "فصل جاری",
+        en: "Current season",
+      },
+    },
+
+    {
+      label: {
+        fa: "سبک",
+        en: "Style",
+      },
+      value: {
+        fa: "راحت و روزمره",
+        en: "Casual and versatile",
       },
     },
   ],
-
   reviewCount: 128,
 
   rating: 4.5,
@@ -170,80 +193,148 @@ const productInformation: ProductInformation = {
   reviews: [
     {
       id: "review-001",
+
       user: {
         initials: "ZR",
         name: "Zahra Rezaei",
       },
-      rating: 4,
+
+      rating: 5,
       date: "2026-09-24",
       verified: true,
+
       content: {
-        fa: "محصول بسیار خوبی است و کیفیت ساخت آن کاملاً قابل قبول است.",
-        en: "Really nice product with excellent build quality. It works very well for my desk.",
+        fa: "خیلی خوشگل‌تر از چیزیه که تو عکس به نظر میاد 😍 رنگ شکلاتیش واقعاً قشنگه و خیلی راحت با لباسای مختلف ست میشه.",
+        en: "Honestly looks even better in person 😍 The chocolate color is gorgeous and it goes really well with so many outfits.",
       },
-      helpfulCount: 24,
+
+      helpfulCount: 31,
     },
+
     {
       id: "review-002",
+
       user: {
         initials: "AM",
         name: "Ali Mohammadi",
       },
+
       rating: 5,
       date: "2026-09-21",
       verified: true,
+
       content: {
-        fa: "طراحی محصول خیلی خوب است و نور آن برای کار طولانی مدت مناسب است.",
-        en: "The design is excellent and the light works really well for long working sessions.",
+        fa: "خیلی نرم و راحته. فکر می‌کردم یه کم سنگین باشه ولی اتفاقاً سبک‌تر از چیزی بود که انتظار داشتم.",
+        en: "Really soft and comfortable. I thought it would feel heavy, but it's actually lighter than I expected.",
       },
-      helpfulCount: 18,
+
+      helpfulCount: 24,
     },
+
     {
       id: "review-003",
+
       user: {
         initials: "NS",
         name: "Nika Shafiei",
       },
+
       rating: 4,
       date: "2026-09-18",
       verified: true,
+
       content: {
-        fa: "ظاهر ساده و کیفیت خوبی دارد. تنظیم شدت نور هم بسیار کاربردی است.",
-        en: "Simple design and good quality. The brightness adjustment is also very useful.",
+        fa: "تنها چیزی که یکم اذیتم کرد اینه که آستین‌ها برای من کمی بلند بود، ولی خود ژاکت خیلی خوش‌فرمه و جنسش رو دوست داشتم.",
+        en: "The sleeves were a little long for me, but the jacket has a really nice fit and I love the feel of the faux fur.",
       },
-      helpfulCount: 12,
+
+      helpfulCount: 18,
     },
+
     {
       id: "review-004",
+
       user: {
         initials: "RK",
         name: "Reza Karimi",
       },
+
       rating: 5,
       date: "2026-09-15",
       verified: false,
+
       content: {
-        fa: "برای میز کار من انتخاب بسیار خوبی بود و از خرید آن راضی هستم.",
-        en: "It has been a great addition to my desk and I am very happy with the purchase.",
+        fa: "برای پاییز خیلی گزینه خوبیه. هم گرم و نرمه، هم اون‌قدر رسمی نیست که نتونی هر روز بپوشیش.",
+        en: "Such a good jacket for fall. It's warm and soft without feeling too dressy for everyday wear.",
       },
-      helpfulCount: 9,
+
+      helpfulCount: 15,
+    },
+
+    {
+      id: "review-005",
+
+      user: {
+        initials: "SM",
+        name: "Sara Mohammadi",
+      },
+
+      rating: 5,
+      date: "2026-09-12",
+      verified: true,
+
+      content: {
+        fa: "من عاشق یقه و مدل کوتاهش شدم. با شلوار جین خیلی خوب میشه و رنگش هم دقیقاً همون چیزی بود که می‌خواستم.",
+        en: "I love the collar and the cropped fit. It looks so good with jeans, and the color was exactly what I was hoping for.",
+      },
+
+      helpfulCount: 27,
+    },
+
+    {
+      id: "review-006",
+
+      user: {
+        initials: "MP",
+        name: "Maryam Pouri",
+      },
+
+      rating: 4,
+      date: "2026-09-09",
+      verified: true,
+
+      content: {
+        fa: "جنسش خیلی نرمه و ظاهرش هم شیکه. فقط کاش جیب‌ها یه مقدار بزرگ‌تر بودن، ولی در کل خیلی راضیم.",
+        en: "The material is super soft and it looks really stylish. I just wish the pockets were a little bigger, but overall I'm very happy with it.",
+      },
+
+      helpfulCount: 21,
     },
   ],
   vendor: {
     name: {
-      fa: "مغازه آنلاین من",
-      en: "My Online Store",
+      fa: "بوتیک زاپا",
+      en: "ZAPA Boutique",
     },
+
     logo: "/images/vendors/my-online-store.jpeg",
-    rating: 4.8,
-    reviewCount: 32,
-    address: "قشم، دریاکنار، پاساژ آفتاب، فروشگاه ۱۲",
-    phone: "0098 021 000 0000",
-    instagram: "@my_online_store",
-    telegram: "@my_online_store",
+
+    rating: 4.7,
+
+    reviewCount: 86,
+
+    address: "پاریس، فرانسه",
+
+    phone: "+33 1 00 00 00 00",
+
+    instagram: "@zapa_paris",
+
+    telegram: "@zapa_paris",
+
     description: {
-      fa: "مغازه آنلاین من فعالیت خود را با علاقه به طراحی، نورپردازی و ساخت محصولات کاربردی برای فضای کار آغاز کرد. هدف ما از ابتدا ارائه محصولاتی بوده است که علاوه بر ظاهر ساده و مدرن، کیفیت ساخت و تجربه استفاده خوبی داشته باشند. در طول این سال‌ها تلاش کرده‌ایم با شناخت نیازهای مشتریان و توجه به جزئیات، مجموعه‌ای از محصولات کاربردی و متفاوت را ارائه کنیم و مسیر خود را با تمرکز بر کیفیت و رضایت مشتری ادامه دهیم.",
-      en: "My Online Store started with a passion for design, lighting, and creating practical products for modern workspaces. From the beginning, our goal has been to offer products that combine a clean, modern appearance with reliable build quality and a great user experience. Over the years, we have focused on understanding our customers' needs, paying attention to details, and building a collection of practical products that we are proud to offer.",
+      fa: "بوتیک زاپا مجموعه‌ای از لباس‌های زنانه با تمرکز بر طراحی مدرن، کیفیت مناسب و استایل روزمره ارائه می‌کند. این مجموعه با انتخاب مدل‌هایی کاربردی و قابل استفاده در موقعیت‌های مختلف، تلاش می‌کند میان راحتی، ظاهر شیک و جزئیات طراحی تعادل ایجاد کند. ژاکت والُو نیز با فرم کوتاه، خز مصنوعی نرم و رنگ شکلاتی، یکی از مدل‌های این مجموعه برای استایل‌های روزمره و فصل سرد است.",
+
+      en: "ZAPA Boutique offers a curated selection of women's clothing focused on modern design, quality, and everyday style. The collection brings together versatile pieces designed to balance comfort, effortless elegance, and thoughtful details. The Valou Jacket, with its short silhouette, soft faux fur, and rich chocolate color, is one of the collection's versatile pieces for everyday and cooler-season styling.",
     },
   },
 };

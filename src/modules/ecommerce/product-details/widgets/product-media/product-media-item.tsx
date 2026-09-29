@@ -30,21 +30,12 @@ export function ProductMediaItem({
       ].join(" ")}
     >
       {media.type === "image" ? (
-        media.src.startsWith("blob:") ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={media.src}
-            alt={media.alt}
-            className="size-full object-cover"
-          />
-        ) : (
-          <div
-            className="flex size-full items-center justify-center"
-            style={{ color }}
-          >
-            <ImageIcon className="size-10 stroke-[1.25]" />
-          </div>
-        )
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={media.src}
+          alt={media.alt}
+          className="size-full object-cover"
+        />
       ) : media.thumbnail ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img

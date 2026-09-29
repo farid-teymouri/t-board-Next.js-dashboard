@@ -122,6 +122,7 @@ export function ProductOverview({ dictionary, locale }: ProductOverviewProps) {
           isError={isVariantsError}
           selectedValues={effectiveSelectedVariants}
           onSelectionChange={setSelectedVariants}
+          dictionary={dictionary}
         />
 
         <Separator />

@@ -6,15 +6,15 @@ const productDetails: ProductDetails = {
   id: "prod-001",
 
   name: {
-    fa: "چراغ رومیزی آلومینیومی آرورا",
-    en: "Aurora Aluminium Task Lamp",
+    fa: "ژاکت والُو",
+    en: "Valou Jacket",
   },
 
-  sku: "APG-0001",
+  sku: "00W024442B",
 
   category: {
-    fa: "تجهیزات صوتی بی‌ سیم",
-    en: "Wireless Audio",
+    fa: "لباس‌های بیرونی",
+    en: "Outerwear",
   },
 };
 

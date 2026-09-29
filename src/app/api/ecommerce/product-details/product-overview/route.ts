@@ -4,38 +4,48 @@ import type { ProductOverview } from "@/modules/ecommerce/product-details/widget
 
 const productOverview: ProductOverview = {
   brand: {
-    fa: "آرورا",
-    en: "Aurora",
+    fa: "زاپا",
+    en: "ZAPA",
   },
+
   category: {
-    fa: "تجهیزات صوتی بی‌ سیم",
-    en: "Wireless Audio",
+    fa: "لباس‌های بیرونی",
+    en: "Outerwear",
   },
+
   name: {
-    fa: "چراغ رومیزی آلومینیومی آرورا",
-    en: "Aurora Aluminium Task Lamp",
+    fa: "ژاکت والُو",
+    en: "Valou Jacket",
   },
-  sku: "APG-0001",
+
+  sku: "00W024442B",
 
   vendor: {
-    fa: "Aperture Studio",
-    en: "Aperture Studio",
+    fa: "ZAPA",
+    en: "ZAPA",
   },
 
   warranty: {
-    fa: "۲ سال",
-    en: "2 years",
+    fa: "ندارد",
+    en: "—",
   },
 
   rating: 4.5,
+
   reviewCount: 128,
-  price: 120000,
-  originalPrice: 150000,
+
+  price: 3420000,
+
+  originalPrice: 5250000,
+
   currency: "IRT",
-  availableQuantity: 84,
+
+  availableQuantity: 5,
+
   description: {
-    fa: "این چراغ رومیزی با آلومینیوم ماشین‌ کاری‌ شده دقیق، قابلیت تنظیم نور بدون پله، بازوی مفصلی مغناطیسی و LED قابل تنظیم با دمای رنگ ۲۷۰۰ تا ۴۰۰۰ کلوین طراحی شده است. این محصول برای کار متمرکز پشت میز ساخته شده و به همراه پایه مجهز به عبور دهی USB-C عرضه می‌شود.",
-    en: "A precision-machined aluminium task lamp with stepless dimming, a magnetic articulating arm and a warm 2700K–4000K tunable LED. Built for focused desk work, it ships with a USB-C passthrough base.",
+    fa: "ژاکت والُو، یکی از مدل‌های شاخص این برند، این فصل با خز مصنوعی تدی و به رنگ شکلاتی بازطراحی شده است. یقه ایستاده و نوارهای کشباف در قسمت لبه‌ها، ظاهری مدرن و راحت به این مدل می‌دهند و آن را به گزینه‌ای مناسب برای استایل‌های روزمره تبدیل می‌کنند.",
+
+    en: "The VALOU jacket, an iconic piece from the brand, is reinvented this season in a teddy-style faux fur. Available in chocolate, it easily complements all your everyday outfits. Its stand-up collar and ribbed trim add a modern and comfortable touch to this essential piece.",
   },
 };
 

@@ -13,78 +13,83 @@ const productOverviewVariants: ProductOverviewVariants = {
       type: "color",
       values: [
         {
-          id: "silver",
+          id: "chocolate",
           label: {
-            fa: "نقره‌ای",
-            en: "Silver",
+            fa: "شکلاتی",
+            en: "Chocolate",
           },
-          color: "#d1d5db",
+          color: "#6b442f",
         },
-        {
-          id: "graphite",
-          label: {
-            fa: "گرافیتی",
-            en: "Graphite",
-          },
-          color: "#374151",
-        },
+
         {
           id: "black",
           label: {
             fa: "مشکی",
             en: "Black",
           },
-          color: "#111827",
+          color: "#171717",
+        },
+
+        {
+          id: "beige",
+          label: {
+            fa: "بژ",
+            en: "Beige",
+          },
+          color: "#d6c2a8",
           disabled: true,
         },
+
         {
-          id: "blue",
+          id: "cream",
           label: {
-            fa: "آبی",
-            en: "Blue",
+            fa: "کرم",
+            en: "Cream",
           },
-          color: "#2563eb",
-        },
-        {
-          id: "red",
-          label: {
-            fa: "قرمز",
-            en: "Red",
-          },
-          color: "#dc2626",
-          disabled: true,
+          color: "#e8dfd2",
         },
       ],
     },
+
     {
       id: "size",
       name: {
-        fa: "اندازه",
+        fa: "سایز",
         en: "Size",
       },
       type: "text",
       values: [
         {
-          id: "30",
+          id: "s",
           label: {
-            fa: "۳۰ سانتیمتر",
-            en: "30 cm",
+            fa: "S",
+            en: "S",
           },
         },
+
         {
-          id: "40",
+          id: "m",
           label: {
-            fa: "۴۰ سانتیمتر",
-            en: "40 cm",
+            fa: "M",
+            en: "M",
+          },
+        },
+
+        {
+          id: "l",
+          label: {
+            fa: "L",
+            en: "L",
+          },
+        },
+
+        {
+          id: "xl",
+          label: {
+            fa: "XL",
+            en: "XL",
           },
           disabled: true,
-        },
-        {
-          id: "50",
-          label: {
-            fa: "۵۰ سانتیمتر",
-            en: "50 cm",
-          },
         },
       ],
     },
@@ -93,50 +98,101 @@ const productOverviewVariants: ProductOverviewVariants = {
   combinations: [
     {
       selections: {
-        color: "graphite",
-        size: "30",
+        color: "chocolate",
+        size: "s",
       },
-      price: 120000,
-    },
-    {
-      selections: {
-        color: "silver",
-        size: "30",
-      },
-      price: 125000,
-      originalPrice: 140000,
-    },
-    {
-      selections: {
-        color: "blue",
-        size: "30",
-      },
-      price: 130000,
-      originalPrice: 145000,
+      price: 3420000,
+      originalPrice: 5250000,
     },
 
     {
       selections: {
-        color: "graphite",
-        size: "50",
+        color: "chocolate",
+        size: "m",
       },
-      price: 135000,
+      price: 3420000,
+      originalPrice: 5250000,
     },
+
     {
       selections: {
-        color: "silver",
-        size: "50",
+        color: "chocolate",
+        size: "l",
       },
-      price: 145000,
-      originalPrice: 160000,
+      price: 3420000,
+      originalPrice: 5250000,
     },
+
     {
       selections: {
-        color: "blue",
-        size: "50",
+        color: "black",
+        size: "s",
       },
-      price: 155000,
-      originalPrice: 175000,
+      price: 3490000,
+      originalPrice: 5350000,
+    },
+
+    {
+      selections: {
+        color: "black",
+        size: "m",
+      },
+      price: 3490000,
+      originalPrice: 5350000,
+    },
+
+    {
+      selections: {
+        color: "black",
+        size: "l",
+      },
+      price: 3490000,
+      originalPrice: 5350000,
+    },
+
+    {
+      selections: {
+        color: "beige",
+        size: "s",
+      },
+      price: 3590000,
+      originalPrice: 5450000,
+    },
+
+    {
+      selections: {
+        color: "beige",
+        size: "m",
+      },
+      price: 3590000,
+      originalPrice: 5450000,
+    },
+
+    {
+      selections: {
+        color: "cream",
+        size: "s",
+      },
+      price: 3350000,
+      originalPrice: 5150000,
+    },
+
+    {
+      selections: {
+        color: "cream",
+        size: "m",
+      },
+      price: 3350000,
+      originalPrice: 5150000,
+    },
+
+    {
+      selections: {
+        color: "cream",
+        size: "l",
+      },
+      price: 3350000,
+      originalPrice: 5150000,
     },
   ],
 };

@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils";
 import type {
   ProductOverviewVariantOption,
   ProductOverviewVariantValue,
+  ProductOverviewVariants,
 } from "./types";
-import type { ProductOverviewVariants } from "./types";
+
 type ProductOverviewVariantsProps = {
   locale: "fa" | "en";
   variants?: ProductOverviewVariants;
@@ -14,6 +15,11 @@ type ProductOverviewVariantsProps = {
   isError: boolean;
   selectedValues: Record<string, string>;
   onSelectionChange: (values: Record<string, string>) => void;
+  dictionary: {
+    variants: {
+      soldOut: string;
+    };
+  };
 };
 
 export function ProductOverviewVariants({
@@ -23,6 +29,7 @@ export function ProductOverviewVariants({
   isError,
   selectedValues,
   onSelectionChange,
+  dictionary,
 }: ProductOverviewVariantsProps) {
   if (isLoading || isError || !variants) {
     return null;
@@ -43,9 +50,10 @@ export function ProductOverviewVariants({
       [option.id]: value.id,
     });
   };
+
   return (
     <div className="space-y-5">
-      {variants.options.map((option) => {
+      {options.map((option) => {
         const selectedValue = selectedValues[option.id];
 
         return (
@@ -74,6 +82,7 @@ export function ProductOverviewVariants({
                       <span className="text-xs text-muted-foreground">
                         {value.label[locale]}
                       </span>
+
                       <span
                         className={cn(
                           "relative flex size-9 items-center justify-center rounded-full border-2 p-0.5 transition-colors",
@@ -109,15 +118,27 @@ export function ProductOverviewVariants({
                     disabled={isDisabled}
                     onClick={() => handleSelect(option, value)}
                     className={cn(
-                      "rounded-md border px-2 py-1 text-sm transition-colors",
+                      "relative flex min-w-12 items-center justify-center overflow-hidden rounded-md border px-2.5 py-1.5 text-sm transition-colors",
                       isSelected
                         ? "border-foreground bg-foreground text-background"
                         : "border-border bg-background hover:bg-muted",
                       isDisabled &&
-                        "cursor-not-allowed opacity-50 hover:bg-background",
+                        "cursor-not-allowed border-border bg-muted text-muted-foreground opacity-60 hover:bg-muted",
                     )}
                   >
-                    {value.label[locale]}
+                    <span className="flex items-center justify-center gap-1.5">
+                      <span>{value.label[locale]}</span>
+
+                      {isDisabled && (
+                        <span className="text-xs font-medium text-muted-foreground">
+                          {dictionary.variants.soldOut}
+                        </span>
+                      )}
+                    </span>
+
+                    {isDisabled && (
+                      <span className="pointer-events-none absolute inset-1/2 h-px w-[calc(100%-8px)] -translate-x-1/2 -translate-y-1/2 rotate-[-35deg] bg-foreground/70" />
+                    )}
                   </button>
                 );
               })}

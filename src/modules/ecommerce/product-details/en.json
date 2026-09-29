@@ -30,6 +30,9 @@
         "reviews": "Reviews"
       }
     },
+    "variants": {
+      "soldOut": "Sold out"
+    },
     "favorite": {
       "add": "Add to favorites",
       "remove": "Remove from favorites"
@@ -89,5 +92,11 @@
       "title": "Fast Shipping",
       "description": "Fast and reliable delivery"
     }
+  },
+  "relatedProducts": {
+    "title": "You might also like",
+    "previous": "Previous",
+    "next": "Next",
+    "error": "Failed to load related products."
   }
 }

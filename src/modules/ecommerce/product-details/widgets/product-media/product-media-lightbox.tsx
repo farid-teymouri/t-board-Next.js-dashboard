@@ -5,8 +5,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
-import { ProductImageIcon } from "./product-image-icon";
-
 import type { ProductMedia } from "./types";
 
 type ProductMediaLightboxProps = {
@@ -16,14 +14,6 @@ type ProductMediaLightboxProps = {
   onOpenChange: (open: boolean) => void;
   onIndexChange: (index: number) => void;
 };
-
-const MEDIA_COLORS = [
-  "var(--chart-1)",
-  "var(--chart-2)",
-  "var(--chart-3)",
-  "var(--chart-4)",
-  "var(--chart-5)",
-] as const;
 
 export function ProductMediaLightbox({
   media,
@@ -90,8 +80,6 @@ export function ProductMediaLightbox({
     return null;
   }
 
-  const mediaColor = MEDIA_COLORS[activeIndex % MEDIA_COLORS.length];
-
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
@@ -111,21 +99,12 @@ export function ProductMediaLightbox({
 
         <div className="relative flex size-full items-center justify-center overflow-hidden rounded-xl bg-muted/20">
           {activeMedia.type === "image" ? (
-            activeMedia.src.startsWith("blob:") ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={activeMedia.src}
-                alt={activeMedia.alt}
-                className="max-h-full max-w-full object-contain"
-              />
-            ) : (
-              <div
-                className="flex size-full items-center justify-center"
-                style={{ color: mediaColor }}
-              >
-                <ProductImageIcon className="size-[min(70vw,70vh)]" />
-              </div>
-            )
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={activeMedia.src}
+              alt={activeMedia.alt}
+              className="max-h-full max-w-full object-contain"
+            />
           ) : (
             <video
               key={activeMedia.id}

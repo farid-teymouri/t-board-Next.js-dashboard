@@ -8,7 +8,6 @@ import { useProductMedia } from "../../hooks/use-product-media";
 
 import { Card, CardContent } from "@/components/ui/card";
 
-import { ProductImageIcon } from "./product-image-icon";
 import { ProductMediaItem } from "./product-media-item";
 import { ProductMediaLightbox } from "./product-media-lightbox";
 import { ProductMediaSkeleton } from "./product-media-skeleton";
@@ -101,28 +100,19 @@ export function ProductMedia({ dictionary }: ProductMediaProps) {
 
   return (
     <>
-      <Card className="overflow-hidden flex">
+      <Card className="flex h-full overflow-hidden">
         <CardContent className="space-y-4 p-4 sm:p-6">
           <div
             data-product-media-stage
             className="group relative flex h-[360px] items-center justify-center overflow-hidden rounded-xl bg-muted/20 sm:h-[420px]"
           >
             {activeMedia.type === "image" ? (
-              activeMedia.src.startsWith("blob:") ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={activeMedia.src}
-                  alt={activeMedia.alt}
-                  className="size-full object-contain"
-                />
-              ) : (
-                <div
-                  className="flex size-full items-center justify-center"
-                  style={{ color: activeColor }}
-                >
-                  <ProductImageIcon className="size-[min(45vw,45vh)]" />
-                </div>
-              )
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={activeMedia.src}
+                alt={activeMedia.alt}
+                className="size-full object-contain"
+              />
             ) : (
               <>
                 <video
@@ -168,7 +158,7 @@ export function ProductMedia({ dictionary }: ProductMediaProps) {
                 type="button"
                 onClick={() => setLightboxOpen(true)}
                 aria-label={dictionary.openFullscreen}
-                className="absolute bottom-4 inset-e-4 flex size-10 items-center justify-center rounded-lg bg-background/80 shadow-sm backdrop-blur-sm transition-colors hover:bg-background"
+                className="absolute bottom-4 inset-e-4 flex size-10 items-center justify-center rounded-lg bg-accent shadow-sm backdrop-blur-sm transition-colors hover:bg-background"
               >
                 <Maximize2 className="size-4" />
               </button>
