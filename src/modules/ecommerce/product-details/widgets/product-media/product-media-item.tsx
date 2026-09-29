@@ -24,7 +24,7 @@ export function ProductMediaItem({
       onClick={onSelect}
       aria-label={media.alt}
       className={[
-        "group relative aspect-square overflow-hidden rounded-xl border bg-muted/20 text-left transition-all",
+        "group relative aspect-square w-16 shrink-0 overflow-hidden rounded-xl border bg-muted/20 text-left transition-all sm:w-20",
         "hover:border-foreground/30 hover:bg-muted/40",
         active ? "border-primary ring-2 ring-primary/20" : "border-border",
       ].join(" ")}

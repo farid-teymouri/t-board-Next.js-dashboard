@@ -34,7 +34,7 @@ export function ProductOverviewActions({
   return (
     <div className="space-y-6">
       {/* Actions */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex gap-4 items-center justify-between flex-wrap">
         <div className="w-full sm:w-auto">
           <div className="flex w-full overflow-hidden rounded-lg border">
             <Button

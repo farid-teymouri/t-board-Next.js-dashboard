@@ -41,9 +41,9 @@ export default async function EcommerceProductDetailsLayout({
         <PageHeader
           dictionary={dictionary.ecommerce.productDetails.page}
           variables={{
-            name: product.name,
+            name: product.name[locale],
             sku: product.sku,
-            category: product.category,
+            category: product.category[locale],
           }}
         />
         <EcommerceProductDetailsHeaderActions

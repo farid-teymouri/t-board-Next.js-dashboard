@@ -101,11 +101,11 @@ export function ProductMedia({ dictionary }: ProductMediaProps) {
 
   return (
     <>
-      <Card className="overflow-hidden">
+      <Card className="overflow-hidden flex">
         <CardContent className="space-y-4 p-4 sm:p-6">
           <div
             data-product-media-stage
-            className="group relative flex items-center justify-center overflow-hidden rounded-xl bg-muted/20"
+            className="group relative flex h-[360px] items-center justify-center overflow-hidden rounded-xl bg-muted/20 sm:h-[420px]"
           >
             {activeMedia.type === "image" ? (
               activeMedia.src.startsWith("blob:") ? (
@@ -175,19 +175,20 @@ export function ProductMedia({ dictionary }: ProductMediaProps) {
             )}
           </div>
 
-          <div className="grid grid-cols-5 gap-2 sm:gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             {sortedMedia.map((item, index) => (
-              <ProductMediaItem
-                key={item.id}
-                media={item}
-                color={MEDIA_COLORS[index % MEDIA_COLORS.length]}
-                index={index}
-                active={item.id === activeMedia.id}
-                onSelect={() => {
-                  setVideoPlaying(false);
-                  setActiveId(item.id);
-                }}
-              />
+              <div key={item.id} className="w-16 sm:w-20">
+                <ProductMediaItem
+                  media={item}
+                  color={MEDIA_COLORS[index % MEDIA_COLORS.length]}
+                  index={index}
+                  active={item.id === activeMedia.id}
+                  onSelect={() => {
+                    setVideoPlaying(false);
+                    setActiveId(item.id);
+                  }}
+                />
+              </div>
             ))}
           </div>
         </CardContent>

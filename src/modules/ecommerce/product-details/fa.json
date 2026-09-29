@@ -47,5 +47,47 @@
         "warranty": "گارانتی"
       }
     }
+  },
+  "information": {
+    "tabs": {
+      "description": "توضیحات",
+      "specification": "مشخصات",
+      "additionalInformation": "اطلاعات تکمیلی",
+      "reviews": "نظرات",
+      "vendor": "فروشنده"
+    },
+    "content": {
+      "error": "دریافت اطلاعات محصول با خطا مواجه شد."
+    },
+    "reviews": {
+      "basedOn": "بر اساس {count} نظر",
+      "writeReview": "ثبت نظر",
+      "verified": "تأیید شده",
+      "helpful": "مفید بود",
+      "viewMore": "مشاهده نظرات بیشتر"
+    },
+    "vendor": {
+      "reviews": "نظر",
+      "address": "آدرس",
+      "contactSeller": "تماس با فروشنده",
+      "instagram": "اینستاگرام",
+      "telegram": "تلگرام",
+      "about": "درباره فروشنده"
+    }
+  },
+  "serviceFeatures": {
+    "error": "دریافت اطلاعات خدمات با خطا مواجه شد.",
+    "support": {
+      "title": "پشتیبانی ۲۴/۷",
+      "description": "پشتیبانی ۲۴ ساعته، ۷ روز هفته"
+    },
+    "returns": {
+      "title": "ضمانت بازگشت کالا",
+      "description": "مهلت ۷ روزه برای بازگشت کالا"
+    },
+    "shipping": {
+      "title": "ارسال سریع",
+      "description": "ارسال سریع و مطمئن سفارش"
+    }
   }
 }

@@ -1,1 +1,1 @@
-export { EcommerceProductDetails } from "./EcommerceProductDetails";
+    export { EcommerceProductDetails } from "./EcommerceProductDetails";

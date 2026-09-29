@@ -47,5 +47,47 @@
         "warranty": "Warranty"
       }
     }
+  },
+  "information": {
+    "tabs": {
+      "description": "Description",
+      "specification": "Specification",
+      "additionalInformation": "Additional Information",
+      "reviews": "Reviews",
+      "vendor": "Vendor"
+    },
+    "content": {
+      "error": "Failed to load product information."
+    },
+    "reviews": {
+      "basedOn": "Based on {count} reviews",
+      "writeReview": "Write a Review",
+      "verified": "Verified",
+      "helpful": "Helpful",
+      "viewMore": "View More Reviews"
+    },
+    "vendor": {
+      "reviews": "reviews",
+      "address": "Address",
+      "contactSeller": "Contact Seller",
+      "instagram": "Instagram",
+      "telegram": "Telegram",
+      "about": "About the Seller"
+    }
+  },
+  "serviceFeatures": {
+    "error": "Failed to load service features.",
+    "support": {
+      "title": "24/7 Support",
+      "description": "24-hour support, 7 days a week"
+    },
+    "returns": {
+      "title": "Easy Returns",
+      "description": "7-day return guarantee"
+    },
+    "shipping": {
+      "title": "Fast Shipping",
+      "description": "Fast and reliable delivery"
+    }
   }
 }

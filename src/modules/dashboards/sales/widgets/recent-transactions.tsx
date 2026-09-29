@@ -128,7 +128,7 @@ export function RecentTransactions({
           completed: "border-transparent bg-chart-3/10 text-chart-3",
 
           pending:
-            "border-transparent bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
+            "border-transparent bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-500",
 
           failed:
             "border-transparent bg-destructive text-destructive dark:bg-destructive/10 bg-destructive/5",

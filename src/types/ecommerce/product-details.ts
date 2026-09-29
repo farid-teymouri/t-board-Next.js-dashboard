@@ -1,6 +1,13 @@
 export interface ProductDetails {
   id: string;
-  name: string;
   sku: string;
-  category: string;
+  name: {
+    fa: string;
+    en: string;
+  };
+
+  category: {
+    fa: string;
+    en: string;
+  };
 }
