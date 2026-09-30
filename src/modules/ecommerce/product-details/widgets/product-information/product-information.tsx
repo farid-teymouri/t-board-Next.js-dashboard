@@ -46,24 +46,35 @@ export function ProductInformation({
               variant="line"
               className="inline-flex w-max min-w-full justify-start"
             >
-              <TabsTrigger value="description">
+              <TabsTrigger
+                value="description"
+                className="shrink-0 px-4 text-sm"
+              >
                 {dictionary.tabs.description}
               </TabsTrigger>
 
-              <TabsTrigger value="specification">
+              <TabsTrigger
+                value="specification"
+                className="shrink-0 px-4 text-sm"
+              >
                 {dictionary.tabs.specification}
               </TabsTrigger>
 
-              <TabsTrigger value="additional-information">
+              <TabsTrigger
+                value="additional-information"
+                className="shrink-0 px-4 text-sm"
+              >
                 {dictionary.tabs.additionalInformation}
               </TabsTrigger>
 
-              <TabsTrigger value="reviews">
+              <TabsTrigger value="reviews" className="shrink-0 px-4 text-sm">
                 {dictionary.tabs.reviews} (
                 {formatNumber(data.reviewCount, locale)})
               </TabsTrigger>
 
-              <TabsTrigger value="vendor">{dictionary.tabs.vendor}</TabsTrigger>
+              <TabsTrigger value="vendor" className="shrink-0 px-4 text-sm">
+                {dictionary.tabs.vendor}
+              </TabsTrigger>
             </TabsList>
           </div>
 
