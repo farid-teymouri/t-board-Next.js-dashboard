@@ -1,6 +1,12 @@
 "use client";
 
-import { Headphones, RotateCcw, Truck } from "lucide-react";
+import {
+  BadgeCheck,
+  Headphones,
+  RotateCcw,
+  ShieldCheck,
+  Truck,
+} from "lucide-react";
 
 import type { EcommerceProductDetailsDictionary } from "@/i18n/dictionaries";
 
@@ -21,13 +27,25 @@ const featureStyles = {
     container: "bg-chart-2/15",
     icon: "text-chart-2",
   },
+
   returns: {
     container: "bg-chart-4/15",
     icon: "text-chart-4",
   },
+
   shipping: {
     container: "bg-chart-5/15",
     icon: "text-chart-5",
+  },
+
+  "secure-payment": {
+    container: "bg-chart-3/15",
+    icon: "text-chart-3",
+  },
+
+  authenticity: {
+    container: "bg-chart-1/15",
+    icon: "text-chart-1",
   },
 } as const;
 
@@ -35,6 +53,8 @@ const iconMap = {
   support: Headphones,
   returns: RotateCcw,
   shipping: Truck,
+  "secure-payment": ShieldCheck,
+  authenticity: BadgeCheck,
 } as const;
 
 export function ProductServiceFeatures({
@@ -59,7 +79,7 @@ export function ProductServiceFeatures({
 
   return (
     <Card>
-      <CardContent className="flex flex-wrap gap-6 ">
+      <CardContent className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
         {data.features.map((feature) => (
           <ProductServiceFeatureItem
             key={feature.id}

@@ -36,8 +36,21 @@ const data: ProductServiceFeaturesData = {
         en: "Fast Shipping",
       },
       description: {
-        fa: "ارسال سریع و مطمئن سفارش",
+        fa: "ارسال سریع و مطمئن",
         en: "Fast and reliable delivery",
+      },
+    },
+
+    {
+      id: "authenticity",
+      icon: "authenticity",
+      title: {
+        fa: "تضمین اصالت کالا",
+        en: "Authenticity Guarantee",
+      },
+      description: {
+        fa: "تضمین اصالت و کیفیت محصولات",
+        en: "Guaranteed authentic products",
       },
     },
   ],
