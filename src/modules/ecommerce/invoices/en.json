@@ -1,10 +1,59 @@
 {
   "page": {
     "title": "Invoices",
-    "description": "{count} invoices — {overdue} overdue totalling {amount}."
+    "description": "{count} invoices this quarter — {overdue} overdue totalling {amount}."
   },
   "header": {
     "createInvoice": "Create Invoice",
     "exportReport": "Export"
+  },
+  "table": {
+    "tabs": {
+      "all": "All",
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "overdue": "Overdue",
+      "draft": "Draft"
+    },
+    "columns": {
+      "invoice": "Invoice",
+      "client": "Client",
+      "issueDate": "Issue Date",
+      "due": "Due",
+      "amount": "Amount",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "searchPlaceholder": "Search invoices...",
+    "calendar": "Filter by date",
+    "reset": "Reset",
+    "overdue": "{days}D overdue",
+    "error": "Failed to load invoices.",
+    "selectAll": "Select all invoices",
+    "selectInvoice": "Select {id}",
+    "status": {
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "overdue": "Overdue",
+      "draft": "Draft"
+    },
+    "pagination": {
+      "showing": "Showing {from}–{to} of {total}",
+      "previous": "Previous page",
+      "next": "Next page"
+    },
+    "sort": {
+      "label": "Sort by",
+      "newest": "Newest",
+      "dueDate": "Due date",
+      "amountHigh": "Amount: High",
+      "amountLow": "Amount: Low",
+      "client": "Client",
+      "status": "Status"
+    },
+    "summary": {
+      "paid": "Paid",
+      "outstanding": "Outstanding"
+    }
   }
 }

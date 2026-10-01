@@ -1,10 +1,59 @@
 {
   "page": {
     "title": "فاکتور ها",
-    "description": "{count} فاکتور — {overdue} مورد سررسید گذشته با مجموع {amount}."
+    "description": "{count} فاکتور در این فصل — {overdue} فاکتور معوق با مجموع {amount}."
   },
   "header": {
     "createInvoice": "ایجاد فاکتور",
     "exportReport": "خروجی گرفتن"
+  },
+  "table": {
+    "tabs": {
+      "all": "همه",
+      "paid": "پرداخت شده",
+      "unpaid": "پرداخت نشده",
+      "overdue": "معوق ها",
+      "draft": "پیش‌ نویس"
+    },
+    "columns": {
+      "invoice": "فاکتور",
+      "client": "مشتری",
+      "issueDate": "تاریخ صدور",
+      "due": "سررسید",
+      "amount": "مبلغ",
+      "status": "وضعیت",
+      "actions": "عملیات"
+    },
+    "searchPlaceholder": "جستجوی فاکتورها...",
+    "calendar": "فیلتر بر اساس تاریخ",
+    "reset": "بازنشانی",
+    "overdue": "{days} روز گذشته",
+    "error": "بارگذاری فاکتورها با خطا مواجه شد.",
+    "selectAll": "انتخاب همه فاکتورها",
+    "selectInvoice": "انتخاب {id}",
+    "status": {
+      "paid": "پرداخت شده",
+      "unpaid": "پرداخت نشده",
+      "overdue": "معوق",
+      "draft": "پیش‌ نویس"
+    },
+    "pagination": {
+      "showing": "نمایش {from} تا {to} از {total}",
+      "previous": "قبلی",
+      "next": "بعدی"
+    },
+    "sort": {
+      "label": "مرتب‌ سازی",
+      "newest": "جدیدترین",
+      "dueDate": "تاریخ سررسید",
+      "amountHigh": "مبلغ: زیاد به کم",
+      "amountLow": "مبلغ: کم به زیاد",
+      "client": "مشتری",
+      "status": "وضعیت"
+    },
+    "summary": {
+      "paid": "پرداخت‌ شده",
+      "outstanding": "مانده"
+    }
   }
 }
