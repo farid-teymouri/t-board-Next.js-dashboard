@@ -5,5 +5,144 @@
   },
   "header": {
     "backToCart": "بازگشت به سبد خرید"
+  },
+  "checkout": {
+    "stepper": {
+      "steps": {
+        "contactAddress": "اطلاعات تماس و آدرس",
+        "shipping": "روش ارسال",
+        "payment": "روش پرداخت",
+        "review": "بررسی نهایی و پرداخت"
+      },
+      "status": {
+        "inProgress": "در حال انجام",
+        "complete": "تکمیل شده"
+      }
+    },
+    "contactAddress": {
+      "step": "مرحله ۱ از ۴",
+      "title": "اطلاعات تماس و آدرس",
+      "description": "سفارش شما را به کجا ارسال کنیم؟",
+      "contactInformation": "اطلاعات تماس",
+      "alreadyHaveAccount": "آیا حساب کاربری دارید؟",
+      "login": "ورود",
+      "email": "ایمیل",
+      "emailPlaceholder": "email@example.com",
+      "emailDescription": "تأیید سفارش و اطلاعات پیگیری به این آدرس ارسال می‌شود.",
+      "shippingAddress": "آدرس ارسال",
+      "firstName": "نام",
+      "lastName": "نام خانوادگی",
+      "address1": "آدرس ۱",
+      "address2": "آدرس ۲",
+      "province": "استان",
+      "city": "شهر",
+      "postcode": "کد پستی",
+      "companyName": "نام شرکت",
+      "phone": "شماره همراه",
+      "additionalInformation": "اطلاعات تکمیلی",
+      "firstNamePlaceholder": "نام خود را وارد کنید",
+      "lastNamePlaceholder": "نام خانوادگی خود را وارد کنید",
+      "address1Placeholder": "آدرس خود را وارد کنید",
+      "address2Placeholder": "واحد، آپارتمان و سایر جزئیات",
+      "cityPlaceholder": "شهر خود را وارد کنید",
+      "postcodePlaceholder": "کد پستی را وارد کنید",
+      "companyNamePlaceholder": "نام شرکت خود را وارد کنید",
+      "phonePlaceholder": "شماره همراه خود را وارد کنید",
+      "additionalInformationPlaceholder": "اطلاعات تکمیلی را وارد کنید",
+      "provincePlaceholder": "استان خود را انتخاب کنید",
+      "provinces": [
+        { "value": "east-azerbaijan", "label": "آذربایجان شرقی" },
+        { "value": "west-azerbaijan", "label": "آذربایجان غربی" },
+        { "value": "ardabil", "label": "اردبیل" },
+        { "value": "isfahan", "label": "اصفهان" },
+        { "value": "alborz", "label": "البرز" },
+        { "value": "ilam", "label": "ایلام" },
+        { "value": "bushehr", "label": "بوشهر" },
+        { "value": "tehran", "label": "تهران" },
+        { "value": "chaharmahal-and-bakhtiari", "label": "چهارمحال و بختیاری" },
+        { "value": "south-khorasan", "label": "خراسان جنوبی" },
+        { "value": "razavi-khorasan", "label": "خراسان رضوی" },
+        { "value": "north-khorasan", "label": "خراسان شمالی" },
+        { "value": "khuzestan", "label": "خوزستان" },
+        { "value": "zanjan", "label": "زنجان" },
+        { "value": "semnan", "label": "سمنان" },
+        { "value": "sistan-and-baluchestan", "label": "سیستان و بلوچستان" },
+        { "value": "fars", "label": "فارس" },
+        { "value": "qazvin", "label": "قزوین" },
+        { "value": "qom", "label": "قم" },
+        { "value": "kurdistan", "label": "کردستان" },
+        { "value": "kerman", "label": "کرمان" },
+        { "value": "kermanshah", "label": "کرمانشاه" },
+        {
+          "value": "kohgiluyeh-and-boyer-ahmad",
+          "label": "کهگیلویه و بویراحمد"
+        },
+        { "value": "golestan", "label": "گلستان" },
+        { "value": "gilan", "label": "گیلان" },
+        { "value": "lorestan", "label": "لرستان" },
+        { "value": "mazandaran", "label": "مازندران" },
+        { "value": "markazi", "label": "مرکزی" },
+        { "value": "hormozgan", "label": "هرمزگان" },
+        { "value": "hamadan", "label": "همدان" },
+        { "value": "yazd", "label": "یزد" }
+      ],
+      "continueToShipping": "قدم بعدی: روش ارسال",
+      "backToContactAddress": "بازگشت به اطلاعات تماس و آدرس",
+      "backToShipping": "بازگشت به روش ارسال",
+
+      "validation": {
+        "required": "تکمیل این فیلد الزامی است.",
+        "invalidEmail": "لطفاً یک ایمیل معتبر وارد کنید."
+      },
+      "provinceNotFound": "استانی پیدا نشد.",
+      "provinceSearchPlaceholder": "جستجوی استان..."
+    },
+    "shipping": {
+      "step": "مرحله ۲ از ۴",
+      "title": "روش ارسال",
+      "back": "بازگشت به اطلاعات تماس و آدرس",
+      "continueToPayment": "قدم بعدی: روش پرداخت"
+    },
+    "payment": {
+      "step": "مرحله ۳ از ۴",
+      "title": "روش پرداخت",
+      "description": "تمام تراکنش‌ها امن و رمزگذاری‌شده هستند.",
+      "back": "بازگشت به روش ارسال",
+      "continueToReview": "قدم بعدی: بررسی نهایی"
+    },
+    "review": {
+      "step": "مرحله ۴ از ۴",
+      "title": "بررسی نهایی و ثبت سفارش",
+      "description": "پیش از پرداخت، لطفاً از صحت اطلاعات سفارش خود اطمینان حاصل کنید.",
+      "contact": "اطلاعات تماس",
+      "shipToAddress": "آدرس ارسال",
+      "shipping": "روش ارسال",
+      "paymentMethod": "روش پرداخت",
+      "products": "محصولات",
+      "terms": "شرایط استفاده از خدمات و قوانین بازگشت وجه را می‌پذیرم.",
+      "placeOrder": "ثبت سفارش و پرداخت",
+      "backToPayment": "بازگشت به روش پرداخت",
+      "item": "عدد",
+      "termsError": "برای ثبت سفارش باید شرایط استفاده از خدمات و قوانین بازگشت وجه را بپذیرید.",
+      "email": "آدرس ایمیل",
+      "phone": "شماره همراه",
+      "address": "آدرس",
+      "province": "استان",
+      "city": "شهر",
+      "postcode": "کد پستی"
+    }
+  },
+  "orderSummary": {
+    "title": "خلاصه سفارش",
+    "items": "مورد",
+    "promoCode": "کد تخفیف",
+    "promoCodePlaceholder": "کد تخفیف را وارد کنید",
+    "apply": "اعمال",
+    "subtotal": "جمع جزء",
+    "shipping": "هزینه ارسال",
+    "tax": "مالیات",
+    "total": "مبلغ نهایی",
+    "free": "رایگان",
+    "refundGuarantee": "ضمانت بازگشت وجه در صورت مرجوعی کالا."
   }
 }

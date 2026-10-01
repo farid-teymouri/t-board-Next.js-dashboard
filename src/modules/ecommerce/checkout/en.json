@@ -5,5 +5,151 @@
   },
   "header": {
     "backToCart": "Back to Cart"
+  },
+  "checkout": {
+    "stepper": {
+      "steps": {
+        "contactAddress": "Contact & Address",
+        "shipping": "Shipping",
+        "payment": "Payment Method",
+        "review": "Final Review & Payment"
+      },
+      "status": {
+        "inProgress": "In Progress",
+        "complete": "Complete"
+      }
+    },
+    "contactAddress": {
+      "step": "Step 1 of 4",
+      "title": "Contact and Address",
+      "description": "Where should we ship your order?",
+      "contactInformation": "Contact Information",
+      "alreadyHaveAccount": "Already have an account?",
+      "login": "Login",
+      "email": "Email",
+      "emailPlaceholder": "email@example.com",
+      "emailDescription": "Order confirmation & tracking will be sent here.",
+      "shippingAddress": "Shipping Address",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "province": "Province",
+      "city": "City",
+      "postcode": "Postcode",
+      "companyName": "Company Name",
+      "phone": "Phone",
+      "additionalInformation": "Additional Information",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastNamePlaceholder": "Enter your last name",
+      "address1Placeholder": "Enter your address",
+      "address2Placeholder": "Apartment, suite, unit, etc.",
+      "cityPlaceholder": "Enter your city",
+      "postcodePlaceholder": "Enter your postcode",
+      "companyNamePlaceholder": "Enter your company name",
+      "phonePlaceholder": "Enter your phone number",
+      "additionalInformationPlaceholder": "Add any additional information",
+      "provincePlaceholder": "Select your province",
+      "provinces": [
+        { "value": "east-azerbaijan", "label": "East Azerbaijan" },
+        { "value": "west-azerbaijan", "label": "West Azerbaijan" },
+        { "value": "ardabil", "label": "Ardabil" },
+        { "value": "isfahan", "label": "Isfahan" },
+        { "value": "alborz", "label": "Alborz" },
+        { "value": "ilam", "label": "Ilam" },
+        { "value": "bushehr", "label": "Bushehr" },
+        { "value": "tehran", "label": "Tehran" },
+        {
+          "value": "chaharmahal-and-bakhtiari",
+          "label": "Chaharmahal and Bakhtiari"
+        },
+        { "value": "south-khorasan", "label": "South Khorasan" },
+        { "value": "razavi-khorasan", "label": "Razavi Khorasan" },
+        { "value": "north-khorasan", "label": "North Khorasan" },
+        { "value": "khuzestan", "label": "Khuzestan" },
+        { "value": "zanjan", "label": "Zanjan" },
+        { "value": "semnan", "label": "Semnan" },
+        {
+          "value": "sistan-and-baluchestan",
+          "label": "Sistan and Baluchestan"
+        },
+        { "value": "fars", "label": "Fars" },
+        { "value": "qazvin", "label": "Qazvin" },
+        { "value": "qom", "label": "Qom" },
+        { "value": "kurdistan", "label": "Kurdistan" },
+        { "value": "kerman", "label": "Kerman" },
+        { "value": "kermanshah", "label": "Kermanshah" },
+        {
+          "value": "kohgiluyeh-and-boyer-ahmad",
+          "label": "Kohgiluyeh and Boyer-Ahmad"
+        },
+        { "value": "golestan", "label": "Golestan" },
+        { "value": "gilan", "label": "Gilan" },
+        { "value": "lorestan", "label": "Lorestan" },
+        { "value": "mazandaran", "label": "Mazandaran" },
+        { "value": "markazi", "label": "Markazi" },
+        { "value": "hormozgan", "label": "Hormozgan" },
+        { "value": "hamadan", "label": "Hamadan" },
+        { "value": "yazd", "label": "Yazd" }
+      ],
+
+      "continueToShipping": "Next: Shipping Method",
+      "backToContactAddress": "Back to Contact & Address",
+      "backToShipping": "Back to Shipping Method",
+
+      "validation": {
+        "required": "This field is required.",
+        "invalidEmail": "Please enter a valid email address."
+      },
+      "provinceNotFound": "No province found.",
+      "provinceSearchPlaceholder": "Search province..."
+    },
+    "shipping": {
+      "step": "Step 2 of 4",
+      "title": "Shipping Method",
+      "back": "Back to Contact & Address",
+      "continueToPayment": "Next: Payment"
+    },
+    "payment": {
+      "step": "Step 3 of 4",
+      "title": "Payment Method",
+      "description": "All transactions are secure and encrypted.",
+      "back": "Back to Shipping Method",
+      "continueToReview": "Next: Final Review"
+    },
+    "review": {
+      "step": "Step 4 of 4",
+      "title": "Review and Place Order",
+      "description": "Confirm everything looks right before you pay.",
+      "contact": "Contact",
+      "shipToAddress": "Ship to address",
+      "shipping": "Shipping",
+      "paymentMethod": "Payment method",
+      "products": "Products",
+      "terms": "I agree to the terms of service and refund policy.",
+      "placeOrder": "Place Order & Pay",
+      "backToPayment": "Back to Payment Method",
+      "item": "item",
+      "termsError": "You must accept the terms of service and refund policy to place your order.",
+      "email": "Email address",
+      "phone": "Phone number",
+      "address": "Address",
+      "province": "Province",
+      "city": "City",
+      "postcode": "Postal code"
+    }
+  },
+  "orderSummary": {
+    "title": "Order summary",
+    "items": "items",
+    "promoCode": "Promo code",
+    "promoCodePlaceholder": "Enter promo code",
+    "apply": "Apply",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "tax": "Tax",
+    "total": "Total",
+    "free": "Free",
+    "refundGuarantee": "Money-back guarantee if the product is returned."
   }
 }
