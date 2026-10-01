@@ -89,7 +89,8 @@
   },
   "recentOrders": {
     "title": "سفارش‌های اخیر",
-    "description": "آخرین سفارش‌های فروشگاه"
+    "description": "آخرین سفارش‌های فروشگاه",
+    "error": "بارگذاری سفارش‌های اخیر با خطا مواجه شد."
   },
   "customerInsights": {
     "lowStock": {

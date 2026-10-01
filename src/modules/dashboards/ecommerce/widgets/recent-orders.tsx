@@ -15,6 +15,7 @@ import { useRecentOrders } from "../hooks/use-recent-orders";
 type RecentOrdersTranslations = {
   title: string;
   description: string;
+  error: string;
 };
 
 type RecentOrdersProps = {
@@ -90,9 +91,12 @@ export function RecentOrders({ locale, translations }: RecentOrdersProps) {
   ];
 
   if (isError) {
-    return null;
+    return (
+      <div className="rounded-xl border p-6 text-sm text-destructive">
+        {translations.error}
+      </div>
+    );
   }
-
   return (
     <TableWidget
       title={translations.title}

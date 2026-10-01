@@ -55,7 +55,8 @@
     "products": "محصولات",
     "transactions": "تراکنش‌ ها",
     "averageOrderValue": "میانگین ارزش سفارش",
-    "refundRate": "نرخ بازپرداخت"
+    "refundRate": "نرخ بازپرداخت",
+    "error": "بارگذاری شاخص‌های فروش با خطا مواجه شد."
   },
   "salesPerformance": {
     "title": "عملکرد فروش",
@@ -125,6 +126,7 @@
   "recentTransactions": {
     "title": "تراکنش‌  های اخیر",
     "description": "آخرین پرداخت‌ ها و واریزی ‌ها",
-    "viewAll": "مشاهده همه"
+    "viewAll": "مشاهده همه",
+    "error": "بارگذاری تراکنش‌های اخیر با خطا مواجه شد."
   }
 }

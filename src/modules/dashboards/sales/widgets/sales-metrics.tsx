@@ -32,7 +32,7 @@ export function SalesMetrics({ locale, translations }: SalesMetricsProps) {
   if (isError) {
     return (
       <div className="rounded-xl border p-6 text-sm text-muted-foreground">
-        Failed to load sales metrics.
+        {translations.error}
       </div>
     );
   }

@@ -15,7 +15,8 @@
     "video": "Video",
     "playVideo": "Play video",
     "pauseVideo": "Pause video",
-    "primary": "Primary"
+    "primary": "Primary",
+    "error": "Failed to load product media."
   },
   "overview": {
     "reviews": "Reviews",

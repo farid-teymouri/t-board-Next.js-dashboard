@@ -55,7 +55,8 @@
     "products": "Products",
     "transactions": "Transactions",
     "averageOrderValue": "Avg. order value",
-    "refundRate": "Refund rate"
+    "refundRate": "Refund rate",
+    "error": "Failed to load sales metrics."
   },
   "salesPerformance": {
     "title": "Sales Performance",
@@ -125,6 +126,7 @@
   "recentTransactions": {
     "title": "Recent Transactions",
     "description": "Latest payments & payouts",
-    "viewAll": "View all"
+    "viewAll": "View all",
+    "error": "Failed to load recent transactions."
   }
 }

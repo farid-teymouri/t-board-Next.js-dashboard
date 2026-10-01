@@ -55,7 +55,7 @@ export function ProductMedia({ dictionary }: ProductMediaProps) {
     return (
       <Card>
         <CardContent className="flex min-h-40 items-center justify-center text-sm text-destructive">
-          Failed to load product media.
+          {dictionary.error}
         </CardContent>
       </Card>
     );

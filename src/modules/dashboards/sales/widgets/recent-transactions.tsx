@@ -18,6 +18,7 @@ type RecentTransactionsTranslations = {
   title: string;
   description: string;
   viewAll: string;
+  error: string;
 };
 
 type RecentTransactionsProps = {
@@ -144,9 +145,12 @@ export function RecentTransactions({
   ];
 
   if (isError) {
-    return null;
+    return (
+      <div className="rounded-xl border p-6 text-sm text-destructive">
+        {translations.error}
+      </div>
+    );
   }
-
   return (
     <TableWidget
       title={translations.title}

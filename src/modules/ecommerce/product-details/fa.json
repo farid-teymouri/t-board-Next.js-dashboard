@@ -15,7 +15,8 @@
     "video": "ویدیو",
     "playVideo": "پخش ویدیو",
     "pauseVideo": "توقف ویدیو",
-    "primary": "اصلی"
+    "primary": "اصلی",
+    "error": "بارگذاری رسانه‌های محصول با خطا مواجه شد."
   },
   "overview": {
     "reviews": "دیدگاه",

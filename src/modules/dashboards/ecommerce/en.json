@@ -58,12 +58,7 @@
   "salesByChannel": {
     "title": "Sales by Channel",
     "description": "Revenue distribution across sales channels",
-    "stages": [
-      "Web store",
-      "Mobile app",
-      "Marketplace",
-      "POS / in-store"
-    ]
+    "stages": ["Web store", "Mobile app", "Marketplace", "POS / in-store"]
   },
   "inventoryStatus": {
     "title": "Inventory Status",
@@ -89,7 +84,8 @@
   },
   "recentOrders": {
     "title": "Recent Orders",
-    "description": "Latest store orders"
+    "description": "Latest store orders",
+    "error": "Failed to load recent orders."
   },
   "customerInsights": {
     "lowStock": {
