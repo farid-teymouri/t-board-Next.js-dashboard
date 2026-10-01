@@ -1,8 +1,10 @@
 import { Skeleton } from "@/components/ui/skeleton";
+
 import {
   Table,
   TableBody,
   TableCell,
+  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -23,44 +25,59 @@ export function InvoicesTableSkeleton() {
         </div>
       </div>
 
-      {/* Search + Calendar */}
+      {/* Search + Calendar + Sort */}
       <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
         <Skeleton className="h-9 w-full sm:max-w-sm" />
 
-        <Skeleton className="size-9 rounded-md" />
+        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
+          <Skeleton className="h-9 w-full sm:w-40" />
+          <Skeleton className="h-9 w-full sm:w-44" />
+        </div>
       </div>
 
       {/* Table */}
       <div className="overflow-x-auto">
         <Table>
-          <TableHeader>
+          <TableHeader className="bg-muted/40">
             <TableRow>
+              {/* Select */}
               <TableHead className="w-12 px-4">
                 <Skeleton className="size-4" />
               </TableHead>
 
+              {/* Invoice */}
               <TableHead>
                 <Skeleton className="h-4 w-16" />
               </TableHead>
 
+              {/* Client */}
               <TableHead>
                 <Skeleton className="h-4 w-16" />
               </TableHead>
 
+              {/* Issue Date */}
               <TableHead>
                 <Skeleton className="h-4 w-20" />
               </TableHead>
 
+              {/* Due */}
               <TableHead>
                 <Skeleton className="h-4 w-16" />
               </TableHead>
 
+              {/* Amount */}
               <TableHead>
                 <Skeleton className="h-4 w-16" />
               </TableHead>
 
+              {/* Status */}
               <TableHead>
                 <Skeleton className="h-4 w-16" />
+              </TableHead>
+
+              {/* Actions */}
+              <TableHead className="w-12">
+                <span className="sr-only">Actions</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -112,9 +129,44 @@ export function InvoicesTableSkeleton() {
                 <TableCell>
                   <Skeleton className="h-6 w-24 rounded-full" />
                 </TableCell>
+
+                {/* Actions */}
+                <TableCell className="w-12">
+                  <Skeleton className="size-8 rounded-md" />
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
+
+          {/* Summary */}
+          <TableFooter>
+            <TableRow>
+              <TableCell colSpan={5} />
+
+              {/* Amount total */}
+              <TableCell>
+                <Skeleton className="h-4 w-24" />
+              </TableCell>
+
+              {/* Paid + Outstanding */}
+              <TableCell>
+                <div className="flex flex-col gap-1">
+                  <div className="flex items-center justify-between gap-4">
+                    <Skeleton className="h-3 w-14" />
+                    <Skeleton className="h-4 w-20" />
+                  </div>
+
+                  <div className="flex items-center justify-between gap-4">
+                    <Skeleton className="h-3 w-20" />
+                    <Skeleton className="h-4 w-20" />
+                  </div>
+                </div>
+              </TableCell>
+
+              {/* Actions */}
+              <TableCell />
+            </TableRow>
+          </TableFooter>
         </Table>
       </div>
     </div>

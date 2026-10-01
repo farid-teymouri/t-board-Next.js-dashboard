@@ -540,7 +540,7 @@ export function InvoicesTable({ dictionary, locale }: InvoicesTableProps) {
                 onSelect={(checked) => handleSelectInvoice(invoice.id, checked)}
               />
             ))}
-          </TableBody>{" "}
+          </TableBody>
           <TableFooter>
             <TableRow>
               <TableCell colSpan={5} />
