@@ -7,6 +7,14 @@
     "createInvoice": "Create Invoice",
     "exportReport": "Export"
   },
+  "summary": {
+    "outstanding": "Outstanding",
+    "overdue": "Overdue",
+    "paid30Days": "Paid — 30 days",
+    "drafts": "Drafts",
+    "change": "vs previous period",
+    "invoices": "INV"
+  },
   "table": {
     "tabs": {
       "all": "All",

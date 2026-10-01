@@ -1,5 +1,5 @@
 import type { Currency } from "@/utils/currency";
-
+import type { InvoiceSummary } from "../invoices-summary/types";
 export type InvoiceTab = "all" | "paid" | "unpaid" | "overdue" | "draft";
 
 export type InvoiceStatus = "paid" | "unpaid" | "overdue" | "draft";
@@ -33,6 +33,7 @@ export type Invoice = {
   amount: number;
   currency: Currency;
   status: InvoiceStatus;
+  paidAt?: string;
 };
 
 export type InvoiceTabCount = {
@@ -40,15 +41,8 @@ export type InvoiceTabCount = {
   count: number;
 };
 
-export type InvoicesTableSummary = {
-  count: number;
-  overdue: number;
-  amount: number;
-  currency: Currency;
-};
-
 export type InvoicesTableData = {
-  summary: InvoicesTableSummary;
+  summary: InvoiceSummary;
   tabs: InvoiceTabCount[];
   invoices: Invoice[];
 };

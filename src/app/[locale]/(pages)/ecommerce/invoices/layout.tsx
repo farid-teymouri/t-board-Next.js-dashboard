@@ -1,7 +1,6 @@
 import { headers } from "next/headers";
 
 import { getDictionary } from "@/i18n/dictionaries";
-
 import { formatCurrency } from "@/utils/currency";
 
 import { PageHeader } from "@/components/layout/page-header/page-header";
@@ -11,7 +10,6 @@ import { EcommerceInvoicesHeaderActions } from "@/modules/ecommerce/invoices/com
 
 interface EcommerceInvoicesLayoutProps {
   children: React.ReactNode;
-
   params: Promise<{
     locale: string;
   }>;
@@ -47,12 +45,15 @@ export default async function EcommerceInvoicesLayout({
   params,
 }: EcommerceInvoicesLayoutProps) {
   const { locale: routeLocale } = await params;
-
   const locale = routeLocale === "fa" ? "fa" : "en";
 
   const dictionary = await getDictionary(locale);
+  const data = await getInvoices();
 
-  const invoices = await getInvoices();
+  const totalInvoiceAmount = data.invoices.reduce(
+    (total: number, invoice: { amount: number }) => total + invoice.amount,
+    0,
+  );
 
   return (
     <>
@@ -60,11 +61,11 @@ export default async function EcommerceInvoicesLayout({
         <PageHeader
           dictionary={dictionary.ecommerce.invoices.page}
           variables={{
-            count: invoices.summary.count,
-            overdue: invoices.summary.overdue,
-            amount: formatCurrency(invoices.summary.amount, {
+            count: data.invoices.length,
+            overdue: data.summary.overdue.count,
+            amount: formatCurrency(totalInvoiceAmount, {
               locale,
-              currency: invoices.summary.currency,
+              currency: data.summary.currency,
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             }),

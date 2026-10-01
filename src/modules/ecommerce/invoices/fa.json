@@ -7,6 +7,14 @@
     "createInvoice": "ایجاد فاکتور",
     "exportReport": "خروجی گرفتن"
   },
+  "summary": {
+    "outstanding": "مانده",
+    "overdue": "معوق",
+    "paid30Days": "پرداخت‌ شده — ۳۰ روز",
+    "drafts": "پیش‌ نویس",
+    "change": "نسبت به دوره قبل",
+    "invoices": "فاکتور"
+  },
   "table": {
     "tabs": {
       "all": "همه",

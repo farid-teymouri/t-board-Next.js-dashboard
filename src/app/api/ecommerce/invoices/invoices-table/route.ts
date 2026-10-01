@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-
 import type {
   Invoice,
   InvoiceTabCount,
@@ -337,6 +336,7 @@ const invoiceClients = [
     avatarColor: "bg-chart-1/15 text-chart-1",
   },
 ];
+
 const statuses: Invoice["status"][] = [
   "paid",
   "unpaid",
@@ -432,32 +432,43 @@ const statuses: Invoice["status"][] = [
   "paid",
   "paid",
 ];
+
 const amounts = [
-  12800000, 18500000, 24750000, 31900000, 38400000, 42500000, 46800000,
-  51200000, 57900000, 63500000, 68200000, 72400000, 79500000, 84200000,
-  91500000, 96800000, 104500000, 112000000, 126500000, 138000000,
+  12_800_000, 18_500_000, 24_750_000, 31_900_000, 38_400_000, 42_500_000,
+  46_800_000, 51_200_000, 57_900_000, 63_500_000, 68_200_000, 72_400_000,
+  79_500_000, 84_200_000, 91_500_000, 96_800_000, 104_500_000, 112_000_000,
+  126_500_000, 138_000_000,
 ];
 
-const overdueDays = [9, 14, 6, 21, 4, 12, 17];
+const overdueDaysList = [9, 14, 6, 21, 4, 12, 17];
+const paidAtOffsets = [2, 4, 6, 8, 10, 12, 15, 18, 21, 24, 27];
 
 let overdueIndex = 0;
+let paidAtIndex = 0;
 
 const invoices: Invoice[] = statuses.map((status, index) => {
   const client = invoiceClients[index % invoiceClients.length];
   const amount = amounts[index % amounts.length];
 
-  const issueDate = new Date(2026, 8, 1 + index);
-
+  const issueDate = new Date(2026, 8, 1 + index); // ۱ شهریور به بعد
   const dueDate = new Date(issueDate);
   dueDate.setDate(dueDate.getDate() + 14);
 
-  let invoiceOverdueDays = 0;
-
+  let overdueDays = 0;
   if (status === "overdue") {
-    invoiceOverdueDays = overdueDays[overdueIndex];
+    overdueDays = overdueDaysList[overdueIndex % overdueDaysList.length];
     overdueIndex += 1;
+    dueDate.setDate(dueDate.getDate() - overdueDays);
+  }
 
-    dueDate.setDate(dueDate.getDate() - invoiceOverdueDays);
+  let paidAt: string | undefined;
+  if (status === "paid") {
+    const paidDate = new Date(issueDate);
+    paidDate.setDate(
+      paidDate.getDate() + paidAtOffsets[paidAtIndex % paidAtOffsets.length],
+    );
+    paidAt = paidDate.toISOString();
+    paidAtIndex += 1;
   }
 
   return {
@@ -465,43 +476,128 @@ const invoices: Invoice[] = statuses.map((status, index) => {
     client,
     issueDate: issueDate.toISOString(),
     dueDate: dueDate.toISOString(),
-    overdueDays: invoiceOverdueDays,
+    paidAt,
+    overdueDays,
     amount,
     currency: "IRT",
     status,
   };
 });
 
+// ─── تاریخ مرجع (۱ مهر ۱۴۰۵) ───────────────────────────────────────────────
+const summaryReferenceDate = new Date(2026, 9, 1); // ۱ اکتبر ۲۰۲۶
+
+const currentPeriodStart = new Date(summaryReferenceDate);
+currentPeriodStart.setDate(currentPeriodStart.getDate() - 30);
+
+const previousPeriodStart = new Date(currentPeriodStart);
+previousPeriodStart.setDate(previousPeriodStart.getDate() - 30);
+
+const previousPeriodEnd = new Date(currentPeriodStart);
+
+// ─── توابع کمکی ────────────────────────────────────────────────────────────
+const getPercentageChange = (current: number, previous: number) => {
+  if (previous === 0) return current === 0 ? 0 : 100;
+  return ((current - previous) / previous) * 100;
+};
+
+const getChangeDirection = (change: number): "up" | "down" =>
+  change >= 0 ? "up" : "down";
+
+// ─── محاسبه paid در ۳۰ روز اخیر (بر اساس issueDate – همان منطق دیتاتیبل) ───
+const filterByIssueDate = (start: Date, end: Date) =>
+  invoices.filter((inv) => {
+    const d = new Date(inv.issueDate);
+    return d >= start && d < end;
+  });
+
+const currentPeriodInvoices = filterByIssueDate(
+  currentPeriodStart,
+  summaryReferenceDate,
+);
+const previousPeriodInvoices = filterByIssueDate(
+  previousPeriodStart,
+  previousPeriodEnd,
+);
+
+const currentPaidAmount = currentPeriodInvoices
+  .filter((inv) => inv.status === "paid")
+  .reduce((sum, inv) => sum + inv.amount, 0);
+
+const previousPaidAmount = previousPeriodInvoices
+  .filter((inv) => inv.status === "paid")
+  .reduce((sum, inv) => sum + inv.amount, 0);
+
+const paidChange = getPercentageChange(currentPaidAmount, previousPaidAmount);
+
+// ─── outstanding (بر اساس dueDate) ─────────────────────────────────────────
+const getOutstandingAmount = (start: Date, end: Date) =>
+  invoices
+    .filter((inv) => inv.status === "unpaid" || inv.status === "overdue")
+    .filter((inv) => {
+      const d = new Date(inv.dueDate);
+      return d >= start && d < end;
+    })
+    .reduce((sum, inv) => sum + inv.amount, 0);
+
+const currentOutstandingAmount = getOutstandingAmount(
+  currentPeriodStart,
+  summaryReferenceDate,
+);
+const previousOutstandingAmount = getOutstandingAmount(
+  previousPeriodStart,
+  previousPeriodEnd,
+);
+const outstandingChange = getPercentageChange(
+  currentOutstandingAmount,
+  previousOutstandingAmount,
+);
+
+// ─── مقادیر کلی (بدون فیلتر زمانی) ─────────────────────────────────────────
+const outstandingInvoices = invoices.filter(
+  (inv) => inv.status === "unpaid" || inv.status === "overdue",
+);
+const outstandingAmount = outstandingInvoices.reduce(
+  (sum, inv) => sum + inv.amount,
+  0,
+);
+
+const overdueInvoices = invoices.filter((inv) => inv.status === "overdue");
+const overdueAmount = overdueInvoices.reduce((sum, inv) => sum + inv.amount, 0);
+
+const draftInvoices = invoices.filter((inv) => inv.status === "draft");
+
+// ─── tabs (کاملاً داینامیک از روی دیتا) ────────────────────────────────────
 const tabs: InvoiceTabCount[] = [
-  {
-    id: "all",
-    count: 94,
-  },
-  {
-    id: "paid",
-    count: 71,
-  },
-  {
-    id: "unpaid",
-    count: 11,
-  },
-  {
-    id: "overdue",
-    count: 7,
-  },
-  {
-    id: "draft",
-    count: 5,
-  },
+  { id: "all", count: invoices.length },
+  { id: "paid", count: invoices.filter((i) => i.status === "paid").length },
+  { id: "unpaid", count: invoices.filter((i) => i.status === "unpaid").length },
+  { id: "overdue", count: overdueInvoices.length },
+  { id: "draft", count: draftInvoices.length },
 ];
 
+// ─── API ───────────────────────────────────────────────────────────────────
 export async function GET() {
   return NextResponse.json({
     summary: {
-      count: 94,
-      overdue: 7,
-      amount: 1824000000,
       currency: "IRT",
+      outstanding: {
+        amount: currentOutstandingAmount,
+        change: Math.abs(outstandingChange),
+        direction: getChangeDirection(outstandingChange),
+      },
+      overdue: {
+        amount: overdueAmount,
+        count: overdueInvoices.length,
+      },
+      paid30Days: {
+        amount: currentPaidAmount,
+        change: Math.abs(paidChange),
+        direction: getChangeDirection(paidChange),
+      },
+      drafts: {
+        count: draftInvoices.length,
+      },
     },
     tabs,
     invoices,
