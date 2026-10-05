@@ -9,5 +9,4 @@ export type {
   InvoiceTabCount,
   InvoicesTableData,
   InvoicesTableProps,
-  InvoicesTableSummary,
 } from "./types";
