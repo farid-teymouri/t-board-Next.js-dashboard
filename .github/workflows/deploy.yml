@@ -17,8 +17,19 @@ jobs:
           port: 9011
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
+          script_stop: true
           script: |
+            set -e
+
             cd /opt/apps/t-board
+
+            echo "==> Pulling latest code"
             git pull origin main
+
+            echo "==> Building and starting T-Board"
             docker compose up -d --build --remove-orphans
+
+            echo "==> Cleaning unused Docker images"
             docker image prune -f
+
+            echo "==> Deployment completed successfully"
